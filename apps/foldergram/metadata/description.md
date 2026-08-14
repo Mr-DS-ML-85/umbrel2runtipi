@@ -12,15 +12,6 @@ The app also includes tools for organizing and maintaining a media library. Item
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/foldergram/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/foldergram/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/foldergram/3.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/foldergram/4.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/foldergram/5.webp)
-
 ## Links
 
 - Website: https://foldergram.github.io/

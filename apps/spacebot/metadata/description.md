@@ -10,15 +10,6 @@ It works out of the box and scales from one person to a whole community.
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/spacebot/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/spacebot/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/spacebot/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/spacebot/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/spacebot/5.jpg)
-
 ## Links
 
 - Website: https://spacebot.sh

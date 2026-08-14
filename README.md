@@ -13,6 +13,7 @@ Add this repository as a custom app store in your Runtipi instance:
 ## Stats
 
 - **191 apps** converted from Umbrel
+- 2 extra self-hosted PaaS apps added by hand (`dokploy`, `coolify`) — not part of the Umbrel catalogue; see `EXTRA_APPS` in `tools/convert.py`
 - 123 Umbrel apps skipped because they already exist in the official Runtipi store (deduped by id / normalized id / normalized name / verified image alias)
 - 77 apps skipped because they depend on Umbrel-only infrastructure (Bitcoin/Lightning/Electrs/Monero system nodes, Tor) or Umbrel install-hook files
 - See `conversion-report.md` for the full breakdown.

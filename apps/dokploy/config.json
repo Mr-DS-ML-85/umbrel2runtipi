@@ -1,0 +1,35 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Dokploy",
+  "available": true,
+  "exposable": false,
+  "dynamic_config": true,
+  "port": 3000,
+  "id": "dokploy",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Dokploy is a free, self-hostable Platform as a Service (PaaS) that simplifies deployment and management of applications, databases and Docker Compose stacks. It uses Traefik for automatic HTTPS routing.\n\nIt manages Docker directly through the host socket and runs its control plane in Docker Swarm mode, so the host Docker engine must be reachable and able to run Swarm services. Dokploy also brings up its own Traefik on ports 80/443, which will conflict with Runtipi's Traefik -- expose Dokploy on a host with those ports free, or stop Runtipi's proxy while using it.",
+  "short_desc": "Self-hosted Platform as a Service (PaaS)",
+  "author": "Dokploy",
+  "source": "https://github.com/Dokploy/dokploy",
+  "website": "https://dokploy.com",
+  "form_fields": [
+    {
+      "label": "Database password",
+      "type": "random",
+      "env_variable": "APP_DB_PASSWORD",
+      "min": 32,
+      "required": false
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786708103238,
+  "updated_at": 1786708103238,
+  "min_tipi_version": "4.5.0"
+}

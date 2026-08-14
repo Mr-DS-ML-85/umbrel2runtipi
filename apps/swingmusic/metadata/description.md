@@ -11,13 +11,6 @@ Swing Music keeps your data local. Host your music library, stream from any brow
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/swingmusic/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/swingmusic/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/swingmusic/3.jpg)
-
 ## Links
 
 - Website: https://github.com/swingmx/swingmusic

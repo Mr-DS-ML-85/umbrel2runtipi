@@ -12,13 +12,6 @@ To enroll a circle: open the seeder dashboard, then in the PearCircle phone app 
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/pearcircle-seeder/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/pearcircle-seeder/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/pearcircle-seeder/3.webp)
-
 ## Links
 
 - Website: https://peerloomllc.com

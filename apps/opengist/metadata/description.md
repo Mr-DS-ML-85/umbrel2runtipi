@@ -14,15 +14,6 @@ It is a practical alternative to GitHub Gist for developers, self-hosters, admin
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/opengist/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/opengist/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/opengist/3.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/opengist/4.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/opengist/5.webp)
-
 ## Links
 
 - Website: https://opengist.io/

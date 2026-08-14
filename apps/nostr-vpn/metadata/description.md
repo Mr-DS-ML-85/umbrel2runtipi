@@ -8,13 +8,6 @@ To connect a device, choose Join on the device you want to add so it displays it
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/nostr-vpn/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/nostr-vpn/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/nostr-vpn/3.webp)
-
 ## Links
 
 - Website: https://github.com/mmalmi/nostr-vpn

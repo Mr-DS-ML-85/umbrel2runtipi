@@ -14,15 +14,6 @@ Overall, Readur leverages intelligent OCR and efficient document processing to p
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/readur/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/readur/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/readur/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/readur/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/readur/5.jpg)
-
 ## Links
 
 - Website: https://github.com/readur/readur

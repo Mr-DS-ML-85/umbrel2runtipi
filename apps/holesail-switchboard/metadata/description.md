@@ -22,15 +22,6 @@ For more information: https://github.com/oren-z0/holesail-switchboard/blob/main/
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/holesail-switchboard/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/holesail-switchboard/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/holesail-switchboard/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/holesail-switchboard/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/holesail-switchboard/5.jpg)
-
 ## Links
 
 - Website: https://github.com/oren-z0/holesail-switchboard

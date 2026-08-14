@@ -8,13 +8,6 @@ If your internet access is not censored, you should consider running a Snowflake
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/snowflake/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/snowflake/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/snowflake/3.jpg)
-
 ## Links
 
 - Website: https://snowflake.torproject.org/

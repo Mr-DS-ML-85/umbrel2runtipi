@@ -10,13 +10,6 @@ You only need to run the app to participate. You can optionally configure your e
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/ipfs-podcasting/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/ipfs-podcasting/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/ipfs-podcasting/3.jpg)
-
 ## Links
 
 - Website: https://IPFSPodcasting.net

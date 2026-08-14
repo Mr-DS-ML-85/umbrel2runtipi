@@ -16,16 +16,6 @@ KitchenOwl is actively developed and maintained by a community of contributors w
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/kitchenowl/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/kitchenowl/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/kitchenowl/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/kitchenowl/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/kitchenowl/5.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/kitchenowl/6.jpg)
-
 ## Links
 
 - Website: https://kitchenowl.org/

@@ -8,13 +8,6 @@ AdventureLog was created to solve a problem: the lack of a modern, open-source, 
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/adventurelog/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/adventurelog/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/adventurelog/3.jpg)
-
 ## Links
 
 - Website: https://adventurelog.app/

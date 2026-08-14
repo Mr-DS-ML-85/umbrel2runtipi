@@ -16,13 +16,6 @@ Available in over 90 languages, and compatible with Windows, Mac and Linux machi
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/firefox/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/firefox/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/firefox/3.jpg)
-
 ## Links
 
 - Website: https://www.mozilla.org/en-US/firefox/

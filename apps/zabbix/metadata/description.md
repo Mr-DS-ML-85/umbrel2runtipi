@@ -20,13 +20,6 @@ The Zabbix Agent listens on port 10050. To monitor the Zabbix server itself, nav
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zabbix/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zabbix/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zabbix/3.jpg)
-
 ## Links
 
 - Website: https://www.zabbix.com/

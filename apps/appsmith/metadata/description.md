@@ -14,14 +14,6 @@ Whether you're a startup looking to accelerate development or an enterprise seek
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/appsmith/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/appsmith/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/appsmith/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/appsmith/4.jpg)
-
 ## Links
 
 - Website: https://www.appsmith.com/

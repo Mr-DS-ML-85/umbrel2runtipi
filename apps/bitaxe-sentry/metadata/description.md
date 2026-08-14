@@ -11,13 +11,6 @@ Features included:
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bitaxe-sentry/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bitaxe-sentry/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bitaxe-sentry/3.jpg)
-
 ## Links
 
 - Website: https://github.com/zachchan105/bitaxe-sentry

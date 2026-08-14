@@ -8,15 +8,6 @@ Use Langflow to prototype multi-agent systems, retrieval workflows, automations,
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/langflow/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/langflow/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/langflow/3.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/langflow/4.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/langflow/5.webp)
-
 ## Links
 
 - Website: https://www.langflow.org/

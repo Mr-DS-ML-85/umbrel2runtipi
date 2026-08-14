@@ -12,15 +12,6 @@ With its combination of ease of use, flexibility, and reliability, Restreamer se
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/restreamer/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/restreamer/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/restreamer/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/restreamer/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/restreamer/5.jpg)
-
 ## Links
 
 - Website: https://datarhei.com/

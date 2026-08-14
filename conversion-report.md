@@ -5,7 +5,7 @@
 - Require Umbrel bitcoin/lightning infra (skipped): 77  
 - Skipped other: 0  
 - Conversion failures: 0  
-- **Converted: 191**  
+- **Converted: 193**  
 
 
 ## Converted apps
@@ -67,6 +67,8 @@
   - notes: removed umbrel app_proxy service
 - **ConvertX** (`convertx`) port 8386, main=server, internal=3000
   - notes: removed umbrel app_proxy service
+- **Coolify** (`coolify`) port 8000, main=coolify, internal=8000
+  - auto-generated secret env vars: APP_DB_PASSWORD, APP_REDIS_PASSWORD, APP_KEY
 - **copyparty** (`copyparty`) port 3923, main=web, internal=3923
   - notes: removed umbrel app_proxy service
 - **DATUM** (`datum`) port 21000, main=datum, internal=21000
@@ -80,6 +82,8 @@
   - notes: removed umbrel app_proxy service
 - **DocuSeal** (`docuseal`) port 8387, main=server, internal=3000
   - notes: removed umbrel app_proxy service
+- **Dokploy** (`dokploy`) port 3000, main=dokploy, internal=3000
+  - auto-generated secret env vars: APP_DB_PASSWORD
 - **Domain Locker** (`domain-locker`) port 8839, main=app, internal=3000
   - notes: removed umbrel app_proxy service
 - **Donetick** (`donetick`) port 8123, main=app, internal=2021
@@ -657,4 +661,5 @@
 
 ## Icons
 
-- All icons downloaded from the Umbrel gallery.
+- `coolify` — placeholder logo (no svg)
+- `dokploy` — placeholder logo (no svg)

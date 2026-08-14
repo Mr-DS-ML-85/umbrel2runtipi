@@ -14,14 +14,6 @@ It enables you to take ownership of your financial data!
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/rotki/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/rotki/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/rotki/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/rotki/4.jpg)
-
 ## Links
 
 - Website: https://rotki.com

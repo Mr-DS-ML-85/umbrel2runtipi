@@ -12,14 +12,6 @@ Slink is built around the idea of ownership and transparency. It avoids unnecess
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/slink/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/slink/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/slink/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/slink/4.jpg)
-
 ## Links
 
 - Website: https://docs.slinkapp.io/

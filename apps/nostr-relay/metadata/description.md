@@ -16,13 +16,6 @@ Nostr Relay is powered by the open source nostr-rs-relay project — a Rust impl
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/nostr-relay/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/nostr-relay/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/nostr-relay/3.jpg)
-
 ## Links
 
 - Website: https://umbrel.com

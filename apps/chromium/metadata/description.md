@@ -8,13 +8,6 @@ Chromium is an open-source web browser project initiated and primarily maintaine
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/chromium/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/chromium/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/chromium/3.jpg)
-
 ## Links
 
 - Website: https://www.chromium.org/Home/

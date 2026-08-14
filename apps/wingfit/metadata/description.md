@@ -10,15 +10,6 @@ Unlike many fitness apps that overwhelm with gamification, notifications, or soc
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wingfit/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wingfit/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wingfit/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wingfit/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wingfit/5.jpg)
-
 ## Links
 
 - Website: https://wingfit.fr/

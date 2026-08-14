@@ -10,13 +10,6 @@ The node ships with browser-based wallet support and persists its chain data, pe
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/sikka/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/sikka/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/sikka/3.webp)
-
 ## Links
 
 - Website: https://github.com/sikkalabs

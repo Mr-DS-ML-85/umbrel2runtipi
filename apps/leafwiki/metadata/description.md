@@ -10,13 +10,6 @@ LeafWiki focuses on clarity rather than unnecessary complexity. It provides a ca
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/leafwiki/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/leafwiki/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/leafwiki/3.webp)
-
 ## Links
 
 - Website: https://leafwiki.com/

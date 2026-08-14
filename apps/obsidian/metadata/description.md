@@ -13,13 +13,6 @@ Obsidian uses open, non-proprietary files, so you're never locked in, and can pr
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/obsidian/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/obsidian/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/obsidian/3.jpg)
-
 ## Links
 
 - Website: https://obsidian.md/

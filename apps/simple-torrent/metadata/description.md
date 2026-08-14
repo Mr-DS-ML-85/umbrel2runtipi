@@ -18,13 +18,6 @@ SimpleTorrent is a a self-hosted remote torrent client that starts torrents remo
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/simple-torrent/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/simple-torrent/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/simple-torrent/3.jpg)
-
 ## Links
 
 - Website: https://github.com/boypt

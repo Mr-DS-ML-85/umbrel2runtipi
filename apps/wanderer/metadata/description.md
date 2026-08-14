@@ -10,17 +10,6 @@ Wanderer is especially popular among people who enjoy organizing their personal 
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wanderer/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wanderer/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wanderer/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wanderer/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wanderer/5.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wanderer/6.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wanderer/7.jpg)
-
 ## Links
 
 - Website: https://wanderer.to/

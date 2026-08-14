@@ -12,13 +12,6 @@ EE Gateway is free and open-source software (GPL-3.0-only), built by encrypteden
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/ee-gateway/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/ee-gateway/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/ee-gateway/3.webp)
-
 ## Links
 
 - Website: https://encryptedenergy.com

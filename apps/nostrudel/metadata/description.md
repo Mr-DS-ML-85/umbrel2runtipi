@@ -7,13 +7,6 @@ The focus is on power users or any other users who want to learn the inner worki
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/nostrudel/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/nostrudel/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/nostrudel/3.jpg)
-
 ## Links
 
 - Website: https://github.com/hzrd149/nostrudel

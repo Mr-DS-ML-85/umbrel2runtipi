@@ -16,15 +16,6 @@ Overall, Reitti focuses on giving users a comprehensive picture of their mobilit
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/reitti/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/reitti/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/reitti/3.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/reitti/4.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/reitti/5.webp)
-
 ## Links
 
 - Website: https://www.dedicatedcode.com/projects/reitti/overview/

@@ -18,14 +18,6 @@ Use as a standalone app OR as a framework, that you can extend via Go and JavaSc
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/pocketbase/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/pocketbase/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/pocketbase/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/pocketbase/4.jpg)
-
 ## Links
 
 - Website: https://pocketbase.io/

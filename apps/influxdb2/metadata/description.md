@@ -15,13 +15,6 @@ Powered by columnar analytics, optimized for cost-efficient storage, and built w
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/influxdb2/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/influxdb2/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/influxdb2/3.jpg)
-
 ## Links
 
 - Website: https://www.influxdata.com/

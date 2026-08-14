@@ -19,13 +19,6 @@ Expose your apps to the internet easily and securely.
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/nginx-proxy-manager/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/nginx-proxy-manager/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/nginx-proxy-manager/3.jpg)
-
 ## Links
 
 - Website: https://nginxproxymanager.com/

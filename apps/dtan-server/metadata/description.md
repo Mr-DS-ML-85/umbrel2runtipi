@@ -7,14 +7,6 @@ The server acts as both a Nostr relay for torrent metadata and a tracker for pee
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dtan-server/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dtan-server/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dtan-server/3.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dtan-server/4.webp)
-
 ## Links
 
 - Website: https://github.com/v0l/dtan-server

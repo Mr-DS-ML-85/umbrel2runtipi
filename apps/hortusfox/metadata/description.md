@@ -16,15 +16,6 @@ HortusFox is ideal for individuals and families who enjoy caring for plants and 
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/hortusfox/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/hortusfox/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/hortusfox/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/hortusfox/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/hortusfox/5.jpg)
-
 ## Links
 
 - Website: https://www.hortusfox.com/

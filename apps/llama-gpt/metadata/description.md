@@ -20,13 +20,6 @@ An official app from the server.
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/llama-gpt/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/llama-gpt/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/llama-gpt/3.jpg)
-
 ## Links
 
 - Website: https://umbrel.com

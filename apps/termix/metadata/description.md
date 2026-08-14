@@ -16,15 +16,6 @@ All of these features are wrapped in a clean and modern interface that prioritiz
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/termix/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/termix/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/termix/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/termix/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/termix/5.jpg)
-
 ## Links
 
 - Website: https://docs.termix.site/

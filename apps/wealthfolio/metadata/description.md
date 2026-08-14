@@ -8,14 +8,6 @@ Use Wealthfolio to keep a self-hosted view of your investments without sending p
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wealthfolio/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wealthfolio/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wealthfolio/3.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wealthfolio/4.webp)
-
 ## Links
 
 - Website: https://wealthfolio.app/

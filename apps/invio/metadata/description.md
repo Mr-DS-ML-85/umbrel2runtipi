@@ -8,13 +8,6 @@ Create and share invoices in seconds, host your data yourself, and share secure,
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/invio/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/invio/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/invio/3.jpg)
-
 ## Links
 
 - Website: https://github.com/kittendevv/invio

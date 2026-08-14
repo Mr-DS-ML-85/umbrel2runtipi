@@ -12,15 +12,6 @@ Whether you're sharing code snippets with a colleague, keeping track of notes, o
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/pastefy/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/pastefy/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/pastefy/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/pastefy/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/pastefy/5.jpg)
-
 ## Links
 
 - Website: https://pastefy.app/

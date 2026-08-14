@@ -14,13 +14,6 @@ Built on a foundation of radical transparency, Sure is fully open-source. You ca
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/sure/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/sure/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/sure/3.jpg)
-
 ## Links
 
 - Website: https://sure.am

@@ -25,13 +25,6 @@ Formicaio exposes an MCP server that any external AI agent or workflow automatio
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/formicaio/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/formicaio/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/formicaio/3.jpg)
-
 ## Links
 
 - Website: https://github.com/bochaco/formicaio

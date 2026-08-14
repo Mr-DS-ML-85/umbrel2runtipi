@@ -12,14 +12,6 @@ Files and database fields are sealed with post-quantum encryption at rest no mat
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/hermitstash/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/hermitstash/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/hermitstash/3.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/hermitstash/4.webp)
-
 ## Links
 
 - Website: https://hermitstash.com

@@ -23,15 +23,6 @@ OpenThread Border Router (OTBR) lets you bridge a Thread mesh network to your lo
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openthread-border-router/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openthread-border-router/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openthread-border-router/3.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openthread-border-router/4.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openthread-border-router/5.webp)
-
 ## Links
 
 - Website: https://github.com/ownbee/hass-otbr-docker

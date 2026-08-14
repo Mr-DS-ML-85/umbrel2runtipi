@@ -28,14 +28,6 @@ Super Productivity is designed for those who want to boost their productivity wh
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/super-productivity/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/super-productivity/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/super-productivity/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/super-productivity/4.jpg)
-
 ## Links
 
 - Website: https://super-productivity.com/

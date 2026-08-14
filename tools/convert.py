@@ -81,6 +81,8 @@ ICON_BASE = "https://getumbrel.github.io/umbrel-apps-gallery"
 REPO_LOGO_FALLBACKS = {
     "route96": "https://raw.githubusercontent.com/v0l/route96/main/ui_src/public/route96.jpg",
     "fizzy": "https://raw.githubusercontent.com/basecamp/fizzy/main/public/app-icon.png",
+    "dokploy": "https://raw.githubusercontent.com/Dokploy/dokploy/main/apps/dokploy/public/logo.svg",
+    "coolify": "https://raw.githubusercontent.com/coollabsio/coolify/main/public/coolify-logo.svg",
 }
 
 # Manual overrides for apps whose Umbrel package depends on Umbrel install
@@ -194,6 +196,220 @@ MANUAL_FORM_FIELDS = {
             "default": "7",
         },
     ],
+}
+
+# Extra apps that are NOT in the Umbrel catalogue but are popular self-hosted
+# apps the user asked to add. They are hand-written, Runtipi-compatible, and
+# injected after the main conversion loop (the write step wipes apps/, so they
+# must be part of `converted`). Each entry supplies a full compose, manifest,
+# config overrides (port/exposable/form_fields) and main_service.
+EXTRA_APPS = {
+    "dokploy": {
+        "port": 3000,
+        "exposable": False,
+        "main_service": "dokploy",
+        "manifest": {
+            "id": "dokploy",
+            "name": "Dokploy",
+            "category": "utilities",
+            "tagline": "Self-hosted Platform as a Service (PaaS)",
+            "description": (
+                "Dokploy is a free, self-hostable Platform as a Service (PaaS) that "
+                "simplifies deployment and management of applications, databases and "
+                "Docker Compose stacks. It uses Traefik for automatic HTTPS routing.\n\n"
+                "It manages Docker directly through the host socket and runs its control "
+                "plane in Docker Swarm mode, so the host Docker engine must be reachable "
+                "and able to run Swarm services. Dokploy also brings up its own Traefik on "
+                "ports 80/443, which will conflict with Runtipi's Traefik -- expose Dokploy "
+                "on a host with those ports free, or stop Runtipi's proxy while using it."
+            ),
+            "developer": "Dokploy",
+            "repo": "https://github.com/Dokploy/dokploy",
+            "website": "https://dokploy.com",
+            "version": "0.29.14",
+            "port": 3000,
+        },
+        "form_fields": [
+            {
+                "label": "Database password",
+                "type": "random",
+                "env_variable": "APP_DB_PASSWORD",
+                "min": 32,
+                "required": False,
+            },
+        ],
+        "compose": {
+            "services": {
+                "dokploy": {
+                    "image": "dokploy/dokploy:0.29.14",
+                    "container_name": "dokploy",
+                    "restart": "unless-stopped",
+                    "ports": ["${APP_PORT}:3000"],
+                    "volumes": [
+                        "/var/run/docker.sock:/var/run/docker.sock",
+                        "/etc/dokploy:/etc/dokploy",
+                        "${APP_DATA_DIR}/docker:/root/.docker",
+                    ],
+                    "environment": [
+                        "POSTGRES_PASSWORD=${APP_DB_PASSWORD}",
+                        "DATABASE_URL=postgres://dokploy:${APP_DB_PASSWORD}@dokploy-postgres:5432/dokploy",
+                    ],
+                    "depends_on": {
+                        "dokploy-postgres": {"condition": "service_healthy"},
+                    },
+                    "networks": ["tipi_main_network"],
+                    "labels": {
+                        "runtipi.managed": "true",
+                    },
+                    "x-runtipi": {"internal_port": 3000, "is_main": True},
+                },
+                "dokploy-postgres": {
+                    "image": "postgres:16-alpine",
+                    "container_name": "dokploy-postgres",
+                    "restart": "unless-stopped",
+                    "environment": [
+                        "POSTGRES_USER=dokploy",
+                        "POSTGRES_PASSWORD=${APP_DB_PASSWORD}",
+                        "POSTGRES_DB=dokploy",
+                    ],
+                    "volumes": ["${APP_DATA_DIR}/postgres:/var/lib/postgresql/data"],
+                    "healthcheck": {
+                        "test": ["CMD-SHELL", "pg_isready -U dokploy -d dokploy"],
+                        "interval": "5s",
+                        "retries": 10,
+                        "timeout": "2s",
+                    },
+                    "networks": ["tipi_main_network"],
+                    "labels": {"runtipi.managed": "true"},
+                },
+            },
+        },
+        "x-runtipi": {"schema_version": 2},
+    },
+    "coolify": {
+        "port": 8000,
+        "exposable": True,
+        "main_service": "coolify",
+        "manifest": {
+            "id": "coolify",
+            "name": "Coolify",
+            "category": "utilities",
+            "tagline": "Self-hosted Heroku / Netlify alternative",
+            "description": (
+                "Coolify is an open-source, self-hostable Platform as a Service (PaaS) "
+                "alternative to Vercel, Heroku and Railway. Deploy applications, databases "
+                "and Docker Compose stacks from git, Docker images or templates with automatic "
+                "SSL, all through a web UI.\n\n"
+                "It manages the host Docker engine through the socket. For realtime features "
+                "the optional `soketi` service is omitted in this packaging; the dashboard and "
+                "deployments work without it."
+            ),
+            "developer": "coolLabs",
+            "repo": "https://github.com/coollabsio/coolify",
+            "website": "https://coolify.io",
+            "version": "4.3.2",
+            "port": 8000,
+        },
+        "form_fields": [
+            {
+                "label": "Database password",
+                "type": "random",
+                "env_variable": "APP_DB_PASSWORD",
+                "min": 32,
+                "required": False,
+            },
+            {
+                "label": "Redis password",
+                "type": "random",
+                "env_variable": "APP_REDIS_PASSWORD",
+                "min": 32,
+                "required": False,
+            },
+            {
+                "label": "App encryption key (Laravel APP_KEY)",
+                "type": "random",
+                "env_variable": "APP_KEY",
+                "min": 32,
+                "required": False,
+            },
+        ],
+        "compose": {
+            "services": {
+                "coolify": {
+                    "image": "ghcr.io/coollabsio/coolify:4.3.2",
+                    "container_name": "coolify",
+                    "restart": "unless-stopped",
+                    "ports": ["${APP_PORT}:8080"],
+                    "volumes": [
+                        "/var/run/docker.sock:/var/run/docker.sock",
+                        "${APP_DATA_DIR}/data:/data",
+                        "${APP_DATA_DIR}/data/ssh:/var/www/html/storage/app/ssh",
+                        "${APP_DATA_DIR}/data/applications:/var/www/html/storage/app/applications",
+                        "${APP_DATA_DIR}/data/databases:/var/www/html/storage/app/databases",
+                        "${APP_DATA_DIR}/data/services:/var/www/html/storage/app/services",
+                        "${APP_DATA_DIR}/data/backups:/var/www/html/storage/app/backups",
+                    ],
+                    "environment": [
+                        "APP_ENV=production",
+                        "DB_CONNECTION=pgsql",
+                        "DB_HOST=postgres",
+                        "DB_PORT=5432",
+                        "DB_DATABASE=coolify",
+                        "DB_USERNAME=coolify",
+                        "DB_PASSWORD=${APP_DB_PASSWORD}",
+                        "DATABASE_URL=postgres://coolify:${APP_DB_PASSWORD}@postgres:5432/coolify",
+                        "REDIS_HOST=redis",
+                        "REDIS_PASSWORD=${APP_REDIS_PASSWORD}",
+                        "APP_KEY=${APP_KEY}",
+                    ],
+                    "depends_on": {
+                        "postgres": {"condition": "service_healthy"},
+                        "redis": {"condition": "service_healthy"},
+                    },
+                    "networks": ["tipi_main_network"],
+                    "labels": {
+                        "runtipi.managed": "true",
+                    },
+                    "x-runtipi": {"internal_port": 8080, "is_main": True},
+                },
+                "postgres": {
+                    "image": "postgres:16-alpine",
+                    "container_name": "coolify-postgres",
+                    "restart": "unless-stopped",
+                    "environment": [
+                        "POSTGRES_USER=coolify",
+                        "POSTGRES_PASSWORD=${APP_DB_PASSWORD}",
+                        "POSTGRES_DB=coolify",
+                    ],
+                    "volumes": ["${APP_DATA_DIR}/postgres:/var/lib/postgresql/data"],
+                    "healthcheck": {
+                        "test": ["CMD-SHELL", "pg_isready -U coolify -d coolify"],
+                        "interval": "5s",
+                        "retries": 10,
+                        "timeout": "2s",
+                    },
+                    "networks": ["tipi_main_network"],
+                    "labels": {"runtipi.managed": "true"},
+                },
+                "redis": {
+                    "image": "redis:7-alpine",
+                    "container_name": "coolify-redis",
+                    "restart": "unless-stopped",
+                    "command": "redis-server --requirepass ${APP_REDIS_PASSWORD}",
+                    "volumes": ["${APP_DATA_DIR}/redis:/data"],
+                    "healthcheck": {
+                        "test": ["CMD-SHELL", "redis-cli -a ${APP_REDIS_PASSWORD} ping | grep PONG"],
+                        "interval": "5s",
+                        "retries": 10,
+                        "timeout": "2s",
+                    },
+                    "networks": ["tipi_main_network"],
+                    "labels": {"runtipi.managed": "true"},
+                },
+            },
+        },
+        "x-runtipi": {"schema_version": 2},
+    },
 }
 
 # Host ports already in use on the user's server (nmap result) - the store must
@@ -992,6 +1208,30 @@ def main():
             "internal_port": internal_port,
             "notes": notes,
             "unnamed_vars": sorted(v for v in var_info if not var_info[v] and v not in RUNTIPI_SYSTEM_VARS),
+        })
+
+    # ------------------------------------------------------------------
+    # extra hand-added apps (not in Umbrel catalogue)
+    # ------------------------------------------------------------------
+    for extra_id, extra in EXTRA_APPS.items():
+        manifest = extra["manifest"]
+        new_compose = extra["compose"]
+        if extra.get("x-runtipi"):
+            new_compose["x-runtipi"] = extra["x-runtipi"]
+        cfg = build_config(manifest, extra_id, 0, {})
+        cfg["port"] = extra["port"]
+        cfg["exposable"] = extra.get("exposable", False)
+        cfg["form_fields"] = extra.get("form_fields", [])
+        converted.append({
+            "id": extra_id,
+            "name": cfg["name"],
+            "compose": new_compose,
+            "config": cfg,
+            "manifest": manifest,
+            "main_service": extra.get("main_service", extra_id),
+            "internal_port": extra["port"],
+            "notes": [],
+            "unnamed_vars": [],
         })
 
     # ------------------------------------------------------------------

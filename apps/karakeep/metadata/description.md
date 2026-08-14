@@ -10,14 +10,6 @@ Karakeep supports the creation of custom lists to group related entries in meani
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/karakeep/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/karakeep/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/karakeep/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/karakeep/4.jpg)
-
 ## Links
 
 - Website: https://karakeep.app/

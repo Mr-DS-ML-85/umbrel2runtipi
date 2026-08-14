@@ -12,14 +12,6 @@ Designed for seamless and secure sharing, Palmr. is completely free.
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/palmr/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/palmr/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/palmr/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/palmr/4.jpg)
-
 ## Links
 
 - Website: https://palmr.kyantech.com.br/

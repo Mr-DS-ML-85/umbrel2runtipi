@@ -12,13 +12,6 @@ Features:
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/convertx/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/convertx/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/convertx/3.jpg)
-
 ## Links
 
 - Website: https://github.com/C4illin/ConvertX

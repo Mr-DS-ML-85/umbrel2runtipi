@@ -68,13 +68,6 @@ Enhanced ChatGPT Clone: Features Agents, DeepSeek, Anthropic, AWS, OpenAI, Assis
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/librechat/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/librechat/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/librechat/3.jpg)
-
 ## Links
 
 - Website: https://librechat.ai/

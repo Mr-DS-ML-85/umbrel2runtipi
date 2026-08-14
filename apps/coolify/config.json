@@ -1,0 +1,49 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Coolify",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8000,
+  "id": "coolify",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Coolify is an open-source, self-hostable Platform as a Service (PaaS) alternative to Vercel, Heroku and Railway. Deploy applications, databases and Docker Compose stacks from git, Docker images or templates with automatic SSL, all through a web UI.\n\nIt manages the host Docker engine through the socket. For realtime features the optional `soketi` service is omitted in this packaging; the dashboard and deployments work without it.",
+  "short_desc": "Self-hosted Heroku / Netlify alternative",
+  "author": "coolLabs",
+  "source": "https://github.com/coollabsio/coolify",
+  "website": "https://coolify.io",
+  "form_fields": [
+    {
+      "label": "Database password",
+      "type": "random",
+      "env_variable": "APP_DB_PASSWORD",
+      "min": 32,
+      "required": false
+    },
+    {
+      "label": "Redis password",
+      "type": "random",
+      "env_variable": "APP_REDIS_PASSWORD",
+      "min": 32,
+      "required": false
+    },
+    {
+      "label": "App encryption key (Laravel APP_KEY)",
+      "type": "random",
+      "env_variable": "APP_KEY",
+      "min": 32,
+      "required": false
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786708103238,
+  "updated_at": 1786708103238,
+  "min_tipi_version": "4.5.0"
+}

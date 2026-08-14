@@ -10,15 +10,6 @@ Perfect for personal use, small teams, or anyone running on the server who wants
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/fizzy/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/fizzy/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/fizzy/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/fizzy/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/fizzy/5.jpg)
-
 ## Links
 
 - Website: https://www.fizzy.do

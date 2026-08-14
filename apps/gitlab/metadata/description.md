@@ -30,13 +30,6 @@ GitLab is your all-in-one DevOps platform, empowering your team to build, deploy
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/gitlab/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/gitlab/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/gitlab/3.jpg)
-
 ## Links
 
 - Website: https://about.gitlab.com

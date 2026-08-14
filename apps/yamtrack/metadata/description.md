@@ -12,16 +12,6 @@ Yamtrack is actively developed with regular updates that enhance its functionali
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yamtrack/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yamtrack/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yamtrack/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yamtrack/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yamtrack/5.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yamtrack/6.jpg)
-
 ## Links
 
 - Website: https://github.com/FuzzyGrim/Yamtrack

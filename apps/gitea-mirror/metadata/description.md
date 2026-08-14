@@ -24,13 +24,6 @@ The **Gitea Access Token** should have the following permissions:
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/gitea-mirror/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/gitea-mirror/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/gitea-mirror/3.jpg)
-
 ## Links
 
 - Website: https://github.com/raylabshq/gitea-mirror

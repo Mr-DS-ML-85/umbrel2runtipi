@@ -13,15 +13,6 @@ Built on Next.js, Blinko is optimized for speed and efficiency, offering a respo
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/blinko/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/blinko/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/blinko/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/blinko/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/blinko/5.jpg)
-
 ## Links
 
 - Website: https://blinko-demo.vercel.app/

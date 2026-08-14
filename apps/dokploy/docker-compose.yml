@@ -1,0 +1,47 @@
+services:
+  dokploy:
+    image: dokploy/dokploy:latest
+    container_name: dokploy
+    restart: unless-stopped
+    ports:
+    - ${APP_PORT}:3000
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /etc/dokploy:/etc/dokploy
+    - ${APP_DATA_DIR}/docker:/root/.docker
+    environment:
+    - POSTGRES_PASSWORD=${APP_DB_PASSWORD}
+    - DATABASE_URL=postgres://dokploy:${APP_DB_PASSWORD}@dokploy-postgres:5432/dokploy
+    depends_on:
+      dokploy-postgres:
+        condition: service_healthy
+    networks:
+    - tipi_main_network
+    labels:
+      runtipi.managed: 'true'
+    x-runtipi:
+      internal_port: 3000
+      is_main: true
+  dokploy-postgres:
+    image: postgres:latest
+    container_name: dokploy-postgres
+    restart: unless-stopped
+    environment:
+    - POSTGRES_USER=dokploy
+    - POSTGRES_PASSWORD=${APP_DB_PASSWORD}
+    - POSTGRES_DB=dokploy
+    volumes:
+    - ${APP_DATA_DIR}/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U dokploy -d dokploy
+      interval: 5s
+      retries: 10
+      timeout: 2s
+    networks:
+    - tipi_main_network
+    labels:
+      runtipi.managed: 'true'
+x-runtipi:
+  schema_version: 2

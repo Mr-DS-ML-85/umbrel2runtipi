@@ -19,13 +19,6 @@ This ensures that the app will connect to the correct database and function prop
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wavelog/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wavelog/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wavelog/3.jpg)
-
 ## Links
 
 - Website: https://www.wavelog.org

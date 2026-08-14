@@ -20,13 +20,6 @@ Agent Zero is a personal, organic agentic framework that grows and learns with y
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/agent-zero/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/agent-zero/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/agent-zero/3.jpg)
-
 ## Links
 
 - Website: https://github.com/agent0ai/agent-zero

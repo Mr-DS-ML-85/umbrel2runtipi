@@ -8,13 +8,6 @@ You just search, press download and you're done!
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/just-download/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/just-download/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/just-download/3.jpg)
-
 ## Links
 
 - Website: https://codeberg.org/highghlow/just-download

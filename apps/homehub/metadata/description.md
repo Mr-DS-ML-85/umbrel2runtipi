@@ -16,15 +16,6 @@ In essence, HomeHub turns household management into a shared, transparent, and c
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/homehub/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/homehub/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/homehub/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/homehub/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/homehub/5.jpg)
-
 ## Links
 
 - Website: https://github.com/surajverma/homehub

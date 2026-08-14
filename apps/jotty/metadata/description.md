@@ -13,14 +13,6 @@ Features:
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/jotty/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/jotty/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/jotty/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/jotty/4.jpg)
-
 ## Links
 
 - Website: https://jotty.page

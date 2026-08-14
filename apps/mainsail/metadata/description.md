@@ -12,13 +12,6 @@ Control and monitor your printer from everywhere, from any device
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mainsail/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mainsail/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mainsail/3.jpg)
-
 ## Links
 
 - Website: https://docs.mainsail.xyz/

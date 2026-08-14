@@ -6,13 +6,6 @@ Technitium DNS Server is an open source authoritative, as well as recursive, DNS
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/technitium-dns/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/technitium-dns/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/technitium-dns/3.jpg)
-
 ## Links
 
 - Website: https://technitium.com/dns/

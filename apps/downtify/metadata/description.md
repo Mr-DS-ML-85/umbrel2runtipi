@@ -9,13 +9,6 @@ Users are responsible for their actions and potential legal consequences. We do 
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/downtify/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/downtify/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/downtify/3.jpg)
-
 ## Links
 
 - Website: https://github.com/henriquesebastiao/downtify

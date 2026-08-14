@@ -15,13 +15,6 @@ Perfect for Bitcoin enthusiasts who want to monitor their holdings securely with
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/toshi-moto/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/toshi-moto/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/toshi-moto/3.jpg)
-
 ## Links
 
 - Website: https://toshimoto.app

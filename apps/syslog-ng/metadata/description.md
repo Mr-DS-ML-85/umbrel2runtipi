@@ -17,14 +17,6 @@ Features:
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/syslog-ng/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/syslog-ng/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/syslog-ng/3.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/syslog-ng/4.webp)
-
 ## Links
 
 - Website: https://www.syslog-ng.com/

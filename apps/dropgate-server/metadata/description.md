@@ -22,15 +22,6 @@ Features
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dropgate-server/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dropgate-server/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dropgate-server/3.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dropgate-server/4.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dropgate-server/5.webp)
-
 ## Links
 
 - Website: https://diamonddigital.dev/projects/dropgate

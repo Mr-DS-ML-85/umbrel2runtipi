@@ -8,14 +8,6 @@ LibreOffice includes several applications that make it the most versatile Free a
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/libreoffice/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/libreoffice/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/libreoffice/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/libreoffice/4.jpg)
-
 ## Links
 
 - Website: https://www.libreoffice.org/

@@ -11,14 +11,6 @@ Before running a model, make sure your device has enough free RAM to support it.
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/localai/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/localai/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/localai/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/localai/4.jpg)
-
 ## Links
 
 - Website: https://localai.io/

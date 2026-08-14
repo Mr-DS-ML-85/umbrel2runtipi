@@ -17,13 +17,6 @@ Samba has been providing secure and stable file sharing for over 30 years. Trust
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/samba/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/samba/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/samba/3.jpg)
-
 ## Links
 
 - Website: https://www.samba.org/

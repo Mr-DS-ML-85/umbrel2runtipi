@@ -31,15 +31,6 @@ Open Yuvomi from your the server dashboard and create the first account — that
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yuvomi/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yuvomi/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yuvomi/3.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yuvomi/4.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yuvomi/5.webp)
-
 ## Links
 
 - Website: https://github.com/ulsklyc/yuvomi

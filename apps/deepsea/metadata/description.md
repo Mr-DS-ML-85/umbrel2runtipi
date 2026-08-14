@@ -64,14 +64,6 @@ This open-source dashboard monitors Ocean.xyz pool miners in real time. It prese
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/deepsea/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/deepsea/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/deepsea/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/deepsea/4.jpg)
-
 ## Links
 
 - Website: https://github.com/Djobleezy/DeepSea-Dashboard

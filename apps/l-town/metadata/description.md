@@ -25,14 +25,6 @@ Perfect for LAN parties — just share your the server URL with anyone on the sa
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/l-town/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/l-town/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/l-town/3.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/l-town/4.webp)
-
 ## Links
 
 - Website: https://yantr.org/apps/l-town/

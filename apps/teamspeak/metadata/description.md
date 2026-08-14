@@ -37,13 +37,6 @@ Make TeamSpeak your own and customize your client to meet your personal style wi
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/teamspeak/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/teamspeak/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/teamspeak/3.jpg)
-
 ## Links
 
 - Website: https://www.teamspeak.com

@@ -18,13 +18,6 @@ Expose your apps to the internet easily and securely.
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openresty-manager/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openresty-manager/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openresty-manager/3.jpg)
-
 ## Links
 
 - Website: https://om.uusec.com/

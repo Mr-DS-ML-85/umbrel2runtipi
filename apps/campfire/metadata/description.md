@@ -19,13 +19,6 @@ On first launch, you'll be guided through creating an admin account. This admin 
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/campfire/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/campfire/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/campfire/3.jpg)
-
 ## Links
 
 - Website: https://once.com/campfire

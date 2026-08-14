@@ -20,14 +20,6 @@ Hermes Agent runs inside the the server app sandbox, so it can work freely insid
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/hermes-agent/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/hermes-agent/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/hermes-agent/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/hermes-agent/4.jpg)
-
 ## Links
 
 - Website: https://hermes-agent.nousresearch.com

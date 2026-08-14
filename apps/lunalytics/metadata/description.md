@@ -16,15 +16,6 @@ All monitoring data is displayed in real time through an intuitive and interacti
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/lunalytics/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/lunalytics/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/lunalytics/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/lunalytics/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/lunalytics/5.jpg)
-
 ## Links
 
 - Website: https://lunalytics.xyz/

@@ -12,13 +12,6 @@ A complete and local NVR designed for Home Assistant with AI object detection.  
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/frigate/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/frigate/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/frigate/3.jpg)
-
 ## Links
 
 - Website: https://frigate.video/

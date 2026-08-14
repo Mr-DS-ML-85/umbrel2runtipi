@@ -20,13 +20,6 @@ FossFLOW brings the power of isometric diagramming to everyone:- developers, net
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/fossflow/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/fossflow/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/fossflow/3.jpg)
-
 ## Links
 
 - Website: https://github.com/stan-smith/FossFLOW

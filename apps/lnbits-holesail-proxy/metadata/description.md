@@ -10,13 +10,6 @@ Note: The tunnel only works when the client side is running from outside the loc
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/lnbits-holesail-proxy/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/lnbits-holesail-proxy/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/lnbits-holesail-proxy/3.jpg)
-
 ## Links
 
 - Website: https://github.com/oren-z0/holesail-server-manager

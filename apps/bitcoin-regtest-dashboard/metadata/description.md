@@ -21,14 +21,6 @@ Perfect for Bitcoin developers who need quick access to regtest node functionali
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bitcoin-regtest-dashboard/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bitcoin-regtest-dashboard/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bitcoin-regtest-dashboard/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bitcoin-regtest-dashboard/4.jpg)
-
 ## Links
 
 - Website: https://github.com/coreyphillips/bitcoin-regtest-dashboard

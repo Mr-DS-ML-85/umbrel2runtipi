@@ -12,15 +12,6 @@ Whether you are a creative professional needing quick image edits a developer wo
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/omnitools/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/omnitools/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/omnitools/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/omnitools/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/omnitools/5.jpg)
-
 ## Links
 
 - Website: https://omnitools.app/

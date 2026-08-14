@@ -16,13 +16,6 @@ Etherpad has gained popularity in academic, business, and development environmen
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/etherpad/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/etherpad/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/etherpad/3.jpg)
-
 ## Links
 
 - Website: https://etherpad.org/

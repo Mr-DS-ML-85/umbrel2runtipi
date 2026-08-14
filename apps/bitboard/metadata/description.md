@@ -9,13 +9,6 @@ Supports multiple quote currencies with live market refreshes using public prici
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bitboard/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bitboard/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bitboard/3.webp)
-
 ## Links
 
 - Website: https://github.com/egzola/bitboard

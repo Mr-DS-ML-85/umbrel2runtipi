@@ -16,16 +16,6 @@ As an open-source project, wger is continuously evolving, with an active communi
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wger/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wger/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wger/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wger/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wger/5.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/wger/6.jpg)
-
 ## Links
 
 - Website: https://wger.de/

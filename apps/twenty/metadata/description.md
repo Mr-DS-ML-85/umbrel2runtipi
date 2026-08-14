@@ -22,14 +22,6 @@ You can find detailed setup instructions here: https://twenty.com/developers/sec
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/twenty/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/twenty/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/twenty/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/twenty/4.jpg)
-
 ## Links
 
 - Website: https://twenty.com/

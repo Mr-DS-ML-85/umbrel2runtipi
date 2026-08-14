@@ -10,14 +10,6 @@ Through its design, monetr aims to make personal financial planning more predict
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/monetr/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/monetr/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/monetr/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/monetr/4.jpg)
-
 ## Links
 
 - Website: https://monetr.app/

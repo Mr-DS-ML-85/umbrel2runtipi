@@ -32,13 +32,6 @@ Music Assistant Server:
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/music-assistant/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/music-assistant/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/music-assistant/3.jpg)
-
 ## Links
 
 - Website: https://www.music-assistant.io

@@ -17,15 +17,6 @@ The Plane admin panel can be reached at `localhost:8762/god-mode`
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/plane/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/plane/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/plane/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/plane/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/plane/5.jpg)
-
 ## Links
 
 - Website: http://plane.so/

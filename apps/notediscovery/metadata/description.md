@@ -10,15 +10,6 @@ NoteDiscovery aims to give you a calm and distraction free environment where you
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/notediscovery/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/notediscovery/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/notediscovery/3.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/notediscovery/4.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/notediscovery/5.webp)
-
 ## Links
 
 - Website: https://www.notediscovery.com/

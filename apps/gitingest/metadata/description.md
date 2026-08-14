@@ -10,13 +10,6 @@ Gitingest is particularly useful for AI developers crafting precise prompts, tea
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/gitingest/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/gitingest/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/gitingest/3.jpg)
-
 ## Links
 
 - Website: https://gitingest.com/

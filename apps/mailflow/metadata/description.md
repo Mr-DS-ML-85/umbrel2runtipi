@@ -8,13 +8,6 @@ It includes a unified inbox, search, compose/reply/forward, folder navigation, m
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mailflow/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mailflow/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mailflow/3.webp)
-
 ## Links
 
 - Website: https://mailflow.sh

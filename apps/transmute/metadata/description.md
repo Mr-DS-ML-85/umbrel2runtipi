@@ -10,13 +10,6 @@ Transmute helps simplify everyday format changes, from converting media files in
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/transmute/1.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/transmute/2.webp)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/transmute/3.webp)
-
 ## Links
 
 - Website: https://transmute.sh/

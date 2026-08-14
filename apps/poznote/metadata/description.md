@@ -12,14 +12,6 @@ Notes can be edited, restored from the trash, exported for safekeeping, or dupli
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/poznote/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/poznote/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/poznote/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/poznote/4.jpg)
-
 ## Links
 
 - Website: https://poznote.com/

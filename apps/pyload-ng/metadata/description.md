@@ -10,13 +10,6 @@ Pyload has a fully featured and well documented Application Programming Interfac
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/pyload-ng/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/pyload-ng/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/pyload-ng/3.jpg)
-
 ## Links
 
 - Website: https://pyload.net/

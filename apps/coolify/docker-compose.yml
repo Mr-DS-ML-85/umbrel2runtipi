@@ -1,0 +1,80 @@
+services:
+  coolify:
+    image: ghcr.io/coollabsio/coolify:latest
+    container_name: coolify
+    restart: unless-stopped
+    ports:
+    - ${APP_PORT}:8080
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - ${APP_DATA_DIR}/data:/data
+    - ${APP_DATA_DIR}/data/ssh:/var/www/html/storage/app/ssh
+    - ${APP_DATA_DIR}/data/applications:/var/www/html/storage/app/applications
+    - ${APP_DATA_DIR}/data/databases:/var/www/html/storage/app/databases
+    - ${APP_DATA_DIR}/data/services:/var/www/html/storage/app/services
+    - ${APP_DATA_DIR}/data/backups:/var/www/html/storage/app/backups
+    environment:
+    - APP_ENV=production
+    - DB_CONNECTION=pgsql
+    - DB_HOST=postgres
+    - DB_PORT=5432
+    - DB_DATABASE=coolify
+    - DB_USERNAME=coolify
+    - DB_PASSWORD=${APP_DB_PASSWORD}
+    - DATABASE_URL=postgres://coolify:${APP_DB_PASSWORD}@postgres:5432/coolify
+    - REDIS_HOST=redis
+    - REDIS_PASSWORD=${APP_REDIS_PASSWORD}
+    - APP_KEY=${APP_KEY}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+    - tipi_main_network
+    labels:
+      runtipi.managed: 'true'
+    x-runtipi:
+      internal_port: 8080
+      is_main: true
+  postgres:
+    image: postgres:latest
+    container_name: coolify-postgres
+    restart: unless-stopped
+    environment:
+    - POSTGRES_USER=coolify
+    - POSTGRES_PASSWORD=${APP_DB_PASSWORD}
+    - POSTGRES_DB=coolify
+    volumes:
+    - ${APP_DATA_DIR}/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U coolify -d coolify
+      interval: 5s
+      retries: 10
+      timeout: 2s
+    networks:
+    - tipi_main_network
+    labels:
+      runtipi.managed: 'true'
+  redis:
+    image: redis:latest
+    container_name: coolify-redis
+    restart: unless-stopped
+    command: redis-server --requirepass ${APP_REDIS_PASSWORD}
+    volumes:
+    - ${APP_DATA_DIR}/redis:/data
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - redis-cli -a ${APP_REDIS_PASSWORD} ping | grep PONG
+      interval: 5s
+      retries: 10
+      timeout: 2s
+    networks:
+    - tipi_main_network
+    labels:
+      runtipi.managed: 'true'
+x-runtipi:
+  schema_version: 2

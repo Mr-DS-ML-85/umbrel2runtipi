@@ -19,15 +19,6 @@ You can join other cool Robots and get community support at https://t.me/robosat
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/robosats/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/robosats/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/robosats/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/robosats/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/robosats/5.jpg)
-
 ## Links
 
 - Website: https://learn.robosats.org

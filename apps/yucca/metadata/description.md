@@ -8,15 +8,6 @@ Yucca is a simple NVR video surveillance solution for home and business. It is d
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yucca/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yucca/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yucca/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yucca/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yucca/5.jpg)
-
 ## Links
 
 - Website: https://yucca.app/

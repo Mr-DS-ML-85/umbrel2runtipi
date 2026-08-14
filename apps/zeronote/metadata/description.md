@@ -6,14 +6,6 @@ ZeroNote is an open-source, offline-first unified app that replaces your passwor
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zeronote/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zeronote/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zeronote/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zeronote/4.jpg)
-
 ## Links
 
 - Website: https://github.com/besoeasy/zeronote

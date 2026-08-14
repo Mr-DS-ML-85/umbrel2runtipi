@@ -12,15 +12,6 @@ Bringing OpenHands to the server gives developers a fully autonomous AI assistan
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openhands/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openhands/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openhands/3.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openhands/4.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openhands/5.jpg)
-
 ## Links
 
 - Website: https://www.all-hands.dev/

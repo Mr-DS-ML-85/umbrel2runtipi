@@ -12,13 +12,6 @@ Overall, RustDesk provides a powerful alternative to proprietary remote desktop 
 
 ---
 
-
-## Preview
-
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/rustdesk-server/1.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/rustdesk-server/2.jpg)
-![Preview](https://getumbrel.github.io/umbrel-apps-gallery/rustdesk-server/3.jpg)
-
 ## Links
 
 - Website: https://rustdesk.com
