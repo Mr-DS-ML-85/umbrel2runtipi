@@ -1,6 +1,6 @@
 services:
   api:
-    image: ghcr.io/danny-avila/librechat:latest
+    image: ghcr.io/danny-avila/librechat:v0.8.7@sha256:c5db3331b845e1f289f8d04c0c77936c4bbe372f76730a804abc1c37e44d23a9
     restart: unless-stopped
     user: 1000:1000
     command: npm run backend
@@ -32,7 +32,7 @@ services:
       internal_port: 3080
       is_main: true
   mongodb:
-    image: mongo:latest
+    image: mongo:8.0.10@sha256:15fb53a5160ebabff5ecade8f8b5d48721b68ea190957a7f35b5b38e8340e62b
     restart: unless-stopped
     user: 1000:1000
     volumes:
@@ -41,7 +41,7 @@ services:
     labels:
     - runtipi.managed=true
   meilisearch:
-    image: getmeili/meilisearch:latest
+    image: getmeili/meilisearch:v1.12.3@sha256:4acfcbbb9e089aa1aac838cfda3fba7f07aaaef044c23da8acbe0ab741400dac
     restart: unless-stopped
     user: 1000:1000
     environment:
@@ -53,7 +53,7 @@ services:
     labels:
     - runtipi.managed=true
   vectordb:
-    image: ankane/pgvector:latest
+    image: ankane/pgvector:v0.5.1@sha256:d3a9d8ac27bb7e05e333ef25b634d2625adaa85336ab729954b9e94859bf6fa7
     environment:
       POSTGRES_DB: mydatabase
       POSTGRES_USER: myuser
@@ -64,7 +64,7 @@ services:
     labels:
     - runtipi.managed=true
   rag_api:
-    image: ghcr.io/danny-avila/librechat-rag-api-dev-lite:latest
+    image: ghcr.io/danny-avila/librechat-rag-api-dev-lite:v0.7.3@sha256:67dba8e1e5707a795f2188d1e345f23b8ebf3bf75365026395edec76474cefa6
     environment:
     - DB_HOST=vectordb
     - RAG_PORT=8000

@@ -12,6 +12,13 @@ In addition to enhanced privacy, Tor Browser enables unrestricted access to the 
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/torbrowser/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/torbrowser/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/torbrowser/3.jpg)
+
 ## Links
 
 - Website: https://www.torproject.org/

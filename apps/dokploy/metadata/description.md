@@ -8,6 +8,11 @@ It manages Docker directly through the host socket and runs its control plane in
 
 ---
 
+
+## Preview
+
+![Preview](https://dokploy.com/banner.png)
+
 ## Links
 
 - Website: https://dokploy.com

@@ -7,7 +7,7 @@
   "port": 8450,
   "id": "wger",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "2.6",
   "categories": [
     "data"
   ],
@@ -42,7 +42,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103208,
-  "updated_at": 1786708103208,
+  "created_at": 1786708753037,
+  "updated_at": 1786708753037,
   "min_tipi_version": "4.5.0"
 }

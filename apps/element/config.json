@@ -7,7 +7,7 @@
   "port": 8094,
   "id": "element",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "1.12.25",
   "categories": [
     "social"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102631,
-  "updated_at": 1786708102631,
+  "created_at": 1786708752459,
+  "updated_at": 1786708752459,
   "min_tipi_version": "4.5.0"
 }

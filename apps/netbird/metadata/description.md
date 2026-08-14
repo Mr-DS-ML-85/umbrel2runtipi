@@ -14,6 +14,13 @@ Open the link shown in your browser on your computer or mobile device and sign i
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/netbird/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/netbird/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/netbird/3.jpg)
+
 ## Links
 
 - Website: https://netbird.io/

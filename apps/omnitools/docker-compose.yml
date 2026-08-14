@@ -1,6 +1,6 @@
 services:
   app:
-    image: iib0011/omni-tools:latest
+    image: iib0011/omni-tools:0.6.0@sha256:3f35a17d8d81caa33c7caec0198eb561dee212a5f48d8303d8f7b182c930fb71
     security_opt:
     - no-new-privileges:true
     restart: unless-stopped

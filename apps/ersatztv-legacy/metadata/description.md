@@ -12,6 +12,13 @@ This package uses the ErsatzTV Legacy release stream, which upstream continues t
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/ersatztv-legacy/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/ersatztv-legacy/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/ersatztv-legacy/3.webp)
+
 ## Links
 
 - Website: https://ersatztv.org

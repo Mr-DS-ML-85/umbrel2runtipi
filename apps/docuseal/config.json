@@ -7,7 +7,7 @@
   "port": 8387,
   "id": "docuseal",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "3.2.0",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102609,
-  "updated_at": 1786708102609,
+  "created_at": 1786708752437,
+  "updated_at": 1786708752437,
   "min_tipi_version": "4.5.0"
 }

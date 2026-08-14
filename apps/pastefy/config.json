@@ -7,7 +7,7 @@
   "port": 9900,
   "id": "pastefy",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "7.1.6",
   "categories": [
     "development"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102965,
-  "updated_at": 1786708102965,
+  "created_at": 1786708752794,
+  "updated_at": 1786708752794,
   "min_tipi_version": "4.5.0"
 }

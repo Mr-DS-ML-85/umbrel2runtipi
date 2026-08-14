@@ -1,6 +1,6 @@
 services:
   web:
-    image: decred/dcrdex:v1.0.5
+    image: decred/dcrdex:v1.0.5@sha256:5d010b92fbb452c9df6e0205d9bb0c8f8c446e011d69501c1e0a9b1fc4abd792
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 15m

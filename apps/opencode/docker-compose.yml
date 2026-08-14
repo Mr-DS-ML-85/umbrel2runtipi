@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/anomalyco/opencode:latest
+    image: ghcr.io/anomalyco/opencode:1.18.17@sha256:c472d1c6c575b86ccc44ff639a1bb2093fd75ab7095be46f8b3c0a04c299fd60
     command:
     - serve
     - --hostname

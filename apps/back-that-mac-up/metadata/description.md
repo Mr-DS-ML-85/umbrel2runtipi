@@ -14,6 +14,13 @@ For seamless backups even when your Mac isn't connected to the same network as y
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/back-that-mac-up/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/back-that-mac-up/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/back-that-mac-up/3.jpg)
+
 ## Links
 
 - Website: https://umbrel.com

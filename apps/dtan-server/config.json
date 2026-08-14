@@ -7,7 +7,7 @@
   "port": 8022,
   "id": "dtan-server",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "v0.2.0",
   "categories": [
     "network"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102619,
-  "updated_at": 1786708102619,
+  "created_at": 1786708752447,
+  "updated_at": 1786708752447,
   "min_tipi_version": "4.5.0"
 }

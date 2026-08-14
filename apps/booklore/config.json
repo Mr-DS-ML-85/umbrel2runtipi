@@ -7,7 +7,7 @@
   "port": 6060,
   "id": "booklore",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "2.3.1-2",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102552,
-  "updated_at": 1786708102552,
+  "created_at": 1786708752377,
+  "updated_at": 1786708752377,
   "min_tipi_version": "4.5.0"
 }

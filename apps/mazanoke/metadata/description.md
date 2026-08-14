@@ -12,6 +12,13 @@ Released under the GPL 3.0 license, Mazanoke is open source and made for people 
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mazanoke/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mazanoke/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mazanoke/3.jpg)
+
 ## Links
 
 - Website: https://mazanoke.com/

@@ -7,7 +7,7 @@
   "port": 8862,
   "id": "langflow",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "1.11.3",
   "categories": [
     "ai"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102778,
-  "updated_at": 1786708102778,
+  "created_at": 1786708752606,
+  "updated_at": 1786708752606,
   "min_tipi_version": "4.5.0"
 }

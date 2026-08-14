@@ -885,52 +885,64 @@ def description_md(manifest: dict) -> str:
     return "\n".join(lines)
 
 
+def _render_svg_logo(svg_bytes: bytes, out_dir: Path, app_id: str) -> bool:
+    """Render an SVG icon to metadata/logo.jpg (composited on white so
+    transparent/black logos stay visible). Returns True on success."""
+    from PIL import Image
+    import subprocess
+    svg_path = out_dir / "icon_tmp.svg"
+    png_path = out_dir / "icon_tmp.png"
+    try:
+        svg_path.write_bytes(svg_bytes)
+        subprocess.run(
+            ["rsvg-convert", "-w", "256", "-h", "256", "-b", "white",
+             "-o", str(png_path), str(svg_path)],
+            check=True, capture_output=True,
+        )
+        img = Image.open(png_path).convert("RGB")
+        # Reject renders that are essentially all one solid colour (no real
+        # artwork) -- e.g. an icon whose content never reached the renderer.
+        colors = img.getcolors(maxcolors=1000000) or [(1, (0, 0, 0))]
+        if len(colors) < 3:
+            raise ValueError(f"icon for {app_id} rendered as a solid block, skipping")
+        img.save(str(out_dir / "logo.jpg"), "JPEG", quality=90)
+        return True
+    except Exception:
+        return False
+    finally:
+        for p in (svg_path, png_path):
+            p.unlink(missing_ok=True)
+
+
 def download_logo(app_id: str, out_dir: Path) -> bool:
+    # Repo logo fallbacks (real upstream logos): handle both raster (png/jpg)
+    # and SVG sources -- rsvg-convert only understands SVG.
     if app_id in REPO_LOGO_FALLBACKS:
         url = REPO_LOGO_FALLBACKS[app_id]
         try:
             req = urllib.request.Request(url, headers={"User-Agent": "runtipi-umbrel-converter"})
-            img_data = urllib.request.urlopen(req, timeout=30).read()
-            from PIL import Image
-            from io import BytesIO
-            img = Image.open(BytesIO(img_data)).convert("RGB")
-            img.thumbnail((256, 256))
-            img.save(str(out_dir / "logo.jpg"), "JPEG", quality=90)
-            return True
+            raw = urllib.request.urlopen(req, timeout=30).read()
+            lowered = url.lower()
+            if lowered.endswith((".svg",)) or raw[:5].lstrip().startswith(b"<"):
+                if _render_svg_logo(raw, out_dir, app_id):
+                    return True
+            else:
+                from PIL import Image
+                from io import BytesIO
+                img = Image.open(BytesIO(raw)).convert("RGB")
+                img.thumbnail((256, 256))
+                img.save(str(out_dir / "logo.jpg"), "JPEG", quality=90)
+                return True
         except Exception:
             pass
+    # Umbrel gallery icon.svg (the default for converted apps).
     url = f"{ICON_BASE}/{app_id}/icon.svg"
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "runtipi-umbrel-converter"})
         svg_data = urllib.request.urlopen(req, timeout=30).read()
     except Exception:
         return False
-    try:
-        from PIL import Image
-        import subprocess
-        svg_path = out_dir / "icon_tmp.svg"
-        svg_path.write_bytes(svg_data)
-        png_path = out_dir / "icon_tmp.png"
-        subprocess.run(
-            ["rsvg-convert", "-w", "256", "-h", "256", "-o", str(png_path), str(svg_path)],
-            check=True, capture_output=True,
-        )
-        img = Image.open(png_path).convert("RGB")
-        # Reject renders that are essentially all black -- the Umbrel gallery
-        # icon for a few apps (route96, fizzy) is a flattened PNG whose content
-        # got lost, so the icon renders as a solid black square.
-        pixels = list(img.getdata())
-        black = sum(1 for p in pixels if sum(p) < 12)
-        if black > 0.95 * len(pixels):
-            raise ValueError(f"gallery icon for {app_id} renders all-black, skipping")
-        img.save(str(out_dir / "logo.jpg"), "JPEG", quality=90)
-        svg_path.unlink(missing_ok=True)
-        png_path.unlink(missing_ok=True)
-        return True
-    except Exception:
-        for p in (out_dir / "icon_tmp.svg", out_dir / "icon_tmp.png"):
-            p.unlink(missing_ok=True)
-        return False
+    return _render_svg_logo(svg_data, out_dir, app_id)
 
 
 def placeholder_logo(out_dir: Path, label: str):

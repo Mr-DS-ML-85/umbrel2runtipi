@@ -11,6 +11,13 @@ Libreddit is a portmanteau of "libre" (meaning freedom) and "Reddit". Libreddit 
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/libreddit/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/libreddit/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/libreddit/3.jpg)
+
 ## Links
 
 - Website: https://spike.codes/

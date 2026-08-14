@@ -12,6 +12,13 @@ Note: Mattermost can be used locally within your network. However, if you want o
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mattermost/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mattermost/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mattermost/3.jpg)
+
 ## Links
 
 - Website: https://mattermost.com

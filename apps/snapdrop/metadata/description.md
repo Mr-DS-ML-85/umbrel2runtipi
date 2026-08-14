@@ -6,6 +6,13 @@ Snapdrop - local file sharing in your browser. Inspired by Apple's Airdrop.
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/snapdrop/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/snapdrop/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/snapdrop/3.jpg)
+
 ## Links
 
 - Website: https://snapdrop.net/

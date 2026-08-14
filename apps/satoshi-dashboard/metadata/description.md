@@ -12,6 +12,15 @@ Satoshi Dashboard is self-hosted, open-source, and designed for bitcoiners who v
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/satoshi-dashboard/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/satoshi-dashboard/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/satoshi-dashboard/3.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/satoshi-dashboard/4.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/satoshi-dashboard/5.webp)
+
 ## Links
 
 - Website: https://www.satoshidashboard.com

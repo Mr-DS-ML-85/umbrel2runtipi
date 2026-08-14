@@ -12,6 +12,14 @@ Another highlight is the integrated OCR functionality, which scans and recognize
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bentopdf/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bentopdf/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bentopdf/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bentopdf/4.jpg)
+
 ## Links
 
 - Website: https://bentopdf.com/

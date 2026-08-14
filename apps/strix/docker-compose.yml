@@ -1,6 +1,6 @@
 services:
   web:
-    image: eduard256/strix:latest
+    image: eduard256/strix:2.1.0@sha256:d34883001c2acf812446863281fe17a411cb16696f070d3fe4ae24b0be177ee5
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m

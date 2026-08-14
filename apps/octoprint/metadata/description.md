@@ -8,6 +8,13 @@ Plug your 3D printer into your the server to control and monitor every aspect of
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/octoprint/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/octoprint/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/octoprint/3.jpg)
+
 ## Links
 
 - Website: https://octoprint.org/

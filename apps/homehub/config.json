@@ -7,7 +7,7 @@
   "port": 5059,
   "id": "homehub",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "0.2.4",
   "categories": [
     "data"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102720,
-  "updated_at": 1786708102720,
+  "created_at": 1786708752548,
+  "updated_at": 1786708752548,
   "min_tipi_version": "4.5.0"
 }

@@ -1,6 +1,6 @@
 services:
   daemon:
-    image: ghcr.io/mmalmi/nostr-vpn-umbrel:v4.1.7
+    image: ghcr.io/mmalmi/nostr-vpn-umbrel:v4.1.7@sha256:8e2df108b88970c5c28ee7fd5b82b9695ef26b0241054794956098e71242c101
     restart: unless-stopped
     stop_grace_period: 1m
     network_mode: host
@@ -23,7 +23,7 @@ services:
     labels:
     - runtipi.managed=true
   web:
-    image: ghcr.io/mmalmi/nostr-vpn-umbrel:v4.1.7
+    image: ghcr.io/mmalmi/nostr-vpn-umbrel:v4.1.7@sha256:8e2df108b88970c5c28ee7fd5b82b9695ef26b0241054794956098e71242c101
     restart: unless-stopped
     stop_grace_period: 1m
     depends_on:

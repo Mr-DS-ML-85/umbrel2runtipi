@@ -1,6 +1,6 @@
 services:
   server:
-    image: docuseal/docuseal:latest
+    image: docuseal/docuseal:3.2.0@sha256:50ed54743542a86c7bb97bea06fbddae619cbd3273df9589af44cac318f0f774
     user: 1000:1000
     depends_on:
     - db
@@ -16,7 +16,7 @@ services:
       internal_port: 3000
       is_main: true
   db:
-    image: postgres:latest
+    image: postgres:17.3@sha256:0321e2252ebfeecb8bc1a899755084d29bce872953e1a5a3e25ec0860b739098
     user: 1000:1000
     environment:
       POSTGRES_DB: docuseal

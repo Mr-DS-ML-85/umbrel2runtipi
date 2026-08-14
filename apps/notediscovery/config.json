@@ -7,7 +7,7 @@
   "port": 8736,
   "id": "notediscovery",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "0.31.0",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102911,
-  "updated_at": 1786708102911,
+  "created_at": 1786708752739,
+  "updated_at": 1786708752739,
   "min_tipi_version": "4.5.0"
 }

@@ -7,7 +7,7 @@
   "port": 1234,
   "id": "llama-gpt",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "1.0.0",
   "categories": [
     "ai"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102813,
-  "updated_at": 1786708102813,
+  "created_at": 1786708752642,
+  "updated_at": 1786708752642,
   "min_tipi_version": "4.5.0"
 }

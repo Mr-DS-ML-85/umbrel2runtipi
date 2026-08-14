@@ -7,7 +7,7 @@
   "port": 9910,
   "id": "yucca",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "0.13.4",
   "categories": [
     "automation"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103224,
-  "updated_at": 1786708103224,
+  "created_at": 1786708753053,
+  "updated_at": 1786708753053,
   "min_tipi_version": "4.5.0"
 }

@@ -7,7 +7,7 @@
   "port": 3435,
   "id": "obsidian",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "1.8.10",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102917,
-  "updated_at": 1786708102917,
+  "created_at": 1786708752745,
+  "updated_at": 1786708752745,
   "min_tipi_version": "4.5.0"
 }

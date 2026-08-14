@@ -23,6 +23,13 @@ Route96 is built in Rust for high performance and low resource usage, and pairs 
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/route96/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/route96/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/route96/3.jpg)
+
 ## Links
 
 - Website: https://github.com/v0l/route96

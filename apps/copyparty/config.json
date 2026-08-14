@@ -7,7 +7,7 @@
   "port": 3923,
   "id": "copyparty",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "1.20.20",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102588,
-  "updated_at": 1786708102588,
+  "created_at": 1786708752415,
+  "updated_at": 1786708752415,
   "min_tipi_version": "4.5.0"
 }

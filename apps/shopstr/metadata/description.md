@@ -11,6 +11,13 @@ Your keys. Your shop.
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/shopstr/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/shopstr/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/shopstr/3.jpg)
+
 ## Links
 
 - Website: https://calva.dev

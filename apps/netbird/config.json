@@ -7,7 +7,7 @@
   "port": 8479,
   "id": "netbird",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "0.77.0",
   "categories": [
     "network"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102887,
-  "updated_at": 1786708102887,
+  "created_at": 1786708752716,
+  "updated_at": 1786708752716,
   "min_tipi_version": "4.5.0"
 }

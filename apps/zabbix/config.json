@@ -7,7 +7,7 @@
   "port": 10052,
   "id": "zabbix",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "7.4.13",
   "categories": [
     "network"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103229,
-  "updated_at": 1786708103229,
+  "created_at": 1786708753059,
+  "updated_at": 1786708753059,
   "min_tipi_version": "4.5.0"
 }

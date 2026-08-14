@@ -7,7 +7,7 @@
   "port": 8066,
   "id": "leafwiki",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "0.12.0",
   "categories": [
     "data"
   ],
@@ -34,7 +34,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102780,
-  "updated_at": 1786708102780,
+  "created_at": 1786708752608,
+  "updated_at": 1786708752608,
   "min_tipi_version": "4.5.0"
 }

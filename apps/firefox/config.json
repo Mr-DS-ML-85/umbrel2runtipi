@@ -7,7 +7,7 @@
   "port": 3434,
   "id": "firefox",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "139.0.4",
   "categories": [
     "network"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102657,
-  "updated_at": 1786708102657,
+  "created_at": 1786708752485,
+  "updated_at": 1786708752485,
   "min_tipi_version": "4.5.0"
 }

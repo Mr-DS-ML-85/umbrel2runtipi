@@ -7,7 +7,7 @@
   "port": 3093,
   "id": "webcheck",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "2.2.0",
   "categories": [
     "network"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103200,
-  "updated_at": 1786708103200,
+  "created_at": 1786708753029,
+  "updated_at": 1786708753029,
   "min_tipi_version": "4.5.0"
 }

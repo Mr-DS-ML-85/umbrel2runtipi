@@ -19,6 +19,14 @@ Features:
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/docuseal/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/docuseal/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/docuseal/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/docuseal/4.jpg)
+
 ## Links
 
 - Website: https://www.docuseal.com/

@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/ulsklyc/yuvomi:latest
+    image: ghcr.io/ulsklyc/yuvomi:2.7.1@sha256:ccbb3685e333bb5568ce16b4de9d8398f257bb360b2fe672be5b4175bc8aac8b
     restart: unless-stopped
     stop_grace_period: 1m
     volumes:

@@ -6,6 +6,13 @@ scanservjs is a web UI frontend for your scanner. It allows you to share one or 
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/scanservjs/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/scanservjs/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/scanservjs/3.jpg)
+
 ## Links
 
 - Website: https://sbs20.github.io/scanservjs/

@@ -1,6 +1,6 @@
 services:
   docker:
-    image: docker:latest
+    image: docker:28.0.4-dind@sha256:ddb0033088b4fab74881ade341a582e3c6c8021b82377703ba1a6106bd3ded44
     privileged: true
     network_mode: host
     stop_grace_period: 1m
@@ -15,7 +15,7 @@ services:
     labels:
     - runtipi.managed=true
   web:
-    image: ghcr.io/openhands/openhands:latest
+    image: ghcr.io/openhands/openhands:1.10.0@sha256:1e5c81b0ccfc4fd33a3524ba2a561f594879e238117c024a1b60edfee0412dc8
     depends_on:
       docker:
         condition: service_started

@@ -7,7 +7,7 @@
   "port": 8176,
   "id": "fossflow",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "b69fc2e",
   "categories": [
     "network"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102671,
-  "updated_at": 1786708102671,
+  "created_at": 1786708752499,
+  "updated_at": 1786708752499,
   "min_tipi_version": "4.5.0"
 }

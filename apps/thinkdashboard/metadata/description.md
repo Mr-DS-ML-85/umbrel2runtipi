@@ -14,6 +14,14 @@ ThinkDashboard is a lightweight, self-hosted bookmark dashboard with keyboard sh
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/thinkdashboard/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/thinkdashboard/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/thinkdashboard/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/thinkdashboard/4.jpg)
+
 ## Links
 
 - Website: https://github.com/MatiasDesuu/ThinkDashboard

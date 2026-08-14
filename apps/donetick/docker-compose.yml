@@ -1,6 +1,6 @@
 services:
   app:
-    image: donetick/donetick:latest
+    image: donetick/donetick:v0.1.76@sha256:2f32646ef4e613f44066163646f53c02d6d5b728b31abe47dfd111b3dfd53643
     user: 1000:1000
     restart: unless-stopped
     volumes:

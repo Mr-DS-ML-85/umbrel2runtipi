@@ -1,6 +1,6 @@
 services:
   zabbix-frontend:
-    image: zabbix/zabbix-web-nginx-pgsql:latest
+    image: zabbix/zabbix-web-nginx-pgsql:7.4.13-alpine@sha256:806b91f8e564879240ec59cfc362322cf02f2b6a8651f5f46a062b1f6458e558
     hostname: zabbix-frontend
     restart: unless-stopped
     environment:
@@ -18,7 +18,7 @@ services:
       internal_port: 8080
       is_main: true
   zabbix-server:
-    image: zabbix/zabbix-server-pgsql:latest
+    image: zabbix/zabbix-server-pgsql:7.4.13-alpine@sha256:9ab190a471ca286bf1c13f20213d4f8cb40d172b7aa72c37eb80b66799be8012
     hostname: zabbix-server
     restart: unless-stopped
     init: true
@@ -33,7 +33,7 @@ services:
     labels:
     - runtipi.managed=true
   zabbix-agent:
-    image: zabbix/zabbix-agent2:latest
+    image: zabbix/zabbix-agent2:7.4.13-alpine@sha256:54759c49167f0370ff4fd5c358e429a9cee922b6499158ca1de21f6b885bfddc
     hostname: zabbix-agent
     restart: unless-stopped
     init: true
@@ -43,7 +43,7 @@ services:
     labels:
     - runtipi.managed=true
   zabbix-database:
-    image: postgres:latest
+    image: postgres:13.18-alpine3.20@sha256:77815c1f18ae761b0e503503a494475a03149d7ce544934ccecdbafdb3956c94
     hostname: zabbix-database
     restart: unless-stopped
     environment:

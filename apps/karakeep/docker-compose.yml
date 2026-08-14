@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/karakeep-app/karakeep:latest
+    image: ghcr.io/karakeep-app/karakeep:0.33.1@sha256:5467873df817ab3aa837f2b06bd7f2b0974132ba1ae5bce0b7e2fd134abc269b
     user: 1000:1000
     restart: unless-stopped
     environment:
@@ -22,7 +22,7 @@ services:
       internal_port: 3000
       is_main: true
   chrome:
-    image: zenika/alpine-chrome:latest
+    image: zenika/alpine-chrome:124@sha256:31758da502f606986ab6d229694d7953741a89f106715d7fa5f2c939b247deeb
     user: 1000:1000
     restart: unless-stopped
     command:
@@ -37,7 +37,7 @@ services:
     labels:
     - runtipi.managed=true
   meilisearch:
-    image: getmeili/meilisearch:latest
+    image: getmeili/meilisearch:v1.41.0@sha256:860fa4baed04ae1c235de870edab0c8006227546dea1bbb6411fbfc5e27cf1db
     user: 1000:1000
     restart: unless-stopped
     environment:

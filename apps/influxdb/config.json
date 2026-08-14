@@ -7,7 +7,7 @@
   "port": 8888,
   "id": "influxdb",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "1.12.4",
   "categories": [
     "development"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102728,
-  "updated_at": 1786708102728,
+  "created_at": 1786708752557,
+  "updated_at": 1786708752557,
   "min_tipi_version": "4.5.0"
 }

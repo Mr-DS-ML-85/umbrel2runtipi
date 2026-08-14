@@ -8,6 +8,13 @@ The developer now offers Originless as a separate app for private, decentralized
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/file-drop/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/file-drop/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/file-drop/3.jpg)
+
 ## Links
 
 - Website: https://github.com/besoeasy/file-drop

@@ -24,6 +24,13 @@ For seamless connection even when you are accessing Element away from home, simp
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/element/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/element/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/element/3.jpg)
+
 ## Links
 
 - Website: https://element.io

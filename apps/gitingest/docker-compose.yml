@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/coderamp-labs/gitingest:main
+    image: ghcr.io/coderamp-labs/gitingest:v0.3.1@sha256:0107c1e389d9e5e86dc3052defe024bd2439b776a1904ae4ee14f1cfb16e3b77
     restart: unless-stopped
     user: 1000:1000
     environment:

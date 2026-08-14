@@ -1,6 +1,6 @@
 services:
   docker:
-    image: docker:latest
+    image: docker:27.2.0-dind@sha256:f9f72ad901a78f27be922b2d320bbc263174f12919c1b37e6a01f828fa904565
     privileged: true
     network_mode: host
     stop_grace_period: 1m
@@ -15,7 +15,7 @@ services:
     labels:
     - runtipi.managed=true
   arcane:
-    image: ghcr.io/getarcaneapp/arcane:latest
+    image: ghcr.io/getarcaneapp/arcane:v2.8.0@sha256:9146935e0797ce14a340616ceab2f77b3bc61d1b10befb0718a4be7f01485e2c
     depends_on:
     - docker
     restart: unless-stopped

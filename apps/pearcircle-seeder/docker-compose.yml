@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/peerloomllc/pearcircle-seeder:1.1.0
+    image: ghcr.io/peerloomllc/pearcircle-seeder:1.1.0@sha256:da0a9f7b86a54f1ea277e70eadc719381e6ebaf2d1b1fcdfebe10482696a9067
     restart: unless-stopped
     stop_grace_period: 1m
     security_opt:

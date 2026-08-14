@@ -39,6 +39,13 @@ For more information on Datum, please visit https://github.com/OCEAN-xyz/datum_g
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/datum/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/datum/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/datum/3.jpg)
+
 ## Links
 
 - Website: https://ocean.xyz

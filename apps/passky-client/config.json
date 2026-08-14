@@ -7,7 +7,7 @@
   "port": 5052,
   "id": "passky-client",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "8.1.1",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102960,
-  "updated_at": 1786708102960,
+  "created_at": 1786708752789,
+  "updated_at": 1786708752789,
   "min_tipi_version": "4.5.0"
 }

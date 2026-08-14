@@ -7,7 +7,7 @@
   "port": 3686,
   "id": "networkingtoolbox",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "1.6.0",
   "categories": [
     "development"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102889,
-  "updated_at": 1786708102889,
+  "created_at": 1786708752718,
+  "updated_at": 1786708752718,
   "min_tipi_version": "4.5.0"
 }

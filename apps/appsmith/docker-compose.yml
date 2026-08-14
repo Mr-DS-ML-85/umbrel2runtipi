@@ -1,6 +1,6 @@
 services:
   app:
-    image: appsmith/appsmith-ce:latest
+    image: appsmith/appsmith-ce:v2.3@sha256:6e6ff29dc25f359793a6031f1ec7acf6bbdbb95e36f3a33e366ba4c14a929b3a
     environment:
       APPSMITH_ENCRYPTION_PASSWORD: ${APP_PASSWORD}
       APPSMITH_ENCRYPTION_SALT: ${APP_PASSWORD}

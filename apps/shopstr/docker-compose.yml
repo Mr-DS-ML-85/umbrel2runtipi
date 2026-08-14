@@ -1,6 +1,6 @@
 services:
   web:
-    image: calvadev/shopstr:latest
+    image: calvadev/shopstr:v0.7.5@sha256:b123e9d16f4267ea766813cbc12ac0989afcea03a72b42edfa37b64951ececdb
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m

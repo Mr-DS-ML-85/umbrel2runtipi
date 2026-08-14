@@ -7,7 +7,7 @@
   "port": 6444,
   "id": "termix",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "2.6.1",
   "categories": [
     "development"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103148,
-  "updated_at": 1786708103148,
+  "created_at": 1786708752977,
+  "updated_at": 1786708752977,
   "min_tipi_version": "4.5.0"
 }

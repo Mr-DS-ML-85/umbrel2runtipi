@@ -1,6 +1,6 @@
 services:
   web:
-    image: ipfspodcasting/podcastnode:v0.6
+    image: ipfspodcasting/podcastnode:v0.6@sha256:773d7c34d452764be973e8bc495990ec47f8042287493997784198c64e924393
     init: true
     restart: unless-stopped
     stop_grace_period: 1m

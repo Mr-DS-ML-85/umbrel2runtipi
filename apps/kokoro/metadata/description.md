@@ -12,6 +12,13 @@ Its lightweight architecture ensures that Kokoro can be deployed even on less po
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/kokoro/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/kokoro/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/kokoro/3.jpg)
+
 ## Links
 
 - Website: https://huggingface.co/hexgrad/Kokoro-82M

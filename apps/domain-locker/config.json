@@ -7,7 +7,7 @@
   "port": 8839,
   "id": "domain-locker",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "0.2.0",
   "categories": [
     "network"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102612,
-  "updated_at": 1786708102612,
+  "created_at": 1786708752440,
+  "updated_at": 1786708752440,
   "min_tipi_version": "4.5.0"
 }

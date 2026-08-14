@@ -15,6 +15,13 @@ Seafile is configured to work out-of-the-box when installed on the server. Howev
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/seafile/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/seafile/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/seafile/3.jpg)
+
 ## Links
 
 - Website: https://www.seafile.com/

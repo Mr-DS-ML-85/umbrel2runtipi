@@ -7,7 +7,7 @@
   "port": 52443,
   "id": "dropgate-server",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "3.0.13",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102617,
-  "updated_at": 1786708102617,
+  "created_at": 1786708752446,
+  "updated_at": 1786708752446,
   "min_tipi_version": "4.5.0"
 }

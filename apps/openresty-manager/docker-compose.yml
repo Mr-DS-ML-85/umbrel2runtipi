@@ -1,6 +1,6 @@
 services:
   web:
-    image: uusec/openresty-manager:latest
+    image: uusec/openresty-manager:2.4.5@sha256:0b00e240f05a1e9cf46a05efc9787b1b7c4eed39bf467962855bd0d300ead5dd
     hostname: web
     restart: unless-stopped
     ports:

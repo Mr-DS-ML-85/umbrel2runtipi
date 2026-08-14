@@ -7,7 +7,7 @@
   "port": 8400,
   "id": "zoraxy",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "3.3.3",
   "categories": [
     "network"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103238,
-  "updated_at": 1786708103238,
+  "created_at": 1786708753067,
+  "updated_at": 1786708753067,
   "min_tipi_version": "4.5.0"
 }

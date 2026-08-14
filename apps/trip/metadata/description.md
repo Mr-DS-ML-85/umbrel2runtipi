@@ -14,6 +14,15 @@ No telemetry. No tracking. No ads. Free, forever.
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/trip/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/trip/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/trip/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/trip/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/trip/5.jpg)
+
 ## Links
 
 - Website: https://itskovacs-trip.netlify.app/

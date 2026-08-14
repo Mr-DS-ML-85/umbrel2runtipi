@@ -1,6 +1,6 @@
 services:
   hbbs:
-    image: rustdesk/rustdesk-server:latest
+    image: rustdesk/rustdesk-server:1.1.16@sha256:8ecdab65deb7c84652a626380e31d11a8f1fbafd97916d57f95c20628f943c00
     ports:
     - 21115:21115
     - 21116:21116
@@ -16,7 +16,7 @@ services:
     labels:
     - runtipi.managed=true
   hbbr:
-    image: rustdesk/rustdesk-server:latest
+    image: rustdesk/rustdesk-server:1.1.16@sha256:8ecdab65deb7c84652a626380e31d11a8f1fbafd97916d57f95c20628f943c00
     ports:
     - 21117:21117
     - 21119:21119
@@ -28,7 +28,7 @@ services:
     labels:
     - runtipi.managed=true
   web:
-    image: nginx:latest
+    image: nginx:1.27@sha256:124b44bfc9ccd1f3cedf4b592d4d1e8bddb78b51ec2ed5056c52d3692baebc19
     restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/www:/usr/share/nginx/html:ro

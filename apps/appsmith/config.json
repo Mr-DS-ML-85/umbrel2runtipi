@@ -7,7 +7,7 @@
   "port": 8655,
   "id": "appsmith",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "v2.3",
   "categories": [
     "development"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102486,
-  "updated_at": 1786708102486,
+  "created_at": 1786708752313,
+  "updated_at": 1786708752313,
   "min_tipi_version": "4.5.0"
 }

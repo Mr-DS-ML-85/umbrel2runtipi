@@ -7,7 +7,7 @@
   "port": 8373,
   "id": "kan",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "0.6.0",
   "categories": [
     "data"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102755,
-  "updated_at": 1786708102755,
+  "created_at": 1786708752583,
+  "updated_at": 1786708752583,
   "min_tipi_version": "4.5.0"
 }

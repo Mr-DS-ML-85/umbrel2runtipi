@@ -7,7 +7,7 @@
   "port": 8474,
   "id": "kitchenowl",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "0.7.10",
   "categories": [
     "data"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102763,
-  "updated_at": 1786708102763,
+  "created_at": 1786708752591,
+  "updated_at": 1786708752591,
   "min_tipi_version": "4.5.0"
 }

@@ -12,6 +12,15 @@ The platform supports internationalization, a customizable dark mode interface, 
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/domain-locker/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/domain-locker/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/domain-locker/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/domain-locker/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/domain-locker/5.jpg)
+
 ## Links
 
 - Website: https://domain-locker.com/

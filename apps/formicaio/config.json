@@ -7,7 +7,7 @@
   "port": 52100,
   "id": "formicaio",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "0.8.4",
   "categories": [
     "finance"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102669,
-  "updated_at": 1786708102669,
+  "created_at": 1786708752497,
+  "updated_at": 1786708752497,
   "min_tipi_version": "4.5.0"
 }

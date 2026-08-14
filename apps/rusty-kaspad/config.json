@@ -7,7 +7,7 @@
   "port": 4321,
   "id": "rusty-kaspad",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "v2.0.1",
   "categories": [
     "finance"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103051,
-  "updated_at": 1786708103051,
+  "created_at": 1786708752881,
+  "updated_at": 1786708752881,
   "min_tipi_version": "4.5.0"
 }

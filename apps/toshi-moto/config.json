@@ -7,7 +7,7 @@
   "port": 8021,
   "id": "toshi-moto",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "1.37.3",
   "categories": [
     "finance"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103160,
-  "updated_at": 1786708103160,
+  "created_at": 1786708752989,
+  "updated_at": 1786708752989,
   "min_tipi_version": "4.5.0"
 }

@@ -7,7 +7,7 @@
   "port": 5832,
   "id": "torbrowser",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "15.0.17",
   "categories": [
     "network"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103155,
-  "updated_at": 1786708103155,
+  "created_at": 1786708752985,
+  "updated_at": 1786708752985,
   "min_tipi_version": "4.5.0"
 }

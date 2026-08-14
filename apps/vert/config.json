@@ -7,7 +7,7 @@
   "port": 3884,
   "id": "vert",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "e1c83ba",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103185,
-  "updated_at": 1786708103185,
+  "created_at": 1786708753015,
+  "updated_at": 1786708753015,
   "min_tipi_version": "4.5.0"
 }

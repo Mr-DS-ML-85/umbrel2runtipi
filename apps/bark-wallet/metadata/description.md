@@ -17,6 +17,15 @@ Proudly open source, built as a reference implementation for developers. Fork th
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bark-wallet/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bark-wallet/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bark-wallet/3.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bark-wallet/4.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bark-wallet/5.webp)
+
 ## Links
 
 - Website: https://second.tech

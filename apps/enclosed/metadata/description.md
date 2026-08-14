@@ -13,6 +13,13 @@ You can set up https using the Cloudflare Tunnel app available in the app store.
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/enclosed/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/enclosed/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/enclosed/3.jpg)
+
 ## Links
 
 - Website: https://enclosed.cc/

@@ -1,6 +1,6 @@
 services:
   coolify:
-    image: ghcr.io/coollabsio/coolify:latest
+    image: ghcr.io/coollabsio/coolify:4.3.2
     container_name: coolify
     restart: unless-stopped
     ports:
@@ -38,7 +38,7 @@ services:
       internal_port: 8080
       is_main: true
   postgres:
-    image: postgres:latest
+    image: postgres:16-alpine
     container_name: coolify-postgres
     restart: unless-stopped
     environment:
@@ -59,7 +59,7 @@ services:
     labels:
       runtipi.managed: 'true'
   redis:
-    image: redis:latest
+    image: redis:7-alpine
     container_name: coolify-redis
     restart: unless-stopped
     command: redis-server --requirepass ${APP_REDIS_PASSWORD}

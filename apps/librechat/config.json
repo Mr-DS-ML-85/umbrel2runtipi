@@ -7,7 +7,7 @@
   "port": 7050,
   "id": "librechat",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "0.8.7",
   "categories": [
     "ai"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102788,
-  "updated_at": 1786708102788,
+  "created_at": 1786708752616,
+  "updated_at": 1786708752616,
   "min_tipi_version": "4.5.0"
 }

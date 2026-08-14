@@ -1,6 +1,6 @@
 services:
   migrate:
-    image: ghcr.io/kanbn/kan-migrate:latest
+    image: ghcr.io/kanbn/kan-migrate:0.6.0@sha256:3296fd28e037a93dda478981494a72c6905ecd4f0d0739e79139172844acbc4b
     environment:
       POSTGRES_URL: postgresql://kanuser:kanpassword@db:5432/kan?sslmode=disable
     depends_on:
@@ -10,7 +10,7 @@ services:
     labels:
     - runtipi.managed=true
   server:
-    image: ghcr.io/kanbn/kan:latest
+    image: ghcr.io/kanbn/kan:0.6.0@sha256:0087a72a123d8462c66ddce3a303049d4ec92f03cfba297d41466605ef8cb5b5
     environment:
       NEXT_PUBLIC_BASE_URL: http://localhost:8373
       BETTER_AUTH_SECRET: ${APP_SEED}
@@ -25,7 +25,7 @@ services:
       internal_port: 3000
       is_main: true
   db:
-    image: postgres:latest
+    image: postgres:17.3@sha256:0321e2252ebfeecb8bc1a899755084d29bce872953e1a5a3e25ec0860b739098
     user: 1000:1000
     environment:
       POSTGRES_DB: kan

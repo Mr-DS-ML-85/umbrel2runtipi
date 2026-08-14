@@ -1,6 +1,6 @@
 services:
   web:
-    image: rstmsn/cashu-me:0.1.1
+    image: rstmsn/cashu-me:0.1.1@sha256:46cf3752f58e20b7fd191b270208f6f41aa143ba950fddb0efb390ed3ea2851b
     restart: unless-stopped
     stop_grace_period: 1m
     labels:

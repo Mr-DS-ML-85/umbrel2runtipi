@@ -7,7 +7,7 @@
   "port": 8887,
   "id": "sqlitebrowser",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "3.13.1",
   "categories": [
     "development"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103103,
-  "updated_at": 1786708103103,
+  "created_at": 1786708752933,
+  "updated_at": 1786708752933,
   "min_tipi_version": "4.5.0"
 }

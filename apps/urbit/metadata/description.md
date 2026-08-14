@@ -12,6 +12,13 @@ Credit to ~timluc-miptev, ~master-forwex, ~sipsen-pilser & ~rivpyl-sidfyl
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/urbit/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/urbit/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/urbit/3.jpg)
+
 ## Links
 
 - Website: https://github.com/mopfel-winrux/urbit-umbrel

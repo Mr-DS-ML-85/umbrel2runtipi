@@ -14,6 +14,13 @@ Neko is especially useful in scenarios where privacy, simplicity, and ease of ac
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/neko/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/neko/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/neko/3.jpg)
+
 ## Links
 
 - Website: https://neko.m1k1o.net/

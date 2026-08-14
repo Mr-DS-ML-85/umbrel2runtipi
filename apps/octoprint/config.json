@@ -7,7 +7,7 @@
   "port": 5003,
   "id": "octoprint",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "1.11.8",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102918,
-  "updated_at": 1786708102918,
+  "created_at": 1786708752747,
+  "updated_at": 1786708752747,
   "min_tipi_version": "4.5.0"
 }

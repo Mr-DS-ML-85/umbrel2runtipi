@@ -7,7 +7,7 @@
   "port": 8899,
   "id": "jupyterlab",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "v4.6.2",
   "categories": [
     "development"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102751,
-  "updated_at": 1786708102751,
+  "created_at": 1786708752579,
+  "updated_at": 1786708752579,
   "min_tipi_version": "4.5.0"
 }

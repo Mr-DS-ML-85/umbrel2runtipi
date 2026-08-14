@@ -7,7 +7,7 @@
   "port": 4848,
   "id": "nostr-relay",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "1.2.0",
   "categories": [
     "social"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102905,
-  "updated_at": 1786708102905,
+  "created_at": 1786708752733,
+  "updated_at": 1786708752733,
   "min_tipi_version": "4.5.0"
 }

@@ -7,7 +7,7 @@
   "port": 8165,
   "id": "urbit",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "v4.6",
   "categories": [
     "network"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103177,
-  "updated_at": 1786708103177,
+  "created_at": 1786708753006,
+  "updated_at": 1786708753006,
   "min_tipi_version": "4.5.0"
 }

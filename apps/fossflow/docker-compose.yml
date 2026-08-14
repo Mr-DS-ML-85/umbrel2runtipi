@@ -1,6 +1,6 @@
 services:
   web:
-    image: stnsmith/fossflow:latest
+    image: stnsmith/fossflow:master-b69fc2e@sha256:c0813b19a9c8a3b8d13901de0e35edf7d9300ae8327a905ff520239d5624dafc
     restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/diagrams:/data/diagrams

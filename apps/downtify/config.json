@@ -7,7 +7,7 @@
   "port": 8789,
   "id": "downtify",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "2.10.0",
   "categories": [
     "media"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102615,
-  "updated_at": 1786708102615,
+  "created_at": 1786708752443,
+  "updated_at": 1786708752443,
   "min_tipi_version": "4.5.0"
 }

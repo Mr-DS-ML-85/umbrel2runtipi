@@ -1,6 +1,6 @@
 services:
   frontend:
-    image: ghcr.io/maathimself/mailflow-frontend:latest
+    image: ghcr.io/maathimself/mailflow-frontend:2.9.0@sha256:aff0f4e03a00bc81d5365f11fdeb12f84f5971dc1369b142284b914623c096d9
     restart: unless-stopped
     stop_grace_period: 1m
     depends_on:
@@ -20,7 +20,7 @@ services:
       internal_port: 80
       is_main: true
   backend:
-    image: ghcr.io/maathimself/mailflow-backend:latest
+    image: ghcr.io/maathimself/mailflow-backend:2.9.0@sha256:723642040845ade85ace9b64db12e9bebdd1fa45244122301dd45cae0d8a9b07
     restart: unless-stopped
     stop_grace_period: 1m
     environment:
@@ -57,7 +57,7 @@ services:
     labels:
     - runtipi.managed=true
   postgres:
-    image: postgres:latest
+    image: postgres:16-alpine@sha256:16bc17c64a573ef34162af9298258d1aec548232985b33ed7b1eac33ba35c229
     user: 1000:1000
     restart: unless-stopped
     environment:
@@ -77,7 +77,7 @@ services:
     labels:
     - runtipi.managed=true
   redis:
-    image: redis:latest
+    image: redis:7-alpine@sha256:6ab0b6e7381779332f97b8ca76193e45b0756f38d4c0dcda72dbb3c32061ab99
     user: 1000:1000
     restart: unless-stopped
     command: redis-server --save 60 1 --loglevel warning

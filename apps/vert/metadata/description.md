@@ -10,6 +10,13 @@ VERT combines a clean, intuitive interface with advanced conversion logic, givin
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/vert/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/vert/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/vert/3.jpg)
+
 ## Links
 
 - Website: https://vert.sh/

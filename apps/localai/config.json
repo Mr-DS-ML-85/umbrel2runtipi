@@ -7,7 +7,7 @@
   "port": 8793,
   "id": "localai",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "v4.8.2",
   "categories": [
     "ai"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102832,
-  "updated_at": 1786708102832,
+  "created_at": 1786708752660,
+  "updated_at": 1786708752660,
   "min_tipi_version": "4.5.0"
 }

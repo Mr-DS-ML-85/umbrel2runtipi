@@ -7,7 +7,7 @@
   "port": 1325,
   "id": "valorgrid",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "3.34.0",
   "categories": [
     "finance"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103182,
-  "updated_at": 1786708103182,
+  "created_at": 1786708753011,
+  "updated_at": 1786708753011,
   "min_tipi_version": "4.5.0"
 }

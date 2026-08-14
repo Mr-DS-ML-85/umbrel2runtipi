@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/seanmorley15/adventurelog-frontend:latest
+    image: ghcr.io/seanmorley15/adventurelog-frontend:v0.13.0@sha256:51ee22428b4192f4372b54f84c8b90cd710311ad99993c5045f53b51717dd3f7
     restart: unless-stopped
     environment:
       PUBLIC_SERVER_URL: http://server:8000
@@ -14,7 +14,7 @@ services:
       internal_port: 3000
       is_main: true
   db:
-    image: ghcr.io/baosystems/postgis:latest
+    image: ghcr.io/baosystems/postgis:15-3.5@sha256:ac619116c8ee81a386eb878956950d798b57c502985c12eb6e7be1598aa8d02f
     restart: unless-stopped
     environment:
       POSTGRES_DB: database
@@ -25,7 +25,7 @@ services:
     labels:
     - runtipi.managed=true
   server:
-    image: ghcr.io/seanmorley15/adventurelog-backend:latest
+    image: ghcr.io/seanmorley15/adventurelog-backend:v0.13.0@sha256:0250d9cb0d745a8d768f31d3cdc68ac14bfa8b43dedfe0f550158e3861c12db7
     restart: unless-stopped
     environment:
     - PGHOST=db

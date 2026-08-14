@@ -7,7 +7,7 @@
   "port": 52027,
   "id": "snort",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "v0.5.3",
   "categories": [
     "social"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103087,
-  "updated_at": 1786708103087,
+  "created_at": 1786708752916,
+  "updated_at": 1786708752916,
   "min_tipi_version": "4.5.0"
 }

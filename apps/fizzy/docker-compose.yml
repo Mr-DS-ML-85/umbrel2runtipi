@@ -1,6 +1,6 @@
 services:
   server:
-    image: ghcr.io/mauricewipf/fizzy-umbrel:latest
+    image: ghcr.io/mauricewipf/fizzy-umbrel:5f45e54@sha256:2d7a493a8933aa784b4d06cc96bd8b047beaf19173d1eec04c767e9dd7f4c28b
     user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/app:/rails/storage

@@ -21,6 +21,13 @@ Controls and wizards are available for users to:
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/sqlitebrowser/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/sqlitebrowser/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/sqlitebrowser/3.jpg)
+
 ## Links
 
 - Website: https://sqlitebrowser.org/

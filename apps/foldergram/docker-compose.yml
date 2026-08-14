@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/foldergram/foldergram:latest
+    image: ghcr.io/foldergram/foldergram:1.2.2@sha256:f72dfe39d9042555fd1b509a06f6c93c8b9a8be02541c80135a9a8f25fe362d4
     restart: unless-stopped
     environment:
       IMAGE_DETAIL_SOURCE: preview

@@ -7,7 +7,7 @@
   "port": 8920,
   "id": "seafile",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "13.0.25",
   "categories": [
     "data"
   ],
@@ -34,7 +34,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103072,
-  "updated_at": 1786708103072,
+  "created_at": 1786708752902,
+  "updated_at": 1786708752902,
   "min_tipi_version": "4.5.0"
 }

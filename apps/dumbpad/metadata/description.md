@@ -19,6 +19,13 @@ DumbPad is for people who want a distraction-free place to jot things down quick
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dumbpad/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dumbpad/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dumbpad/3.jpg)
+
 ## Links
 
 - Website: https://github.com/DumbWareio/DumbPad

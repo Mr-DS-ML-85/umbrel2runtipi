@@ -10,6 +10,14 @@ Vane can explore virtually any topic, from technical explanations and factual re
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/perplexica/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/perplexica/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/perplexica/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/perplexica/4.jpg)
+
 ## Links
 
 - Website: https://github.com/ItzCrazyKns/Vane

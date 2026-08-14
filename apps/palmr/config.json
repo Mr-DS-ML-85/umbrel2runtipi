@@ -7,7 +7,7 @@
   "port": 8075,
   "id": "palmr",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "3.3.2-beta",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102953,
-  "updated_at": 1786708102953,
+  "created_at": 1786708752782,
+  "updated_at": 1786708752782,
   "min_tipi_version": "4.5.0"
 }

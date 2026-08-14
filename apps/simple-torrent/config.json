@@ -7,7 +7,7 @@
   "port": 8124,
   "id": "simple-torrent",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "1.3.9-hotfix-1",
   "categories": [
     "network"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103080,
-  "updated_at": 1786708103080,
+  "created_at": 1786708752909,
+  "updated_at": 1786708752909,
   "min_tipi_version": "4.5.0"
 }

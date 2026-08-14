@@ -18,6 +18,13 @@ Get started by opening the Homey app on your iOS or Android device, adding a new
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/homey/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/homey/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/homey/3.webp)
+
 ## Links
 
 - Website: https://homey.app

@@ -7,7 +7,7 @@
   "port": 8105,
   "id": "rotki",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "1.43.2",
   "categories": [
     "finance"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103045,
-  "updated_at": 1786708103045,
+  "created_at": 1786708752874,
+  "updated_at": 1786708752874,
   "min_tipi_version": "4.5.0"
 }

@@ -8,6 +8,11 @@ It manages the host Docker engine through the socket. For realtime features the 
 
 ---
 
+
+## Preview
+
+![Preview](https://cdn.coollabs.io/og-images/coolify.png)
+
 ## Links
 
 - Website: https://coolify.io

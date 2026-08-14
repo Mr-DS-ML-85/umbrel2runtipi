@@ -7,7 +7,7 @@
   "port": 8020,
   "id": "super-productivity",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "18.19.0",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103116,
-  "updated_at": 1786708103116,
+  "created_at": 1786708752945,
+  "updated_at": 1786708752945,
   "min_tipi_version": "4.5.0"
 }

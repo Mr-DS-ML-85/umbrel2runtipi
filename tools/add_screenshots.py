@@ -13,7 +13,8 @@ Every Umbrel app manifest has a `gallery:` field listing screenshot filenames
 This tool reads the gallery list straight from the cloned umbrel-apps repo and
 injects a `## Preview` section with those images into metadata/description.md.
 
-Apps with an empty gallery list are skipped and reported.
+Apps with an empty gallery list are skipped and reported. Hand-added apps
+(not in the Umbrel catalogue) get screenshots from EXTRA_SCREENSHOTS.
 
 Usage: python3 add_screenshots.py
 """
@@ -32,6 +33,15 @@ UMBREL_REPO = ROOT / "umbrel-apps"
 GALLERY_BASE = "https://getumbrel.github.io/umbrel-apps-gallery"
 UA = {"User-Agent": "runtipi-umbrel-store/1.0"}
 
+# Hand-added apps that are not in the Umbrel catalogue (see EXTRA_APPS in
+# convert.py) have no `gallery:` manifest. Point them at real preview images
+# from their upstream sites so their notes tab shows a screenshot like the
+# converted apps do.
+EXTRA_SCREENSHOTS = {
+    "dokploy": ["https://dokploy.com/banner.png"],
+    "coolify": ["https://cdn.coollabs.io/og-images/coolify.png"],
+}
+
 
 def main() -> None:
     done = skipped = missing = 0
@@ -41,6 +51,30 @@ def main() -> None:
         app_id = app_dir.name
         desc_path = app_dir / "metadata" / "description.md"
         if not desc_path.exists():
+            continue
+
+        # hand-added apps: use their configured screenshot URLs directly
+        if app_id in EXTRA_SCREENSHOTS:
+            urls = EXTRA_SCREENSHOTS[app_id]
+            first_url = urls[0]
+            try:
+                req = urllib.request.Request(first_url, headers=UA, method="HEAD")
+                with urllib.request.urlopen(req, timeout=15) as r:
+                    if r.status != 200:
+                        missing += 1
+                        continue
+            except Exception:
+                try:
+                    req = urllib.request.Request(first_url, headers=UA)
+                    with urllib.request.urlopen(req, timeout=15) as r:
+                        if r.status != 200:
+                            missing += 1
+                            continue
+                except Exception:
+                    missing += 1
+                    continue
+            inject(desc_path, urls)
+            done += 1
             continue
 
         src_manifest = UMBREL_REPO / app_id / "umbrel-app.yml"

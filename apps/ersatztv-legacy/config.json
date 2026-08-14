@@ -7,7 +7,7 @@
   "port": 8409,
   "id": "ersatztv-legacy",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "26.7.1",
   "categories": [
     "media"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102641,
-  "updated_at": 1786708102641,
+  "created_at": 1786708752469,
+  "updated_at": 1786708752469,
   "min_tipi_version": "4.5.0"
 }

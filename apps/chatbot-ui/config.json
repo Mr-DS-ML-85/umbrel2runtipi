@@ -7,7 +7,7 @@
   "port": 10101,
   "id": "chatbot-ui",
   "tipi_version": 1,
-  "version": "main",
+  "version": "2023.04.20",
   "categories": [
     "ai"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102576,
-  "updated_at": 1786708102576,
+  "created_at": 1786708752403,
+  "updated_at": 1786708752403,
   "min_tipi_version": "4.5.0"
 }

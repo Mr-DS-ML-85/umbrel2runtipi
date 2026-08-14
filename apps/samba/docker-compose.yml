@@ -1,6 +1,6 @@
 services:
   homepage:
-    image: loficafe/static-web-server-samba:1.0.1
+    image: loficafe/static-web-server-samba:1.0.1@sha256:783667f052d9535bb75946ff9bc807989b041e25437ef10c30b291589d041e6e
     restart: unless-stopped
     user: 1000:1000
     volumes:
@@ -11,7 +11,7 @@ services:
       internal_port: 80
       is_main: true
   server:
-    image: dockurr/samba:latest
+    image: dockurr/samba:4.23.5@sha256:63428d1cb6c1ace60cfa782c1d6c9e4b3686044fc47600c97055e6b62e9bb5fa
     restart: unless-stopped
     environment:
       USER: umbrel

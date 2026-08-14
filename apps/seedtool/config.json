@@ -7,7 +7,7 @@
   "port": 8147,
   "id": "seedtool",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "2.3.0",
   "categories": [
     "finance"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103075,
-  "updated_at": 1786708103075,
+  "created_at": 1786708752904,
+  "updated_at": 1786708752904,
   "min_tipi_version": "4.5.0"
 }

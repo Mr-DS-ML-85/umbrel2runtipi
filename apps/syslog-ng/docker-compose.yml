@@ -1,6 +1,6 @@
 services:
   syslog:
-    image: linuxserver/syslog-ng:latest
+    image: linuxserver/syslog-ng:4.10.2@sha256:b77c32d93b9e9b84f4fdd9261d7dd1db3b8a6f90391459b1ca51c82af9828bf8
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
@@ -25,7 +25,7 @@ services:
     labels:
     - runtipi.managed=true
   web:
-    image: rickraven/logdy:latest
+    image: rickraven/logdy:0.17.1@sha256:a1438c758ed3735e9b06205168a3c63e39bd0895bc5f0cd1adf4ed2270ae66cb
     user: 1000:1000
     restart: unless-stopped
     environment:

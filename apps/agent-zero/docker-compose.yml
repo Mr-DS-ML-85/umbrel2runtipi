@@ -1,6 +1,6 @@
 services:
   web:
-    image: agent0ai/agent-zero:latest
+    image: agent0ai/agent-zero:v2.9@sha256:2894754eecc64e1af1fc48bcaa2a45459b63d2ea6ce9eb26417aa040b8f7776e
     restart: unless-stopped
     ulimits:
       nofile:

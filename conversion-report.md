@@ -661,5 +661,4 @@
 
 ## Icons
 
-- `coolify` — placeholder logo (no svg)
-- `dokploy` — placeholder logo (no svg)
+- All icons downloaded from the Umbrel gallery.

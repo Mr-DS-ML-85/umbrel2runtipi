@@ -12,6 +12,15 @@ Because Picsur is self-hosted, it ensures maximum privacy and independence from 
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/picsur/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/picsur/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/picsur/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/picsur/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/picsur/5.jpg)
+
 ## Links
 
 - Website: https://picsur.org/upload

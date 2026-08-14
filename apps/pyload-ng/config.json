@@ -7,7 +7,7 @@
   "port": 8784,
   "id": "pyload-ng",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "0.5.0",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103020,
-  "updated_at": 1786708103020,
+  "created_at": 1786708752849,
+  "updated_at": 1786708752849,
   "min_tipi_version": "4.5.0"
 }

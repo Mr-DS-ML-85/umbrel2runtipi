@@ -7,7 +7,7 @@
   "port": 8950,
   "id": "wingfit",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "5.3.1",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103212,
-  "updated_at": 1786708103212,
+  "created_at": 1786708753041,
+  "updated_at": 1786708753041,
   "min_tipi_version": "4.5.0"
 }

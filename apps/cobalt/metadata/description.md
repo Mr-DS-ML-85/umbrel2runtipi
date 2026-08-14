@@ -12,6 +12,15 @@ cobalt is ideal for anyone who values simplicity and control over their media do
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/cobalt/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/cobalt/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/cobalt/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/cobalt/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/cobalt/5.jpg)
+
 ## Links
 
 - Website: https://cobalt.tools/

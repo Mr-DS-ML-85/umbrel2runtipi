@@ -22,6 +22,13 @@ Chronograf is the administrative user interface and visualization engine of the 
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/influxdb/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/influxdb/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/influxdb/3.jpg)
+
 ## Links
 
 - Website: https://www.influxdata.com/

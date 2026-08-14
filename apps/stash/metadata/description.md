@@ -14,6 +14,14 @@ Everything runs on-device via QVAC. No accounts, no API keys, no cloud — nothi
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/stash/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/stash/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/stash/3.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/stash/4.webp)
+
 ## Links
 
 - Website: https://github.com/savewithstash/stash

@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/sikkalabs/sikka:latest
+    image: ghcr.io/sikkalabs/sikka:0.2.0@sha256:9472a9f214e812685bb8a6b829755bbbdb196fe8beccaad19f0d2116590af417
     restart: unless-stopped
     stop_grace_period: 1m
     user: 1000:1000

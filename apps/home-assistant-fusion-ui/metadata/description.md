@@ -6,6 +6,13 @@ HA-Fusion (Home Assistant Fusion UI) is an alternative frontend for the Home Ass
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/home-assistant-fusion-ui/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/home-assistant-fusion-ui/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/home-assistant-fusion-ui/3.jpg)
+
 ## Links
 
 - Website: https://github.com/matt8707/ha-fusion

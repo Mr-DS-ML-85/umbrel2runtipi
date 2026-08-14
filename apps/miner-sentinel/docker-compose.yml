@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:latest
+    image: postgres:17.7@sha256:bac8128cd62a35471a1e97966861aa2ac88c8d2f408767a425ae70695a607c99
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
@@ -20,7 +20,7 @@ services:
     labels:
     - runtipi.managed=true
   backend:
-    image: dcbert/minersentinel-backend:latest
+    image: dcbert/minersentinel-backend:v1.0.3@sha256:a890925f66df5b3f80334fe9d00c02f027e282d77015613a5b08925adfa5523b
     restart: unless-stopped
     stop_grace_period: 1m
     depends_on:
@@ -44,7 +44,7 @@ services:
     labels:
     - runtipi.managed=true
   frontend:
-    image: dcbert/minersentinel-frontend:latest
+    image: dcbert/minersentinel-frontend:v1.0.3@sha256:e4ac190cbf5cdb9c6959b59bdff70d6135c34c18bf492b6b0303bbfd75489e59
     restart: unless-stopped
     stop_grace_period: 1m
     depends_on:
@@ -57,7 +57,7 @@ services:
       internal_port: 80
       is_main: true
   data-service:
-    image: dcbert/minersentinel-data-service:latest
+    image: dcbert/minersentinel-data-service:v1.0.3@sha256:ce4b2a955dc70e5c3fd897c910e8a7a525b6133ff37e49f0a7f7a7f6239b5bc4
     restart: unless-stopped
     stop_grace_period: 1m
     depends_on:

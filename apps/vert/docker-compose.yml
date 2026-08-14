@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/vert-sh/vert:latest
+    image: ghcr.io/vert-sh/vert:sha-e1c83ba@sha256:6492f2a88e977e7ce82fd26f49028a17575fee8cac38604f585bc5773298cbc8
     restart: unless-stopped
     environment:
       PUB_HOSTNAME: http://localhost:3884

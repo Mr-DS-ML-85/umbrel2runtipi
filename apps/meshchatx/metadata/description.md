@@ -22,6 +22,15 @@ Features:
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/meshchatx/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/meshchatx/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/meshchatx/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/meshchatx/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/meshchatx/5.jpg)
+
 ## Links
 
 - Website: https://quad4.io

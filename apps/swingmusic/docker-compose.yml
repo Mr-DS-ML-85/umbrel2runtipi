@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/swingmx/swingmusic:latest
+    image: ghcr.io/swingmx/swingmusic:v3.0.0@sha256:a49155d1809bc6ad09d87d76cc91648c149fc80146b5e10260e70fe1cfa78175
     restart: unless-stopped
     environment:
     - PUID=1000

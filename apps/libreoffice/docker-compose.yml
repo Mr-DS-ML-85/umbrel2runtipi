@@ -1,6 +1,6 @@
 services:
   server:
-    image: linuxserver/libreoffice:latest
+    image: linuxserver/libreoffice:7.6.7@sha256:a62c7f094f2a7ed8145983d04f54ca80d85b557bbdda0f9aa784ccb6267b70e8
     restart: unless-stopped
     stop_grace_period: 1m
     environment:

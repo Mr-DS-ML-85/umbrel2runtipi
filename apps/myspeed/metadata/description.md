@@ -8,6 +8,13 @@ MySpeed automatically creates tests every hour, which you can view in the dashbo
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/myspeed/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/myspeed/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/myspeed/3.jpg)
+
 ## Links
 
 - Website: https://myspeed.dev

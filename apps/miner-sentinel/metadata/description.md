@@ -24,6 +24,15 @@ Runs entirely on your own hardware with no external dependencies. All data stays
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/miner-sentinel/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/miner-sentinel/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/miner-sentinel/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/miner-sentinel/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/miner-sentinel/5.jpg)
+
 ## Links
 
 - Website: https://github.com/dcbert/miner-sentinel

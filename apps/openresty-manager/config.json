@@ -7,7 +7,7 @@
   "port": 34567,
   "id": "openresty-manager",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "2.4.5",
   "categories": [
     "network"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102939,
-  "updated_at": 1786708102939,
+  "created_at": 1786708752768,
+  "updated_at": 1786708752768,
   "min_tipi_version": "4.5.0"
 }

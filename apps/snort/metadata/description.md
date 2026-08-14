@@ -6,6 +6,13 @@ Snort is a client for Nostr that is built using React, designed to be fast and l
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/snort/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/snort/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/snort/3.jpg)
+
 ## Links
 
 - Website: https://snort.social

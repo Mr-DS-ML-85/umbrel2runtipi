@@ -7,7 +7,7 @@
   "port": 4096,
   "id": "opencode",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "1.18.17",
   "categories": [
     "ai"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102930,
-  "updated_at": 1786708102930,
+  "created_at": 1786708752759,
+  "updated_at": 1786708752759,
   "min_tipi_version": "4.5.0"
 }

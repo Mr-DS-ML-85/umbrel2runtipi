@@ -10,6 +10,15 @@ Komodo exposes extensive REST and WebSocket APIs that empower teams to automate 
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/komodo/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/komodo/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/komodo/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/komodo/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/komodo/5.jpg)
+
 ## Links
 
 - Website: https://komo.do/

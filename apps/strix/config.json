@@ -7,7 +7,7 @@
   "port": 4568,
   "id": "strix",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "2.1.0",
   "categories": [
     "automation"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103114,
-  "updated_at": 1786708103114,
+  "created_at": 1786708752943,
+  "updated_at": 1786708752943,
   "min_tipi_version": "4.5.0"
 }

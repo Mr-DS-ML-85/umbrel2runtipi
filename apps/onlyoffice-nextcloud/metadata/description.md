@@ -8,6 +8,15 @@ Simply install ONLYOFFICE Docs and follow the in-app instructions to connect it 
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/onlyoffice-nextcloud/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/onlyoffice-nextcloud/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/onlyoffice-nextcloud/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/onlyoffice-nextcloud/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/onlyoffice-nextcloud/5.jpg)
+
 ## Links
 
 - Website: https://www.onlyoffice.com/

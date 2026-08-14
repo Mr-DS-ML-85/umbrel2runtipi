@@ -7,7 +7,7 @@
   "port": 2903,
   "id": "scanservjs",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "3.2.0",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708103069,
-  "updated_at": 1786708103069,
+  "created_at": 1786708752898,
+  "updated_at": 1786708752898,
   "min_tipi_version": "4.5.0"
 }

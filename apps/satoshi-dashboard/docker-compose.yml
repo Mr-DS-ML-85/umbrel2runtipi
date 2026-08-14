@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/satoshi-dashboard/main:latest
+    image: ghcr.io/satoshi-dashboard/main:v1.1.0@sha256:35ae82af78d972aeb621689e0a1e7dd76fa1c2835dca054c489179a09a279506
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m

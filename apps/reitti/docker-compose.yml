@@ -1,6 +1,6 @@
 services:
   app:
-    image: dedicatedcode/reitti:latest
+    image: dedicatedcode/reitti:5.1.0@sha256:f97f94df5b18e6f8c12774e4f421b234c74f2a258b77247320a445a697b8fb17
     restart: unless-stopped
     depends_on:
       postgis:
@@ -23,7 +23,7 @@ services:
       internal_port: 8080
       is_main: true
   postgis:
-    image: imresamu/postgis:latest
+    image: imresamu/postgis:17-3.5-alpine@sha256:ba5f5012ffe7a01a78e85404d3e081ed7e961013161bb09d39ff09c867ada17b
     user: 1000:1000
     restart: unless-stopped
     environment:
@@ -42,7 +42,7 @@ services:
     labels:
     - runtipi.managed=true
   redis:
-    image: redis:latest
+    image: redis:7.4.9-alpine@sha256:6ab0b6e7381779332f97b8ca76193e45b0756f38d4c0dcda72dbb3c32061ab99
     user: 1000:1000
     restart: unless-stopped
     volumes:
@@ -58,7 +58,7 @@ services:
     labels:
     - runtipi.managed=true
   tile-cache:
-    image: dedicatedcode/reitti-tile-cache:latest
+    image: dedicatedcode/reitti-tile-cache:5.1.0@sha256:98a96e6df5948a80e731193f4e5e4f0d5c4263beee13ea5980561db0ef7030b9
     restart: unless-stopped
     healthcheck:
       test:

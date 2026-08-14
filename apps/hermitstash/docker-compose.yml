@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/dotcoocoo/hermitstash:latest
+    image: ghcr.io/dotcoocoo/hermitstash:1.14.2@sha256:46f5c4ba6ed9ddeff93963cf60084c4c9b531918dec9f7b9eea56193786cf9f8
     user: 1000:1000
     init: true
     restart: unless-stopped

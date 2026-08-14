@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/s1t5/mailarchiver:latest
+    image: ghcr.io/s1t5/mailarchiver:2607.5@sha256:296af6847dc1be84f50b167f1cbf45b1df876098d72f4fe825bb2179be077a13
     restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/data-protection-keys:/app/DataProtection-Keys
@@ -14,7 +14,7 @@ services:
       internal_port: 5000
       is_main: true
   postgres:
-    image: postgres:latest
+    image: postgres:18.3-alpine3.23@sha256:4da1a4828be12604092fa55311276f08f9224a74a62dcb4708bd7439e2a03911
     restart: unless-stopped
     user: 1000:1000
     environment:

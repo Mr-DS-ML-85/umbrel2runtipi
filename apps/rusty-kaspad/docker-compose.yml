@@ -1,6 +1,6 @@
 services:
   frontend:
-    image: elldee/kaspa-frontend:latest
+    image: elldee/kaspa-frontend:v0.4.1@sha256:a77573dfbc706b632ba24b9087685dc0b44d588c60b5399e2c2df2a19bd38a93
     restart: unless-stopped
     stop_grace_period: 1m
     depends_on:
@@ -11,7 +11,7 @@ services:
       internal_port: 4321
       is_main: true
   kaspad:
-    image: kaspanet/rusty-kaspad:latest
+    image: kaspanet/rusty-kaspad:v2.0.1@sha256:db36449e2f41cf33ab7c26683ce390cb71bdea9c403eefd2e740a7d5605bcd8b
     restart: unless-stopped
     stop_grace_period: 3m
     volumes:

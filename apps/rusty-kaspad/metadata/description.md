@@ -14,6 +14,12 @@ Packaged for the server by Luke Dunshea (https://dunshea.au).
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/rusty-kaspad/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/rusty-kaspad/2.jpg)
+
 ## Links
 
 - Website: https://github.com/kaspanet/rusty-kaspa

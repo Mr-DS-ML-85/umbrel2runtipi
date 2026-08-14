@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/besoeasy/gupt:latest
+    image: ghcr.io/besoeasy/gupt:2.80.4@sha256:ab88455d212a20250d5422ad371160756be5c35ffded633d1689f3538096d010
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m

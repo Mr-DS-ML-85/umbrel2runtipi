@@ -7,7 +7,7 @@
   "port": 3395,
   "id": "mailflow",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "2.9.0",
   "categories": [
     "network"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102842,
-  "updated_at": 1786708102842,
+  "created_at": 1786708752670,
+  "updated_at": 1786708752670,
   "min_tipi_version": "4.5.0"
 }

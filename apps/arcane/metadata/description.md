@@ -24,6 +24,15 @@ The platform is designed to bridge the gap between simplicity and advanced contr
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/arcane/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/arcane/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/arcane/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/arcane/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/arcane/5.jpg)
+
 ## Links
 
 - Website: https://getarcane.app/

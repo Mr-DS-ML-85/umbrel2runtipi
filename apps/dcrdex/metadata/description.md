@@ -10,6 +10,14 @@ No trading fees. No KYC. You stay in control of your assets throughout the entir
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dcrdex/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dcrdex/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dcrdex/3.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dcrdex/4.webp)
+
 ## Links
 
 - Website: https://dex.decred.org

@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/richardr1126/openreader:latest
+    image: ghcr.io/richardr1126/openreader:4.4.0@sha256:2e3ec184dac71082646995a17309add008405827d81a020fb6d264360f7c1a49
     user: 1000:1000
     environment:
     - API_BASE=http://kokoro_web_1:8880/v1

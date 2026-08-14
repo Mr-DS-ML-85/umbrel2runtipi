@@ -1,6 +1,6 @@
 services:
   web:
-    image: johannesjo/super-productivity:latest
+    image: johannesjo/super-productivity:v18.19.0@sha256:ae91fe9ac19561e0f3669d15a2c4c71d7a75c43a29eb44ddc010ae50d1f63c82
     restart: unless-stopped
     labels:
     - runtipi.managed=true

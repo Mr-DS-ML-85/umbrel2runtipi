@@ -1,6 +1,6 @@
 services:
   ui:
-    image: joni1802/ts3-manager:latest
+    image: joni1802/ts3-manager:v2.2.1@sha256:d69890c323e8715cef0f625036c7c51ec7e7da321438897633fff5df83da1e39
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
@@ -12,7 +12,7 @@ services:
       internal_port: 8080
       is_main: true
   server:
-    image: teamspeak:latest
+    image: teamspeak:3.13.7@sha256:b5bdec55bc87b992c5658e739f3ce465644efa6d997633110b12be3dc3a10796
     restart: unless-stopped
     stop_grace_period: 1m
     ports:

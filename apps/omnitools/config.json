@@ -7,7 +7,7 @@
   "port": 8681,
   "id": "omnitools",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "0.6.0",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102922,
-  "updated_at": 1786708102922,
+  "created_at": 1786708752750,
+  "updated_at": 1786708752750,
   "min_tipi_version": "4.5.0"
 }

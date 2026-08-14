@@ -7,7 +7,7 @@
   "port": 4859,
   "id": "homey",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "13.4.0",
   "categories": [
     "automation"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102721,
-  "updated_at": 1786708102721,
+  "created_at": 1786708752549,
+  "updated_at": 1786708752549,
   "min_tipi_version": "4.5.0"
 }

@@ -7,7 +7,7 @@
   "port": 9009,
   "id": "cobalt",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "11.5",
   "categories": [
     "media"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102583,
-  "updated_at": 1786708102583,
+  "created_at": 1786708752411,
+  "updated_at": 1786708752411,
   "min_tipi_version": "4.5.0"
 }

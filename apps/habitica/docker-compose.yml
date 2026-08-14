@@ -1,6 +1,6 @@
 services:
   server:
-    image: awinterstein/habitica-server:latest
+    image: awinterstein/habitica-server:5.48.8@sha256:1352a3e100b9f6c297086d58d23d5b520198aa186f5293e1d356ea531ec70bfd
     restart: unless-stopped
     command: 'sh -c "perl -0pi -e ''s/upgradeInsecureRequests: IS_PROD \\? \\[\\] : null,?/upgradeInsecureRequests: null/g'' /var/lib/habitica/website/server/middlewares/index.js /var/lib/habitica/website/transpiled-babel/middlewares/index.js && printenv | grep -v ''no_proxy'' >> /etc/environment && /etc/init.d/cron start && node /var/lib/habitica/website/transpiled-babel/index.js"'
     depends_on:
@@ -15,7 +15,7 @@ services:
       internal_port: 3000
       is_main: true
   mongo:
-    image: mongo:latest
+    image: mongo:8.0.11@sha256:5941949d3887e40be5175787aade07dc052f2cddb8ce21b740c3948eba6a3ed0
     restart: unless-stopped
     command:
     - --replSet

@@ -12,6 +12,13 @@ This version of ChatBot UI supports both GPT-3.5 and GPT-4 models. Conversations
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/chatbot-ui/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/chatbot-ui/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/chatbot-ui/3.jpg)
+
 ## Links
 
 - Website: https://github.com/mckaywrigley/chatbot-ui

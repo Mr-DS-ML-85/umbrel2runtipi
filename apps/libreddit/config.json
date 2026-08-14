@@ -7,7 +7,7 @@
   "port": 7420,
   "id": "libreddit",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "0.22.9",
   "categories": [
     "social"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708102790,
-  "updated_at": 1786708102790,
+  "created_at": 1786708752618,
+  "updated_at": 1786708752618,
   "min_tipi_version": "4.5.0"
 }

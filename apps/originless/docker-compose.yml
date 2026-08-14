@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/besoeasy/originless:latest
+    image: ghcr.io/besoeasy/originless:0.1.0@sha256:f4f232052e2763eb23bd9019da885f5700fae947b8760a695be6774bfc9c38b9
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 5m

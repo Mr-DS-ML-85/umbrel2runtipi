@@ -1,6 +1,6 @@
 services:
   init_perms:
-    image: encryptedenergy/ee-gateway-worker:latest
+    image: encryptedenergy/ee-gateway-worker:0.8.0@sha256:816e236ff47052e5d081cc4a99f56c40434df33aba1b0efd0badc4d30902ae04
     user: 0:0
     entrypoint:
     - sh
@@ -12,7 +12,7 @@ services:
     labels:
     - runtipi.managed=true
   ui:
-    image: encryptedenergy/ee-gateway-ui:latest
+    image: encryptedenergy/ee-gateway-ui:0.6.4@sha256:c30e4b2a2bd640005499e4fe564a04f6650b920c0726b15e2437eaa41ffb25eb
     init: true
     restart: unless-stopped
     depends_on:
@@ -30,7 +30,7 @@ services:
       internal_port: 8080
       is_main: true
   worker:
-    image: encryptedenergy/ee-gateway-worker:latest
+    image: encryptedenergy/ee-gateway-worker:0.8.0@sha256:816e236ff47052e5d081cc4a99f56c40434df33aba1b0efd0badc4d30902ae04
     init: true
     restart: unless-stopped
     depends_on:
