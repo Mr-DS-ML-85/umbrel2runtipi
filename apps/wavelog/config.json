@@ -4,7 +4,7 @@
   "available": true,
   "exposable": true,
   "dynamic_config": true,
-  "port": 8184,
+  "port": 8170,
   "id": "wavelog",
   "tipi_version": 1,
   "version": "latest",
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786690389026,
-  "updated_at": 1786690389026,
+  "created_at": 1786691341602,
+  "updated_at": 1786691341602,
   "min_tipi_version": "4.0.0"
 }

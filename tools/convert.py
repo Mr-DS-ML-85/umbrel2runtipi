@@ -550,6 +550,58 @@ def placeholder_logo(out_dir: Path, label: str):
         raise
 
 
+# Images that are generic infrastructure ("main" service of both stores) and
+# should NOT make two apps look like the same product. Everything else counts
+# as an app-specific image.
+INFRA_IMAGES = {
+    name.lower()
+    for name in (
+        "postgres", "postgresql", "redis", "nginx", "mariadb", "mysql",
+        "mongo", "memcached", "valkey", "clickhouse", "meilisearch",
+        "getmeili/meilisearch", "onlyoffice/documentserver", "guacamole/guacd",
+        "alpine", "bash", "busybox", "debian", "ubuntu", "traefik", "caddy",
+        "zenika/alpine-chrome", "getumbrel/electrs", "getumbrel/docker-bitcoind",
+        "postgres", "mariadb", "memcached", "valkey",
+    )
+}
+
+# Hand-verified duplicates whose id/name differ between the Umbrel and Runtipi
+# stores but which are the same product (confirmed by their images).
+DEDUPE_ALIASES = {
+    "adguard-home": "adguard",
+    "changedetection-io": "changedetection",
+    "firefly-iii-importer": "firefly-iii-data-importer",
+    "kiwix": "kiwix-serve",
+    "mosquitto": "eclipse-mosquitto",
+    "mqttx-web": "mqttx",
+    # umbrel's ollama is the generic/CPU build; amd/nvidia are distinct variants
+    "ollama": "ollama-cpu",
+    "plausible": "plausible-ce",
+    "stalwart": "stalwart-mail",
+    "trilium-notes": "trilium",
+    "umami": "umami-analytics",
+}
+
+
+def image_repos(image_refs: list[str]) -> set[str]:
+    """Normalise docker-compose image refs to {registry/org/repo} minus tag/digest."""
+    repos = set()
+    for img in image_refs or []:
+        if not img:
+            continue
+        repo = img.split("@")[0].rsplit(":", 1)[0]
+        repo = re.sub(
+            r"^(docker\.io|ghcr\.io|quay\.io|gcr\.io|registry\.|index\.docker\.io)/",
+            "", repo,
+        )
+        repos.add(repo)
+    return repos
+
+
+def app_specific_images(images: set[str]) -> set[str]:
+    return {i for i in images if i.lower() not in INFRA_IMAGES}
+
+
 def load_runtipi_catalog() -> dict:
     catalog = {}
     for cfg in (RUNTIPI_REPO / "apps").glob("*/config.json"):
@@ -557,11 +609,24 @@ def load_runtipi_catalog() -> dict:
             c = json.loads(cfg.read_text())
         except Exception:
             continue
-        catalog[c["id"].lower()] = c.get("name", c["id"])
+        rid = c["id"].lower()
+        images = set()
+        try:
+            comp = yaml.safe_load(
+                (RUNTIPI_REPO / "apps" / c["id"] / "docker-compose.yml").read_text()
+            ) or {}
+            for svc in (comp.get("services") or {}).values():
+                images |= image_repos([svc.get("image", "")])
+        except Exception:
+            pass
+        catalog[rid] = {
+            "name": c.get("name", c["id"]),
+            "images": app_specific_images(images),
+        }
     return catalog
 
 
-def match_runtipi(umbrel_id: str, umbrel_name: str, catalog: dict):
+def match_runtipi(umbrel_id: str, umbrel_name: str, umbrel_images: set[str], catalog: dict):
     ru_id = umbrel_id.lower()
     if ru_id in catalog:
         return ("id", ru_id)
@@ -571,8 +636,25 @@ def match_runtipi(umbrel_id: str, umbrel_name: str, catalog: dict):
             return ("normalized-id", rid)
     nname = norm(umbrel_name)
     for rid, rname in catalog.items():
-        if norm(rname) == nname:
+        if norm(rname["name"]) == nname:
             return ("name", rid)
+    if ru_id in DEDUPE_ALIASES and DEDUPE_ALIASES[ru_id] in catalog:
+        return ("alias", DEDUPE_ALIASES[ru_id])
+    # Image-based fallback: only match when the two apps share at least one
+    # app-specific image AND one normalized name is contained in the other,
+    # and exactly one runtipi app qualifies (avoids variant collisions like
+    # ollama-cpu/amd/nvidia).
+    my_images = app_specific_images(umbrel_images)
+    if my_images:
+        candidates = []
+        for rid, info in catalog.items():
+            if not (my_images & info["images"]):
+                continue
+            rname = norm(info["name"])
+            if nname and rname and (nname in rname or rname in nname):
+                candidates.append(rid)
+        if len(candidates) == 1:
+            return ("image", candidates[0])
     return None
 
 
@@ -618,7 +700,10 @@ def main():
         umbrel_name = manifest.get("name") or app_id
 
         # ---- dedupe against runtipi --------------------------------------
-        m = match_runtipi(umbrel_id, umbrel_name, catalog)
+        umbrel_images = set()
+        for svc in (compose.get("services") or {}).values():
+            umbrel_images |= image_repos([svc.get("image", "")])
+        m = match_runtipi(umbrel_id, umbrel_name, umbrel_images, catalog)
         if m:
             skipped_dedup.append((app_id, m[1], m[0]))
             continue

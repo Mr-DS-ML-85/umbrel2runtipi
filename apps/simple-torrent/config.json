@@ -4,7 +4,7 @@
   "available": true,
   "exposable": true,
   "dynamic_config": true,
-  "port": 8165,
+  "port": 8124,
   "id": "simple-torrent",
   "tipi_version": 1,
   "version": "latest",
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786690388917,
-  "updated_at": 1786690388917,
+  "created_at": 1786691341485,
+  "updated_at": 1786691341485,
   "min_tipi_version": "4.0.0"
 }

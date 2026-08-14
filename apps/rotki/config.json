@@ -4,7 +4,7 @@
   "available": true,
   "exposable": true,
   "dynamic_config": true,
-  "port": 8124,
+  "port": 8105,
   "id": "rotki",
   "tipi_version": 1,
   "version": "latest",
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786690388885,
-  "updated_at": 1786690388885,
+  "created_at": 1786691341449,
+  "updated_at": 1786691341449,
   "min_tipi_version": "4.0.0"
 }

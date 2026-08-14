@@ -1,17 +1,15 @@
 # Umbrel -> Runtipi conversion report
 
 - Umbrel apps: 391  
-- Already in Runtipi official store (deduped): 112  
+- Already in Runtipi official store (deduped): 123  
 - Require Umbrel bitcoin/lightning infra (skipped): 77  
 - Skipped other: 0  
 - Conversion failures: 0  
-- **Converted: 202**  
+- **Converted: 191**  
 
 
 ## Converted apps
 
-- **AdGuard Home** (`adguard-home`) port 8105, main=server, internal=8095
-  - notes: host networking app, internal_port set to umbrel port; assigned new host port 8105 (umbrel port 8095 already used)
 - **AdventureLog** (`adventurelog`) port 8018, main=web, internal=3000
   - notes: removed umbrel app_proxy service; assigned new host port 8018 (umbrel port 8015 already used)
 - **Agent Zero** (`agent-zero`) port 3015, main=web, internal=80
@@ -61,8 +59,6 @@
   - auto-generated secret env vars: APP_SEED
 - **Cashu.me Wallet** (`cashu-me`) port 3194, main=web, internal=80
   - notes: removed umbrel app_proxy service
-- **changedetection.io** (`changedetection-io`) port 5037, main=app, internal=5000
-  - notes: removed umbrel app_proxy service
 - **ChatBot UI** (`chatbot-ui`) port 10101, main=web, internal=3000
   - notes: removed umbrel app_proxy service
 - **Chromium** (`chromium`) port 30099, main=chromium, internal=3000
@@ -111,8 +107,6 @@
   - notes: removed umbrel app_proxy service
   - auto-generated secret env vars: APP_PASSWORD
 - **File Drop** (`file-drop`) port 3232, main=app, internal=3232
-  - notes: removed umbrel app_proxy service
-- **Firefly III Importer** (`firefly-iii-importer`) port 30010, main=importer, internal=8080
   - notes: removed umbrel app_proxy service
 - **Firefox** (`firefox`) port 3434, main=server, internal=3000
   - notes: removed umbrel app_proxy service
@@ -184,8 +178,6 @@
 - **KitchenOwl** (`kitchenowl`) port 8474, main=web, internal=8080
   - notes: removed umbrel app_proxy service
   - auto-generated secret env vars: APP_PASSWORD
-- **Kiwix** (`kiwix`) port 8898, main=web, internal=8080
-  - notes: removed umbrel app_proxy service
 - **Kokoro** (`kokoro`) port 8877, main=web, internal=8880
   - notes: removed umbrel app_proxy service
 - **Komodo** (`komodo`) port 9120, main=core, internal=9120
@@ -239,10 +231,6 @@
   - notes: removed umbrel app_proxy service
 - **Morphos server** (`morphos`) port 3778, main=web, internal=8080
   - notes: removed umbrel app_proxy service
-- **Mosquitto** (`mosquitto`) port 9021, main=web, internal=80
-  - notes: removed umbrel app_proxy service
-- **MQTTX Web** (`mqttx-web`) port 9012, main=app, internal=80
-  - notes: removed umbrel app_proxy service
 - **Music Assistant** (`music-assistant`) port 8896, main=web, internal=8896
   - notes: host networking app, internal_port set to umbrel port
 - **MySpeed** (`myspeed`) port 5216, main=web, internal=5216
@@ -270,8 +258,6 @@
   - notes: removed umbrel app_proxy service
 - **OctoPrint** (`octoprint`) port 5003, main=web, internal=5000
   - notes: removed umbrel app_proxy service
-- **Ollama** (`ollama`) port 11437, main=ollama, internal=11434
-  - notes: removed umbrel app_proxy service; assigned new host port 11437 (umbrel port 11434 already used)
 - **OmniTools** (`omnitools`) port 8681, main=app, internal=80
   - notes: removed umbrel app_proxy service; assigned new host port 8681 (umbrel port 8678 already used)
 - **ONLYOFFICE Docs** (`onlyoffice-nextcloud`) port 3014, main=web, internal=3000
@@ -315,9 +301,6 @@
 - **Plane** (`plane`) port 8762, main=nginx, internal=8762
   - notes: removed umbrel app_proxy service; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available
   - auto-generated secret env vars: APP_PASSWORD, APP_SEED
-- **Plausible Analytics** (`plausible`) port 9093, main=plausible, internal=8000
-  - notes: removed umbrel app_proxy service
-  - auto-generated secret env vars: APP_PLAUSIBLE_VAULT_KEY, APP_SEED
 - **PocketBase** (`pocketbase`) port 5400, main=app, internal=8090
   - notes: removed umbrel app_proxy service
 - **Poznote** (`poznote`) port 8389, main=app, internal=80
@@ -341,8 +324,8 @@
   - notes: removed umbrel app_proxy service; assigned new host port 8139 (umbrel port 8135 already used)
 - **RoboSats** (`robosats`) port 12596, main=web, internal=12596
   - notes: removed umbrel app_proxy service
-- **rotki** (`rotki`) port 8124, main=web, internal=80
-  - notes: removed umbrel app_proxy service; assigned new host port 8124 (umbrel port 8084 already used)
+- **rotki** (`rotki`) port 8105, main=web, internal=80
+  - notes: removed umbrel app_proxy service; assigned new host port 8105 (umbrel port 8084 already used)
 - **Route96** (`route96`) port 8019, main=server, internal=8002
   - notes: removed umbrel app_proxy service; assigned new host port 8019 (umbrel port 8002 already used)
 - **RustDesk Server** (`rustdesk-server`) port 21080, main=web, internal=80
@@ -365,8 +348,8 @@
   - notes: removed umbrel app_proxy service
 - **Sikka** (`sikka`) port 64552, main=web, internal=64552
   - notes: removed umbrel app_proxy service
-- **SimpleTorrent** (`simple-torrent`) port 8165, main=server, internal=8086
-  - notes: removed umbrel app_proxy service; assigned new host port 8165 (umbrel port 8086 already used)
+- **SimpleTorrent** (`simple-torrent`) port 8124, main=server, internal=8086
+  - notes: removed umbrel app_proxy service; assigned new host port 8124 (umbrel port 8086 already used)
 - **SkyBro** (`skybro`) port 7437, main=web, internal=5000
   - notes: removed umbrel app_proxy service
 - **Slink** (`slink`) port 8811, main=web, internal=3000
@@ -381,9 +364,6 @@
   - notes: removed umbrel app_proxy service
 - **SQLite Browser** (`sqlitebrowser`) port 8887, main=app, internal=3000
   - notes: removed umbrel app_proxy service
-- **Stalwart** (`stalwart`) port 8746, main=server, internal=8080
-  - notes: removed umbrel app_proxy service; assigned new host port 8746 (umbrel port 8745 already used)
-  - auto-generated secret env vars: APP_PASSWORD
 - **Stash** (`stash`) port 5173, main=web, internal=5173
   - notes: removed umbrel app_proxy service
 - **Strix** (`strix`) port 4568, main=web, internal=4567
@@ -421,17 +401,12 @@
 - **Transmute** (`transmute`) port 3313, main=web, internal=3313
   - notes: removed umbrel app_proxy service
   - auto-generated secret env vars: APP_SEED
-- **Trilium Notes** (`trilium-notes`) port 3779, main=server, internal=8080
-  - notes: removed umbrel app_proxy service
 - **Trip** (`trip`) port 8980, main=app, internal=8000
   - notes: removed umbrel app_proxy service
 - **Twenty** (`twenty`) port 2020, main=server, internal=3000
   - notes: removed umbrel app_proxy service
-- **Umami** (`umami`) port 25727, main=app, internal=3000
-  - notes: removed ui port mapping(s) handled by runtipi: ['25727:3000']
-  - auto-generated secret env vars: APP_SEED
-- **Urbit** (`urbit`) port 8170, main=manager, internal=8090
-  - notes: removed umbrel app_proxy service; assigned new host port 8170 (umbrel port 8090 already used)
+- **Urbit** (`urbit`) port 8165, main=manager, internal=8090
+  - notes: removed umbrel app_proxy service; assigned new host port 8165 (umbrel port 8090 already used)
   - auto-generated secret env vars: APP_PASSWORD
 - **ValorGrid** (`valorgrid`) port 1325, main=app, internal=1325
   - notes: removed umbrel app_proxy service
@@ -440,8 +415,8 @@
 - **Wanderer** (`wanderer`) port 3111, main=web, internal=3000
   - notes: removed umbrel app_proxy service
   - auto-generated secret env vars: APP_PASSWORD, APP_SEED, APP_WANDERER_ENCRYPTION_KEY
-- **Wavelog** (`wavelog`) port 8184, main=app, internal=80
-  - notes: removed umbrel app_proxy service; assigned new host port 8184 (umbrel port 8099 already used)
+- **Wavelog** (`wavelog`) port 8170, main=app, internal=80
+  - notes: removed umbrel app_proxy service; assigned new host port 8170 (umbrel port 8099 already used)
 - **Wealthfolio** (`wealthfolio`) port 8883, main=server, internal=8088
   - notes: removed umbrel app_proxy service; assigned new host port 8883 (umbrel port 8880 already used)
   - auto-generated secret env vars: APP_WEALTHFOLIO_SECRET_KEY
@@ -457,8 +432,8 @@
   - auto-generated secret env vars: APP_SEED
 - **Yucca** (`yucca`) port 9910, main=yucca, internal=9910
   - notes: removed umbrel app_proxy service
-- **Yuvomi** (`yuvomi`) port 8187, main=web, internal=3000
-  - notes: removed umbrel app_proxy service; assigned new host port 8187 (umbrel port 8180 already used)
+- **Yuvomi** (`yuvomi`) port 8184, main=web, internal=3000
+  - notes: removed umbrel app_proxy service; assigned new host port 8184 (umbrel port 8180 already used)
   - auto-generated secret env vars: APP_SEED
 - **Zabbix** (`zabbix`) port 10052, main=zabbix-frontend, internal=8080
   - notes: removed umbrel app_proxy service
@@ -472,6 +447,7 @@
 ## Deduplicated (already in Runtipi)
 
 - `activepieces` matched runtipi `activepieces` (id)
+- `adguard-home` matched runtipi `adguard` (alias)
 - `affine` matched runtipi `affine` (id)
 - `archivebox` matched runtipi `archivebox` (id)
 - `audiobookshelf` matched runtipi `audiobookshelf` (id)
@@ -482,6 +458,7 @@
 - `bookstack` matched runtipi `bookstack` (id)
 - `budibase` matched runtipi `budibase` (id)
 - `calibre-web` matched runtipi `calibre-web` (id)
+- `changedetection-io` matched runtipi `changedetection` (alias)
 - `chatpad-ai` matched runtipi `chatpad` (name)
 - `cloudflared` matched runtipi `cloudflared` (id)
 - `code-server` matched runtipi `code-server` (id)
@@ -495,6 +472,7 @@
 - `excalidraw` matched runtipi `excalidraw` (id)
 - `file-browser` matched runtipi `filebrowser` (normalized-id)
 - `firefly-iii` matched runtipi `firefly-iii` (id)
+- `firefly-iii-importer` matched runtipi `firefly-iii-data-importer` (alias)
 - `flaresolverr` matched runtipi `flaresolverr` (id)
 - `flatnotes` matched runtipi `flatnotes` (id)
 - `forgejo` matched runtipi `forgejo` (id)
@@ -517,6 +495,7 @@
 - `jellyfin` matched runtipi `jellyfin` (id)
 - `jellyseerr` matched runtipi `jellyseerr` (id)
 - `kimai` matched runtipi `kimai` (id)
+- `kiwix` matched runtipi `kiwix-serve` (alias)
 - `librephotos` matched runtipi `librephotos` (id)
 - `librespeed` matched runtipi `librespeed` (id)
 - `libretranslate` matched runtipi `libretranslate` (id)
@@ -531,6 +510,8 @@
 - `mempool` matched runtipi `mempool` (id)
 - `metube` matched runtipi `metube` (id)
 - `minio` matched runtipi `minio` (id)
+- `mosquitto` matched runtipi `eclipse-mosquitto` (alias)
+- `mqttx-web` matched runtipi `mqttx` (alias)
 - `mstream` matched runtipi `mstream` (id)
 - `n8n` matched runtipi `n8n-2` (name)
 - `navidrome` matched runtipi `navidrome` (id)
@@ -540,6 +521,7 @@
 - `node-red` matched runtipi `nodered` (normalized-id)
 - `node-red-standalone` matched runtipi `nodered` (name)
 - `ntfy` matched runtipi `ntfy` (id)
+- `ollama` matched runtipi `ollama-cpu` (alias)
 - `onedev` matched runtipi `onedev` (id)
 - `open-webui` matched runtipi `open-webui` (id)
 - `openclaw` matched runtipi `openclaw` (id)
@@ -553,6 +535,7 @@
 - `pinchflat` matched runtipi `pinchflat` (id)
 - `pingvin-share` matched runtipi `pingvin-share` (id)
 - `planka` matched runtipi `planka` (id)
+- `plausible` matched runtipi `plausible-ce` (alias)
 - `plex` matched runtipi `plex` (id)
 - `portainer` matched runtipi `portainer` (id)
 - `privatebin` matched runtipi `privatebin` (id)
@@ -564,13 +547,16 @@
 - `sabnzbd` matched runtipi `sabnzbd` (id)
 - `searxng` matched runtipi `searxng` (id)
 - `sonarr` matched runtipi `sonarr` (id)
+- `stalwart` matched runtipi `stalwart-mail` (alias)
 - `stirling-pdf` matched runtipi `stirling-pdf` (id)
 - `syncthing` matched runtipi `syncthing` (id)
 - `tailscale` matched runtipi `tailscale` (id)
 - `tandoor` matched runtipi `tandoor` (id)
 - `tautulli` matched runtipi `tautulli` (id)
 - `transmission` matched runtipi `transmission` (id)
+- `trilium-notes` matched runtipi `trilium` (alias)
 - `tubearchivist` matched runtipi `tubearchivist` (id)
+- `umami` matched runtipi `umami-analytics` (alias)
 - `uptime-kuma` matched runtipi `uptime-kuma` (id)
 - `vaultwarden` matched runtipi `vaultwarden` (id)
 - `vikunja` matched runtipi `vikunja` (id)
