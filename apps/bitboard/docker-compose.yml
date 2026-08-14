@@ -1,7 +1,6 @@
 services:
   app:
     image: ghcr.io/egzola/bitboard:1.0.0
-    user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
     environment:

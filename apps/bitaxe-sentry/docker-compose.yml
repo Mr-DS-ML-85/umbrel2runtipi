@@ -1,7 +1,6 @@
 services:
   sentry:
     image: zachprice105/bitaxe-sentry:latest
-    user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
     volumes:
@@ -13,7 +12,6 @@ services:
     - runtipi.managed=true
   web:
     image: zachprice105/bitaxe-sentry:latest
-    user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
     volumes:

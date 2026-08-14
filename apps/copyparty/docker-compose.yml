@@ -2,7 +2,6 @@ services:
   web:
     image: ghcr.io/9001/copyparty-ac:latest
     restart: unless-stopped
-    user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/config/config.conf:/cfg/config.conf:ro
     - ${APP_DATA_DIR}/data/cp_data:/cfg/hists

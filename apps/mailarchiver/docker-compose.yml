@@ -16,7 +16,6 @@ services:
   postgres:
     image: postgres:latest
     restart: unless-stopped
-    user: 1000:1000
     environment:
       POSTGRES_DB: mailarchiver
       POSTGRES_USER: mailarchiver

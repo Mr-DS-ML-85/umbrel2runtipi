@@ -1,7 +1,6 @@
 services:
   web:
     image: ghcr.io/richardr1126/openreader:latest
-    user: 1000:1000
     environment:
     - API_BASE=http://kokoro_web_1:8880/v1
     - BASE_URL=${APP_PROTOCOL:-http}://${APP_DOMAIN}

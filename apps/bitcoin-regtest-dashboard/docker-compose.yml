@@ -1,7 +1,6 @@
 services:
   bitcoin:
     image: ghcr.io/getumbrel/docker-bitcoind:v31.0
-    user: 1000:1000
     restart: unless-stopped
     entrypoint:
     - /bin/sh
@@ -22,7 +21,6 @@ services:
     - runtipi.managed=true
   electrs:
     image: getumbrel/electrs:latest
-    user: 1000:1000
     restart: unless-stopped
     ports:
     - 60401:50001
@@ -42,7 +40,6 @@ services:
     - runtipi.managed=true
   dashboard:
     image: coreylphillips/bitcoin-regtest-dashboard:v1.0.4
-    user: 1000:1000
     restart: unless-stopped
     environment:
       PORT: 3000

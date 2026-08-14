@@ -36,6 +36,7 @@
   - notes: removed umbrel app_proxy service
 - **BFFless** (`bffless`) port 5537, main=nginx, internal=5537
   - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_SEED
 - **Bisq 2 Node** (`bisq2-node`) port 8390, main=server, internal=8091
   - notes: removed umbrel app_proxy service
 - **Bitaxe Sentry** (`bitaxe-sentry`) port 7070, main=web, internal=7070

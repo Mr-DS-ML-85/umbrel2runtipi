@@ -8,7 +8,6 @@ services:
     - --port
     - '4096'
     restart: unless-stopped
-    user: 1000:1000
     environment:
       HOME: /home/opencode
     volumes:

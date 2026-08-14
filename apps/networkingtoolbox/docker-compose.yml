@@ -1,7 +1,6 @@
 services:
   app:
     image: ghcr.io/lissy93/networking-toolbox:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       NODE_ENV: production

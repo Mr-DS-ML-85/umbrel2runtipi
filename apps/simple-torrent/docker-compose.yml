@@ -1,7 +1,6 @@
 services:
   server:
     image: boypt/cloud-torrent:latest
-    user: 1000:1000
     restart: unless-stopped
     command: '--port=8086 --config-path /config/simple-torrent.json
 

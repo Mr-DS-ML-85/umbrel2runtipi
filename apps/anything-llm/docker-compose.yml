@@ -2,7 +2,6 @@ services:
   app:
     image: mintplexlabs/anythingllm:latest
     restart: unless-stopped
-    user: 1000:1000
     cap_add:
     - SYS_ADMIN
     environment:

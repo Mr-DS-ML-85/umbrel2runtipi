@@ -1,7 +1,6 @@
 services:
   app:
     image: ghcr.io/besoeasy/originless:latest
-    user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 5m
     ports:

@@ -1,7 +1,6 @@
 services:
   web:
     image: ghcr.io/we-promise/sure:latest
-    user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/rails:/rails/storage
     restart: unless-stopped
@@ -28,7 +27,6 @@ services:
       is_main: true
   worker:
     image: ghcr.io/we-promise/sure:latest
-    user: 1000:1000
     command: bundle exec sidekiq
     volumes:
     - ${APP_DATA_DIR}/data/rails:/rails/storage
@@ -53,7 +51,6 @@ services:
     - runtipi.managed=true
   db:
     image: postgres:latest
-    user: 1000:1000
     restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/postgres:/data
@@ -72,7 +69,6 @@ services:
     - runtipi.managed=true
   redis:
     image: redis:latest
-    user: 1000:1000
     restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/redis:/data

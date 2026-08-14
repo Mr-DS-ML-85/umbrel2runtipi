@@ -1,7 +1,6 @@
 services:
   ui:
     image: joni1802/ts3-manager:latest
-    user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
     environment:

@@ -2,7 +2,6 @@ services:
   web:
     image: ghcr.io/ersatztv/legacy:latest
     restart: unless-stopped
-    user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/config:/config
     - ${APP_DATA_DIR}/data/transcode:/transcode

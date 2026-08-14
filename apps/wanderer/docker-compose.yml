@@ -1,7 +1,6 @@
 services:
   web:
     image: flomp/wanderer-web:latest
-    user: 1000:1000
     depends_on:
       search:
         condition: service_healthy
@@ -47,7 +46,6 @@ services:
     - runtipi.managed=true
   db:
     image: flomp/wanderer-db:latest
-    user: 1000:1000
     depends_on:
       search:
         condition: service_healthy

@@ -2,7 +2,6 @@ services:
   app:
     image: ghcr.io/coderamp-labs/gitingest:main
     restart: unless-stopped
-    user: 1000:1000
     environment:
     - ALLOWED_HOSTS=localhost,localhost,${APP_GITINGEST_LOCAL_IPS}
     labels:

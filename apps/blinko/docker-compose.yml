@@ -13,7 +13,6 @@ services:
       timeout: 45s
       interval: 10s
       retries: 10
-    user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/db:/var/lib/postgresql/data:rw
     environment:
@@ -41,7 +40,6 @@ services:
       NEXT_PUBLIC_BASE_URL: ${APP_PROTOCOL:-http}://${APP_DOMAIN}
       NEXTAUTH_SECRET: ${APP_SEED}
       DATABASE_URL: postgresql://blinkouser:blinkopass@db:5432/blinko
-    user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/app:/app/.blinko:rw
     logging:

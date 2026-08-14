@@ -1,7 +1,6 @@
 services:
   server:
     image: twentycrm/twenty:latest
-    user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/server-local-data:/app/packages/twenty-server/.local-storage
     - ${APP_DATA_DIR}/data/docker-data:/app/docker-data
@@ -31,7 +30,6 @@ services:
       is_main: true
   worker:
     image: twentycrm/twenty:latest
-    user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/server-local-data:/app/packages/twenty-server/.local-storage
     command:
@@ -54,7 +52,6 @@ services:
     - runtipi.managed=true
   db:
     image: postgres:latest
-    user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/db-data:/var/lib/postgresql/data
     environment:
@@ -71,7 +68,6 @@ services:
     - runtipi.managed=true
   redis:
     image: redis:latest
-    user: 1000:1000
     restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/redis:/data

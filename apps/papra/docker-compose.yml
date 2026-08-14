@@ -1,7 +1,6 @@
 services:
   server:
     image: ghcr.io/papra-hq/papra:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
     - AUTH_SECRET=${APP_SEED}

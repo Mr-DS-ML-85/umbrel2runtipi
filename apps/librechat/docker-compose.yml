@@ -2,7 +2,6 @@ services:
   api:
     image: ghcr.io/danny-avila/librechat:latest
     restart: unless-stopped
-    user: 1000:1000
     command: npm run backend
     environment:
     - HOST=0.0.0.0
@@ -34,7 +33,6 @@ services:
   mongodb:
     image: mongo:latest
     restart: unless-stopped
-    user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/db:/data/db
     command: mongod --noauth
@@ -43,7 +41,6 @@ services:
   meilisearch:
     image: getmeili/meilisearch:latest
     restart: unless-stopped
-    user: 1000:1000
     environment:
     - MEILI_HOST=http://meilisearch:7700
     - MEILI_NO_ANALYTICS=true

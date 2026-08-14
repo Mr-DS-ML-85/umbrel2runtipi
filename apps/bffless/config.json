@@ -16,12 +16,21 @@
   "author": "BFFless",
   "source": "https://github.com/bffless/ce",
   "website": "https://docs.bffless.app/deployment/umbrel/",
-  "form_fields": [],
+  "form_fields": [
+    {
+      "label": "App seed",
+      "type": "random",
+      "env_variable": "APP_SEED",
+      "min": 32,
+      "required": false,
+      "hint": "Seeds the backend's derived encryption/JWT keys."
+    }
+  ],
   "supported_architectures": [
     "arm64",
     "amd64"
   ],
-  "created_at": 1786720647139,
-  "updated_at": 1786720647139,
+  "created_at": 1786722644826,
+  "updated_at": 1786722644826,
   "min_tipi_version": "4.5.0"
 }

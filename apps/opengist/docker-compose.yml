@@ -1,7 +1,6 @@
 services:
   server:
     image: ghcr.io/thomiceli/opengist:latest
-    user: 1000:1000
     restart: unless-stopped
     ports:
     - 2224:2224

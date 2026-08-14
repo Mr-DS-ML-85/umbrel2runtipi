@@ -1,7 +1,6 @@
 services:
   syslog:
     image: linuxserver/syslog-ng:latest
-    user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
     environment:
@@ -26,7 +25,6 @@ services:
     - runtipi.managed=true
   web:
     image: rickraven/logdy:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       LOGDY_MODE: follow

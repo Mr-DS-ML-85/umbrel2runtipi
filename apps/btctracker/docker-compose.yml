@@ -2,7 +2,6 @@ services:
   web:
     image: thewilqq/btc-tracker:latest
     restart: unless-stopped
-    user: 1000:1000
     environment:
     - NODE_ENV=production
     - PORT=3000

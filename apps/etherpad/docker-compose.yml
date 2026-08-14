@@ -43,7 +43,6 @@ services:
       POSTGRES_USER: admin
       PGDATA: /var/lib/postgresql/data/pgdata
     restart: unless-stopped
-    user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/postgres_data:/var/lib/postgresql/data/pgdata
     labels:

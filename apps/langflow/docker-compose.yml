@@ -1,7 +1,6 @@
 services:
   app:
     image: langflowai/langflow:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       LANGFLOW_CONFIG_DIR: /app/langflow
@@ -19,7 +18,6 @@ services:
       is_main: true
   db:
     image: postgres:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       POSTGRES_USER: langflow

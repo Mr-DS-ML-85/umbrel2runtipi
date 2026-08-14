@@ -1,7 +1,6 @@
 services:
   deepsea:
     image: ghcr.io/retropex/custom-dashboard-ocean:v2.0.4
-    user: 1000:1000
     restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data:/app/data/

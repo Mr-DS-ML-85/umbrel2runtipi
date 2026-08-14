@@ -2,7 +2,6 @@ services:
   web:
     image: ghcr.io/quad4-software/meshchatx:4.6.0-rc.4
     restart: unless-stopped
-    user: 1000:1000
     healthcheck:
       test:
       - CMD

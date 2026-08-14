@@ -1,7 +1,6 @@
 services:
   web:
     image: bitcoinscala/oracle-server-ui:latest
-    user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
     volumes:
@@ -29,7 +28,6 @@ services:
     - /bitcoin-s
     - --conf
     - /opt/docker/docker-application.conf
-    user: 1000:1000
     restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/oracleserver:/bitcoin-s

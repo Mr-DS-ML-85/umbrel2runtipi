@@ -3,10 +3,10 @@ services:
     image: a4004/onlyoffice-nextcloud-web:1.0.4
     restart: unless-stopped
     environment:
-    - DOCS_ADDRESS=http://localhost:$DOCSERVER_PORT
+    - DOCS_ADDRESS=${APP_PROTOCOL:-http}://${APP_DOMAIN}:$DOCSERVER_PORT
     - DOCS_INTERNAL_ADDRESS=http://documentserver
     - NEXTCLOUD_INTERNAL_ADDRESS=http://nextcloud_web_1
-    - NEXTCLOUD_WEB_URL=http://localhost:$APP_NEXTCLOUD_PORT
+    - NEXTCLOUD_WEB_URL=${APP_PROTOCOL:-http}://${APP_DOMAIN}:$APP_NEXTCLOUD_PORT
     labels:
     - runtipi.managed=true
     x-runtipi:

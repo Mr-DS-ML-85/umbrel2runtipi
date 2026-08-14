@@ -24,7 +24,6 @@ services:
       is_main: true
   postgis:
     image: imresamu/postgis:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       POSTGRES_USER: reitti
@@ -43,7 +42,6 @@ services:
     - runtipi.managed=true
   redis:
     image: redis:latest
-    user: 1000:1000
     restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/redis:/data

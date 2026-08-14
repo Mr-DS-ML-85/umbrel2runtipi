@@ -1,7 +1,6 @@
 services:
   web:
     image: anirdev/slink:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       TZ: UTC

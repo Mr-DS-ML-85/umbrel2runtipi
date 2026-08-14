@@ -1,7 +1,6 @@
 services:
   db:
     image: postgres:latest
-    user: 1000:1000
     mem_limit: 1g
     cpu_shares: 1024
     security_opt:
@@ -29,7 +28,6 @@ services:
     - runtipi.managed=true
   web:
     image: ghcr.io/caramelfur/picsur:latest
-    user: 1000:1000
     environment:
       PICSUR_PORT: 8286
       PICSUR_DB_HOST: db

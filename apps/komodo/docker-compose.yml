@@ -16,7 +16,6 @@ services:
     - runtipi.managed=true
   postgres:
     image: ghcr.io/ferretdb/postgres-documentdb:latest
-    user: 1000:1000
     labels:
       komodo.skip: null
       runtipi.managed: true
@@ -29,7 +28,6 @@ services:
       POSTGRES_DB: postgres
   ferretdb:
     image: ghcr.io/ferretdb/ferretdb:latest
-    user: 1000:1000
     labels:
       komodo.skip: null
       runtipi.managed: true
@@ -42,7 +40,6 @@ services:
       FERRETDB_POSTGRESQL_URL: postgres://admin:admin@postgres:5432/postgres
   core:
     image: ghcr.io/moghtech/komodo-core:latest
-    user: 1000:1000
     init: true
     labels:
       komodo.skip: null

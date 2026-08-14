@@ -1,7 +1,6 @@
 services:
   app:
     image: ghcr.io/readur/readur:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       DATABASE_URL: postgresql://readur:readur_password@postgres:5432/readur
@@ -43,7 +42,6 @@ services:
       is_main: true
   postgres:
     image: postgres:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       POSTGRES_USER: readur

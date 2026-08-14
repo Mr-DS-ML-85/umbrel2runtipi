@@ -2,7 +2,6 @@ services:
   app:
     image: ghcr.io/besoeasy/l-town:latest
     restart: unless-stopped
-    user: 1000:1000
     labels:
     - runtipi.managed=true
     x-runtipi:

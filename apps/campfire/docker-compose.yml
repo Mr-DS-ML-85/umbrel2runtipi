@@ -1,7 +1,6 @@
 services:
   server:
     image: ghcr.io/basecamp/once-campfire:main
-    user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/app:/rails/storage
     environment:
@@ -30,7 +29,6 @@ services:
       is_main: true
   redis:
     image: redis:latest
-    user: 1000:1000
     command: redis-server --save 60 1 --save 300 10 --save 900 100 --appendonly yes --loglevel warning
     volumes:
     - ${APP_DATA_DIR}/data/redis:/data

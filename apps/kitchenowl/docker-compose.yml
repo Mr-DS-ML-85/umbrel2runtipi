@@ -1,7 +1,6 @@
 services:
   web:
     image: tombursch/kitchenowl:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       JWT_SECRET_KEY: ${APP_PASSWORD}
@@ -21,7 +20,6 @@ services:
       is_main: true
   db:
     image: postgres:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       POSTGRES_DB: kitchenowl

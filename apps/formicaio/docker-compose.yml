@@ -1,7 +1,6 @@
 services:
   proxy:
     image: bochaco/formicaio_proxy:latest
-    user: 1000:1000
     environment:
       FORMICAIO_ADDR: host.docker.internal:3000
       FORMICAIO_PROXY_PORT: 52100
@@ -16,7 +15,6 @@ services:
   app:
     image: bochaco/formicaio:latest
     restart: unless-stopped
-    user: 1000:1000
     network_mode: host
     stop_grace_period: 5s
     environment:

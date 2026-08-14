@@ -1,7 +1,6 @@
 services:
   app:
     image: lissy93/domain-locker:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       DL_ENV_TYPE: selfHosted
@@ -30,7 +29,6 @@ services:
       is_main: true
   postgres:
     image: postgres:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       POSTGRES_DB: domain_locker

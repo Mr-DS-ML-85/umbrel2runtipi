@@ -58,7 +58,6 @@ services:
     - runtipi.managed=true
   postgres:
     image: postgres:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       POSTGRES_DB: mailflow
@@ -78,7 +77,6 @@ services:
     - runtipi.managed=true
   redis:
     image: redis:latest
-    user: 1000:1000
     restart: unless-stopped
     command: redis-server --save 60 1 --loglevel warning
     volumes:

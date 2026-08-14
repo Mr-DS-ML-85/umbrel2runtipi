@@ -1,7 +1,6 @@
 services:
   server:
     image: wealthfolio/wealthfolio:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       WF_LISTEN_ADDR: 0.0.0.0:8088

@@ -1,7 +1,6 @@
 services:
   db:
     image: mariadb:latest
-    user: 1000:1000
     environment:
       MYSQL_ROOT_PASSWORD: tyooe
       MYSQL_DATABASE: pastefy
@@ -14,7 +13,6 @@ services:
     - runtipi.managed=true
   app:
     image: interaapps/pastefy:latest
-    user: 1000:1000
     environment:
       HTTP_SERVER_CORS: '*'
       DATABASE_DRIVER: mysql

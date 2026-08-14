@@ -1,13 +1,12 @@
 services:
   web:
     image: dumbwareio/dumbpad:latest
-    user: 1000:1000
     restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data:/app/data
     environment:
       SITE_TITLE: DumbPad
-      BASE_URL: http://localhost:3000
+      BASE_URL: ${APP_PROTOCOL:-http}://${APP_DOMAIN}
     labels:
     - runtipi.managed=true
     x-runtipi:

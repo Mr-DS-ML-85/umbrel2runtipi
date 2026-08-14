@@ -1,7 +1,6 @@
 services:
   web:
     image: getumbrel/umbrel-nostr-relay:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       RELAY_HOST: relay
@@ -15,7 +14,6 @@ services:
       is_main: true
   relay:
     image: getumbrel/nostr-rs-relay:0.8.1
-    user: 1000:1000
     restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/relay/config.toml:/app/config.toml
@@ -24,7 +22,6 @@ services:
     - runtipi.managed=true
   relay-proxy:
     image: getumbrel/umbrel-nostr-relay-proxy:v1.1.0
-    user: 1000:1000
     restart: unless-stopped
     environment:
       RELAY_HOST: relay

@@ -20,7 +20,6 @@ services:
       is_main: true
   db:
     image: mariadb:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       MARIADB_DATABASE: booklore

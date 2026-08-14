@@ -2,7 +2,6 @@ services:
   homepage:
     image: loficafe/static-web-server-samba:1.0.1
     restart: unless-stopped
-    user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/samba/smb.conf:/public/smb.conf:ro
     labels:

@@ -1,7 +1,6 @@
 services:
   web:
     image: wger/server:latest
-    user: 1000:1000
     depends_on:
       db:
         condition: service_healthy
@@ -31,7 +30,6 @@ services:
     - runtipi.managed=true
   powersync_setup:
     image: wger/server:latest
-    user: 1000:1000
     command: ./manage.py setup-powersync-storage
     depends_on:
       db:
@@ -97,7 +95,6 @@ services:
       is_main: true
   db:
     image: postgres:latest
-    user: 1000:1000
     shm_size: 256mb
     environment:
       POSTGRES_USER: wger
@@ -131,7 +128,6 @@ services:
     - runtipi.managed=true
   cache:
     image: redis:latest
-    user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/redis-data:/data
     healthcheck:
@@ -145,7 +141,6 @@ services:
     - runtipi.managed=true
   celery_worker:
     image: wger/server:latest
-    user: 1000:1000
     command: /start-worker
     environment:
       SECRET_KEY: ${APP_SEED}
@@ -167,7 +162,6 @@ services:
     - runtipi.managed=true
   celery_beat:
     image: wger/server:latest
-    user: 1000:1000
     command: /start-beat
     environment:
       SECRET_KEY: ${APP_SEED}

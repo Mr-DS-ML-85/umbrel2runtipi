@@ -1,7 +1,6 @@
 services:
   app:
     image: alexlack/mattermost-app:v11.9.0
-    user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
     environment:
@@ -29,7 +28,6 @@ services:
       is_main: true
   db:
     image: alexlack/mattermost-db:v11.9.0
-    user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
     environment:

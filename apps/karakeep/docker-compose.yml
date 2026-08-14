@@ -1,7 +1,6 @@
 services:
   web:
     image: ghcr.io/karakeep-app/karakeep:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       MEILI_ADDR: http://meilisearch:7700
@@ -23,7 +22,6 @@ services:
       is_main: true
   chrome:
     image: zenika/alpine-chrome:latest
-    user: 1000:1000
     restart: unless-stopped
     command:
     - --no-sandbox
@@ -38,7 +36,6 @@ services:
     - runtipi.managed=true
   meilisearch:
     image: getmeili/meilisearch:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       MEILI_NO_ANALYTICS: 'true'

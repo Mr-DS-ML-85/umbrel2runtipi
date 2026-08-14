@@ -1,7 +1,6 @@
 services:
   dcrd:
     image: ghcr.io/karamble/dcrpulse-dcrd:latest
-    user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 5m
     volumes:
@@ -29,7 +28,6 @@ services:
     - runtipi.managed=true
   dcrwallet:
     image: ghcr.io/karamble/dcrpulse-dcrwallet:latest
-    user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
     volumes:
@@ -63,7 +61,6 @@ services:
     - runtipi.managed=true
   dashboard:
     image: ghcr.io/karamble/dcrpulse-dashboard:latest
-    user: 1000:1000
     restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data:/app-data:ro

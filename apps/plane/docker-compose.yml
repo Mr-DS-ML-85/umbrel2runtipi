@@ -44,7 +44,6 @@ services:
       is_main: true
   db:
     image: postgres:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       NGINX_PORT: 8762
@@ -97,7 +96,6 @@ services:
     - runtipi.managed=true
   rabbitmq:
     image: rabbitmq:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       NGINX_PORT: 8762
@@ -136,7 +134,6 @@ services:
     - runtipi.managed=true
   minio:
     image: alpine/minio:latest
-    user: 1000:1000
     restart: unless-stopped
     command: server /export --console-address ":8763"
     environment:
@@ -178,7 +175,6 @@ services:
     - runtipi.managed=true
   api:
     image: makeplane/plane-backend:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       NGINX_PORT: 8762
@@ -222,7 +218,6 @@ services:
     - runtipi.managed=true
   worker:
     image: makeplane/plane-backend:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       NGINX_PORT: 8762
@@ -270,7 +265,6 @@ services:
     - runtipi.managed=true
   beat-worker:
     image: makeplane/plane-backend:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       NGINX_PORT: 8762
@@ -320,7 +314,6 @@ services:
     - runtipi.managed=true
   migrator:
     image: makeplane/plane-backend:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       NGINX_PORT: 8762
@@ -402,7 +395,6 @@ services:
     - runtipi.managed=true
   live:
     image: makeplane/plane-live:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       NGINX_PORT: 8762
@@ -441,7 +433,6 @@ services:
     - runtipi.managed=true
   space:
     image: makeplane/plane-space:latest
-    user: 1000:1000
     restart: unless-stopped
     environment:
       NGINX_PORT: 8762

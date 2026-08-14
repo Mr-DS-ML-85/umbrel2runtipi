@@ -1,7 +1,6 @@
 services:
   influxdb:
     image: influxdb:latest
-    user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
     volumes:
@@ -14,7 +13,6 @@ services:
     - runtipi.managed=true
   chronograf:
     image: chronograf:latest
-    user: 1000:1000
     environment:
       INFLUXDB_URL: http://influxdb:8086
       INFLUXDB_USERNAME: admin

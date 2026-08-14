@@ -149,6 +149,12 @@ MANUAL_ENV_OVERRIDES = {
             "ENCRYPTION_KEY": "${ENCRYPTION_KEY}",
         },
     },
+    "bffless": {
+        "backend": {
+            "FRONTEND_URL": "${APP_PROTOCOL:-http}://${APP_DOMAIN}",
+            "API_DOMAIN": "${APP_PROTOCOL:-http}://${APP_DOMAIN}",
+        },
+    },
 }
 
 
@@ -192,6 +198,16 @@ MANUAL_FORM_FIELDS = {
             "min": 64,
             "required": False,
             "hint": "Exactly 64 hex characters (32 bytes).",
+        },
+    ],
+    "bffless": [
+        {
+            "label": "App seed",
+            "type": "random",
+            "env_variable": "APP_SEED",
+            "min": 32,
+            "required": False,
+            "hint": "Seeds the backend's derived encryption/JWT keys.",
         },
     ],
     "openthread-border-router": [
@@ -960,12 +976,12 @@ def convert_compose(app_id: str, compose: dict, manifest_port: int):
         # websocket origins / oidc callbacks against the real access URL instead
         # of the container-internal "localhost" (which crashes e.g. mailflow).
         s = re.sub(
-            r"(?i)\bhttps?://\$\{DEVICE_DOMAIN_NAME\}(?::\d+)?",
+            r"(?i)\bhttps?://\$\{DEVICE_DOMAIN_NAME\}(?::\d+)?|\bhttps?://\$DEVICE_DOMAIN_NAME(?::\d+)?",
             "${APP_PROTOCOL:-http}://${APP_DOMAIN}",
             s,
         )
         s = re.sub(
-            r"(?i)\bhttps?://\$\{DEVICE_HOSTNAME\}(?::\d+)?",
+            r"(?i)\bhttps?://\$\{DEVICE_HOSTNAME\}(?::\d+)?|\bhttps?://\$DEVICE_HOSTNAME(?::\d+)?",
             "${APP_PROTOCOL:-http}://${APP_DOMAIN}",
             s,
         )
@@ -994,6 +1010,15 @@ def convert_compose(app_id: str, compose: dict, manifest_port: int):
     # "stop all"/"restart all" actions and container identification), and the
     # store standard is restart: unless-stopped rather than umbrel's on-failure.
     for sname, s in services.items():
+        # Umbrel pins every container to its device UID `1000:1000`. Runtipi
+        # creates the app data folder as root and only chmods it AFTER
+        # `docker compose up`, so the bind-mount subdirs exist as root-owned at
+        # container start; services pinned to uid 1000 then cannot initdb /
+        # write their data dir and crash (e.g. mailflow's postgres ->
+        # `initdb: could not change permissions ... Operation not permitted`).
+        # Dropping the umbrel UID pin lets images run as root and write.
+        if isinstance(s.get("user"), str) and re.match(r"^['\"]?1000:1000['\"]?$", s["user"]):
+            del s["user"]
         labels = s.get("labels")
         if isinstance(labels, dict):
             labels.setdefault("runtipi.managed", True)

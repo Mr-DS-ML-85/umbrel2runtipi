@@ -92,8 +92,8 @@ services:
       SUPERTOKENS_CONNECTION_URI: http://bffless-supertokens:3567
       SUPERTOKENS_API_KEY: ''
       PRIMARY_DOMAIN: localhost
-      FRONTEND_URL: http://localhost:5537
-      API_DOMAIN: http://localhost:5537
+      FRONTEND_URL: ${APP_PROTOCOL:-http}://${APP_DOMAIN}
+      API_DOMAIN: ${APP_PROTOCOL:-http}://${APP_DOMAIN}
       ADMIN_DOMAIN: localhost
       COOKIE_SECURE: 'false'
       COOKIE_DOMAIN: localhost

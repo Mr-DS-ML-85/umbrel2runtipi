@@ -2,7 +2,6 @@ services:
   web:
     image: ghcr.io/music-assistant/server:latest
     restart: unless-stopped
-    user: 1000:1000
     network_mode: host
     volumes:
     - ${APP_DATA_DIR}/data:/data/

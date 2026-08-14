@@ -2,7 +2,6 @@ services:
   web:
     image: ghcr.io/matt8707/ha-fusion:latest
     restart: unless-stopped
-    user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/fusion:/app/data
     environment:
