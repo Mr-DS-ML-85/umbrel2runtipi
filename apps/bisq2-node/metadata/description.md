@@ -12,6 +12,13 @@ Treat the pairing code like a password. Anyone who has it can pair with your nod
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bisq2-node/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bisq2-node/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bisq2-node/3.webp)
+
 ## Links
 
 - Website: https://bisq.network

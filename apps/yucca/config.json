@@ -11,7 +11,7 @@
   "categories": [
     "automation"
   ],
-  "description": "Yucca is a simple NVR video surveillance solution for home and business. It is designed to support safe cities with thousands of cameras, subscriber services, and self-hosted home use.\n\n[Android app](https://play.google.com/store/apps/details?id=app.yucca.android&utm_source=umbrel)",
+  "description": "Yucca is a simple NVR video surveillance solution for home and business. It is designed to support safe cities with thousands of cameras, subscriber services, and self-hosted home use.\n\n[Android app](https://play.google.com/store/apps/details?id=app.yucca.android&utm_source=the server)",
   "short_desc": "Simple NVR video surveillance solution",
   "author": "Yucca Stream",
   "source": "https://yucca.app/",
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786691341630,
-  "updated_at": 1786691341630,
-  "min_tipi_version": "4.0.0"
+  "created_at": 1786704447919,
+  "updated_at": 1786704447919,
+  "min_tipi_version": "4.5.0"
 }

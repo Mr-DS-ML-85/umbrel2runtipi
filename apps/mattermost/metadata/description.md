@@ -8,9 +8,16 @@ Team Chat, Open Source, Self-Hosted
 
 💾 Mattermost offers a self-hosted alternative to proprietary SaaS messaging services such as Slack and Microsoft Teams.
 
-Note: Mattermost can be used locally within your network. However, if you want others outside your local network to access your server, you'll need to make it accessible on the public internet. If you have a domain name, you can set this up using the Cloudflare Tunnel or Nginx Proxy Manager apps in the Umbrel Apps Store.
+Note: Mattermost can be used locally within your network. However, if you want others outside your local network to access your server, you'll need to make it accessible on the public internet. If you have a domain name, you can set this up using the Cloudflare Tunnel or Nginx Proxy Manager apps in the the server Apps Store.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mattermost/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mattermost/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mattermost/3.jpg)
 
 ## Links
 

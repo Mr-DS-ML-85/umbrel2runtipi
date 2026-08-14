@@ -12,6 +12,13 @@ WARNING: This version of Krystal Bull is an early alpha release for testing. It'
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/krystal-bull/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/krystal-bull/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/krystal-bull/3.jpg)
+
 ## Links
 
 - Website: https://suredbits.com/

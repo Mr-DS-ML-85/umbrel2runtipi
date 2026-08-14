@@ -9,6 +9,13 @@ This app is in early development and most likely buggy. It does handle real sats
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/nutstash-wallet/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/nutstash-wallet/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/nutstash-wallet/3.jpg)
+
 ## Links
 
 - Website: https://nutstash.app/

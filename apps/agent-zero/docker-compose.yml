@@ -1,7 +1,7 @@
 services:
   web:
     image: agent0ai/agent-zero:latest
-    restart: on-failure
+    restart: unless-stopped
     ulimits:
       nofile:
         soft: 65535
@@ -12,6 +12,8 @@ services:
     - ${APP_DATA_DIR}/data/usr:/a0/usr
     environment:
     - ALLOWED_ORIGINS=http://localhost:${APP_AGENTZERO_PORT},http://localhost:${APP_AGENTZERO_PORT},${APP_AGENTZERO_LOCAL_URLS}
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 80
       is_main: true

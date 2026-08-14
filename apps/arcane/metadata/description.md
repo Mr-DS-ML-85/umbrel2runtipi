@@ -4,7 +4,7 @@ An easy and modern Docker management platform
 
 ⚠️ Make sure to only use named Docker volumes for your containers and projects. Data in bind-mounted volumes will be lost when the Arcane app is restarted or updated.
 
-⚠️ Watch out for port conflicts between your custom Docker containers and your umbrelOS apps.
+⚠️ Watch out for port conflicts between your custom Docker containers and your the server apps.
 
 Arcane is a powerful and modern container management platform designed to simplify the way developers interact with Docker environments. It provides a seamless and visually appealing interface that brings all aspects of container management together in one place. Users can create, start, stop, and inspect containers, explore networks, manage images, and handle volumes with precision and control.
 
@@ -12,17 +12,26 @@ Beyond basic management, Arcane enhances productivity by offering integrated too
 
 The platform is designed to bridge the gap between simplicity and advanced control. It combines a clean, modern design with powerful backend capabilities, making it equally suitable for developers experimenting locally and professionals managing larger setups. With Arcane, managing containers feels more like using a well-crafted development environment than an administrative dashboard, allowing users to focus on building and running applications instead of dealing with complex Docker commands.
 
-🧩 Arcane on Umbrel is designed for advanced users who want complete control over their containers. Follow these recommendations to ensure a reliable and stable experience.  
+🧩 Arcane on the server is designed for advanced users who want complete control over their containers. Follow these recommendations to ensure a reliable and stable experience.  
 
 1. Persistent data: Always use named Docker volumes for your containers and projects. Any data stored in bind mounts will be lost when the Arcane app is updated or restarted.  
 
-2. Port usage: Be mindful of port conflicts between your containers, Umbrel system services, and other installed or future apps. Assign unique port numbers to prevent conflicts.  
+2. Port usage: Be mindful of port conflicts between your containers, the server system services, and other installed or future apps. Assign unique port numbers to prevent conflicts.  
 
 3. Restart behavior: Configure your containers with the restart policy set to unless stopped or always. This ensures they automatically restart after Arcane restarts or updates.  
 
-4. Web access: You can access any container that exposes a web interface at `umbrel.local:PORT_NUMBER`. For example, if your app runs on port 5050, open `http://umbrel.local:5050` in your browser.
+4. Web access: You can access any container that exposes a web interface at `localhost:PORT_NUMBER`. For example, if your app runs on port 5050, open `http://localhost:5050` in your browser.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/arcane/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/arcane/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/arcane/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/arcane/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/arcane/5.jpg)
 
 ## Links
 

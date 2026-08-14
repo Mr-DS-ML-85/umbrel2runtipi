@@ -18,6 +18,14 @@ Gupt is fully client-side with no backend — it connects directly to public or 
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/gupt/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/gupt/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/gupt/3.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/gupt/4.webp)
+
 ## Links
 
 - Website: https://github.com/besoeasy/gupt

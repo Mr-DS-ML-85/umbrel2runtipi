@@ -1,7 +1,7 @@
 services:
   server:
     image: c4illin/convertx:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     user: 1000:1000
     environment:
@@ -9,6 +9,8 @@ services:
     - ACCOUNT_REGISTRATION=true
     volumes:
     - ${APP_DATA_DIR}/data/app:/app/data
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3000
       is_main: true

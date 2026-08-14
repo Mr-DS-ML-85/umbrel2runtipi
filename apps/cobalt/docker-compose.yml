@@ -2,7 +2,7 @@ services:
   web:
     image: dennysubke/cobalt:latest
     read_only: true
-    restart: on-failure
+    restart: unless-stopped
     user: 1000:1000
     ports:
     - 9013:9000
@@ -10,6 +10,8 @@ services:
       API_URL: http://localhost:9013/
       API_AUTH_REQUIRED: 0
       DURATION_LIMIT: 86400
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 9001
       is_main: true

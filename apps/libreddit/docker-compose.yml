@@ -1,7 +1,7 @@
 services:
   web:
     image: ceramicwhite/libreddit:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     init: true
     user: 1000:1000
@@ -9,6 +9,8 @@ services:
       PORT: 7420
     healthcheck:
       disable: true
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 7420
       is_main: true

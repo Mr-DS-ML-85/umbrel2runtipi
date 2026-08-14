@@ -1,7 +1,7 @@
 services:
   web:
     privileged: true
-    restart: on-failure
+    restart: unless-stopped
     image: ghcr.io/blakeblackshear/frigate:0.12.0-beta1-tensorrt
     shm_size: 128mb
     volumes:
@@ -14,6 +14,8 @@ services:
     - 8555:8555/udp
     environment:
       FRIGATE_RTSP_PASSWORD: ${APP_PASSWORD}
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8971
       is_main: true

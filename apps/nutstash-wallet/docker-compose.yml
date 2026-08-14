@@ -1,8 +1,10 @@
 services:
   web:
     image: ghcr.io/gandlafbtc/nutstash-wallet:0.1.12
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3000
       is_main: true

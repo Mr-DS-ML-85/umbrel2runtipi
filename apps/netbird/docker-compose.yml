@@ -1,7 +1,7 @@
 services:
   app:
     image: ghcr.io/netbirdio/netbird:latest
-    restart: on-failure
+    restart: unless-stopped
     user: 1000:1000
     cap_add:
     - NET_ADMIN
@@ -10,11 +10,15 @@ services:
     network_mode: host
     volumes:
     - ${APP_DATA_DIR}/data/app_data:/var/lib/netbird:rw
+    labels:
+    - runtipi.managed=true
   web:
     image: nginx:latest
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/www:/usr/share/nginx/html:ro
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 80
       is_main: true

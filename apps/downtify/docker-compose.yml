@@ -5,6 +5,9 @@ services:
     volumes:
     - ${RUNTIPI_MEDIA_DIR}/downloads/downtify:/downloads
     - ${APP_DATA_DIR}/data:/data
+    labels:
+    - runtipi.managed=true
+    restart: unless-stopped
     x-runtipi:
       internal_port: 8000
       is_main: true

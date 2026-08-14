@@ -12,9 +12,9 @@ Add this repository as a custom app store in your Runtipi instance:
 
 ## Stats
 
-- **191 apps** converted from Umbrel
+- **190 apps** converted from Umbrel
 - 123 Umbrel apps skipped because they already exist in the official Runtipi store (deduped by id / normalized id / normalized name / verified image alias)
-- 77 apps skipped because they depend on Umbrel-only infrastructure (Bitcoin/Lightning/Electrs/Monero system nodes, Tor)
+- 78 apps skipped because they depend on Umbrel-only infrastructure (Bitcoin/Lightning/Electrs/Monero system nodes, Tor) or Umbrel install-hook files
 - See `conversion-report.md` for the full breakdown.
 
 ## Image tags
@@ -26,6 +26,36 @@ Images are pinned to **`latest`** where the registry publishes a `latest` tag
 the newest available version tag is resolved at conversion time by querying the
 registry APIs, and that tag is pinned instead. Pinned digests (`@sha256:…`)
 are stripped so images always resolve to the tag at install time.
+
+## Large images (slow installs)
+
+A few apps ship very large images (1 GB+). On slow connections the initial
+pull can exceed Runtipi's install watchdog (6 minutes), which force-syncs the
+app to `stopped` mid-install — it looks stuck even though the pull continues.
+**If an install appears hung, just retry it**: the image layers are then cached
+and the second attempt completes quickly. Note that Runtipi runs
+`down --rmi all` during install, so the image is wiped and re-pulled on every
+fresh install.
+
+| App | Approx. pull size |
+|---|---|
+| Vane (perplexica) | 3.9 GB |
+| Agent Zero | 3.2 GB |
+| Stash | 2.3 GB |
+| wger | 1.7 GB |
+| ConvertX | 1.6 GB |
+| ONLYOFFICE Docs | 1.5 GB |
+| Appsmith | 1.4 GB |
+| GitLab | 1.4 GB |
+| Obsidian | 1.3 GB |
+| Plane | 1.3 GB |
+| Public Pool's Web | 1.2 GB |
+| Remmina | 1.1 GB |
+| Firefox | 1.1 GB |
+| AnythingLLM | 1.1 GB |
+| Langflow | 1.0 GB |
+| LibreOffice | 1.0 GB |
+| Seafile | 0.9 GB |
 
 ## Layout
 
@@ -49,14 +79,19 @@ tools/
 ```bash
 git clone https://github.com/getumbrel/umbrel-apps.git      # or refresh your clone
 git clone https://github.com/runtipi/runtipi-appstore.git   # clone as runtipi-official/
-python3 tools/convert.py      # regenerates apps/ + conversion-report.md
-python3 tools/update_tags.py  # resolves image tags to latest / newest
-python3 scripts/validate.py   # sanity-check the result
+python3 tools/convert.py        # regenerates apps/ + conversion-report.md
+python3 tools/update_tags.py    # resolves image tags to latest / newest
+python3 tools/add_screenshots.py  # embeds gallery screenshots into the notes
+python3 scripts/validate.py     # sanity-check the result
 ```
 
 The converter reads the local clones of `umbrel-apps/` and `runtipi-official/`,
 dedupes against the Runtipi registry, and rewrites `umbrel-app.yml` +
 `docker-compose.yml` into the Runtipi dynamic-compose format.
+
+`add_screenshots.py` reads each app's `gallery:` list from the Umbrel manifest
+and links the screenshots into `metadata/description.md` (the "notes" tab in
+Runtipi) from the Umbrel gallery CDN. Run it after `convert.py`.
 
 ### Port handling
 
@@ -67,7 +102,7 @@ Host ports assigned to apps never collide with:
   (see `RESERVED_PORTS` in `tools/convert.py`), or
 - any other converted app.
 
-## Skipped apps (77)
+## Skipped apps (78)
 
 These Umbrel apps were **not** converted. They all depend on Umbrel-only
 infrastructure (system Bitcoin / Lightning / Electrs / Monero nodes, Tor hidden
@@ -82,9 +117,9 @@ agora · alby-nostr-wallet-connect · bleskomat-server · bluewallet · bolt12-p
 
 bassin · bitbalance · bitcoin · bitcoin-cash-node · bitcoin-knots · bitfeed · btc-rpc-explorer · btcpay-server · canary · chainforensics · electrumx · elements · fedimint-gateway · fedimintd · fulcrum · gobrrr-pool · hashrate-autopilot · itchysats · jam · joinstr · ordinals · peerswap · pogolo · public-pool · samourai-server · satwatch · specter-desktop · suredbits-wallet · sv2-ui · urbit-bitcoin-connector · woofbot
 
-### Umbrel-specific / other (10)
+### Umbrel-specific / other (11)
 
-albyhub · am-i-exposed · blockstream-blind-oracle · chantools · libre-relay · monero · paperclip · solidtime · synapse · tdex
+albyhub · am-i-exposed · blockstream-blind-oracle · chantools · libre-relay · monero · openthread-border-router · paperclip · solidtime · synapse · tdex
 
 > The exact `APP_*` variables each app needs are listed in `conversion-report.md`
 > under **"Skipped: require Umbrel bitcoin/lightning infra"**.
@@ -97,9 +132,13 @@ The conversion is best-effort; these known limitations apply:
   services (`APP_BITCOIN_NODE_IP`, `APP_LIGHTNING_NODE_*`, `APP_ELECTRS_NODE_*`,
   `APP_MONERO_*`, Tor hidden services, `$UMBREL_ROOT/app-data`) that do not exist
   on Runtipi, so they cannot run.
+- **Umbrel install hooks** — some apps mount or run files that Umbrel's
+  install/pre-start hooks generate (`${APP_DATA_DIR}/server.py`, `settings.env`).
+  Runtipi has no hook mechanism, so these files never exist and the app
+  crash-loops; such apps (OpenThread Border Router) are skipped.
 - **Host networking** — apps that use `network_mode: host` (AdGuard Home,
-  Homey, Music Assistant, OpenThread Border Router, Technitium DNS) are converted
-  best-effort; their ports may need manual configuration.
+  Homey, Music Assistant, Technitium DNS) are converted best-effort; their ports
+  may need manual configuration.
 - **`env_file` removal** — env files created by Umbrel install hooks
   (e.g. `settings.env`, `config/prod.env`, `.env`) do not exist on Runtipi and
   were removed. Affected apps may need their settings set manually in the

@@ -15,6 +15,13 @@ Kan is a modern, open-source alternative to Trello designed for seamless project
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/kan/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/kan/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/kan/3.jpg)
+
 ## Links
 
 - Website: https://kan.bn/

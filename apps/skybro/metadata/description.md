@@ -16,6 +16,13 @@ All settings — home coordinates, alert radius, altitude threshold, satellite l
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/skybro/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/skybro/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/skybro/3.webp)
+
 ## Links
 
 - Website: https://github.com/xDeeKay/SkyBro

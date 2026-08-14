@@ -2,10 +2,12 @@ services:
   app:
     image: ghcr.io/besoeasy/zeronote:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 5m
     environment:
     - NODE_ENV=production
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8000
       is_main: true

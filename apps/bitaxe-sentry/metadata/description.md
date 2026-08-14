@@ -11,6 +11,11 @@ Features included:
 
 ---
 
+
+## Preview
+
+![Preview](./public/merged_image.png)
+
 ## Links
 
 - Website: https://github.com/zachchan105/bitaxe-sentry

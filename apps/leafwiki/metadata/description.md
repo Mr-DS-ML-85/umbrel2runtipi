@@ -10,6 +10,11 @@ LeafWiki focuses on clarity rather than unnecessary complexity. It provides a ca
 
 ---
 
+
+## Preview
+
+![Preview](./assets/preview.png)
+
 ## Links
 
 - Website: https://leafwiki.com/

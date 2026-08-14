@@ -10,6 +10,15 @@ After opening PicoClaw, define your password, add your LLM provider API key, con
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/picoclaw/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/picoclaw/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/picoclaw/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/picoclaw/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/picoclaw/5.jpg)
+
 ## Links
 
 - Website: https://picoclaw.io

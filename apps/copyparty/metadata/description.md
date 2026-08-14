@@ -14,6 +14,11 @@ In essence, copyparty is not just a file server but a flexible and elegant file 
 
 ---
 
+
+## Preview
+
+![Preview](https://user-images.githubusercontent.com/241032/115978057-66419080-a57d-11eb-8539-d2be843991aa.png)
+
 ## Links
 
 - Website: https://github.com/9001/copyparty

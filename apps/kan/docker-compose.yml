@@ -2,21 +2,25 @@ services:
   migrate:
     image: ghcr.io/kanbn/kan-migrate:latest
     environment:
-      POSTGRES_URL: postgresql://kanuser:kanpassword@kan_db_1:5432/kan?sslmode=disable
+      POSTGRES_URL: postgresql://kanuser:kanpassword@db:5432/kan?sslmode=disable
     depends_on:
       db:
         condition: service_healthy
-    restart: on-failure
+    restart: unless-stopped
+    labels:
+    - runtipi.managed=true
   server:
     image: ghcr.io/kanbn/kan:latest
     environment:
       NEXT_PUBLIC_BASE_URL: http://localhost:8373
       BETTER_AUTH_SECRET: ${APP_SEED}
-      POSTGRES_URL: postgresql://kanuser:kanpassword@kan_db_1:5432/kan?sslmode=disable
+      POSTGRES_URL: postgresql://kanuser:kanpassword@db:5432/kan?sslmode=disable
       NEXT_PUBLIC_ALLOW_CREDENTIALS: 'true'
     depends_on:
     - db
-    restart: on-failure
+    restart: unless-stopped
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3000
       is_main: true
@@ -34,8 +38,10 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/db:/var/lib/postgresql/data
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

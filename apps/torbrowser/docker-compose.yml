@@ -1,12 +1,14 @@
 services:
   web:
     image: dennysubke/torbrowser:latest
-    restart: on-failure
+    restart: unless-stopped
     environment:
     - DARK_MODE=1
     - WEB_AUDIO=1
     volumes:
     - ${APP_DATA_DIR}/config:/config
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 5800
       is_main: true

@@ -2,7 +2,7 @@ services:
   app:
     image: ghcr.io/lissy93/networking-toolbox:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       NODE_ENV: production
       PORT: 3000
@@ -17,6 +17,8 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3000
       is_main: true

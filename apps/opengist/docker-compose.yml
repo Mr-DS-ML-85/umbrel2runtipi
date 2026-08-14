@@ -2,13 +2,15 @@ services:
   server:
     image: ghcr.io/thomiceli/opengist:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     ports:
     - 2224:2224
     volumes:
     - ${APP_DATA_DIR}/data:/opengist
     environment:
       OG_SSH_PORT: '2224'
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 6157
       is_main: true

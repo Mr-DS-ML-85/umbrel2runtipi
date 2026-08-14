@@ -14,6 +14,13 @@ Features:
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/morphos/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/morphos/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/morphos/3.jpg)
+
 ## Links
 
 - Website: https://github.com/danvergara/morphos

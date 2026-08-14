@@ -3,10 +3,12 @@ services:
     image: linuxserver/remmina:latest
     volumes:
     - ${APP_DATA_DIR}/data/config:/config
-    restart: on-failure
+    restart: unless-stopped
     environment:
     - PUID=1000
     - PGID=1000
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3000
       is_main: true

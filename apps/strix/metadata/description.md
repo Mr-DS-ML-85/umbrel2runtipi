@@ -10,6 +10,15 @@ Then paste your existing frigate.yml - even with 500 cameras - and Strix adds ca
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/strix/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/strix/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/strix/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/strix/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/strix/5.jpg)
+
 ## Links
 
 - Website: https://github.com/eduard256/Strix

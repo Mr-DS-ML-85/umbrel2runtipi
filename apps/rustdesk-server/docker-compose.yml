@@ -12,7 +12,9 @@ services:
     network_mode: host
     depends_on:
     - hbbr
-    restart: on-failure
+    restart: unless-stopped
+    labels:
+    - runtipi.managed=true
   hbbr:
     image: rustdesk/rustdesk-server:latest
     ports:
@@ -22,12 +24,16 @@ services:
     volumes:
     - ${APP_DATA_DIR}/data/hbbr:/root
     network_mode: host
-    restart: on-failure
+    restart: unless-stopped
+    labels:
+    - runtipi.managed=true
   web:
     image: nginx:latest
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/www:/usr/share/nginx/html:ro
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 80
       is_main: true

@@ -1,7 +1,7 @@
 services:
   server:
     image: zoraxydocker/zoraxy:latest
-    restart: on-failure
+    restart: unless-stopped
     ports:
     - 41080:80
     - 41443:443
@@ -13,6 +13,8 @@ services:
       ZEROTIER: 'false'
       DOCKER: 'false'
       NOAUTH: 'true'
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8000
       is_main: true

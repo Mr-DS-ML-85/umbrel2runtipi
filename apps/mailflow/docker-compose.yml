@@ -1,7 +1,7 @@
 services:
   frontend:
     image: ghcr.io/maathimself/mailflow-frontend:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     depends_on:
       backend:
@@ -14,12 +14,14 @@ services:
       timeout: 5s
       retries: 3
       start_period: 20s
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 80
       is_main: true
   backend:
     image: ghcr.io/maathimself/mailflow-backend:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     environment:
       NODE_ENV: production
@@ -28,12 +30,12 @@ services:
       FRONTEND_URL: http://localhost:3395
       SESSION_SECRET: ${APP_SEED}
       ENCRYPTION_KEY: ${APP_SEED}
-      DB_HOST: mailflow_postgres_1
+      DB_HOST: postgres
       DB_PORT: 5432
       DB_NAME: mailflow
       DB_USER: mailflow
       DB_PASSWORD: mailflow
-      REDIS_URL: redis://mailflow_redis_1:6379
+      REDIS_URL: redis://redis:6379
       GOOGLE_CLIENT_ID: ''
       GOOGLE_CLIENT_SECRET: ''
       VAPID_PUBLIC_KEY: ''
@@ -52,10 +54,12 @@ services:
       timeout: 5s
       retries: 3
       start_period: 30s
+    labels:
+    - runtipi.managed=true
   postgres:
     image: postgres:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       POSTGRES_DB: mailflow
       POSTGRES_USER: mailflow
@@ -70,10 +74,12 @@ services:
       timeout: 5s
       retries: 5
       start_period: 20s
+    labels:
+    - runtipi.managed=true
   redis:
     image: redis:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     command: redis-server --save 60 1 --loglevel warning
     volumes:
     - ${APP_DATA_DIR}/data/redis:/data
@@ -86,5 +92,7 @@ services:
       timeout: 3s
       retries: 5
       start_period: 10s
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

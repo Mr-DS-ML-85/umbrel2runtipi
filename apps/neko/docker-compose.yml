@@ -10,9 +10,11 @@ services:
       NEKO_WEBRTC_EPR: 52000-52100
       NEKO_WEBRTC_ICELITE: 0
     shm_size: 2gb
-    restart: on-failure
+    restart: unless-stopped
     ports:
     - 52000-52100:52000-52100/udp
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8080
       is_main: true

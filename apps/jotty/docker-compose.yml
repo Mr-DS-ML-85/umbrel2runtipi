@@ -2,13 +2,15 @@ services:
   web:
     image: ghcr.io/fccview/jotty:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/app:/app/data
     - ${APP_DATA_DIR}/data/config:/app/config
     - ${APP_DATA_DIR}/data/cache:/app/.next/cache
     environment:
     - NODE_ENV=production
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3000
       is_main: true

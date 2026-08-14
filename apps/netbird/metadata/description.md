@@ -8,11 +8,18 @@ The NetBird Client is the component that brings this system to life. It handles 
 
 By combining simplicity, automation, and strong cryptography, the NetBird Client enables secure networking without configuration. It provides a stable foundation for private communication and collaboration while ensuring that every connection remains fully encrypted, authenticated, and resilient.
 
-⚙️ Get your Umbrel connected with NetBird
+⚙️ Get your the server connected with NetBird
 
-Open the link shown in your browser on your computer or mobile device and sign in with the same NetBird account you use for the dashboard. Approve the device when prompted. After confirmation, your Umbrel client will automatically register itself and remain connected across restarts.
+Open the link shown in your browser on your computer or mobile device and sign in with the same NetBird account you use for the dashboard. Approve the device when prompted. After confirmation, your the server client will automatically register itself and remain connected across restarts.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/netbird/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/netbird/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/netbird/3.jpg)
 
 ## Links
 

@@ -11,7 +11,7 @@
   "categories": [
     "network"
   ],
-  "description": "Nostr VPN turns your Umbrel into a private mesh VPN node for your own devices and trusted groups. Approve signed join-request QRs, manage peers, and route traffic through trusted exit nodes without relying on a hosted VPN provider or a central control server.\n\nTo connect a device, choose Join on the device you want to add so it displays its signed QR code or link. On your Umbrel, scan or paste that request, review it, and accept it. The joining device then receives the signed network roster and your devices can reach each other using their private Nostr VPN IPs.",
+  "description": "Nostr VPN turns your the server into a private mesh VPN node for your own devices and trusted groups. Approve signed join-request QRs, manage peers, and route traffic through trusted exit nodes without relying on a hosted VPN provider or a central control server.\n\nTo connect a device, choose Join on the device you want to add so it displays its signed QR code or link. On your the server, scan or paste that request, review it, and accept it. The joining device then receives the signed network roster and your devices can reach each other using their private Nostr VPN IPs.",
   "short_desc": "Admin-approved mesh VPN over Nostr",
   "author": "mmalmi and contributors",
   "source": "https://github.com/mmalmi/nostr-vpn",
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786691341314,
-  "updated_at": 1786691341314,
-  "min_tipi_version": "4.0.0"
+  "created_at": 1786704447603,
+  "updated_at": 1786704447603,
+  "min_tipi_version": "4.5.0"
 }

@@ -6,7 +6,7 @@ Syslog-ng is a flexible, highly scalable syslog server that collects logs from a
 
 Includes a real-time log viewer with search and filtering capabilities, accessible through your browser.
 
-Simply configure your network devices to send syslog messages to your Umbrel's IP address on UDP port 514 or TCP port 601.
+Simply configure your network devices to send syslog messages to your the server's IP address on UDP port 514 or TCP port 601.
 
 Features:
   - Supports BSD/RFC3164 format (used by most routers including Ubiquiti, Alta Labs, etc.)
@@ -16,6 +16,14 @@ Features:
   - Persistent log storage
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/syslog-ng/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/syslog-ng/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/syslog-ng/3.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/syslog-ng/4.webp)
 
 ## Links
 

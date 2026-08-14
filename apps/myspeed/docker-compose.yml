@@ -1,10 +1,12 @@
 services:
   web:
     image: germannewsmaker/myspeed:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     volumes:
     - ${APP_DATA_DIR}/data/myspeed:/myspeed/data
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 5216
       is_main: true

@@ -13,9 +13,18 @@ Meet Plane, an open-source project management tool to track issues, run sprints 
   - Analytics Access real-time insights across all your Plane data. Visualize trends, remove blockers, and keep your projects moving forward.
 
 
-The Plane admin panel can be reached at `umbrel.local:8762/god-mode`
+The Plane admin panel can be reached at `localhost:8762/god-mode`
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/plane/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/plane/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/plane/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/plane/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/plane/5.jpg)
 
 ## Links
 

@@ -1,7 +1,7 @@
 services:
   app:
     image: dedicatedcode/reitti:latest
-    restart: on-failure
+    restart: unless-stopped
     depends_on:
       postgis:
         condition: service_healthy
@@ -14,16 +14,18 @@ services:
       POSTGIS_USER: reitti
       POSTGIS_PASSWORD: reitti
       POSTGIS_DB: reittidb
-      POSTGIS_HOST: reitti_postgis_1
+      POSTGIS_HOST: postgis
     volumes:
     - ${APP_DATA_DIR}/data/app:/data
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8080
       is_main: true
   postgis:
     image: imresamu/postgis:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       POSTGRES_USER: reitti
       POSTGRES_PASSWORD: reitti
@@ -37,10 +39,12 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    labels:
+    - runtipi.managed=true
   redis:
     image: redis:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/redis:/data
     healthcheck:
@@ -51,9 +55,11 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    labels:
+    - runtipi.managed=true
   tile-cache:
     image: dedicatedcode/reitti-tile-cache:latest
-    restart: on-failure
+    restart: unless-stopped
     healthcheck:
       test:
       - CMD-SHELL
@@ -64,5 +70,7 @@ services:
       retries: 5
     volumes:
     - ${APP_DATA_DIR}/data/title-cache:/var/cache/nginx
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

@@ -1,18 +1,22 @@
 services:
   tracker:
     image: xdeekay/skybro-tracker:1.5.7
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data:/data
     - /etc/localtime:/etc/localtime:ro
+    labels:
+    - runtipi.managed=true
   web:
     image: xdeekay/skybro-dashboard:1.5.7
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data:/data
     - /etc/localtime:/etc/localtime:ro
     depends_on:
     - tracker
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 5000
       is_main: true

@@ -2,7 +2,7 @@ services:
   web:
     image: ksjaay/lunalytics:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     healthcheck:
       test:
       - CMD-SHELL
@@ -14,6 +14,8 @@ services:
     volumes:
     - ${APP_DATA_DIR}/data/lunalytics_data:/app/data:rw
     - ${APP_DATA_DIR}/data/logs:/app/logs:rw
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 2308
       is_main: true

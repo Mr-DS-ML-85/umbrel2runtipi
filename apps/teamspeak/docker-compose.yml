@@ -2,16 +2,18 @@ services:
   ui:
     image: joni1802/ts3-manager:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     environment:
       JWT_SECRET: $APP_SEED
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8080
       is_main: true
   server:
     image: teamspeak:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     ports:
     - 9987:9987/udp
@@ -22,5 +24,7 @@ services:
     environment:
       TS3SERVER_LICENSE: accept
       TS3SERVER_SERVERADMIN_PASSWORD: $APP_PASSWORD
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

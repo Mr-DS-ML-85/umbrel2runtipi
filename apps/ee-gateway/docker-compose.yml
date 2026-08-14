@@ -6,13 +6,15 @@ services:
     - sh
     - -c
     - chown -R 1000:1000 /data
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data:/data
+    labels:
+    - runtipi.managed=true
   ui:
     image: encryptedenergy/ee-gateway-ui:latest
     init: true
-    restart: on-failure
+    restart: unless-stopped
     depends_on:
       init_perms:
         condition: service_completed_successfully
@@ -22,13 +24,15 @@ services:
       EE_DATA_DIR: /data
       EE_UI_PORT: 8080
       EE_GATEWAY_VERSION: 0.10.7
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8080
       is_main: true
   worker:
     image: encryptedenergy/ee-gateway-worker:latest
     init: true
-    restart: on-failure
+    restart: unless-stopped
     depends_on:
       init_perms:
         condition: service_completed_successfully
@@ -45,5 +49,7 @@ services:
     - /dev:/dev
     environment:
       EE_DATA_DIR: /data
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

@@ -1,7 +1,7 @@
 services:
   web:
     image: ghcr.io/9001/copyparty-ac:latest
-    restart: on-failure
+    restart: unless-stopped
     user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/config/config.conf:/cfg/config.conf:ro
@@ -10,6 +10,8 @@ services:
     - ${APP_DATA_DIR}/data/media:/media
     environment:
       TZ: UTC
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3923
       is_main: true

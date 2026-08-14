@@ -4,9 +4,16 @@ A snappy web interface for your 3D printer
 
 OctoPrint provides a snappy web interface for controlling consumer 3D printers. OctoPrint's powerful plugin system allows extending its functionality with awesome plugins from the community.
 
-Plug your 3D printer into your Umbrel to control and monitor every aspect of your 3D printer and your printing jobs right from within your browser.
+Plug your 3D printer into your the server to control and monitor every aspect of your 3D printer and your printing jobs right from within your browser.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/octoprint/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/octoprint/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/octoprint/3.jpg)
 
 ## Links
 

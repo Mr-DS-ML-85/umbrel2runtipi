@@ -11,7 +11,7 @@
   "categories": [
     "finance"
   ],
-  "description": "ValorGrid is a local-first portfolio tracker for recording, importing and analysing investment movements with SQLite persistence, local backups and a browser UI. Portfolio data stays on your Umbrel server; market price lookups are sent only to the configured market data provider for the requested symbol.",
+  "description": "ValorGrid is a local-first portfolio tracker for recording, importing and analysing investment movements with SQLite persistence, local backups and a browser UI. Portfolio data stays on your the server server; market price lookups are sent only to the configured market data provider for the requested symbol.",
   "short_desc": "Private and auditable investment portfolio tracking",
   "author": "aivm23",
   "source": "https://github.com/aivm23/ValorGrid",
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786691341590,
-  "updated_at": 1786691341590,
-  "min_tipi_version": "4.0.0"
+  "created_at": 1786704447877,
+  "updated_at": 1786704447877,
+  "min_tipi_version": "4.5.0"
 }

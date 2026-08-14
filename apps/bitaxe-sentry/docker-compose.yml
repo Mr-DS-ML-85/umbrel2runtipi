@@ -2,17 +2,19 @@ services:
   sentry:
     image: zachprice105/bitaxe-sentry:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     volumes:
     - ${APP_DATA_DIR}/data/sentry:/var/lib/bitaxe
     environment:
       DB_PATH: /var/lib/bitaxe/bitaxe_sentry.db
       DB_DATA_DIR: /var/lib/bitaxe
+    labels:
+    - runtipi.managed=true
   web:
     image: zachprice105/bitaxe-sentry:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     volumes:
     - ${APP_DATA_DIR}/data/sentry:/var/lib/bitaxe
@@ -22,6 +24,8 @@ services:
     command: uvicorn bitaxe_sentry.sentry.webapp:app --host 0.0.0.0 --port 7070
     depends_on:
     - sentry
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 7070
       is_main: true

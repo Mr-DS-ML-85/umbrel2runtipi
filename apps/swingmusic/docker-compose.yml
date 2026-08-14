@@ -1,7 +1,7 @@
 services:
   app:
     image: ghcr.io/swingmx/swingmusic:latest
-    restart: on-failure
+    restart: unless-stopped
     environment:
     - PUID=1000
     - PGID=1000
@@ -9,6 +9,8 @@ services:
     - ${APP_DATA_DIR}/data/config:/config
     - ${APP_DATA_DIR}/data/music:/music:rw
     - ${RUNTIPI_MEDIA_DIR}/downloads/:/downloads
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 1970
       is_main: true

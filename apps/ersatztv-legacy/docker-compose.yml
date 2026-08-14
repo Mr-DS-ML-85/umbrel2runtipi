@@ -1,12 +1,14 @@
 services:
   web:
     image: ghcr.io/ersatztv/legacy:latest
-    restart: on-failure
+    restart: unless-stopped
     user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/config:/config
     - ${APP_DATA_DIR}/data/transcode:/transcode
     - ${RUNTIPI_MEDIA_DIR}/downloads/:/media:ro
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8409
       is_main: true

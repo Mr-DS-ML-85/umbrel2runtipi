@@ -3,15 +3,20 @@ services:
     image: ghcr.io/hzrd149/docker-cors-anywhere:latest
     environment:
       CORSANYWHERE_REQUIRE_HEADERS: host
+    labels:
+    - runtipi.managed=true
+    restart: unless-stopped
   web:
     image: ghcr.io/hzrd149/nostrudel:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     init: true
     depends_on:
     - cors
     environment:
       REQUEST_PROXY: cors:8080
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 80
       is_main: true

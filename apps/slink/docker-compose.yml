@@ -2,7 +2,7 @@ services:
   web:
     image: anirdev/slink:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       TZ: UTC
       ORIGIN: http://localhost:8811
@@ -17,6 +17,8 @@ services:
     volumes:
     - ${APP_DATA_DIR}/data/var:/app/var/data
     - ${APP_DATA_DIR}/data/images:/app/slink/images
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3000
       is_main: true

@@ -2,12 +2,14 @@ services:
   server:
     image: ghcr.io/papra-hq/papra:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
     - AUTH_SECRET=${APP_SEED}
     - APP_BASE_URL=http://localhost:8112
     volumes:
     - ${APP_DATA_DIR}/data:/app/app-data
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 1221
       is_main: true

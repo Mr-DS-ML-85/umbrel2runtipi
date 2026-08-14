@@ -1,7 +1,7 @@
 services:
   web:
     image: codeberg.org/highghlow/just-download:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     volumes:
     - ${APP_DATA_DIR}/data/config:/config
@@ -9,6 +9,8 @@ services:
       LOCK_TRANSMISSION_CONFIG: 1
       CONFIG_LOCATION: /config/config.json
       CONFIG: '{"indexers": [], "transmission": {"host": "transmission_server_1", "port": 9091}}'
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 5000
       is_main: true

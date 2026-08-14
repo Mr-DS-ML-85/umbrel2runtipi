@@ -6,6 +6,11 @@ HA-Fusion (Home Assistant Fusion UI) is an alternative frontend for the Home Ass
 
 ---
 
+
+## Preview
+
+![Preview](/static/preview.png)
+
 ## Links
 
 - Website: https://github.com/matt8707/ha-fusion

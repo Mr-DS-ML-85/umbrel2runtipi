@@ -2,22 +2,24 @@ services:
   app:
     image: johly/airtrail:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     depends_on:
       postgres:
         condition: service_healthy
     environment:
       UPLOAD_LOCATION: /app/uploads
-      DB_URL: postgres://airtrail:itworkslocally@airtrail_postgres_1:5432/airtrail
+      DB_URL: postgres://airtrail:itworkslocally@postgres:5432/airtrail
     volumes:
     - ${APP_DATA_DIR}/data/uploads:/app/uploads
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3000
       is_main: true
   postgres:
     image: postgres:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     environment:
       POSTGRES_DB: airtrail
@@ -32,5 +34,7 @@ services:
       start_period: 30s
     volumes:
     - ${APP_DATA_DIR}/data/db:/data
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

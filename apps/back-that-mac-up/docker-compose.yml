@@ -1,11 +1,13 @@
 services:
   server:
     image: getumbrel/umbrel-back-that-mac-up:1.0.1
-    restart: on-failure
+    restart: unless-stopped
     environment:
       TIME_MACHINE_DIR: /timemachine
     volumes:
     - ${APP_DATA_DIR}/data:/timemachine
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 80
       is_main: true
@@ -45,5 +47,7 @@ services:
     - ${APP_DATA_DIR}/data/var-lib-samba:/var/lib/samba
     - ${APP_DATA_DIR}/data/var-cache-samba:/var/cache/samba
     - ${APP_DATA_DIR}/data/run-samba:/run/samba
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

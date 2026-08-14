@@ -1,7 +1,7 @@
 services:
   gitlab:
     image: gitlab/gitlab-ce:latest
-    restart: on-failure
+    restart: unless-stopped
     hostname: localhost:8929
     ulimits:
       nofile:
@@ -28,6 +28,8 @@ services:
     - ${APP_DATA_DIR}/data/logs:/var/log/gitlab
     - ${APP_DATA_DIR}/data/data:/var/opt/gitlab
     shm_size: 256m
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8929
       is_main: true

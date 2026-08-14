@@ -2,9 +2,17 @@
 
 Private and auditable investment portfolio tracking
 
-ValorGrid is a local-first portfolio tracker for recording, importing and analysing investment movements with SQLite persistence, local backups and a browser UI. Portfolio data stays on your Umbrel server; market price lookups are sent only to the configured market data provider for the requested symbol.
+ValorGrid is a local-first portfolio tracker for recording, importing and analysing investment movements with SQLite persistence, local backups and a browser UI. Portfolio data stays on your the server server; market price lookups are sent only to the configured market data provider for the requested symbol.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/valorgrid/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/valorgrid/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/valorgrid/3.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/valorgrid/4.webp)
 
 ## Links
 

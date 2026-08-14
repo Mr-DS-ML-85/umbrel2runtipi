@@ -16,6 +16,11 @@ Overall, BTC Tracker is a focused tool that puts privacy first and strips away u
 
 ---
 
+
+## Preview
+
+![Preview](public/umbrel.svg)
+
 ## Links
 
 - Website: https://github.com/wilqq-the

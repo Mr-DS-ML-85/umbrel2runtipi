@@ -1,13 +1,15 @@
 services:
   app:
     image: linuxserver/sqlitebrowser:latest
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/config:/config
     environment:
     - PUID=1000
     - PGID=1000
     - TZ=Etc/CET
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3000
       is_main: true

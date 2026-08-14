@@ -11,7 +11,7 @@
   "categories": [
     "ai"
   ],
-  "description": "\u26a0\ufe0f Removal Notice: ChatBot UI has been removed from the Umbrel App Store because the packaged version is no longer maintained and is not compatible with the current upstream app architecture. Existing installs will continue to work as normal.\n\nChatBot UI is an advanced chatbot kit for OpenAI's chat models aiming to mimic ChatGPT's interface and functionality.\n\nSimply add your OpenAI API key and start chatting!\n\nThis version of ChatBot UI supports both GPT-3.5 and GPT-4 models. Conversations are stored locally within your browser. You can export and import conversations to safeguard against data loss.",
+  "description": "\u26a0\ufe0f Removal Notice: ChatBot UI has been removed from the the server App Store because the packaged version is no longer maintained and is not compatible with the current upstream app architecture. Existing installs will continue to work as normal.\n\nChatBot UI is an advanced chatbot kit for OpenAI's chat models aiming to mimic ChatGPT's interface and functionality.\n\nSimply add your OpenAI API key and start chatting!\n\nThis version of ChatBot UI supports both GPT-3.5 and GPT-4 models. Conversations are stored locally within your browser. You can export and import conversations to safeguard against data loss.",
   "short_desc": "ChatGPT but better",
   "author": "Mckay Wrigley",
   "source": "https://github.com/mckaywrigley/chatbot-ui",
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786691340991,
-  "updated_at": 1786691340991,
-  "min_tipi_version": "4.0.0"
+  "created_at": 1786704447274,
+  "updated_at": 1786704447274,
+  "min_tipi_version": "4.5.0"
 }

@@ -1,7 +1,7 @@
 services:
   web:
     image: ghcr.io/getumbrel/hermes-agent-umbrel:v2026.8.13
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     volumes:
     - ${APP_DATA_DIR}/data/hermes:/opt/data
@@ -17,6 +17,8 @@ services:
     command:
     - gateway
     - run
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 18789
       is_main: true

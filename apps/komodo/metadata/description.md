@@ -10,6 +10,11 @@ Komodo exposes extensive REST and WebSocket APIs that empower teams to automate 
 
 ---
 
+
+## Preview
+
+![Preview](https://raw.githubusercontent.com/moghtech/komodo/main/screenshots/Dark-Compose.png)
+
 ## Links
 
 - Website: https://komo.do/

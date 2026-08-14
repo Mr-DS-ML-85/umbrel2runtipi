@@ -1,8 +1,10 @@
 services:
   app:
     image: ghcr.io/besoeasy/l-town:latest
-    restart: on-failure
+    restart: unless-stopped
     user: 1000:1000
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 30300
       is_main: true

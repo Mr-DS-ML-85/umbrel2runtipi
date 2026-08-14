@@ -20,6 +20,9 @@ services:
     - ${APP_DATA_DIR}/data/data:/data:cached
     - ${APP_DATA_DIR}/data/configuration:/configuration:cached
     - ${APP_DATA_DIR}/data/images/:/tmp/generated/images/
+    labels:
+    - runtipi.managed=true
+    restart: unless-stopped
     x-runtipi:
       internal_port: 8080
       is_main: true

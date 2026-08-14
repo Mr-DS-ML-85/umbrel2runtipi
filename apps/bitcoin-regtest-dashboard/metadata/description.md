@@ -21,6 +21,11 @@ Perfect for Bitcoin developers who need quick access to regtest node functionali
 
 ---
 
+
+## Preview
+
+![Preview](gallery/screenshot1.png)
+
 ## Links
 
 - Website: https://github.com/coreyphillips/bitcoin-regtest-dashboard

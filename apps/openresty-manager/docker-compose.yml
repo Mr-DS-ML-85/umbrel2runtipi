@@ -1,8 +1,8 @@
 services:
   web:
     image: uusec/openresty-manager:latest
-    hostname: openresty-manager_web_1
-    restart: on-failure
+    hostname: web
+    restart: unless-stopped
     ports:
     - 3080:80
     - 3443:443
@@ -17,6 +17,8 @@ services:
     - NGINX_RESOLVER=resolver 127.0.0.11 valid=30s ipv6=off local=on;
     - PUID=1000
     - PGID=1000
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 34567
       is_main: true

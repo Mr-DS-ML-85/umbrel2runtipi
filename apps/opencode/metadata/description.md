@@ -10,6 +10,14 @@ With its flexible architecture, you can use your preferred AI models while maint
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/opencode/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/opencode/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/opencode/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/opencode/4.jpg)
+
 ## Links
 
 - Website: https://opencode.ai/

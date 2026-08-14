@@ -11,7 +11,7 @@
   "categories": [
     "media"
   ],
-  "description": "ErsatzTV Legacy transforms your personal media library into custom live TV channels with IPTV, XMLTV guide data, channel scheduling, and browser playback.\n\nConnect local media from Umbrel's Downloads folder or libraries from Plex, Jellyfin, and Emby, then create channels that can be watched from IPTV clients, media servers, or a web browser.\n\nHardware acceleration can be enabled on supported devices by creating a hardware-accelerated FFmpeg profile in ErsatzTV and assigning it to your channels.\n\nThis package uses the ErsatzTV Legacy release stream, which upstream continues to maintain for security updates while ErsatzTV Next remains an experimental rewrite.",
+  "description": "ErsatzTV Legacy transforms your personal media library into custom live TV channels with IPTV, XMLTV guide data, channel scheduling, and browser playback.\n\nConnect local media from the server's Downloads folder or libraries from Plex, Jellyfin, and Emby, then create channels that can be watched from IPTV clients, media servers, or a web browser.\n\nHardware acceleration can be enabled on supported devices by creating a hardware-accelerated FFmpeg profile in ErsatzTV and assigning it to your channels.\n\nThis package uses the ErsatzTV Legacy release stream, which upstream continues to maintain for security updates while ErsatzTV Next remains an experimental rewrite.",
   "short_desc": "Build your own live TV channels",
   "author": "ErsatzTV",
   "source": "https://github.com/ErsatzTV/legacy",
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786691341055,
-  "updated_at": 1786691341055,
-  "min_tipi_version": "4.0.0"
+  "created_at": 1786704447339,
+  "updated_at": 1786704447339,
+  "min_tipi_version": "4.5.0"
 }

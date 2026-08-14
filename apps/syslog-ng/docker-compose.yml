@@ -2,7 +2,7 @@ services:
   syslog:
     image: linuxserver/syslog-ng:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     environment:
     - PUID=1000
@@ -22,10 +22,12 @@ services:
       timeout: 5s
       retries: 5
       start_period: 5s
+    labels:
+    - runtipi.managed=true
   web:
     image: rickraven/logdy:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       LOGDY_MODE: follow
       LOGDY_FOLLOW_FILES: /data/*.log
@@ -35,6 +37,8 @@ services:
     depends_on:
       syslog:
         condition: service_healthy
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8080
       is_main: true

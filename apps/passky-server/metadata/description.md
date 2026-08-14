@@ -12,6 +12,13 @@ Plus, Passky is easy to use and available on all of your devices, so you can acc
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/passky-server/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/passky-server/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/passky-server/3.jpg)
+
 ## Links
 
 - Website: https://passky.org

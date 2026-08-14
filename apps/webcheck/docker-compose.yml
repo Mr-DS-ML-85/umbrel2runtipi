@@ -1,9 +1,11 @@
 services:
   server:
     image: ghcr.io/lissy93/web-check:latest
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data:/app/data
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3000
       is_main: true

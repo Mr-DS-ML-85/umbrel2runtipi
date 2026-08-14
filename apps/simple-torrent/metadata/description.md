@@ -1,8 +1,8 @@
 # SimpleTorrent
 
-Download torrents with your Umbrel
+Download torrents with your the server
 
-SimpleTorrent is a a self-hosted remote torrent client that starts torrents remotely, download sets of files on your Umbrel, which are then retrievable or streamable via web browser over HTTP. This project is a re-branded fork of cloud-torrent by jpillora. Features:
+SimpleTorrent is a a self-hosted remote torrent client that starts torrents remotely, download sets of files on your the server, which are then retrievable or streamable via web browser over HTTP. This project is a re-branded fork of cloud-torrent by jpillora. Features:
 
 - Individual file download control
 - Run external program on tasks completion: DoneCmd
@@ -17,6 +17,13 @@ SimpleTorrent is a a self-hosted remote torrent client that starts torrents remo
 ⚠️ SimpleTorrent downloads torrents over the Clearnet, not Tor.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/simple-torrent/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/simple-torrent/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/simple-torrent/3.jpg)
 
 ## Links
 

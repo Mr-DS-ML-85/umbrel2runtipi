@@ -1,10 +1,10 @@
 services:
   nginx:
     image: ghcr.io/bffless/ce-nginx:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 30s
     environment:
-      DEVICE_DOMAIN_NAME: umbrel.local
+      DEVICE_DOMAIN_NAME: localhost
     volumes:
     - ${APP_DATA_DIR}/data/config:/app/config:ro
     - ${APP_DATA_DIR}/data/frontend:/usr/share/nginx/html/app:ro
@@ -12,12 +12,14 @@ services:
     depends_on:
     - backend
     - frontend
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 5537
       is_main: true
   postgres:
     image: pgvector/pgvector:0.8.6-pg13
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 30s
     environment:
       POSTGRES_USER: postgres
@@ -36,15 +38,17 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    labels:
+    - runtipi.managed=true
   supertokens:
     image: supertokens/supertokens-postgresql:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 30s
     depends_on:
       postgres:
         condition: service_healthy
     environment:
-      POSTGRESQL_HOST: bffless_postgres_1
+      POSTGRESQL_HOST: postgres
       POSTGRESQL_PORT: '5432'
       POSTGRESQL_USER: postgres
       POSTGRESQL_PASSWORD: staticfilesgobrrrr
@@ -61,9 +65,11 @@ services:
       timeout: 10s
       retries: 8
       start_period: 45s
+    labels:
+    - runtipi.managed=true
   backend:
     image: ghcr.io/bffless/ce-backend:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 30s
     depends_on:
       postgres:
@@ -77,7 +83,7 @@ services:
       LOG_LEVEL: error,warn,log
       APP_SEED: ${APP_SEED:-}
       APP_DATA_DIR: ${APP_DATA_DIR:-/data}
-      DATABASE_URL: postgresql://postgres:staticfilesgobrrrr@bffless_postgres_1:5432/assethost
+      DATABASE_URL: postgresql://postgres:staticfilesgobrrrr@postgres:5432/assethost
       STORAGE_TYPE: local
       ENABLE_MINIO: 'false'
       CACHE_TYPE: memory
@@ -90,7 +96,7 @@ services:
       API_DOMAIN: http://localhost:5537
       ADMIN_DOMAIN: localhost
       COOKIE_SECURE: 'false'
-      COOKIE_DOMAIN: umbrel.local
+      COOKIE_DOMAIN: localhost
       NGINX_SITES_PATH: /etc/nginx/sites-enabled
       NGINX_RELOAD_WAIT_MS: '3000'
       NGINX_LISTEN_PORT: '5537'
@@ -103,13 +109,17 @@ services:
     - ${APP_DATA_DIR}/data/uploads:/app/apps/backend/uploads
     - ${APP_DATA_DIR}/data/config:/app/config:ro
     - ${APP_DATA_DIR}/data/nginx:/etc/nginx/sites-enabled
+    labels:
+    - runtipi.managed=true
   frontend:
     image: ghcr.io/bffless/ce-frontend:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 30s
     volumes:
     - ${APP_DATA_DIR}/data/frontend:/app/dist
     depends_on:
     - backend
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

@@ -8,6 +8,13 @@ This is an early access release of Maybe that is only available to those who sel
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/maybe/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/maybe/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/maybe/3.jpg)
+
 ## Links
 
 - Website: https://maybe.co/

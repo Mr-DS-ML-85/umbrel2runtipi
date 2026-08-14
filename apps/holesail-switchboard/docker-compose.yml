@@ -1,7 +1,7 @@
 services:
   web:
     image: orenz0/holesail-switchboard:v2.0.8
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     ports:
     - 3161:3161
@@ -23,6 +23,8 @@ services:
       HSSB_CLIENT_HOST: 0.0.0.0
       HSSB_FIXED_CLIENT_PORTS: 3161-3170
       HSSB_SUBTITLE: 'For more information, visit: https://github.com/oren-z0/holesail-switchboard/blob/main/docs/Umbrel.md'
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3160
       is_main: true

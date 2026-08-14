@@ -8,17 +8,24 @@ LlamaGPT is a self-hosted, offline, and private chatbot that provides a ChatGPT-
 
 Note: The download size of LlamaGPT is about 5.5GB. Depending on your internet speed, it may take some time for it to be installed.
 
-LlamaGPT consumes approximately 5GB of RAM. As a result, it is not suitable for users running umbrelOS on a Raspberry Pi 4 with 4GB RAM. For the best user experience, at least 8GB RAM is recommended.
+LlamaGPT consumes approximately 5GB of RAM. As a result, it is not suitable for users running the server on a Raspberry Pi 4 with 4GB RAM. For the best user experience, at least 8GB RAM is recommended.
 
-LlamaGPT is optimized for the Umbrel Home, generating words as fast as ~3 words/sec. On a Raspberry Pi 4 with 8GB RAM, it generates words at ~1 word/sec. Performance can vary depending on which other apps are installed on your Umbrel.
+LlamaGPT is optimized for the the server Home, generating words as fast as ~3 words/sec. On a Raspberry Pi 4 with 8GB RAM, it generates words at ~1 word/sec. Performance can vary depending on which other apps are installed on your the server.
 
 Powered by the state-of-the-art Nous Hermes Llama 2 7B language model, LlamaGPT is fine-tuned on over 300,000 instructions to offer longer responses and a lower hallucination rate.
 
 LlamaGPT has been made possible thanks to the incredible open source work from various developers and teams. We extend our gratitude to Mckay Wrigley for building the Chatbot UI, Georgi Gerganov for implementing llama.cpp, Andrei for developing the Python bindings for llama.cpp, NousResearch for fine-tuning the model, Tom Jobbins for quantizing the model, and Meta for releasing Llama 2 under a permissive license.
 
-An official app from Umbrel.
+An official app from the server.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/llama-gpt/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/llama-gpt/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/llama-gpt/3.jpg)
 
 ## Links
 

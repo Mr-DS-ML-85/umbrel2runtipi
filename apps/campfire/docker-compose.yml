@@ -7,7 +7,7 @@ services:
     environment:
       RAILS_ENV: production
       SECRET_KEY_BASE: ${APP_SEED}
-      REDIS_URL: redis://campfire_redis_1:6379
+      REDIS_URL: redis://redis:6379
       DISABLE_SSL: 'true'
       VAPID_PUBLIC_KEY: ${VAPID_PUBLIC_KEY:-}
       VAPID_PRIVATE_KEY: ${VAPID_PRIVATE_KEY:-}
@@ -22,7 +22,9 @@ services:
         reservations:
           memory: 2G
           cpus: '1'
-    restart: on-failure
+    restart: unless-stopped
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 80
       is_main: true
@@ -40,6 +42,8 @@ services:
         reservations:
           memory: 256M
           cpus: '0.25'
-    restart: on-failure
+    restart: unless-stopped
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

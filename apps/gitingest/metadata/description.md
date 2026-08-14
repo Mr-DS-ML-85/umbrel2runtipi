@@ -10,6 +10,11 @@ Gitingest is particularly useful for AI developers crafting precise prompts, tea
 
 ---
 
+
+## Preview
+
+![Preview](https://raw.githubusercontent.com/coderamp-labs/gitingest/refs/heads/main/docs/frontpage.png)
+
 ## Links
 
 - Website: https://gitingest.com/

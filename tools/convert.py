@@ -75,6 +75,14 @@ REPORT_PATH = ROOT_DIR / "conversion-report.md"
 
 ICON_BASE = "https://getumbrel.github.io/umbrel-apps-gallery"
 
+# Repo logo fallbacks for apps whose Umbrel gallery icon is broken (renders
+# all-black, e.g. the gallery PNG was flattened without its alpha). Value is a
+# raw.githubusercontent.com URL to the app's real logo.
+REPO_LOGO_FALLBACKS = {
+    "route96": "https://raw.githubusercontent.com/v0l/route96/main/ui_src/public/route96.jpg",
+    "fizzy": "https://raw.githubusercontent.com/basecamp/fizzy/main/public/app-icon.png",
+}
+
 # Host ports already in use on the user's server (nmap result) - the store must
 # NEVER assign these to an app. Edit this list to match your setup.
 RESERVED_PORTS = {
@@ -323,6 +331,12 @@ def convert_compose(app_id: str, compose: dict, manifest_port: int):
         cn = s.get("container_name")
         if isinstance(cn, str) and cn and cn != sname:
             container_map[cn] = sname
+        # umbrel compose auto-names containers <project>_<service>_1 (and
+        # <project>-<service>-1). Those hostnames are baked into DATABASE_URL /
+        # REDIS_URL etc. and do not resolve on runtipi (project name differs),
+        # so rewrite them to the plain service name.
+        for alt in (f"{app_id}_{sname}_1", f"{app_id}-{sname}-1"):
+            container_map[alt] = sname
 
     for s in services.values():
         s.pop("container_name", None)
@@ -402,6 +416,11 @@ def convert_compose(app_id: str, compose: dict, manifest_port: int):
             return m.group(1) if m.group(1) else "localhost"
         s = re.sub(r"\$\{DEVICE_DOMAIN_NAME(?::-([^}]*))?\}", _resolve_defaulted_var, s)
         s = re.sub(r"\$\{DEVICE_HOSTNAME(?::-([^}]*))?\}", _resolve_defaulted_var, s)
+        # umbrel-branded hardcoded defaults (device domain/email/credentials)
+        s = s.replace("umbrel@umbrel.local", "admin@localhost")
+        s = s.replace("admin@umbrel.local", "admin@localhost")
+        s = s.replace("umbrel.local", "localhost")
+        s = re.sub(r"(?<![\w.-])umbrelplane(?![\w.-])", "$APP_PASSWORD", s)
         if container_map:
             for cn, sname in container_map.items():
                 s = re.sub(rf"(?<![\w.-]){re.escape(cn)}(?![\w.-])", sname, s)
@@ -410,6 +429,24 @@ def convert_compose(app_id: str, compose: dict, manifest_port: int):
     comp = rewrite_paths(comp)
     services = comp.setdefault("services", {})
     svc = services[main_service]
+
+    # -- official-store conventions -----------------------------------------
+    # runtipi marks its containers with the runtipi.managed label (used by the
+    # "stop all"/"restart all" actions and container identification), and the
+    # store standard is restart: unless-stopped rather than umbrel's on-failure.
+    for sname, s in services.items():
+        labels = s.get("labels")
+        if isinstance(labels, dict):
+            labels.setdefault("runtipi.managed", True)
+        else:
+            labels = [] if labels is None else labels
+            if isinstance(labels, (list, tuple)):
+                labels = list(labels)
+            if not any("runtipi.managed" in str(l) for l in labels):
+                labels.append("runtipi.managed=true")
+            s["labels"] = labels
+        if not isinstance(s.get("restart"), str) or s.get("restart") != "unless-stopped":
+            s["restart"] = "unless-stopped"
 
     # -- x-runtipi metadata -------------------------------------------------
     svc.setdefault("x-runtipi", {})
@@ -446,6 +483,16 @@ def build_form_fields(var_info: dict[str, bool]):
     return fields
 
 
+def sanitize_text(s: str) -> str:
+    """Remove umbrelOS/umbrel.local branding from user-facing text."""
+    s = s.replace("umbrel@umbrel.local", "admin@localhost")
+    s = s.replace("admin@umbrel.local", "admin@localhost")
+    s = s.replace("umbrel.local", "localhost")
+    s = s.replace("umbrelOS", "the server")
+    s = re.sub(r"(?i)\bumbrel\b", "the server", s)
+    return s
+
+
 def build_config(manifest: dict, app_id: str, internal_port: int, var_info: dict[str, bool]) -> dict:
     name = manifest.get("name") or app_id
     category = manifest.get("category", "")
@@ -465,8 +512,8 @@ def build_config(manifest: dict, app_id: str, internal_port: int, var_info: dict
         "tipi_version": 1,
         "version": str(manifest.get("version") or "latest"),
         "categories": categories,
-        "description": (manifest.get("description") or "").strip(),
-        "short_desc": (manifest.get("tagline") or "").strip(),
+        "description": sanitize_text((manifest.get("description") or "").strip()),
+        "short_desc": sanitize_text((manifest.get("tagline") or "").strip()),
         "author": manifest.get("developer") or name,
         "source": manifest.get("repo") or manifest.get("website") or "",
         "website": manifest.get("website") or manifest.get("repo") or "",
@@ -474,7 +521,7 @@ def build_config(manifest: dict, app_id: str, internal_port: int, var_info: dict
         "supported_architectures": ["arm64", "amd64"],
         "created_at": now,
         "updated_at": now,
-        "min_tipi_version": "4.0.0",
+        "min_tipi_version": "4.5.0",
     }
     return cfg
 
@@ -483,10 +530,10 @@ def description_md(manifest: dict) -> str:
     lines = ["# " + (manifest.get("name") or ""), ""]
     tagline = (manifest.get("tagline") or "").strip()
     if tagline:
-        lines += [tagline, ""]
+        lines += [sanitize_text(tagline), ""]
     desc = (manifest.get("description") or "").strip()
     if desc:
-        lines += [desc, "", "---", ""]
+        lines += [sanitize_text(desc), "", "---", ""]
     links = []
     if manifest.get("website"):
         links.append(f"- Website: {manifest['website']}")
@@ -499,7 +546,7 @@ def description_md(manifest: dict) -> str:
     if manifest.get("defaultUsername") or manifest.get("defaultPassword"):
         lines += ["## Default credentials", ""]
         if manifest.get("defaultUsername"):
-            lines.append(f"- Username: `{manifest['defaultUsername']}`")
+            lines.append(f"- Username: `{sanitize_text(str(manifest['defaultUsername']))}`")
         if manifest.get("defaultPassword"):
             lines.append(f"- Password: `{manifest['defaultPassword']}`")
         lines.append("")
@@ -510,6 +557,19 @@ def description_md(manifest: dict) -> str:
 
 
 def download_logo(app_id: str, out_dir: Path) -> bool:
+    if app_id in REPO_LOGO_FALLBACKS:
+        url = REPO_LOGO_FALLBACKS[app_id]
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "runtipi-umbrel-converter"})
+            img_data = urllib.request.urlopen(req, timeout=30).read()
+            from PIL import Image
+            from io import BytesIO
+            img = Image.open(BytesIO(img_data)).convert("RGB")
+            img.thumbnail((256, 256))
+            img.save(str(out_dir / "logo.jpg"), "JPEG", quality=90)
+            return True
+        except Exception:
+            pass
     url = f"{ICON_BASE}/{app_id}/icon.svg"
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "runtipi-umbrel-converter"})
@@ -527,6 +587,13 @@ def download_logo(app_id: str, out_dir: Path) -> bool:
             check=True, capture_output=True,
         )
         img = Image.open(png_path).convert("RGB")
+        # Reject renders that are essentially all black -- the Umbrel gallery
+        # icon for a few apps (route96, fizzy) is a flattened PNG whose content
+        # got lost, so the icon renders as a solid black square.
+        pixels = list(img.getdata())
+        black = sum(1 for p in pixels if sum(p) < 12)
+        if black > 0.95 * len(pixels):
+            raise ValueError(f"gallery icon for {app_id} renders all-black, skipping")
         img.save(str(out_dir / "logo.jpg"), "JPEG", quality=90)
         svg_path.unlink(missing_ok=True)
         png_path.unlink(missing_ok=True)
@@ -729,6 +796,22 @@ def main():
             skipped_infra.append((app_id, "umbrel system app dependency", ";".join(infra_hits[:6])))
             continue
 
+        # ---- skip apps that depend on umbrel install hooks / templates -----
+        # Apps whose containers mount or run files generated by umbrel
+        # install/pre-start hooks (e.g. ${APP_DATA_DIR}/server.py from a
+        # server.py.template) cannot run: runtipi has no hook mechanism, so the
+        # mounted file never exists and the app crash-loops. Note: a plain
+        # `env_file: settings.env` is NOT a skip reason -- convert already
+        # strips env_file entries (see env_file removal in convert_compose).
+        hook_deps = []
+        if re.search(r"server\.py", compose_text) and (
+            "server.py:" in compose_text or "server.py\"" in compose_text or "/app/server.py" in compose_text
+        ):
+            hook_deps.append("mounts/runs server.py (created by umbrel hook/template)")
+        if hook_deps:
+            skipped_other.append((app_id, "umbrel install hook/template dependency", ";".join(hook_deps)))
+            continue
+
         # ---- convert -------------------------------------------------------
         try:
             new_compose, main_service, internal_port, host_port, notes = convert_compose(
@@ -844,8 +927,13 @@ def main():
     for folder, reason, hits in sorted(skipped_infra):
         lines.append(f"- `{folder}` — {reason} [{hits}]")
     lines.append("\n## Skipped: other\n")
-    for folder, reason in sorted(skipped_other):
-        lines.append(f"- `{folder}` — {reason}")
+    for row in sorted(skipped_other):
+        if len(row) == 3:
+            folder, reason, hits = row
+            lines.append(f"- `{folder}` — {reason} [{hits}]")
+        else:
+            folder, reason = row
+            lines.append(f"- `{folder}` — {reason}")
     lines.append("\n## Conversion failures\n")
     for folder, reason in sorted(failures):
         lines.append(f"- `{folder}` — {reason}")

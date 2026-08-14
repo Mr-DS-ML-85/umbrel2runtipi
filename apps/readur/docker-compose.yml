@@ -2,9 +2,9 @@ services:
   app:
     image: ghcr.io/readur/readur:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
-      DATABASE_URL: postgresql://readur:readur_password@readur_postgres_1:5432/readur
+      DATABASE_URL: postgresql://readur:readur_password@postgres:5432/readur
       JWT_SECRET: ${APP_SEED}
       SERVER_ADDRESS: 0.0.0.0:8000
       UPLOAD_PATH: /app/uploads
@@ -36,13 +36,15 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8000
       is_main: true
   postgres:
     image: postgres:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       POSTGRES_USER: readur
       POSTGRES_PASSWORD: readur_password
@@ -56,5 +58,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

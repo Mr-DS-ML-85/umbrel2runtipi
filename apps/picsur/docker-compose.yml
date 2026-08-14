@@ -24,13 +24,15 @@ services:
       POSTGRES_DB: picsur
       POSTGRES_USER: picsuruser
       POSTGRES_PASSWORD: picsurpass
-    restart: on-failure
+    restart: unless-stopped
+    labels:
+    - runtipi.managed=true
   web:
     image: ghcr.io/caramelfur/picsur:latest
     user: 1000:1000
     environment:
       PICSUR_PORT: 8286
-      PICSUR_DB_HOST: picsur_db_1
+      PICSUR_DB_HOST: db
       PICSUR_DB_PORT: 5432
       PICSUR_DB_USERNAME: picsuruser
       PICSUR_DB_PASSWORD: picsurpass
@@ -40,7 +42,9 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    restart: on-failure
+    restart: unless-stopped
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8286
       is_main: true

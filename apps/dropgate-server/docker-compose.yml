@@ -1,7 +1,7 @@
 services:
   web:
     image: willtda/dropgate-server:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     volumes:
     - ${APP_DATA_DIR}/data/uploads:/usr/src/app/uploads
@@ -17,6 +17,8 @@ services:
       UPLOAD_MAX_FILE_LIFETIME_HOURS: 24
       UPLOAD_MAX_FILE_DOWNLOADS: 1
       ENABLE_P2P: 'true'
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 52443
       is_main: true

@@ -2,10 +2,10 @@ services:
   app:
     image: lissy93/domain-locker:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       DL_ENV_TYPE: selfHosted
-      DL_PG_HOST: domain-locker_postgres_1
+      DL_PG_HOST: postgres
       DL_PG_PORT: 5432
       DL_PG_USER: postgres
       DL_PG_PASSWORD: domain-locker
@@ -23,13 +23,15 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3000
       is_main: true
   postgres:
     image: postgres:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       POSTGRES_DB: domain_locker
       POSTGRES_USER: postgres
@@ -43,5 +45,7 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

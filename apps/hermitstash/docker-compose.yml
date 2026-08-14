@@ -3,7 +3,7 @@ services:
     image: ghcr.io/dotcoocoo/hermitstash:latest
     user: 1000:1000
     init: true
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     shm_size: 256m
     security_opt:
@@ -31,6 +31,8 @@ services:
       TRUST_PROXY: 'true'
       RP_ORIGIN: http://localhost:3081
       EMAIL_VERIFICATION: 'false'
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3000
       is_main: true

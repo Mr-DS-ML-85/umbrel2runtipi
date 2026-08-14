@@ -31,6 +31,15 @@ Zoraxy is particularly popular in the homelab and developer communities for its 
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zoraxy/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zoraxy/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zoraxy/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zoraxy/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zoraxy/5.jpg)
+
 ## Links
 
 - Website: https://zoraxy.aroz.org/

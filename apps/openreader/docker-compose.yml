@@ -8,9 +8,11 @@ services:
     - AUTH_SECRET=${APP_SEED}
     - AUTH_TRUSTED_ORIGINS=http://localhost:3391,http://localhost:3391,http://*.ts.net:3391,https://*.ts.net:3391,${APP_OPENREADER_LOCAL_URLS}
     - USE_ANONYMOUS_AUTH_SESSIONS=true
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/docstore:/app/docstore
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3003
       is_main: true

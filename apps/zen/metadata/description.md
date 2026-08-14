@@ -12,6 +12,15 @@ Overall, Zen serves as a lightweight, fast, and privacy-focused tool for persona
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zen/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zen/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zen/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zen/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/zen/5.jpg)
+
 ## Links
 
 - Website: https://www.sheshbabu.com/zen/

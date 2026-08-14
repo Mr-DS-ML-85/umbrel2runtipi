@@ -5,7 +5,7 @@ services:
       UID: '1000'
       GID: '1000'
       DB_TYPE: postgres
-      DB_HOST: endurain_db_1
+      DB_HOST: db
       DB_PORT: 5432
       DB_PASSWORD: endurain
       SECRET_KEY: ${APP_PASSWORD}
@@ -16,7 +16,9 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    restart: on-failure
+    restart: unless-stopped
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8080
       is_main: true
@@ -30,7 +32,7 @@ services:
       PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
     - ${APP_DATA_DIR}/data/db:/var/lib/postgresql/data
-    restart: on-failure
+    restart: unless-stopped
     healthcheck:
       test:
       - CMD-SHELL
@@ -38,5 +40,7 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

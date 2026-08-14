@@ -11,7 +11,7 @@
   "categories": [
     "finance"
   ],
-  "description": "Running Umbrel behind a home router (NAT) without a public domain?\nTOR is too slow?\nThis app will allow you (and your friends) to connect remotely to your LNbits, using a Holesail - an instant P2P tunnel to bypass any network, firewall, NAT restrictions.\n\nNote: The tunnel only works when the client side is running from outside the local network (which is the main use case of this app).",
+  "description": "Running the server behind a home router (NAT) without a public domain?\nTOR is too slow?\nThis app will allow you (and your friends) to connect remotely to your LNbits, using a Holesail - an instant P2P tunnel to bypass any network, firewall, NAT restrictions.\n\nNote: The tunnel only works when the client side is running from outside the local network (which is the main use case of this app).",
   "short_desc": "A Holesail proxy to connect remotely to your LNbits",
   "author": "oren-z0",
   "source": "https://github.com/oren-z0/holesail-server-manager",
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786691341226,
-  "updated_at": 1786691341226,
-  "min_tipi_version": "4.0.0"
+  "created_at": 1786704447515,
+  "updated_at": 1786704447515,
+  "min_tipi_version": "4.5.0"
 }

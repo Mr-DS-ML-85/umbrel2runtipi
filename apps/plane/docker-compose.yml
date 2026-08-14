@@ -5,13 +5,13 @@ x-environment:
   GUNICORN_WORKERS: 2
   POSTGRES_DB: plane
   POSTGRES_USER: plane
-  POSTGRES_PASSWORD: umbrelplane
-  DATABASE_URL: postgresql://plane:umbrelplane@plane_db_1:5432/plane
-  REDIS_URL: redis://plane_redis_1:6379/0
+  POSTGRES_PASSWORD: $APP_PASSWORD
+  DATABASE_URL: postgresql://plane:$APP_PASSWORD@db:5432/plane
+  REDIS_URL: redis://redis:6379/0
   RABBITMQ_DEFAULT_USER: plane
-  RABBITMQ_DEFAULT_PASS: umbrelplane
+  RABBITMQ_DEFAULT_PASS: $APP_PASSWORD
   RABBITMQ_DEFAULT_VHOST: plane
-  CELERY_BROKER_URL: amqp://plane:umbrelplane@plane_rabbitmq_1:5672/plane
+  CELERY_BROKER_URL: amqp://plane:$APP_PASSWORD@rabbitmq:5672/plane
   USE_MINIO: 1
   AWS_ACCESS_KEY_ID: umbrel
   AWS_SECRET_ACCESS_KEY: $APP_PASSWORD
@@ -32,18 +32,20 @@ x-environment:
 services:
   nginx:
     image: nginx:latest
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/config/nginx.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
     - web
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8762
       is_main: true
   db:
     image: postgres:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       NGINX_PORT: 8762
       LISTEN_HTTP_PORT: 8762
@@ -51,13 +53,13 @@ services:
       GUNICORN_WORKERS: 2
       POSTGRES_DB: plane
       POSTGRES_USER: plane
-      POSTGRES_PASSWORD: umbrelplane
-      DATABASE_URL: postgresql://plane:umbrelplane@plane_db_1:5432/plane
-      REDIS_URL: redis://plane_redis_1:6379/0
+      POSTGRES_PASSWORD: $APP_PASSWORD
+      DATABASE_URL: postgresql://plane:$APP_PASSWORD@db:5432/plane
+      REDIS_URL: redis://redis:6379/0
       RABBITMQ_DEFAULT_USER: plane
-      RABBITMQ_DEFAULT_PASS: umbrelplane
+      RABBITMQ_DEFAULT_PASS: $APP_PASSWORD
       RABBITMQ_DEFAULT_VHOST: plane
-      CELERY_BROKER_URL: amqp://plane:umbrelplane@plane_rabbitmq_1:5672/plane
+      CELERY_BROKER_URL: amqp://plane:$APP_PASSWORD@rabbitmq:5672/plane
       USE_MINIO: 1
       AWS_ACCESS_KEY_ID: umbrel
       AWS_SECRET_ACCESS_KEY: $APP_PASSWORD
@@ -84,15 +86,19 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
+    labels:
+    - runtipi.managed=true
   redis:
     image: valkey/valkey:latest
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/redis:/data
+    labels:
+    - runtipi.managed=true
   rabbitmq:
     image: rabbitmq:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       NGINX_PORT: 8762
       LISTEN_HTTP_PORT: 8762
@@ -100,13 +106,13 @@ services:
       GUNICORN_WORKERS: 2
       POSTGRES_DB: plane
       POSTGRES_USER: plane
-      POSTGRES_PASSWORD: umbrelplane
-      DATABASE_URL: postgresql://plane:umbrelplane@plane_db_1:5432/plane
-      REDIS_URL: redis://plane_redis_1:6379/0
+      POSTGRES_PASSWORD: $APP_PASSWORD
+      DATABASE_URL: postgresql://plane:$APP_PASSWORD@db:5432/plane
+      REDIS_URL: redis://redis:6379/0
       RABBITMQ_DEFAULT_USER: plane
-      RABBITMQ_DEFAULT_PASS: umbrelplane
+      RABBITMQ_DEFAULT_PASS: $APP_PASSWORD
       RABBITMQ_DEFAULT_VHOST: plane
-      CELERY_BROKER_URL: amqp://plane:umbrelplane@plane_rabbitmq_1:5672/plane
+      CELERY_BROKER_URL: amqp://plane:$APP_PASSWORD@rabbitmq:5672/plane
       USE_MINIO: 1
       AWS_ACCESS_KEY_ID: umbrel
       AWS_SECRET_ACCESS_KEY: $APP_PASSWORD
@@ -126,10 +132,12 @@ services:
       WEBHOOK_ALLOWED_HOSTS: ''
     volumes:
     - ${APP_DATA_DIR}/data/rabbitmq:/var/lib/rabbitmq
+    labels:
+    - runtipi.managed=true
   minio:
     image: alpine/minio:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     command: server /export --console-address ":8763"
     environment:
       NGINX_PORT: 8762
@@ -138,13 +146,13 @@ services:
       GUNICORN_WORKERS: 2
       POSTGRES_DB: plane
       POSTGRES_USER: plane
-      POSTGRES_PASSWORD: umbrelplane
-      DATABASE_URL: postgresql://plane:umbrelplane@plane_db_1:5432/plane
-      REDIS_URL: redis://plane_redis_1:6379/0
+      POSTGRES_PASSWORD: $APP_PASSWORD
+      DATABASE_URL: postgresql://plane:$APP_PASSWORD@db:5432/plane
+      REDIS_URL: redis://redis:6379/0
       RABBITMQ_DEFAULT_USER: plane
-      RABBITMQ_DEFAULT_PASS: umbrelplane
+      RABBITMQ_DEFAULT_PASS: $APP_PASSWORD
       RABBITMQ_DEFAULT_VHOST: plane
-      CELERY_BROKER_URL: amqp://plane:umbrelplane@plane_rabbitmq_1:5672/plane
+      CELERY_BROKER_URL: amqp://plane:$APP_PASSWORD@rabbitmq:5672/plane
       USE_MINIO: 1
       AWS_ACCESS_KEY_ID: umbrel
       AWS_SECRET_ACCESS_KEY: $APP_PASSWORD
@@ -166,10 +174,12 @@ services:
     - ${APP_DATA_DIR}/data/uploads:/export
     ports:
     - 8763:8763
+    labels:
+    - runtipi.managed=true
   api:
     image: makeplane/plane-backend:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       NGINX_PORT: 8762
       LISTEN_HTTP_PORT: 8762
@@ -177,13 +187,13 @@ services:
       GUNICORN_WORKERS: 2
       POSTGRES_DB: plane
       POSTGRES_USER: plane
-      POSTGRES_PASSWORD: umbrelplane
-      DATABASE_URL: postgresql://plane:umbrelplane@plane_db_1:5432/plane
-      REDIS_URL: redis://plane_redis_1:6379/0
+      POSTGRES_PASSWORD: $APP_PASSWORD
+      DATABASE_URL: postgresql://plane:$APP_PASSWORD@db:5432/plane
+      REDIS_URL: redis://redis:6379/0
       RABBITMQ_DEFAULT_USER: plane
-      RABBITMQ_DEFAULT_PASS: umbrelplane
+      RABBITMQ_DEFAULT_PASS: $APP_PASSWORD
       RABBITMQ_DEFAULT_VHOST: plane
-      CELERY_BROKER_URL: amqp://plane:umbrelplane@plane_rabbitmq_1:5672/plane
+      CELERY_BROKER_URL: amqp://plane:$APP_PASSWORD@rabbitmq:5672/plane
       USE_MINIO: 1
       AWS_ACCESS_KEY_ID: umbrel
       AWS_SECRET_ACCESS_KEY: $APP_PASSWORD
@@ -208,10 +218,12 @@ services:
         condition: service_started
       rabbitmq:
         condition: service_started
+    labels:
+    - runtipi.managed=true
   worker:
     image: makeplane/plane-backend:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       NGINX_PORT: 8762
       LISTEN_HTTP_PORT: 8762
@@ -219,13 +231,13 @@ services:
       GUNICORN_WORKERS: 2
       POSTGRES_DB: plane
       POSTGRES_USER: plane
-      POSTGRES_PASSWORD: umbrelplane
-      DATABASE_URL: postgresql://plane:umbrelplane@plane_db_1:5432/plane
-      REDIS_URL: redis://plane_redis_1:6379/0
+      POSTGRES_PASSWORD: $APP_PASSWORD
+      DATABASE_URL: postgresql://plane:$APP_PASSWORD@db:5432/plane
+      REDIS_URL: redis://redis:6379/0
       RABBITMQ_DEFAULT_USER: plane
-      RABBITMQ_DEFAULT_PASS: umbrelplane
+      RABBITMQ_DEFAULT_PASS: $APP_PASSWORD
       RABBITMQ_DEFAULT_VHOST: plane
-      CELERY_BROKER_URL: amqp://plane:umbrelplane@plane_rabbitmq_1:5672/plane
+      CELERY_BROKER_URL: amqp://plane:$APP_PASSWORD@rabbitmq:5672/plane
       USE_MINIO: 1
       AWS_ACCESS_KEY_ID: umbrel
       AWS_SECRET_ACCESS_KEY: $APP_PASSWORD
@@ -254,10 +266,12 @@ services:
     - sh
     - -c
     - celery -A plane worker --loglevel=info
+    labels:
+    - runtipi.managed=true
   beat-worker:
     image: makeplane/plane-backend:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       NGINX_PORT: 8762
       LISTEN_HTTP_PORT: 8762
@@ -265,13 +279,13 @@ services:
       GUNICORN_WORKERS: 2
       POSTGRES_DB: plane
       POSTGRES_USER: plane
-      POSTGRES_PASSWORD: umbrelplane
-      DATABASE_URL: postgresql://plane:umbrelplane@plane_db_1:5432/plane
-      REDIS_URL: redis://plane_redis_1:6379/0
+      POSTGRES_PASSWORD: $APP_PASSWORD
+      DATABASE_URL: postgresql://plane:$APP_PASSWORD@db:5432/plane
+      REDIS_URL: redis://redis:6379/0
       RABBITMQ_DEFAULT_USER: plane
-      RABBITMQ_DEFAULT_PASS: umbrelplane
+      RABBITMQ_DEFAULT_PASS: $APP_PASSWORD
       RABBITMQ_DEFAULT_VHOST: plane
-      CELERY_BROKER_URL: amqp://plane:umbrelplane@plane_rabbitmq_1:5672/plane
+      CELERY_BROKER_URL: amqp://plane:$APP_PASSWORD@rabbitmq:5672/plane
       USE_MINIO: 1
       AWS_ACCESS_KEY_ID: umbrel
       AWS_SECRET_ACCESS_KEY: $APP_PASSWORD
@@ -302,10 +316,12 @@ services:
     - sh
     - -c
     - celery -A plane beat --loglevel=info
+    labels:
+    - runtipi.managed=true
   migrator:
     image: makeplane/plane-backend:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       NGINX_PORT: 8762
       LISTEN_HTTP_PORT: 8762
@@ -313,13 +329,13 @@ services:
       GUNICORN_WORKERS: 2
       POSTGRES_DB: plane
       POSTGRES_USER: plane
-      POSTGRES_PASSWORD: umbrelplane
-      DATABASE_URL: postgresql://plane:umbrelplane@plane_db_1:5432/plane
-      REDIS_URL: redis://plane_redis_1:6379/0
+      POSTGRES_PASSWORD: $APP_PASSWORD
+      DATABASE_URL: postgresql://plane:$APP_PASSWORD@db:5432/plane
+      REDIS_URL: redis://redis:6379/0
       RABBITMQ_DEFAULT_USER: plane
-      RABBITMQ_DEFAULT_PASS: umbrelplane
+      RABBITMQ_DEFAULT_PASS: $APP_PASSWORD
       RABBITMQ_DEFAULT_VHOST: plane
-      CELERY_BROKER_URL: amqp://plane:umbrelplane@plane_rabbitmq_1:5672/plane
+      CELERY_BROKER_URL: amqp://plane:$APP_PASSWORD@rabbitmq:5672/plane
       USE_MINIO: 1
       AWS_ACCESS_KEY_ID: umbrel
       AWS_SECRET_ACCESS_KEY: $APP_PASSWORD
@@ -344,9 +360,11 @@ services:
     - sh
     - -c
     - python manage.py wait_for_db && python manage.py migrate
+    labels:
+    - runtipi.managed=true
   web:
     image: makeplane/plane-frontend:latest
-    restart: on-failure
+    restart: unless-stopped
     environment:
       NGINX_PORT: 8762
       LISTEN_HTTP_PORT: 8762
@@ -354,13 +372,13 @@ services:
       GUNICORN_WORKERS: 2
       POSTGRES_DB: plane
       POSTGRES_USER: plane
-      POSTGRES_PASSWORD: umbrelplane
-      DATABASE_URL: postgresql://plane:umbrelplane@plane_db_1:5432/plane
-      REDIS_URL: redis://plane_redis_1:6379/0
+      POSTGRES_PASSWORD: $APP_PASSWORD
+      DATABASE_URL: postgresql://plane:$APP_PASSWORD@db:5432/plane
+      REDIS_URL: redis://redis:6379/0
       RABBITMQ_DEFAULT_USER: plane
-      RABBITMQ_DEFAULT_PASS: umbrelplane
+      RABBITMQ_DEFAULT_PASS: $APP_PASSWORD
       RABBITMQ_DEFAULT_VHOST: plane
-      CELERY_BROKER_URL: amqp://plane:umbrelplane@plane_rabbitmq_1:5672/plane
+      CELERY_BROKER_URL: amqp://plane:$APP_PASSWORD@rabbitmq:5672/plane
       USE_MINIO: 1
       AWS_ACCESS_KEY_ID: umbrel
       AWS_SECRET_ACCESS_KEY: $APP_PASSWORD
@@ -380,10 +398,12 @@ services:
       WEBHOOK_ALLOWED_HOSTS: ''
     depends_on:
     - api
+    labels:
+    - runtipi.managed=true
   live:
     image: makeplane/plane-live:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       NGINX_PORT: 8762
       LISTEN_HTTP_PORT: 8762
@@ -391,13 +411,13 @@ services:
       GUNICORN_WORKERS: 2
       POSTGRES_DB: plane
       POSTGRES_USER: plane
-      POSTGRES_PASSWORD: umbrelplane
-      DATABASE_URL: postgresql://plane:umbrelplane@plane_db_1:5432/plane
-      REDIS_URL: redis://plane_redis_1:6379/0
+      POSTGRES_PASSWORD: $APP_PASSWORD
+      DATABASE_URL: postgresql://plane:$APP_PASSWORD@db:5432/plane
+      REDIS_URL: redis://redis:6379/0
       RABBITMQ_DEFAULT_USER: plane
-      RABBITMQ_DEFAULT_PASS: umbrelplane
+      RABBITMQ_DEFAULT_PASS: $APP_PASSWORD
       RABBITMQ_DEFAULT_VHOST: plane
-      CELERY_BROKER_URL: amqp://plane:umbrelplane@plane_rabbitmq_1:5672/plane
+      CELERY_BROKER_URL: amqp://plane:$APP_PASSWORD@rabbitmq:5672/plane
       USE_MINIO: 1
       AWS_ACCESS_KEY_ID: umbrel
       AWS_SECRET_ACCESS_KEY: $APP_PASSWORD
@@ -417,10 +437,12 @@ services:
       WEBHOOK_ALLOWED_HOSTS: ''
     depends_on:
     - api
+    labels:
+    - runtipi.managed=true
   space:
     image: makeplane/plane-space:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       NGINX_PORT: 8762
       LISTEN_HTTP_PORT: 8762
@@ -428,13 +450,13 @@ services:
       GUNICORN_WORKERS: 2
       POSTGRES_DB: plane
       POSTGRES_USER: plane
-      POSTGRES_PASSWORD: umbrelplane
-      DATABASE_URL: postgresql://plane:umbrelplane@plane_db_1:5432/plane
-      REDIS_URL: redis://plane_redis_1:6379/0
+      POSTGRES_PASSWORD: $APP_PASSWORD
+      DATABASE_URL: postgresql://plane:$APP_PASSWORD@db:5432/plane
+      REDIS_URL: redis://redis:6379/0
       RABBITMQ_DEFAULT_USER: plane
-      RABBITMQ_DEFAULT_PASS: umbrelplane
+      RABBITMQ_DEFAULT_PASS: $APP_PASSWORD
       RABBITMQ_DEFAULT_VHOST: plane
-      CELERY_BROKER_URL: amqp://plane:umbrelplane@plane_rabbitmq_1:5672/plane
+      CELERY_BROKER_URL: amqp://plane:$APP_PASSWORD@rabbitmq:5672/plane
       USE_MINIO: 1
       AWS_ACCESS_KEY_ID: umbrel
       AWS_SECRET_ACCESS_KEY: $APP_PASSWORD
@@ -462,9 +484,11 @@ services:
       timeout: 5s
       start_period: 10s
       retries: 3
+    labels:
+    - runtipi.managed=true
   admin:
     image: makeplane/plane-admin:latest
-    restart: on-failure
+    restart: unless-stopped
     environment:
       NGINX_PORT: 8762
       LISTEN_HTTP_PORT: 8762
@@ -472,13 +496,13 @@ services:
       GUNICORN_WORKERS: 2
       POSTGRES_DB: plane
       POSTGRES_USER: plane
-      POSTGRES_PASSWORD: umbrelplane
-      DATABASE_URL: postgresql://plane:umbrelplane@plane_db_1:5432/plane
-      REDIS_URL: redis://plane_redis_1:6379/0
+      POSTGRES_PASSWORD: $APP_PASSWORD
+      DATABASE_URL: postgresql://plane:$APP_PASSWORD@db:5432/plane
+      REDIS_URL: redis://redis:6379/0
       RABBITMQ_DEFAULT_USER: plane
-      RABBITMQ_DEFAULT_PASS: umbrelplane
+      RABBITMQ_DEFAULT_PASS: $APP_PASSWORD
       RABBITMQ_DEFAULT_VHOST: plane
-      CELERY_BROKER_URL: amqp://plane:umbrelplane@plane_rabbitmq_1:5672/plane
+      CELERY_BROKER_URL: amqp://plane:$APP_PASSWORD@rabbitmq:5672/plane
       USE_MINIO: 1
       AWS_ACCESS_KEY_ID: umbrel
       AWS_SECRET_ACCESS_KEY: $APP_PASSWORD
@@ -498,5 +522,7 @@ services:
       WEBHOOK_ALLOWED_HOSTS: ''
     depends_on:
     - api
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

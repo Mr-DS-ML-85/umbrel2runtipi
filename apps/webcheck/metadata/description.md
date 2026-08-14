@@ -20,6 +20,15 @@ In addition to public website analysis, WebCheck can be used for internal networ
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/webcheck/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/webcheck/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/webcheck/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/webcheck/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/webcheck/5.jpg)
+
 ## Links
 
 - Website: https://web-check.xyz/

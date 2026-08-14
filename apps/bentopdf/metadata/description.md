@@ -12,6 +12,11 @@ Another highlight is the integrated OCR functionality, which scans and recognize
 
 ---
 
+
+## Preview
+
+![Preview](public/images/bentopdf-tools.png)
+
 ## Links
 
 - Website: https://bentopdf.com/

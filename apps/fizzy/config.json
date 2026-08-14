@@ -11,7 +11,7 @@
   "categories": [
     "social"
   ],
-  "description": "Fizzy is a fresh, modern, and delightfully simple Kanban board from 37signals (the makers of Basecamp and HEY).\n\nTired of bloated tools like Trello or Jira? Fizzy strips away the unnecessary features and delivers a fast, fun, and intuitive way to track tasks, bugs, ideas, issues, or small projects. With its colorful UI, smooth drag-and-drop boards and auto-closing for inactive cards, it keeps your workflow light and focused.\n\nPerfect for personal use, small teams, or anyone running on umbrelOS who wants privacy-first project management without the bloat \u2014 Kanban as it should be.",
+  "description": "Fizzy is a fresh, modern, and delightfully simple Kanban board from 37signals (the makers of Basecamp and HEY).\n\nTired of bloated tools like Trello or Jira? Fizzy strips away the unnecessary features and delivers a fast, fun, and intuitive way to track tasks, bugs, ideas, issues, or small projects. With its colorful UI, smooth drag-and-drop boards and auto-closing for inactive cards, it keeps your workflow light and focused.\n\nPerfect for personal use, small teams, or anyone running on the server who wants privacy-first project management without the bloat \u2014 Kanban as it should be.",
   "short_desc": "Kanban as it should be. Not as it has been.",
   "author": "37signals",
   "source": "https://github.com/basecamp/fizzy",
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786691341073,
-  "updated_at": 1786691341073,
-  "min_tipi_version": "4.0.0"
+  "created_at": 1786704447357,
+  "updated_at": 1786704447357,
+  "min_tipi_version": "4.5.0"
 }

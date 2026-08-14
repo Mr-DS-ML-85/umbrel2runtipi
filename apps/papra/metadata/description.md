@@ -10,6 +10,13 @@ Forget about that receipt of that gift you bought for your friend last year, or 
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/papra/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/papra/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/papra/3.jpg)
+
 ## Links
 
 - Website: https://papra.app

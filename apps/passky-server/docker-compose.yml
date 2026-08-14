@@ -1,7 +1,7 @@
 services:
   server:
     image: rabbitcompany/passky-server:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     environment:
       SERVER_LOCATION: US
@@ -53,6 +53,8 @@ services:
       LIMITER_GET_REPORT: -1
     volumes:
     - ${APP_DATA_DIR}/data/passky:/var/www/html/databases
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 80
       is_main: true

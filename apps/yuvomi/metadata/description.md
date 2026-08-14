@@ -4,7 +4,7 @@ Self-hosted family planner — calendar, tasks, shopping, meals & budget
 
 Yuvomi is a self-hosted, privacy-focused family planner that bundles everything a household needs into a single fast PWA — no cloud, no tracking, no ads.
 
-Everything runs on your Umbrel and stays on your Umbrel.
+Everything runs on your the server and stays on your the server.
 
 ✨ FEATURES
 
@@ -27,9 +27,18 @@ Yuvomi keeps all data in a local SQLite database (optionally encrypted with SQLC
 
 🛠️ SET-UP
 
-Open Yuvomi from your Umbrel dashboard and create the first account — that account becomes the family admin and can invite the rest of the household.
+Open Yuvomi from your the server dashboard and create the first account — that account becomes the family admin and can invite the rest of the household.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yuvomi/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yuvomi/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yuvomi/3.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yuvomi/4.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/yuvomi/5.webp)
 
 ## Links
 

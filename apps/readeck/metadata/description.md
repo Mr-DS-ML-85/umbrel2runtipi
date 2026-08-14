@@ -23,6 +23,14 @@ Readeck is a simple web application that lets you save the precious readable con
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/readeck/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/readeck/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/readeck/3.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/readeck/4.webp)
+
 ## Links
 
 - Website: https://readeck.org

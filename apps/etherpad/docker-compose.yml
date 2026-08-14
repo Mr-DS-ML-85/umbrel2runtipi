@@ -11,7 +11,7 @@ services:
       CI: 'true'
       ADMIN_PASSWORD: ${APP_PASSWORD}
       DB_CHARSET: utf8mb4
-      DB_HOST: etherpad_postgres_1
+      DB_HOST: postgres
       DB_NAME: etherpad
       DB_PASS: admin
       DB_PORT: 5432
@@ -27,8 +27,10 @@ services:
       SKIN_VARIANTS: super-light-toolbar super-light-editor light-background
       SHOW_SETTINGS_IN_ADMIN_PAGE: 'true'
       SUPPRESS_ERRORS_IN_PAD_TEXT: 'false'
-    restart: on-failure
+    restart: unless-stopped
     user: '5001:0'
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 9001
       is_main: true
@@ -40,9 +42,11 @@ services:
       POSTGRES_PORT: 5432
       POSTGRES_USER: admin
       PGDATA: /var/lib/postgresql/data/pgdata
-    restart: on-failure
+    restart: unless-stopped
     user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/postgres_data:/var/lib/postgresql/data/pgdata
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

@@ -11,8 +11,8 @@
   "categories": [
     "network"
   ],
-  "description": "Urbit is a personal server for self-sovereign personal & networked computing. Nock, a functional combinator, is built into Hoon, a system programming language, used to implement Arvo, a deterministic operating system, that communicates over Ames, a decentralized, encrypted P2P network.\n\nThis app helps you boot and manage Urbit instances on your Umbrel. It provides a simple management GUI, start and stop operations, and passes your +code through the interface.\n\nIf you are interested in purchasing an L2 planet checkout: subject.network/buy\n\nCredit to ~timluc-miptev, ~master-forwex, ~sipsen-pilser & ~rivpyl-sidfyl",
-  "short_desc": "Run Urbit on your Umbrel",
+  "description": "Urbit is a personal server for self-sovereign personal & networked computing. Nock, a functional combinator, is built into Hoon, a system programming language, used to implement Arvo, a deterministic operating system, that communicates over Ames, a decentralized, encrypted P2P network.\n\nThis app helps you boot and manage Urbit instances on your the server. It provides a simple management GUI, start and stop operations, and passes your +code through the interface.\n\nIf you are interested in purchasing an L2 planet checkout: subject.network/buy\n\nCredit to ~timluc-miptev, ~master-forwex, ~sipsen-pilser & ~rivpyl-sidfyl",
+  "short_desc": "Run Urbit on your the server",
   "author": "~mopfel-winrux & ~sitful-hatred",
   "source": "https://github.com/mopfel-winrux/urbit-umbrel",
   "website": "https://github.com/mopfel-winrux/urbit-umbrel",
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786691341585,
-  "updated_at": 1786691341585,
-  "min_tipi_version": "4.0.0"
+  "created_at": 1786704447872,
+  "updated_at": 1786704447872,
+  "min_tipi_version": "4.5.0"
 }

@@ -19,6 +19,13 @@ JupyterLab uses the same notebook document format as the classic Jupyter Noteboo
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/jupyterlab/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/jupyterlab/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/jupyterlab/3.jpg)
+
 ## Links
 
 - Website: https://jupyterlab.readthedocs.io/en/latest/

@@ -1,7 +1,7 @@
 services:
   app:
     image: ghcr.io/peerloomllc/pearcircle-seeder:1.1.0
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     security_opt:
     - no-new-privileges:true
@@ -12,6 +12,8 @@ services:
       SEEDER_NO_UPDATE_CHECK: '1'
     volumes:
     - ${APP_DATA_DIR}/data:/data
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8730
       is_main: true

@@ -1,11 +1,13 @@
 services:
   web:
     image: ghcr.io/sikkalabs/sikka:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data:/home/sikka/data
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 64552
       is_main: true

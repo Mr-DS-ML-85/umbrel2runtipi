@@ -5,7 +5,9 @@ services:
     volumes:
     - ${APP_DATA_DIR}/data:/octoprint
     - /dev:/dev
-    restart: on-failure
+    restart: unless-stopped
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 5000
       is_main: true

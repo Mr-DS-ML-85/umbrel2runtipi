@@ -14,6 +14,11 @@ Whether you're a startup looking to accelerate development or an enterprise seek
 
 ---
 
+
+## Preview
+
+![Preview](/static/images/appsmith-introduction-video-tile.png)
+
 ## Links
 
 - Website: https://www.appsmith.com/

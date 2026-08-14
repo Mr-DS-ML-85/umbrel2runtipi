@@ -10,7 +10,7 @@ Key Features:
   - Deployment aliases for staging, production, and custom environments
   - Custom domain support with subdomain routing
   - Built-in admin dashboard for managing deployments
-  - Privacy-focused: All data stays on your Umbrel
+  - Privacy-focused: All data stays on your the server
 
 
 Perfect for developers who want full control over their static site hosting without relying on external services.
@@ -18,6 +18,13 @@ Perfect for developers who want full control over their static site hosting with
 Note: This app requires a Cloudflare Tunnel for external domain access. Internal access shows setup instructions.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bffless/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bffless/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bffless/3.jpg)
 
 ## Links
 

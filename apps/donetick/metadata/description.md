@@ -12,6 +12,11 @@ With its combination of automation, smart scheduling, and collaborative task sha
 
 ---
 
+
+## Preview
+
+![Preview](assets/screenshot.png)
+
 ## Links
 
 - Website: https://donetick.com/

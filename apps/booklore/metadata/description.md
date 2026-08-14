@@ -24,6 +24,16 @@ At its core, BookLore is more than just a management tool. It is a thoughtful en
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/booklore/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/booklore/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/booklore/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/booklore/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/booklore/5.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/booklore/6.jpg)
+
 ## Links
 
 - Website: https://demo.booklore.dev/login

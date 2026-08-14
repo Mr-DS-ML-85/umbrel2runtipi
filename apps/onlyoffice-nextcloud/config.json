@@ -11,7 +11,7 @@
   "categories": [
     "data"
   ],
-  "description": "An online office suite for Nextcloud that enables you to create, edit and collaborate on text documents, spreadsheets and presentations in real time.\n\nSimply install ONLYOFFICE Docs and follow the in-app instructions to connect it to Nextcloud running on your Umbrel.",
+  "description": "An online office suite for Nextcloud that enables you to create, edit and collaborate on text documents, spreadsheets and presentations in real time.\n\nSimply install ONLYOFFICE Docs and follow the in-app instructions to connect it to Nextcloud running on your the server.",
   "short_desc": "Online office for Nextcloud",
   "author": "Ascensio System SIA",
   "source": "https://github.com/ONLYOFFICE/DocumentServer",
@@ -29,7 +29,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786691341333,
-  "updated_at": 1786691341333,
-  "min_tipi_version": "4.0.0"
+  "created_at": 1786704447622,
+  "updated_at": 1786704447622,
+  "min_tipi_version": "4.5.0"
 }

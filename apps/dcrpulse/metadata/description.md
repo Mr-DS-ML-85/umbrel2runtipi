@@ -24,6 +24,13 @@ Features:
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dcrpulse/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dcrpulse/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/dcrpulse/3.jpg)
+
 ## Links
 
 - Website: https://decred.org

@@ -20,9 +20,18 @@ Visualize performance trends with interactive charts. Compare efficiency across 
 Telegram integration delivers instant notifications for critical events. Receive alerts for device offline status, hashrate stagnation, and new best difficulty achievements. Automatic device restart attempts when stagnation is detected.
 
 **Built for Self-Sovereignty**
-Runs entirely on your own hardware with no external dependencies. All data stays local. Designed for Umbrel with Docker containerization for easy deployment and updates.
+Runs entirely on your own hardware with no external dependencies. All data stays local. Designed for the server with Docker containerization for easy deployment and updates.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/miner-sentinel/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/miner-sentinel/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/miner-sentinel/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/miner-sentinel/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/miner-sentinel/5.jpg)
 
 ## Links
 

@@ -1,18 +1,25 @@
 # Back That Mac Up
 
-Backup your Mac to your Umbrel using Time Machine
+Backup your Mac to your the server using Time Machine
 
-⚠️ Removal Notice: This app has been removed from the Umbrel App Store. It would really make sense for this to be integrated directly into umbrelOS... hmmmmmmm.
+⚠️ Removal Notice: This app has been removed from the the server App Store. It would really make sense for this to be integrated directly into the server... hmmmmmmm.
 
-Introducing Back That Mac Up — an official app by Umbrel.
+Introducing Back That Mac Up — an official app by the server.
 
-Effortlessly back up your Mac to your Umbrel using Time Machine. Simply follow the instructions in the app to set up your Umbrel as a Time Machine backup destination and you're good to go!
+Effortlessly back up your Mac to your the server using Time Machine. Simply follow the instructions in the app to set up your the server as a Time Machine backup destination and you're good to go!
 
-Make sure to follow the instructions in the app to appropriately allocate the backup size. Time Machine backs up your Mac by keeping hourly backups for the past 24 hours, daily backups for the past month and weekly backups for all previous months. Over time, it will likely use all the allotted space on your Umbrel, automatically deleting the oldest backups to free up space as needed.
+Make sure to follow the instructions in the app to appropriately allocate the backup size. Time Machine backs up your Mac by keeping hourly backups for the past 24 hours, daily backups for the past month and weekly backups for all previous months. Over time, it will likely use all the allotted space on your the server, automatically deleting the oldest backups to free up space as needed.
 
-For seamless backups even when your Mac isn't connected to the same network as your Umbrel, simply install Tailscale on your Umbrel and your Mac, and use smb://umbrel as the server address.
+For seamless backups even when your Mac isn't connected to the same network as your the server, simply install Tailscale on your the server and your Mac, and use smb://the server as the server address.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/back-that-mac-up/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/back-that-mac-up/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/back-that-mac-up/3.jpg)
 
 ## Links
 

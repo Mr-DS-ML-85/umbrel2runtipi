@@ -7,12 +7,15 @@ services:
       FORMICAIO_PROXY_PORT: 52100
     extra_hosts:
     - host.docker.internal:host-gateway
+    labels:
+    - runtipi.managed=true
+    restart: unless-stopped
     x-runtipi:
       internal_port: 52100
       is_main: true
   app:
     image: bochaco/formicaio:latest
-    restart: on-failure
+    restart: unless-stopped
     user: 1000:1000
     network_mode: host
     stop_grace_period: 5s
@@ -22,5 +25,7 @@ services:
       LEPTOS_SITE_ADDR: 0.0.0.0:3000
     volumes:
     - ${APP_DATA_DIR}/data/formicaio:/data
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

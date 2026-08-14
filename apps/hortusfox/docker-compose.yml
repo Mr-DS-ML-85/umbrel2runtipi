@@ -1,7 +1,7 @@
 services:
   app:
     image: ghcr.io/danielbrendel/hortusfox-web:latest
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/images:/var/www/html/public/img
     - ${APP_DATA_DIR}/data/attachments:/var/www/html/public/attachments
@@ -10,9 +10,9 @@ services:
     - ${APP_DATA_DIR}/data/themes:/var/www/html/public/themes
     - ${APP_DATA_DIR}/data/migrate:/var/www/html/app/migrations
     environment:
-      APP_ADMIN_EMAIL: umbrel@umbrel.local
+      APP_ADMIN_EMAIL: admin@localhost
       APP_ADMIN_PASSWORD: ${APP_PASSWORD}
-      DB_HOST: hortusfox_db_1
+      DB_HOST: db
       DB_PORT: 3306
       DB_DATABASE: hortusfox
       DB_USERNAME: user
@@ -20,12 +20,14 @@ services:
       DB_CHARSET: utf8mb4
     depends_on:
     - db
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 80
       is_main: true
   db:
     image: mariadb:latest
-    restart: on-failure
+    restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: my-secret-pw
       MYSQL_DATABASE: hortusfox
@@ -33,5 +35,7 @@ services:
       MYSQL_PASSWORD: password
     volumes:
     - ${APP_DATA_DIR}/data/db_data:/var/lib/mysql
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

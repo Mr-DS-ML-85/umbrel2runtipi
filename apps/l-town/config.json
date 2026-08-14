@@ -11,7 +11,7 @@
   "categories": [
     "social"
   ],
-  "description": "L-Town is an open source multiplayer first-person shooter that runs entirely in the browser \u2014 no download or account required. Just open a URL and play.\n\nBuilt with Node.js, WebSockets, and Three.js, L-Town supports up to 300 players per server on a procedurally generated 750\u00d7750 arena that regenerates each match. Matches last 10 minutes and the top 3 players win.\n\nChoose from 11 unique playable characters:\n- \u26a1 Telepotu \u2014 Swap positions with a random enemy (60s cooldown)\n- \ud83d\udc7b Chumantr \u2014 Go invisible for 10s, can't shoot (30s cooldown)\n- \ud83d\udd25 Denja \u2014 Passive: 2\u00d7 speed, max 75% HP\n- \ud83d\udc8a Mednix \u2014 Restore 1\u201350 HP (20s cooldown)\n- \ud83d\udee1 Tank \u2014 Passive: 2\u00d7 HP, half speed\n- \u2693 Anchor \u2014 Passive: SUPER and SHIELD cost 50% less HP\n- \ud83c\udf00 Surge \u2014 Drain 30 HP from the nearest enemy within 40 units (25s cooldown)\n- \ud83d\udc80 Jinx \u2014 Passive: Death Curse \u2014 killer loses 80 HP when you die\n- \ud83c\udfb2 Gambler \u2014 Roll the dice: +200 HP, land on enemy, or instant death (45s cooldown)\n- \ud83e\uddeb Parasite \u2014 Passive: Drain 3 HP/s from every enemy within 15 units\n- \ud83d\udd34 Berserker \u2014 Passive: Speed and damage scale up to 2.5\u00d7 as HP drops\n\nControls: WASD to move, Mouse to aim, Left Click to shoot, Q for ability, R for shield, E for super, Space for super jump, C to crouch, F for scoreboard.\n\nPerfect for LAN parties \u2014 just share your Umbrel URL with anyone on the same network and start playing instantly.",
+  "description": "L-Town is an open source multiplayer first-person shooter that runs entirely in the browser \u2014 no download or account required. Just open a URL and play.\n\nBuilt with Node.js, WebSockets, and Three.js, L-Town supports up to 300 players per server on a procedurally generated 750\u00d7750 arena that regenerates each match. Matches last 10 minutes and the top 3 players win.\n\nChoose from 11 unique playable characters:\n- \u26a1 Telepotu \u2014 Swap positions with a random enemy (60s cooldown)\n- \ud83d\udc7b Chumantr \u2014 Go invisible for 10s, can't shoot (30s cooldown)\n- \ud83d\udd25 Denja \u2014 Passive: 2\u00d7 speed, max 75% HP\n- \ud83d\udc8a Mednix \u2014 Restore 1\u201350 HP (20s cooldown)\n- \ud83d\udee1 Tank \u2014 Passive: 2\u00d7 HP, half speed\n- \u2693 Anchor \u2014 Passive: SUPER and SHIELD cost 50% less HP\n- \ud83c\udf00 Surge \u2014 Drain 30 HP from the nearest enemy within 40 units (25s cooldown)\n- \ud83d\udc80 Jinx \u2014 Passive: Death Curse \u2014 killer loses 80 HP when you die\n- \ud83c\udfb2 Gambler \u2014 Roll the dice: +200 HP, land on enemy, or instant death (45s cooldown)\n- \ud83e\uddeb Parasite \u2014 Passive: Drain 3 HP/s from every enemy within 15 units\n- \ud83d\udd34 Berserker \u2014 Passive: Speed and damage scale up to 2.5\u00d7 as HP drops\n\nControls: WASD to move, Mouse to aim, Left Click to shoot, Q for ability, R for shield, E for super, Space for super jump, C to crouch, F for scoreboard.\n\nPerfect for LAN parties \u2014 just share your the server URL with anyone on the same network and start playing instantly.",
   "short_desc": "Open source multiplayer FPS browser game",
   "author": "besoeasy",
   "source": "https://github.com/besoeasy/l-town",
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786691341184,
-  "updated_at": 1786691341184,
-  "min_tipi_version": "4.0.0"
+  "created_at": 1786704447473,
+  "updated_at": 1786704447473,
+  "min_tipi_version": "4.5.0"
 }

@@ -1,7 +1,7 @@
 services:
   rails-app:
     image: martinbarilik/public-pool-web:latest
-    restart: on-failure
+    restart: unless-stopped
     user: 1000:1000
     environment:
     - RAILS_MASTER_KEY=${APP_PUBLIC_POOL_WEB_MASTER_KEY}
@@ -16,12 +16,14 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3000
       is_main: true
   db:
     image: pgautoupgrade/pgautoupgrade:latest
-    restart: on-failure
+    restart: unless-stopped
     environment:
     - POSTGRES_USER=${APP_PUBLIC_POOL_WEB_POSTGRES_USERNAME}
     - POSTGRES_PASSWORD=${APP_PUBLIC_POOL_WEB_POSTGRES_PASSWORD}
@@ -36,9 +38,11 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    labels:
+    - runtipi.managed=true
   redis:
     image: valkey/valkey:latest
-    restart: on-failure
+    restart: unless-stopped
     user: 1000:1000
     healthcheck:
       test:
@@ -47,9 +51,11 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    labels:
+    - runtipi.managed=true
   sidekiq:
     image: martinbarilik/public-pool-web:latest
-    restart: on-failure
+    restart: unless-stopped
     user: 1000:1000
     environment:
     - RAILS_MASTER_KEY=${APP_PUBLIC_POOL_WEB_MASTER_KEY}
@@ -62,5 +68,7 @@ services:
     - redis
     - db
     - rails-app
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

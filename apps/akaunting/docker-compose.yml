@@ -1,11 +1,11 @@
 services:
   app:
     image: akaunting/akaunting:latest
-    restart: on-failure
+    restart: unless-stopped
     environment:
       AKAUNTING_SETUP: 'true'
       LOCALE: en-US
-      DB_HOST: akaunting_db_1
+      DB_HOST: db
       DB_PORT: 3306
       DB_NAME: akaunting
       DB_USERNAME: admin
@@ -13,17 +13,19 @@ services:
       DB_PREFIX: asd_
       COMPANY_NAME: My Company
       COMPANY_EMAIL: my@company.com
-      ADMIN_EMAIL: umbrel@umbrel.local
+      ADMIN_EMAIL: admin@localhost
       ADMIN_PASSWORD: ${APP_PASSWORD}
     depends_on:
     - db
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 80
       is_main: true
   db:
     image: mariadb:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       MYSQL_DATABASE: akaunting
       MYSQL_USER: admin
@@ -31,5 +33,7 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
     volumes:
     - ${APP_DATA_DIR}/db:/var/lib/mysql
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

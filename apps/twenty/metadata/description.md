@@ -6,7 +6,7 @@ Twenty is the leading open-source CRM, built by a community of hundreds of contr
 
 🛠️ SET-UP INSTRUCTIONS
 
-For first-time setup, open Twenty through **umbrel.local** and create your workspace. After setup, you can also access Twenty using your Umbrel's IP address, Tailscale address, or another hostname.
+For first-time setup, open Twenty through **localhost** and create your workspace. After setup, you can also access Twenty using your the server's IP address, Tailscale address, or another hostname.
 
 With Twenty, you can easily manage customer data through its contact management system. You can create custom objects and fields to capture information specific to your business operations, ensuring that your CRM is tailored to your needs. The platform offers both Kanban and Table Views, allowing you to visualize your workflow and manage projects in a way that works best for your team.
 
@@ -21,6 +21,14 @@ Benefits of using Twenty include improved organization, streamlined communicatio
 You can find detailed setup instructions here: https://twenty.com/developers/section/self-hosting/setup#for-gmail-and-google-calendar
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/twenty/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/twenty/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/twenty/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/twenty/4.jpg)
 
 ## Links
 

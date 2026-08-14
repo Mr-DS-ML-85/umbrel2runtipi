@@ -1,6 +1,9 @@
 services:
   web:
     image: ghcr.io/mckaywrigley/chatbot-ui:main
+    labels:
+    - runtipi.managed=true
+    restart: unless-stopped
     x-runtipi:
       internal_port: 3000
       is_main: true

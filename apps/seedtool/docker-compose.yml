@@ -1,7 +1,9 @@
 services:
   app:
     image: dennysubke/seedtool:latest
-    restart: on-failure
+    restart: unless-stopped
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8080
       is_main: true

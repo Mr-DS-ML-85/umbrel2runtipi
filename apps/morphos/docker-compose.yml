@@ -1,8 +1,10 @@
 services:
   web:
     image: ghcr.io/danvergara/morphos-server:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8080
       is_main: true

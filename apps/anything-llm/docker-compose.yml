@@ -1,7 +1,7 @@
 services:
   app:
     image: mintplexlabs/anythingllm:latest
-    restart: on-failure
+    restart: unless-stopped
     user: 1000:1000
     cap_add:
     - SYS_ADMIN
@@ -21,6 +21,8 @@ services:
     - ${APP_DATA_DIR}/data/collector-outputs:/app/collector/outputs
     extra_hosts:
     - host.docker.internal:host-gateway
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3001
       is_main: true

@@ -1,19 +1,21 @@
 services:
   app:
     image: ghcr.io/s1t5/mailarchiver:latest
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/data-protection-keys:/app/DataProtection-Keys
     - ${APP_DATA_DIR}/data/appsettings.json:/app/appsettings.json
     depends_on:
       postgres:
         condition: service_healthy
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 5000
       is_main: true
   postgres:
     image: postgres:latest
-    restart: on-failure
+    restart: unless-stopped
     user: 1000:1000
     environment:
       POSTGRES_DB: mailarchiver
@@ -29,5 +31,7 @@ services:
       timeout: 5s
       retries: 5
       start_period: 10s
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

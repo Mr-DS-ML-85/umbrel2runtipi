@@ -2,20 +2,20 @@
 
 Easy, Secure, and High-Quality Communication for Gaming, Learning, Business, and more
 
-⚠️ This app has been temporarily removed from the Umbrel App Store while we work on a solution for running TeamSpeak on arm64 devices. Existing installs will continue to work as normal. TeamSpeak will be back soon!
+⚠️ This app has been temporarily removed from the the server App Store while we work on a solution for running TeamSpeak on arm64 devices. Existing installs will continue to work as normal. TeamSpeak will be back soon!
 
 Use crystal clear sound to communicate with your team mates cross-platform with military-grade security, lag-free performance & unparalleled reliability and uptime.
 
 🛠️ SET-UP INSTRUCTIONS
-1) Download the TeamSpeak client for your preferred platform: https://www.teamspeak.com/downloads. You will connect your client to the TeamSpeak app on your Umbrel.
+1) Download the TeamSpeak client for your preferred platform: https://www.teamspeak.com/downloads. You will connect your client to the TeamSpeak app on your the server.
 
-2) Log in to the TeamSpeak app on your Umbrel device using the following login details:
+2) Log in to the TeamSpeak app on your the server device using the following login details:
 - Server: teamspeak_server_1
 - Port: 10011
 - SSH: off
 - Name: serveradmin (the default username shown here in the app store and when you right-click on the app icon from the homescreen)
 - Password: (the default password shown here in the app store and when you right-click on the app icon from the homescreen)
-3) Claim your server from within the TeamSpeak client by creating a Privilege Key in the TeamSpeak app on your Umbrel and redeeming it in the client.
+3) Claim your server from within the TeamSpeak client by creating a Privilege Key in the TeamSpeak app on your the server and redeeming it in the client.
 
 🎙️ Unrivaled voice quality
 Get crystal-clear, lag-free communication with our integrated automatic microphone volume adjustment, background noise reduction and echo cancellation. 
@@ -36,6 +36,13 @@ Be at the heart of the game with Positional Audio. Hear your team mates within a
 Make TeamSpeak your own and customize your client to meet your personal style with the included plugins, sound & icon packs, and themes. Choose from hundreds of add-ons created by the user community, or even create your own.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/teamspeak/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/teamspeak/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/teamspeak/3.jpg)
 
 ## Links
 

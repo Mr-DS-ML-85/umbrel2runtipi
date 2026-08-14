@@ -6,6 +6,9 @@ services:
       APPSMITH_ENCRYPTION_SALT: ${APP_PASSWORD}
     volumes:
     - ${APP_DATA_DIR}/data/app:/appsmith-stacks
+    labels:
+    - runtipi.managed=true
+    restart: unless-stopped
     x-runtipi:
       internal_port: 80
       is_main: true

@@ -2,11 +2,18 @@
 
 Decentralized, Anonymous, and Secure File Sharing
 
-⚠️ Removal Notice: At the developer's request, File Drop has been removed from the Umbrel App Store due to copyright concerns.
+⚠️ Removal Notice: At the developer's request, File Drop has been removed from the the server App Store due to copyright concerns.
 
 The developer now offers Originless as a separate app for private, decentralized file sharing. Please install Originless instead.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/file-drop/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/file-drop/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/file-drop/3.jpg)
 
 ## Links
 

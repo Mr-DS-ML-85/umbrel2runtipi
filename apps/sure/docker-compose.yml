@@ -4,7 +4,7 @@ services:
     user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/rails:/rails/storage
-    restart: on-failure
+    restart: unless-stopped
     environment:
       POSTGRES_USER: sure_user
       POSTGRES_PASSWORD: sure_password
@@ -13,14 +13,16 @@ services:
       SELF_HOSTED: 'true'
       RAILS_FORCE_SSL: 'false'
       RAILS_ASSUME_SSL: 'false'
-      DB_HOST: sure_db_1
+      DB_HOST: db
       DB_PORT: 5432
-      REDIS_URL: redis://sure_redis_1:6379/1
+      REDIS_URL: redis://redis:6379/1
     depends_on:
       db:
         condition: service_healthy
       redis:
         condition: service_healthy
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3000
       is_main: true
@@ -30,7 +32,7 @@ services:
     command: bundle exec sidekiq
     volumes:
     - ${APP_DATA_DIR}/data/rails:/rails/storage
-    restart: on-failure
+    restart: unless-stopped
     depends_on:
       db:
         condition: service_healthy
@@ -44,13 +46,15 @@ services:
       SELF_HOSTED: 'true'
       RAILS_FORCE_SSL: 'false'
       RAILS_ASSUME_SSL: 'false'
-      DB_HOST: sure_db_1
+      DB_HOST: db
       DB_PORT: 5432
-      REDIS_URL: redis://sure_redis_1:6379/1
+      REDIS_URL: redis://redis:6379/1
+    labels:
+    - runtipi.managed=true
   db:
     image: postgres:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/postgres:/data
     environment:
@@ -64,10 +68,12 @@ services:
       timeout: 5s
       retries: 5
       start_period: 30s
+    labels:
+    - runtipi.managed=true
   redis:
     image: redis:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/redis:/data
     healthcheck:
@@ -76,5 +82,7 @@ services:
       timeout: 5s
       retries: 5
       start_period: 30s
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

@@ -10,6 +10,11 @@ Karakeep supports the creation of custom lists to group related entries in meani
 
 ---
 
+
+## Preview
+
+![Preview](https://github.com/karakeep-app/karakeep/blob/main/screenshots/homepage.png?raw=true)
+
 ## Links
 
 - Website: https://karakeep.app/

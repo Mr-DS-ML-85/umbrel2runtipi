@@ -1,7 +1,7 @@
 services:
   web:
     image: ghcr.io/surajverma/homehub:latest
-    restart: on-failure
+    restart: unless-stopped
     environment:
     - FLASK_ENV=production
     - SECRET_KEY=${APP_SEED}
@@ -11,6 +11,8 @@ services:
     - ${APP_DATA_DIR}/data/pdfs:/app/pdfs
     - ${APP_DATA_DIR}/data/app_data:/app/data
     - ${APP_DATA_DIR}/data/config/config.yml:/app/config.yml:ro
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 5000
       is_main: true

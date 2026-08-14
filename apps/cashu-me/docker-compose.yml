@@ -1,8 +1,10 @@
 services:
   web:
     image: rstmsn/cashu-me:0.1.1
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 80
       is_main: true

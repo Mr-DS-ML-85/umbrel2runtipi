@@ -1,7 +1,7 @@
 services:
   web:
     image: ghcr.io/civilblur/mazanoke:latest
-    restart: on-failure
+    restart: unless-stopped
     healthcheck:
       test:
       - CMD-SHELL
@@ -10,6 +10,8 @@ services:
       timeout: 5s
       retries: 3
       start_period: 90s
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 80
       is_main: true

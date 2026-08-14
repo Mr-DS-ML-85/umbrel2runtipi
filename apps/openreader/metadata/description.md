@@ -14,6 +14,14 @@ Additionally, OpenReader WebUI is available as an open-source project, allowing 
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openreader/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openreader/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openreader/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/openreader/4.jpg)
+
 ## Links
 
 - Website: https://openreader.richardr.dev/

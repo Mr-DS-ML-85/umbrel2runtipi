@@ -1,17 +1,19 @@
 services:
   api_web:
     image: toshimoto821/toshi-moto-api:1.8.4
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     user: 1000:1000
     depends_on:
     - mongodb
     environment:
       PORT: 8121
-      MONGODB_URI: mongodb://toshi-moto_mongodb_1:27017/toshi-moto
+      MONGODB_URI: mongodb://mongodb:27017/toshi-moto
+    labels:
+    - runtipi.managed=true
   web:
     image: toshimoto821/toshi-moto:1.37.3
-    restart: on-failure
+    restart: unless-stopped
     user: 1000:1000
     stop_grace_period: 1m
     volumes:
@@ -20,6 +22,8 @@ services:
     - api_web
     environment:
       PORT: 8021
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8021
       is_main: true
@@ -30,5 +34,8 @@ services:
     command: mongod --noauth
     volumes:
     - ${APP_DATA_DIR}/data/db:/data/db
+    labels:
+    - runtipi.managed=true
+    restart: unless-stopped
 x-runtipi:
   schema_version: 2

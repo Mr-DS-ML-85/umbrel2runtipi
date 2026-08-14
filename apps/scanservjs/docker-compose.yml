@@ -1,7 +1,7 @@
 services:
   server:
     image: sbs20/scanservjs:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     volumes:
     - ${APP_DATA_DIR}/data/scans:/var/lib/scanservjs/output
@@ -9,6 +9,8 @@ services:
     - /var/run/dbus:/var/run/dbus
     - /dev:/dev
     privileged: true
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8080
       is_main: true

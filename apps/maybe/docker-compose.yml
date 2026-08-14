@@ -1,7 +1,7 @@
 services:
   web:
     image: ghcr.io/maybe-finance/maybe:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     volumes:
     - ${APP_DATA_DIR}/data/rails:/rails/storage
@@ -16,19 +16,21 @@ services:
       POSTGRES_PASSWORD: maybe
       GOOD_JOB_EXECUTION_MODE: async
       SECRET_KEY_BASE: $APP_SEED
-      REDIS_URL: redis://maybe_redis_1:6379/1
+      REDIS_URL: redis://redis:6379/1
     depends_on:
       db:
         condition: service_healthy
       redis:
         condition: service_healthy
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3063
       is_main: true
   worker:
     image: ghcr.io/maybe-finance/maybe:latest
     command: bundle exec sidekiq
-    restart: on-failure
+    restart: unless-stopped
     environment:
       SELF_HOSTING_ENABLED: 'true'
       PORT: 3063
@@ -40,13 +42,15 @@ services:
       POSTGRES_PASSWORD: maybe
       GOOD_JOB_EXECUTION_MODE: async
       SECRET_KEY_BASE: $APP_SEED
-      REDIS_URL: redis://maybe_redis_1:6379/1
+      REDIS_URL: redis://redis:6379/1
     depends_on:
       redis:
         condition: service_healthy
+    labels:
+    - runtipi.managed=true
   db:
     image: postgres:latest
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     volumes:
     - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data
@@ -62,10 +66,12 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    labels:
+    - runtipi.managed=true
   redis:
     image: redis:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/redis:/data
     healthcheck:
@@ -76,5 +82,7 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

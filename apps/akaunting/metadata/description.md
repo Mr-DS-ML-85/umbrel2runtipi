@@ -30,6 +30,15 @@ Key Features:
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/akaunting/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/akaunting/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/akaunting/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/akaunting/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/akaunting/5.jpg)
+
 ## Links
 
 - Website: https://akaunting.com/
@@ -38,7 +47,7 @@ Key Features:
 
 ## Default credentials
 
-- Username: `umbrel@umbrel.local`
+- Username: `admin@localhost`
 
 ## Release notes
 

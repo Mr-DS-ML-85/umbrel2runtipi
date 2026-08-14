@@ -11,7 +11,7 @@
   "categories": [
     "data"
   ],
-  "description": "\u26a0\ufe0f Removal Notice: At the developer's request, File Drop has been removed from the Umbrel App Store due to copyright concerns.\n\nThe developer now offers Originless as a separate app for private, decentralized file sharing. Please install Originless instead.",
+  "description": "\u26a0\ufe0f Removal Notice: At the developer's request, File Drop has been removed from the the server App Store due to copyright concerns.\n\nThe developer now offers Originless as a separate app for private, decentralized file sharing. Please install Originless instead.",
   "short_desc": "Decentralized, Anonymous, and Secure File Sharing",
   "author": "besoeasy",
   "source": "https://github.com/besoeasy/file-drop",
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786691341066,
-  "updated_at": 1786691341066,
-  "min_tipi_version": "4.0.0"
+  "created_at": 1786704447351,
+  "updated_at": 1786704447351,
+  "min_tipi_version": "4.5.0"
 }

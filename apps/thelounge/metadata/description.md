@@ -12,6 +12,13 @@ It offers both private mode, combining the functionalities of a bouncer and a cl
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/thelounge/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/thelounge/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/thelounge/3.jpg)
+
 ## Links
 
 - Website: https://thelounge.chat
@@ -20,4 +27,4 @@ It offers both private mode, combining the functionalities of a bouncer and a cl
 
 ## Default credentials
 
-- Username: `umbrel`
+- Username: `the server`

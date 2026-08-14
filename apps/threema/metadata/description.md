@@ -8,6 +8,13 @@ With Threema Web, users can send and receive messages, share images and files, a
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/threema/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/threema/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/threema/3.jpg)
+
 ## Links
 
 - Website: https://threema.ch/

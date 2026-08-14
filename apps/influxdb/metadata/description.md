@@ -4,7 +4,7 @@ High performance time series database
 
 InfluxDB is an open-source, high-performance time series database packaged with Chronograf, the official web-based visualization tool. Built specifically for handling high-frequency data, InfluxDB excels at managing and analyzing large volumes of timestamped information.
 
-⚠️ Default admin credentials are provided for advanced CLI access. Chronograf is pre-configured with these credentials and requires no additional setup. To find these credentials you can right-click on the InfluxDB app icon from your umbrelOS homescreen and select "Show default credentials".
+⚠️ Default admin credentials are provided for advanced CLI access. Chronograf is pre-configured with these credentials and requires no additional setup. To find these credentials you can right-click on the InfluxDB app icon from your the server homescreen and select "Show default credentials".
 
 Why use InfluxDB?
 
@@ -21,6 +21,13 @@ InfluxDB can handle millions of data points per second. Working with that much d
 Chronograf is the administrative user interface and visualization engine of the stack. It makes it easy to setup and maintain the monitoring and alerting for your infrastructure. It's simple to use and includes templates and libraries that allow you to rapidly build dashboards with real-time visualizations of your data and to easily create alerting and automation rules.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/influxdb/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/influxdb/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/influxdb/3.jpg)
 
 ## Links
 

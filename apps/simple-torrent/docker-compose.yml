@@ -2,7 +2,7 @@ services:
   server:
     image: boypt/cloud-torrent:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     command: '--port=8086 --config-path /config/simple-torrent.json
 
       '
@@ -10,6 +10,8 @@ services:
     - ${APP_DATA_DIR}/data/torrents:/torrents
     - ${RUNTIPI_MEDIA_DIR}/downloads/:/downloads
     - ${APP_DATA_DIR}/data/config:/config
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8086
       is_main: true

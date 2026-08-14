@@ -16,6 +16,13 @@ This is a hobby project!
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/public-pool-web/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/public-pool-web/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/public-pool-web/3.jpg)
+
 ## Links
 
 - Website: https://github.com/martinbarilik/public-pool-web

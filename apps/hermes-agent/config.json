@@ -11,7 +11,7 @@
   "categories": [
     "ai"
   ],
-  "description": "Hermes Agent is an AI agent that gets better the more you use it by creating its own skills, storing user preferences, and updating its memory.\n\nUse Hermes Agent to browse the web, edit files, run shell commands, connect services like Telegram, Signal, WhatsApp, and Discord, save reusable skills, and remember important details across sessions.\n\nHermes Agent runs inside the Umbrel app sandbox, so it can work freely inside its own environment while your other apps and data stay separate.\n\n## What It Does\n\n  - **Chat and act** - Ask questions, automate tasks, and let Hermes use tools for you.\n\n  - **Works across channels** - Connect chat apps and keep talking to the same agent wherever you want.\n\n  - **Remembers your workflow** - Save preferences, context, and reusable skills that carry across sessions.\n\n  - **Manage it from the dashboard** - Configure settings, review activity, and monitor the agent from your browser.",
+  "description": "Hermes Agent is an AI agent that gets better the more you use it by creating its own skills, storing user preferences, and updating its memory.\n\nUse Hermes Agent to browse the web, edit files, run shell commands, connect services like Telegram, Signal, WhatsApp, and Discord, save reusable skills, and remember important details across sessions.\n\nHermes Agent runs inside the the server app sandbox, so it can work freely inside its own environment while your other apps and data stay separate.\n\n## What It Does\n\n  - **Chat and act** - Ask questions, automate tasks, and let Hermes use tools for you.\n\n  - **Works across channels** - Connect chat apps and keep talking to the same agent wherever you want.\n\n  - **Remembers your workflow** - Save preferences, context, and reusable skills that carry across sessions.\n\n  - **Manage it from the dashboard** - Configure settings, review activity, and monitor the agent from your browser.",
   "short_desc": "The AI agent that grows with you",
   "author": "Nous Research",
   "source": "https://github.com/NousResearch/hermes-agent",
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786691341118,
-  "updated_at": 1786691341118,
-  "min_tipi_version": "4.0.0"
+  "created_at": 1786704447404,
+  "updated_at": 1786704447404,
+  "min_tipi_version": "4.5.0"
 }

@@ -18,6 +18,13 @@ The ability to use, see, modify, and share with all. Requiring sharing on equal 
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/remmina/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/remmina/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/remmina/3.jpg)
+
 ## Links
 
 - Website: https://remmina.org

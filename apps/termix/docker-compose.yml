@@ -1,7 +1,7 @@
 services:
   web:
     image: ghcr.io/lukegus/termix:latest
-    restart: on-failure
+    restart: unless-stopped
     depends_on:
     - guacd
     environment:
@@ -12,13 +12,17 @@ services:
       ENABLE_TELEMETRY: 'false'
     volumes:
     - ${APP_DATA_DIR}/data:/app/data
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8080
       is_main: true
   guacd:
     image: guacamole/guacd:latest
-    restart: on-failure
+    restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data:/termix-data
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

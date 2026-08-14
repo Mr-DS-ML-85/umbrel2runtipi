@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786691341197,
-  "updated_at": 1786691341197,
-  "min_tipi_version": "4.0.0"
+  "created_at": 1786704447486,
+  "updated_at": 1786704447486,
+  "min_tipi_version": "4.5.0"
 }

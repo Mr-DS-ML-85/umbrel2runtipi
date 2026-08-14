@@ -2,7 +2,7 @@ services:
   web:
     image: ipfspodcasting/podcastnode:v0.6
     init: true
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     user: 1000:1000
     ports:
@@ -10,6 +10,8 @@ services:
     volumes:
     - ${APP_DATA_DIR}/ipfs:/ipfs-podcasting/ipfs
     - ${APP_DATA_DIR}/cfg:/ipfs-podcasting/cfg
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8675
       is_main: true

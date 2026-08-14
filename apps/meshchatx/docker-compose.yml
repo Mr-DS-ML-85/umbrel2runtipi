@@ -1,7 +1,7 @@
 services:
   web:
     image: ghcr.io/quad4-software/meshchatx:4.6.0-rc.4
-    restart: on-failure
+    restart: unless-stopped
     user: 1000:1000
     healthcheck:
       test:
@@ -17,6 +17,8 @@ services:
     - ${APP_DATA_DIR}/data:/config
     environment:
       MESHCHAT_NO_HTTPS: 'true'
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8000
       is_main: true

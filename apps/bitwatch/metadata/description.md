@@ -21,6 +21,11 @@ Recommended to have Mempool + Fulcrum to run privately but not required.
 
 ---
 
+
+## Preview
+
+![Preview](./client/public/app.png)
+
 ## Links
 
 - Website: https://github.com/zapomatic/bitwatch

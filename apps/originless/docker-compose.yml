@@ -2,7 +2,7 @@ services:
   app:
     image: ghcr.io/besoeasy/originless:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 5m
     ports:
     - 4003:4001/tcp
@@ -12,6 +12,8 @@ services:
     environment:
     - NODE_ENV=production
     - STORAGE_MAX=${STORAGE_MAX:-20GB}
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3232
       is_main: true

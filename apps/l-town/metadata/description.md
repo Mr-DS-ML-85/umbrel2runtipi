@@ -21,9 +21,17 @@ Choose from 11 unique playable characters:
 
 Controls: WASD to move, Mouse to aim, Left Click to shoot, Q for ability, R for shield, E for super, Space for super jump, C to crouch, F for scoreboard.
 
-Perfect for LAN parties — just share your Umbrel URL with anyone on the same network and start playing instantly.
+Perfect for LAN parties — just share your the server URL with anyone on the same network and start playing instantly.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/l-town/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/l-town/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/l-town/3.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/l-town/4.webp)
 
 ## Links
 

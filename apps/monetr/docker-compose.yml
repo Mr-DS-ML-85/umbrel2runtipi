@@ -15,6 +15,9 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
+    labels:
+    - runtipi.managed=true
+    restart: unless-stopped
   valkey:
     image: valkey/valkey:latest
     user: 1000:1000
@@ -28,6 +31,9 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
+    labels:
+    - runtipi.managed=true
+    restart: unless-stopped
   monetr:
     image: ghcr.io/monetr/monetr:0.10.11
     user: 1000:1000
@@ -48,13 +54,16 @@ services:
       MONETR_PG_USERNAME: postgres
       MONETR_PG_PASSWORD: m0netrPass123
       MONETR_PG_DATABASE: monetr
-      MONETR_PG_ADDRESS: monetr_db_1
+      MONETR_PG_ADDRESS: db
       MONETR_PG_PORT: 5432
       MONETR_REDIS_ENABLED: 'true'
-      MONETR_REDIS_ADDRESS: monetr_valkey_1
+      MONETR_REDIS_ADDRESS: valkey
       MONETR_REDIS_PORT: 6379
       MONETR_STORAGE_ENABLED: ${MONETR_STORAGE_ENABLED:-true}
       MONETR_STORAGE_PROVIDER: ${MONETR_STORAGE_PROVIDER:-filesystem}
+    labels:
+    - runtipi.managed=true
+    restart: unless-stopped
     x-runtipi:
       internal_port: 4000
       is_main: true

@@ -22,6 +22,11 @@ Features
 
 ---
 
+
+## Preview
+
+![Preview](./docs/img/screenshots/download.png)
+
 ## Links
 
 - Website: https://diamonddigital.dev/projects/dropgate

@@ -8,6 +8,11 @@ It supports OpenAI, Anthropic, Gemini, Ollama, LocalAI, OpenRouter, and many oth
 
 ---
 
+
+## Preview
+
+![Preview](/images/youtube.png)
+
 ## Links
 
 - Website: https://anythingllm.com

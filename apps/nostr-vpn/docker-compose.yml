@@ -1,7 +1,7 @@
 services:
   daemon:
     image: ghcr.io/mmalmi/nostr-vpn-umbrel:v4.1.7
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     network_mode: host
     cap_add:
@@ -20,9 +20,11 @@ services:
       RUST_LOG: info
     volumes:
     - ${APP_DATA_DIR}/data:/data
+    labels:
+    - runtipi.managed=true
   web:
     image: ghcr.io/mmalmi/nostr-vpn-umbrel:v4.1.7
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     depends_on:
     - daemon
@@ -41,6 +43,8 @@ services:
       RUST_LOG: info
     volumes:
     - ${APP_DATA_DIR}/data:/data
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 38080
       is_main: true

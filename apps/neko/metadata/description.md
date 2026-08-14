@@ -6,13 +6,20 @@ A self-hosted virtual browser powered by WebRTC
 
 Designed with collaboration in mind, Neko allows multiple users to join and share the same session, making it ideal for activities like co-browsing, watch parties, or remote support. The interface is optimized for responsiveness, with minimal delay between input and feedback, creating an experience that feels native despite running remotely.
 
-When integrated into Umbrel, Neko offers a private and always-available browser instance that can be accessed securely from within the home network or over the internet through Umbrel's tunneling options. It fits seamlessly into the self-hosted ecosystem, providing a reliable and user-friendly way to browse the web without relying on third-party services or exposing your local device.
+When integrated into the server, Neko offers a private and always-available browser instance that can be accessed securely from within the home network or over the internet through the server's tunneling options. It fits seamlessly into the self-hosted ecosystem, providing a reliable and user-friendly way to browse the web without relying on third-party services or exposing your local device.
 
 Neko is especially useful in scenarios where privacy, simplicity, and ease of access are important - whether for personal use, collaborative tasks, or secure remote browsing.
 
 💡 Neko offers a wide range of configuration options, including WebRTC configuration, plugin settings, and audio & video capture. For more detailed information, check out the official documentation here: https://neko.m1k1o.net/docs/v3/configuration.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/neko/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/neko/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/neko/3.jpg)
 
 ## Links
 

@@ -15,6 +15,13 @@ Features:
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/airtrail/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/airtrail/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/airtrail/3.jpg)
+
 ## Links
 
 - Website: https://airtrail.johan.ohly.dk

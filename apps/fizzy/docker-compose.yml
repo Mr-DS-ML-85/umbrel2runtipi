@@ -20,7 +20,9 @@ services:
         reservations:
           memory: 512M
           cpus: '0.5'
-    restart: on-failure
+    restart: unless-stopped
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 80
       is_main: true

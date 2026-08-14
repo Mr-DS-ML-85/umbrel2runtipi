@@ -2,7 +2,7 @@ services:
   web:
     image: codeberg.org/readeck/readeck:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     volumes:
     - ${APP_DATA_DIR}/data:/readeck
@@ -22,6 +22,8 @@ services:
       interval: 30s
       timeout: 2s
       retries: 3
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8000
       is_main: true

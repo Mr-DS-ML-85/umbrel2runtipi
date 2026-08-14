@@ -2,7 +2,7 @@
 
 An intuitive tool for real-time collaborative writing
 
-⚙️ The admin panel for Etherpad is accessible at "http://umbrel.local:9002/admin/". You can find your unique credentials by right-clicking on the Etherpad app icon on the umbrelOS homescreen and selecting "Show default credentials".
+⚙️ The admin panel for Etherpad is accessible at "http://localhost:9002/admin/". You can find your unique credentials by right-clicking on the Etherpad app icon on the the server homescreen and selecting "Show default credentials".
 
 📝 Etherpad is an open-source, web-based collaborative real-time editor that enables multiple users to simultaneously edit a document from different locations. It's particularly valuable for teamwork, group projects, or situations where many people need to contribute to the same document at once. One of Etherpad's standout features is its live collaboration functionality - as users make changes, those changes appear in real-time for all participants, with each user's contributions color-coded to distinguish them.
 
@@ -15,6 +15,13 @@ As an open-source tool, Etherpad offers flexibility in how it's used. Users can 
 Etherpad has gained popularity in academic, business, and development environments for its simple yet effective collaboration features. Whether you're writing meeting notes, drafting a report, or brainstorming ideas with a team, Etherpad offers a powerful and user-friendly solution for collaborative writing.
 
 ---
+
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/etherpad/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/etherpad/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/etherpad/3.jpg)
 
 ## Links
 

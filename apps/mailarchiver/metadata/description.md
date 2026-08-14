@@ -39,6 +39,13 @@ Provided credentials need to be changed on first login. Users, accounts etc. may
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mailarchiver/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mailarchiver/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/mailarchiver/3.jpg)
+
 ## Links
 
 - Website: https://mail-archiver.org

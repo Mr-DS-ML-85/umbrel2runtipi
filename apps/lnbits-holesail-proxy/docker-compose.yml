@@ -1,7 +1,7 @@
 services:
   web:
     image: orenz0/holesail-server-manager:v1.0.7
-    restart: on-failure
+    restart: unless-stopped
     stop_grace_period: 1m
     volumes:
     - ${APP_DATA_DIR}/data:/data
@@ -12,6 +12,8 @@ services:
       HSM_TITLE: LNbits Holesail Proxy
       HSM_TARGET_ADDRESS: lnbits_web_1
       HSM_TARGET_PORT: 3007
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3107
       is_main: true

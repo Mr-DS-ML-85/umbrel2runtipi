@@ -1,7 +1,7 @@
 services:
   web:
     image: ghcr.io/music-assistant/server:latest
-    restart: on-failure
+    restart: unless-stopped
     user: 1000:1000
     network_mode: host
     volumes:
@@ -12,6 +12,8 @@ services:
     - DAC_READ_SEARCH
     security_opt:
     - apparmor=unconfined
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8896
       is_main: true

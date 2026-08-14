@@ -2,11 +2,11 @@ services:
   web:
     image: tombursch/kitchenowl:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       JWT_SECRET_KEY: ${APP_PASSWORD}
       DB_DRIVER: postgresql
-      DB_HOST: kitchenowl_db_1
+      DB_HOST: db
       DB_NAME: kitchenowl
       DB_USER: kitchenowl
       DB_PASSWORD: password
@@ -14,13 +14,15 @@ services:
     - ${APP_DATA_DIR}/data/kitchenowl_files:/data
     depends_on:
     - db
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 8080
       is_main: true
   db:
     image: postgres:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       POSTGRES_DB: kitchenowl
       POSTGRES_USER: kitchenowl
@@ -35,5 +37,7 @@ services:
       timeout: 60s
       retries: 5
       start_period: 80s
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

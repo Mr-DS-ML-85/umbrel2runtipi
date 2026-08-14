@@ -10,6 +10,16 @@ Beyond individual use, Habitica offers social features like joining groups and p
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/habitica/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/habitica/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/habitica/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/habitica/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/habitica/5.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/habitica/6.jpg)
+
 ## Links
 
 - Website: https://habitica.com/

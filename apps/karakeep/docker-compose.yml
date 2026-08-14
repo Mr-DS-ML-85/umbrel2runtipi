@@ -2,11 +2,11 @@ services:
   web:
     image: ghcr.io/karakeep-app/karakeep:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
-      MEILI_ADDR: http://karakeep_meilisearch_1:7700
+      MEILI_ADDR: http://meilisearch:7700
       MEILI_MASTER_KEY: ${APP_SEED}
-      BROWSER_WEB_URL: http://karakeep_chrome_1:9222
+      BROWSER_WEB_URL: http://chrome:9222
       DATA_DIR: /data
       NEXTAUTH_SECRET: ${APP_SEED}
       NEXTAUTH_URL: http://localhost:8620
@@ -16,13 +16,15 @@ services:
     depends_on:
     - chrome
     - meilisearch
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 3000
       is_main: true
   chrome:
     image: zenika/alpine-chrome:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     command:
     - --no-sandbox
     - --disable-gpu
@@ -32,14 +34,18 @@ services:
     - --hide-scrollbars
     - --disable-blink-features=AutomationControlled
     - --window-size=1440,900
+    labels:
+    - runtipi.managed=true
   meilisearch:
     image: getmeili/meilisearch:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       MEILI_NO_ANALYTICS: 'true'
       MEILI_MASTER_KEY: ${APP_SEED}
     volumes:
     - ${APP_DATA_DIR}/data/meilisearch_data:/meili_data
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

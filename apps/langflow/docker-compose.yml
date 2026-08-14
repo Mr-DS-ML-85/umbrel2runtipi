@@ -2,28 +2,32 @@ services:
   app:
     image: langflowai/langflow:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       LANGFLOW_CONFIG_DIR: /app/langflow
       HOME: /app/langflow
       DO_NOT_TRACK: 'true'
       LANGFLOW_AUTO_LOGIN: 'true'
       LANGFLOW_SUPERUSER_PASSWORD: ${APP_PASSWORD}
-      LANGFLOW_DATABASE_URL: postgresql://langflow:langflow@langflow_db_1:5432/langflow
+      LANGFLOW_DATABASE_URL: postgresql://langflow:langflow@db:5432/langflow
     volumes:
     - ${APP_DATA_DIR}/data/app:/app/langflow
+    labels:
+    - runtipi.managed=true
     x-runtipi:
       internal_port: 7860
       is_main: true
   db:
     image: postgres:latest
     user: 1000:1000
-    restart: on-failure
+    restart: unless-stopped
     environment:
       POSTGRES_USER: langflow
       POSTGRES_PASSWORD: langflow
       POSTGRES_DB: langflow
     volumes:
     - ${APP_DATA_DIR}/data/db:/var/lib/postgresql/data
+    labels:
+    - runtipi.managed=true
 x-runtipi:
   schema_version: 2

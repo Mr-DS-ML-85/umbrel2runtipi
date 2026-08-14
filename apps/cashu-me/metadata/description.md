@@ -23,6 +23,13 @@ To use the wallet, you need to connect to one or more Cashu mints of your choice
 
 ---
 
+
+## Preview
+
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/cashu-me/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/cashu-me/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/cashu-me/3.jpg)
+
 ## Links
 
 - Website: https://cashu.space
