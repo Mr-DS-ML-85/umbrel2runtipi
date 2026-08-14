@@ -14,7 +14,9 @@ Features included:
 
 ## Preview
 
-![Preview](./public/merged_image.png)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bitaxe-sentry/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bitaxe-sentry/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bitaxe-sentry/3.jpg)
 
 ## Links
 

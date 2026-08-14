@@ -18,7 +18,9 @@ GlassHome requires a reachable Home Assistant instance. If Home Assistant is ins
 
 ## Preview
 
-![Preview](https://glasshome.app/assets/screenshots/home-coral-reef-dark-desktop.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/glasshome/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/glasshome/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/glasshome/3.webp)
 
 ## Links
 

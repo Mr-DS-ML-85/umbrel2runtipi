@@ -12,9 +12,9 @@ Add this repository as a custom app store in your Runtipi instance:
 
 ## Stats
 
-- **190 apps** converted from Umbrel
+- **191 apps** converted from Umbrel
 - 123 Umbrel apps skipped because they already exist in the official Runtipi store (deduped by id / normalized id / normalized name / verified image alias)
-- 78 apps skipped because they depend on Umbrel-only infrastructure (Bitcoin/Lightning/Electrs/Monero system nodes, Tor) or Umbrel install-hook files
+- 77 apps skipped because they depend on Umbrel-only infrastructure (Bitcoin/Lightning/Electrs/Monero system nodes, Tor) or Umbrel install-hook files
 - See `conversion-report.md` for the full breakdown.
 
 ## Image tags
@@ -102,7 +102,7 @@ Host ports assigned to apps never collide with:
   (see `RESERVED_PORTS` in `tools/convert.py`), or
 - any other converted app.
 
-## Skipped apps (78)
+## Skipped apps (77)
 
 These Umbrel apps were **not** converted. They all depend on Umbrel-only
 infrastructure (system Bitcoin / Lightning / Electrs / Monero nodes, Tor hidden
@@ -117,9 +117,9 @@ agora · alby-nostr-wallet-connect · bleskomat-server · bluewallet · bolt12-p
 
 bassin · bitbalance · bitcoin · bitcoin-cash-node · bitcoin-knots · bitfeed · btc-rpc-explorer · btcpay-server · canary · chainforensics · electrumx · elements · fedimint-gateway · fedimintd · fulcrum · gobrrr-pool · hashrate-autopilot · itchysats · jam · joinstr · ordinals · peerswap · pogolo · public-pool · samourai-server · satwatch · specter-desktop · suredbits-wallet · sv2-ui · urbit-bitcoin-connector · woofbot
 
-### Umbrel-specific / other (11)
+### Umbrel-specific / other (10)
 
-albyhub · am-i-exposed · blockstream-blind-oracle · chantools · libre-relay · monero · openthread-border-router · paperclip · solidtime · synapse · tdex
+albyhub · am-i-exposed · blockstream-blind-oracle · chantools · libre-relay · monero · paperclip · solidtime · synapse · tdex
 
 > The exact `APP_*` variables each app needs are listed in `conversion-report.md`
 > under **"Skipped: require Umbrel bitcoin/lightning infra"**.
@@ -135,10 +135,12 @@ The conversion is best-effort; these known limitations apply:
 - **Umbrel install hooks** — some apps mount or run files that Umbrel's
   install/pre-start hooks generate (`${APP_DATA_DIR}/server.py`, `settings.env`).
   Runtipi has no hook mechanism, so these files never exist and the app
-  crash-loops; such apps (OpenThread Border Router) are skipped.
+  crash-loops; such apps are skipped. Where an official upstream image exists
+  (e.g. OpenThread Border Router via `openthread/border-router`), the app is
+  hand-converted instead (see `MANUAL_COMPOSES` in `tools/convert.py`).
 - **Host networking** — apps that use `network_mode: host` (AdGuard Home,
-  Homey, Music Assistant, Technitium DNS) are converted best-effort; their ports
-  may need manual configuration.
+  Homey, Music Assistant, OpenThread Border Router, Technitium DNS) are
+  converted best-effort; their ports may need manual configuration.
 - **`env_file` removal** — env files created by Umbrel install hooks
   (e.g. `settings.env`, `config/prod.env`, `.env`) do not exist on Runtipi and
   were removed. Affected apps may need their settings set manually in the

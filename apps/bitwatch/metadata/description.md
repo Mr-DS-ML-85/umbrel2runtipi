@@ -24,7 +24,9 @@ Recommended to have Mempool + Fulcrum to run privately but not required.
 
 ## Preview
 
-![Preview](./client/public/app.png)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bitwatch/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bitwatch/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/bitwatch/3.jpg)
 
 ## Links
 

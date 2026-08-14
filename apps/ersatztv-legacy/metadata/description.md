@@ -15,7 +15,9 @@ This package uses the ErsatzTV Legacy release stream, which upstream continues t
 
 ## Preview
 
-![Preview](https://ersatztv.org/images/home/epg-example.png)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/ersatztv-legacy/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/ersatztv-legacy/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/ersatztv-legacy/3.webp)
 
 ## Links
 

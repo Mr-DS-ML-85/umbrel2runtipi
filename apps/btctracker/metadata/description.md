@@ -19,7 +19,10 @@ Overall, BTC Tracker is a focused tool that puts privacy first and strips away u
 
 ## Preview
 
-![Preview](public/umbrel.svg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/btctracker/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/btctracker/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/btctracker/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/btctracker/4.jpg)
 
 ## Links
 

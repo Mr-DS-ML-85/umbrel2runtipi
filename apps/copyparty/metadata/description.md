@@ -17,7 +17,11 @@ In essence, copyparty is not just a file server but a flexible and elegant file 
 
 ## Preview
 
-![Preview](https://user-images.githubusercontent.com/241032/115978057-66419080-a57d-11eb-8539-d2be843991aa.png)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/copyparty/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/copyparty/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/copyparty/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/copyparty/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/copyparty/5.jpg)
 
 ## Links
 

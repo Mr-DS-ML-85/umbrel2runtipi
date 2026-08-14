@@ -1,0 +1,84 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "OpenThread Border Router",
+  "available": true,
+  "exposable": false,
+  "dynamic_config": true,
+  "port": 7587,
+  "id": "openthread-border-router",
+  "tipi_version": 1,
+  "version": "0.3.0",
+  "categories": [
+    "automation"
+  ],
+  "description": "OpenThread Border Router (OTBR) lets you bridge a Thread mesh network to your local Wi-Fi/Ethernet network using a Thread radio dongle. It enables Home Assistant and Matter-over-Thread devices (locks, sensors, plugs, thermostats) to communicate with your smart home stack without relying on a vendor-specific hub like Apple HomePod, Google Nest Hub, or Amazon eero.\n\n## Setup\n1. Plug your Thread radio dongle into your the server device.\n2. Open the app. The setup wizard detects\n   your radio's serial device, lets you confirm the backbone network\n   interface, and checks that IPv6 is available on your host and LAN. Pick\n   the device and save \u2014 the border router then starts automatically.\n\n3. Open Home Assistant and add the \"OpenThread Border Router\"\n   integration, using the REST API URL shown in this app after setup. The\n   OTBR web dashboard link is also shown in the app after setup.\n\n\n## Notes\n- **IPv6 is required.** Thread relies on end-to-end IPv6, so IPv6\n  must be enabled on your the server host and your router/LAN. The setup wizard\n  verifies this.",
+  "short_desc": "Thread border router for Home Assistant and Matter",
+  "author": "ownbee",
+  "source": "https://github.com/ownbee/hass-otbr-docker",
+  "website": "https://github.com/ownbee/hass-otbr-docker",
+  "form_fields": [
+    {
+      "label": "Thread radio device",
+      "type": "text",
+      "env_variable": "OT_RCP_DEVICE",
+      "required": true,
+      "hint": "e.g. spinel+hdlc+uart:///dev/ttyACM0?uart-baudrate=1000000"
+    },
+    {
+      "label": "Backbone network interface",
+      "type": "text",
+      "env_variable": "OT_INFRA_IF",
+      "required": true,
+      "hint": "The host network interface to bridge Thread to, e.g. eth0"
+    },
+    {
+      "label": "Thread interface",
+      "type": "text",
+      "env_variable": "OT_THREAD_IF",
+      "required": false,
+      "default": "wpan0"
+    },
+    {
+      "label": "Web GUI listen address",
+      "type": "text",
+      "env_variable": "OT_WEB_LISTEN_ADDR",
+      "required": false,
+      "default": "0.0.0.0"
+    },
+    {
+      "label": "Web GUI port",
+      "type": "number",
+      "env_variable": "OT_WEB_LISTEN_PORT",
+      "required": false,
+      "default": "7587"
+    },
+    {
+      "label": "REST API listen address",
+      "type": "text",
+      "env_variable": "OT_REST_LISTEN_ADDR",
+      "required": false,
+      "default": "0.0.0.0"
+    },
+    {
+      "label": "REST API port",
+      "type": "number",
+      "env_variable": "OT_REST_LISTEN_PORT",
+      "required": false,
+      "default": "8083"
+    },
+    {
+      "label": "Log level",
+      "type": "number",
+      "env_variable": "OT_LOG_LEVEL",
+      "required": false,
+      "default": "7"
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786705740915,
+  "updated_at": 1786705740915,
+  "min_tipi_version": "4.5.0"
+}

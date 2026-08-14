@@ -83,6 +83,119 @@ REPO_LOGO_FALLBACKS = {
     "fizzy": "https://raw.githubusercontent.com/basecamp/fizzy/main/public/app-icon.png",
 }
 
+# Manual overrides for apps whose Umbrel package depends on Umbrel install
+# hooks / templates and therefore cannot be converted mechanically, but that DO
+# have an official upstream image configurable via plain environment variables.
+# Each entry is a fully hand-written compose; the config.json form fields are
+# generated from MANUAL_OTBR_FORM_FIELDS below.
+#
+# openthread-border-router:
+#   The Umbrel package mounts ${APP_DATA_DIR}/server.py (rendered from a
+#   template by Umbrel's install hook) and waits for settings.env written by its
+#   pre-start hook. Neither exists on Runtipi. The official openthread/border-router
+#   image instead configures the radio + interfaces purely through env vars
+#   (OT_RCP_DEVICE, OT_INFRA_IF, OT_WEB_LISTEN_PORT, OT_REST_LISTEN_PORT, ...),
+#   so it works on Runtipi with no hooks.
+MANUAL_COMPOSES = {
+    "openthread-border-router": {
+        "compose": {
+            "services": {
+                "otbr": {
+                    "image": "openthread/border-router:latest",
+                    "container_name": "openthread-border-router",
+                    "restart": "unless-stopped",
+                    "network_mode": "host",
+                    "privileged": True,
+                    "environment": [
+                        "OT_LOG_LEVEL=${OT_LOG_LEVEL}",
+                        "OT_RCP_DEVICE=${OT_RCP_DEVICE}",
+                        "OT_INFRA_IF=${OT_INFRA_IF}",
+                        "OT_THREAD_IF=${OT_THREAD_IF}",
+                        "OT_WEB_LISTEN_ADDR=${OT_WEB_LISTEN_ADDR}",
+                        "OT_WEB_LISTEN_PORT=${OT_WEB_LISTEN_PORT}",
+                        "OT_REST_LISTEN_ADDR=${OT_REST_LISTEN_ADDR}",
+                        "OT_REST_LISTEN_PORT=${OT_REST_LISTEN_PORT}",
+                    ],
+                    "volumes": [
+                        "${APP_DATA_DIR}/data:/data",
+                        "/dev:/dev:ro",
+                    ],
+                    "labels": {
+                        "runtipi.managed": "true",
+                    },
+                    "x-runtipi": {
+                        "internal_port": 7587,
+                        "is_main": True,
+                    },
+                }
+            }
+        },
+        "x-runtipi": {"schema_version": 2},
+        "port": 7587,  # otbr-web GUI (OT_WEB_LISTEN_PORT), host networking
+    },
+}
+
+MANUAL_FORM_FIELDS = {
+    "openthread-border-router": [
+        {
+            "label": "Thread radio device",
+            "type": "text",
+            "env_variable": "OT_RCP_DEVICE",
+            "required": True,
+            "hint": "e.g. spinel+hdlc+uart:///dev/ttyACM0?uart-baudrate=1000000",
+        },
+        {
+            "label": "Backbone network interface",
+            "type": "text",
+            "env_variable": "OT_INFRA_IF",
+            "required": True,
+            "hint": "The host network interface to bridge Thread to, e.g. eth0",
+        },
+        {
+            "label": "Thread interface",
+            "type": "text",
+            "env_variable": "OT_THREAD_IF",
+            "required": False,
+            "default": "wpan0",
+        },
+        {
+            "label": "Web GUI listen address",
+            "type": "text",
+            "env_variable": "OT_WEB_LISTEN_ADDR",
+            "required": False,
+            "default": "0.0.0.0",
+        },
+        {
+            "label": "Web GUI port",
+            "type": "number",
+            "env_variable": "OT_WEB_LISTEN_PORT",
+            "required": False,
+            "default": "7587",
+        },
+        {
+            "label": "REST API listen address",
+            "type": "text",
+            "env_variable": "OT_REST_LISTEN_ADDR",
+            "required": False,
+            "default": "0.0.0.0",
+        },
+        {
+            "label": "REST API port",
+            "type": "number",
+            "env_variable": "OT_REST_LISTEN_PORT",
+            "required": False,
+            "default": "8083",
+        },
+        {
+            "label": "Log level",
+            "type": "number",
+            "env_variable": "OT_LOG_LEVEL",
+            "required": False,
+            "default": "7",
+        },
+    ],
+}
+
 # Host ports already in use on the user's server (nmap result) - the store must
 # NEVER assign these to an app. Edit this list to match your setup.
 RESERVED_PORTS = {
@@ -781,6 +894,32 @@ def main():
             continue
         if not umbrel_id:
             skipped_other.append((app_id, "missing id"))
+            continue
+
+        # ---- manual overrides (apps with a hook-free official image) ------
+        # These apps are written by hand because their Umbrel package depends
+        # on install hooks/templates, but an official upstream image works on
+        # Runtipi via plain env vars. Skip all mechanical conversion for them.
+        if app_id in MANUAL_COMPOSES:
+            manual = MANUAL_COMPOSES[app_id]
+            new_compose = manual["compose"]
+            if manual.get("x-runtipi"):
+                new_compose["x-runtipi"] = manual["x-runtipi"]
+            cfg = build_config(manifest, app_id, 0, {})
+            cfg["port"] = manual["port"]
+            cfg["exposable"] = False
+            cfg["form_fields"] = MANUAL_FORM_FIELDS.get(app_id, [])
+            converted.append({
+                "id": app_id,
+                "name": cfg["name"],
+                "compose": new_compose,
+                "config": cfg,
+                "manifest": manifest,
+                "main_service": "otbr",
+                "internal_port": manual["port"],
+                "notes": [],
+                "unnamed_vars": [],
+            })
             continue
 
         # ---- skip apps that depend on Umbrel system infra -----------------

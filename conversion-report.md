@@ -3,9 +3,9 @@
 - Umbrel apps: 391  
 - Already in Runtipi official store (deduped): 123  
 - Require Umbrel bitcoin/lightning infra (skipped): 77  
-- Skipped other: 1  
+- Skipped other: 0  
 - Conversion failures: 0  
-- **Converted: 190**  
+- **Converted: 191**  
 
 
 ## Converted apps
@@ -273,6 +273,7 @@
   - auto-generated secret env vars: APP_SEED
 - **OpenResty Manager** (`openresty-manager`) port 34567, main=web, internal=34567
   - notes: removed umbrel app_proxy service
+- **OpenThread Border Router** (`openthread-border-router`) port 7587, main=otbr, internal=7587
 - **Originless** (`originless`) port 3233, main=app, internal=3232
   - notes: removed umbrel app_proxy service; assigned new host port 3233 (umbrel port 3232 already used)
 - **Palmr** (`palmr`) port 8075, main=server, internal=5487
@@ -650,7 +651,6 @@
 
 ## Skipped: other
 
-- `openthread-border-router` — umbrel install hook/template dependency [mounts/runs server.py (created by umbrel hook/template)]
 
 ## Conversion failures
 

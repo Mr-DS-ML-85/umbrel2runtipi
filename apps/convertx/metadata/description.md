@@ -15,7 +15,9 @@ Features:
 
 ## Preview
 
-![Preview](images/preview.png)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/convertx/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/convertx/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/convertx/3.jpg)
 
 ## Links
 

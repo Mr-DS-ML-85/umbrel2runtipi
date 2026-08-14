@@ -15,7 +15,11 @@ With its combination of automation, smart scheduling, and collaborative task sha
 
 ## Preview
 
-![Preview](assets/screenshot.png)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/donetick/1.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/donetick/2.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/donetick/3.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/donetick/4.jpg)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/donetick/5.jpg)
 
 ## Links
 

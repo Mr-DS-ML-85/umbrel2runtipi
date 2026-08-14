@@ -11,7 +11,10 @@ It supports OpenAI, Anthropic, Gemini, Ollama, LocalAI, OpenRouter, and many oth
 
 ## Preview
 
-![Preview](/images/youtube.png)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/anything-llm/1.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/anything-llm/2.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/anything-llm/3.webp)
+![Preview](https://getumbrel.github.io/umbrel-apps-gallery/anything-llm/4.webp)
 
 ## Links
 
