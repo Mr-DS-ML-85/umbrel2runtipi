@@ -7,7 +7,7 @@
   "port": 2021,
   "id": "public-pool-web",
   "tipi_version": 1,
-  "version": "0.2.0",
+  "version": "latest",
   "categories": [
     "finance"
   ],
@@ -62,7 +62,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752848,
-  "updated_at": 1786708752848,
+  "created_at": 1786720647644,
+  "updated_at": 1786720647644,
   "min_tipi_version": "4.5.0"
 }

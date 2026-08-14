@@ -7,7 +7,7 @@
   "port": 4322,
   "id": "gitea-mirror",
   "tipi_version": 1,
-  "version": "3.26.2",
+  "version": "latest",
   "categories": [
     "development"
   ],
@@ -35,7 +35,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752512,
-  "updated_at": 1786708752512,
+  "created_at": 1786720647311,
+  "updated_at": 1786720647311,
   "min_tipi_version": "4.5.0"
 }

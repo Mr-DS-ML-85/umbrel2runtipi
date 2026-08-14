@@ -7,7 +7,7 @@
   "port": 8345,
   "id": "jotty",
   "tipi_version": 1,
-  "version": "1.26.0",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752578,
-  "updated_at": 1786708752578,
+  "created_at": 1786720647376,
+  "updated_at": 1786720647376,
   "min_tipi_version": "4.5.0"
 }

@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/mainsail-crew/mainsail:v2.18.2@sha256:7351715acdda0d893c759b96c54d8e772321300863e622db59a7d8d29b69976f
+    image: ghcr.io/mainsail-crew/mainsail:latest
     restart: unless-stopped
     stop_grace_period: 1m
     volumes:

@@ -5,7 +5,7 @@
 - Require Umbrel bitcoin/lightning infra (skipped): 77  
 - Skipped other: 0  
 - Conversion failures: 0  
-- **Converted: 193**  
+- **Converted: 194**  
 
 
 ## Converted apps
@@ -216,7 +216,7 @@
   - notes: removed umbrel app_proxy service
 - **MailFlow** (`mailflow`) port 3395, main=frontend, internal=80
   - notes: removed umbrel app_proxy service
-  - auto-generated secret env vars: APP_SEED
+  - auto-generated secret env vars: SESSION_SECRET, ENCRYPTION_KEY
 - **Mainsail** (`mainsail`) port 8070, main=web, internal=80
   - notes: removed umbrel app_proxy service
 - **Mattermost** (`mattermost`) port 8765, main=app, internal=8000
@@ -308,6 +308,8 @@
   - notes: removed umbrel app_proxy service
 - **Poznote** (`poznote`) port 8389, main=app, internal=80
   - notes: removed umbrel app_proxy service
+- **Pterodactyl** (`pterodactyl`) port 8082, main=pterodactyl-panel, internal=8082
+  - auto-generated secret env vars: APP_DB_PASSWORD, APP_DB_ROOT_PASSWORD
 - **Public Pool's Web** (`public-pool-web`) port 2021, main=rails-app, internal=3000
   - notes: removed umbrel app_proxy service
   - auto-generated secret env vars: APP_PUBLIC_POOL_WEB_MASTER_KEY, APP_PUBLIC_POOL_WEB_POSTGRES_PASSWORD

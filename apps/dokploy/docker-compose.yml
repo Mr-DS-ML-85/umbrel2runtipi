@@ -1,6 +1,6 @@
 services:
   dokploy:
-    image: dokploy/dokploy:0.29.14
+    image: dokploy/dokploy:latest
     container_name: dokploy
     restart: unless-stopped
     ports:
@@ -23,7 +23,7 @@ services:
       internal_port: 3000
       is_main: true
   dokploy-postgres:
-    image: postgres:16-alpine
+    image: postgres:latest
     container_name: dokploy-postgres
     restart: unless-stopped
     environment:

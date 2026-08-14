@@ -7,7 +7,7 @@
   "port": 8895,
   "id": "gitingest",
   "tipi_version": 1,
-  "version": "0.3.1",
+  "version": "main",
   "categories": [
     "development"
   ],
@@ -29,7 +29,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752514,
-  "updated_at": 1786708752514,
+  "created_at": 1786720647313,
+  "updated_at": 1786720647313,
   "min_tipi_version": "4.5.0"
 }

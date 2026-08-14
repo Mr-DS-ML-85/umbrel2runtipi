@@ -7,7 +7,7 @@
   "port": 1970,
   "id": "swingmusic",
   "tipi_version": 1,
-  "version": "3.0.0",
+  "version": "latest",
   "categories": [
     "media"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752955,
-  "updated_at": 1786708752955,
+  "created_at": 1786720647752,
+  "updated_at": 1786720647752,
   "min_tipi_version": "4.5.0"
 }

@@ -7,7 +7,7 @@
   "port": 3800,
   "id": "snowflake",
   "tipi_version": 1,
-  "version": "v2.14.1",
+  "version": "latest",
   "categories": [
     "network"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752918,
-  "updated_at": 1786708752918,
+  "created_at": 1786720647715,
+  "updated_at": 1786720647715,
   "min_tipi_version": "4.5.0"
 }

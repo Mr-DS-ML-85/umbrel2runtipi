@@ -1,6 +1,6 @@
 services:
   server:
-    image: ghcr.io/glasshome/dash:1.0.0@sha256:a00a5537447b1df187d6516a722de7913ca2514a5610d4a825010df09777663a
+    image: ghcr.io/glasshome/dash:latest
     restart: unless-stopped
     environment:
       PORT: 3123

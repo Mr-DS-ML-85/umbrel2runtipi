@@ -1,6 +1,6 @@
 services:
   web:
-    image: voidic/snort:v0.5.3@sha256:410778efd4d74f001bb20e91e9f752bda8bb2e5d5f796a2020b253be8b9ca099
+    image: voidic/snort:latest
     init: true
     labels:
     - runtipi.managed=true

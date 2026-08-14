@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/quad4-software/meshchatx:4.8.1@sha256:f0c6d70bcce25bfe67e3b66b978f098f5770daa94def353b632bd4c4814fb8ab
+    image: ghcr.io/quad4-software/meshchatx:4.6.0-rc.4
     restart: unless-stopped
     user: 1000:1000
     healthcheck:

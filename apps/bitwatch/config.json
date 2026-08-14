@@ -7,7 +7,7 @@
   "port": 3117,
   "id": "bitwatch",
   "tipi_version": 1,
-  "version": "1.7.2",
+  "version": "latest",
   "categories": [
     "finance"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752363,
-  "updated_at": 1786708752363,
+  "created_at": 1786720647164,
+  "updated_at": 1786720647164,
   "min_tipi_version": "4.5.0"
 }

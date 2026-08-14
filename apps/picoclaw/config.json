@@ -7,7 +7,7 @@
   "port": 18800,
   "id": "picoclaw",
   "tipi_version": 1,
-  "version": "0.3.1",
+  "version": "latest",
   "categories": [
     "ai"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752807,
-  "updated_at": 1786708752807,
+  "created_at": 1786720647603,
+  "updated_at": 1786720647603,
   "min_tipi_version": "4.5.0"
 }

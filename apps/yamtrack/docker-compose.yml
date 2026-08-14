@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/fuzzygrim/yamtrack:0.26.1@sha256:2c4c8ef6b73ba00aeb3e7cda5a34751f01448034a23d2fbcc98e48e44d377bb8
+    image: ghcr.io/fuzzygrim/yamtrack:latest
     restart: unless-stopped
     security_opt:
     - no-new-privileges:true
@@ -17,7 +17,7 @@ services:
       internal_port: 8000
       is_main: true
   redis:
-    image: redis:8.0.2@sha256:b43d2dcbbdb1f9e1582e3a0f37e53bf79038522ccffb56a25858969d7a9b6c11
+    image: redis:latest
     user: 1000:1000
     restart: unless-stopped
     volumes:

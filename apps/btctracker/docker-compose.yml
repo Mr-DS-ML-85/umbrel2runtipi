@@ -1,6 +1,6 @@
 services:
   web:
-    image: thewilqq/btc-tracker:v0.7.0@sha256:0c7beea5e0791cc39c9294f0a62faa24aa2ef42ed04571b63977c0afe085321b
+    image: thewilqq/btc-tracker:latest
     restart: unless-stopped
     user: 1000:1000
     environment:
@@ -8,7 +8,7 @@ services:
     - PORT=3000
     - DATABASE_URL=file:/app/data/bitcoin-tracker.db
     - NEXTAUTH_SECRET=${APP_SEED}
-    - NEXTAUTH_URL=http://localhost:3947
+    - NEXTAUTH_URL=${APP_PROTOCOL:-http}://${APP_DOMAIN}
     volumes:
     - ${APP_DATA_DIR}/data:/app/data
     labels:

@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/civilblur/mazanoke:v1.1.6@sha256:92cc7474deb789af6549318563b7a9ee750131f9f7b297cc9c87ab67e656c22c
+    image: ghcr.io/civilblur/mazanoke:latest
     restart: unless-stopped
     healthcheck:
       test:

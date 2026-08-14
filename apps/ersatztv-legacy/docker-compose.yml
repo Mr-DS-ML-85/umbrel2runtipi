@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/ersatztv/legacy:v26.7.1@sha256:2923be34ff5f4df8fe4eac4e2ec4c873d6a6a875529a9a5b8745dab8be354983
+    image: ghcr.io/ersatztv/legacy:latest
     restart: unless-stopped
     user: 1000:1000
     volumes:

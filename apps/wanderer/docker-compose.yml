@@ -1,6 +1,6 @@
 services:
   web:
-    image: flomp/wanderer-web:v0.20.0@sha256:d76177573caab135e8167179c9954168b5c582a48cbef0fcb7e1571af0c84d98
+    image: flomp/wanderer-web:latest
     user: 1000:1000
     depends_on:
       search:
@@ -8,7 +8,7 @@ services:
       db:
         condition: service_healthy
     environment:
-      ORIGIN: http://localhost:3111
+      ORIGIN: ${APP_PROTOCOL:-http}://${APP_DOMAIN}
       BODY_SIZE_LIMIT: Infinity
       PUBLIC_POCKETBASE_URL: http://db:8090
       PUBLIC_DISABLE_SIGNUP: 'false'
@@ -29,7 +29,7 @@ services:
       internal_port: 3000
       is_main: true
   search:
-    image: getmeili/meilisearch:v1.14.0@sha256:8cd411ba5d9ec2dfce02e241305208eebacce0fd74a72bece21cadd03dc566ce
+    image: getmeili/meilisearch:latest
     environment:
       MEILI_NO_ANALYTICS: 'true'
       MEILI_URL: http://search:7700
@@ -46,7 +46,7 @@ services:
     labels:
     - runtipi.managed=true
   db:
-    image: flomp/wanderer-db:v0.20.0@sha256:591974a7cb92be1d30a9033da0b97ef628d0ee1328e3ec29683b0075619805ba
+    image: flomp/wanderer-db:latest
     user: 1000:1000
     depends_on:
       search:
@@ -55,7 +55,7 @@ services:
       POCKETBASE_ENCRYPTION_KEY: ${APP_WANDERER_ENCRYPTION_KEY}
       MEILI_URL: http://search:7700
       MEILI_MASTER_KEY: ${APP_SEED}
-      ORIGIN: http://localhost:3111
+      ORIGIN: ${APP_PROTOCOL:-http}://${APP_DOMAIN}
     restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/pb_data:/pb_data

@@ -7,7 +7,7 @@
   "port": 18790,
   "id": "hermes-agent",
   "tipi_version": 1,
-  "version": "2026.8.3",
+  "version": "2026.8.13",
   "categories": [
     "ai"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752534,
-  "updated_at": 1786708752534,
+  "created_at": 1786720647333,
+  "updated_at": 1786720647333,
   "min_tipi_version": "4.5.0"
 }

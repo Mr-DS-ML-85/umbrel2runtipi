@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/aivm23/valorgrid:v3.34.0@sha256:15363af68f698e7f79f5e3fc96cbb771155fd55115893aded5b63caeae7b76f3
+    image: ghcr.io/aivm23/valorgrid:latest
     restart: unless-stopped
     environment:
       HOST: 0.0.0.0

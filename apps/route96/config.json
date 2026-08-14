@@ -7,7 +7,7 @@
   "port": 8019,
   "id": "route96",
   "tipi_version": 1,
-  "version": "0.7.0",
+  "version": "latest",
   "categories": [
     "social"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752876,
-  "updated_at": 1786708752876,
+  "created_at": 1786720647672,
+  "updated_at": 1786720647672,
   "min_tipi_version": "4.5.0"
 }

@@ -7,7 +7,7 @@
   "port": 8005,
   "id": "fizzy",
   "tipi_version": 1,
-  "version": "5f45e54",
+  "version": "latest",
   "categories": [
     "social"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752487,
-  "updated_at": 1786708752487,
+  "created_at": 1786720647286,
+  "updated_at": 1786720647286,
   "min_tipi_version": "4.5.0"
 }

@@ -7,7 +7,7 @@
   "port": 8423,
   "id": "gupt",
   "tipi_version": 1,
-  "version": "2.80.4",
+  "version": "latest",
   "categories": [
     "social"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752525,
-  "updated_at": 1786708752525,
+  "created_at": 1786720647323,
+  "updated_at": 1786720647323,
   "min_tipi_version": "4.5.0"
 }

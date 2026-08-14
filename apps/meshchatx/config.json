@@ -7,7 +7,7 @@
   "port": 8985,
   "id": "meshchatx",
   "tipi_version": 1,
-  "version": "4.8.1",
+  "version": "4.6.0-rc.4",
   "categories": [
     "social"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752688,
-  "updated_at": 1786708752688,
+  "created_at": 1786720647485,
+  "updated_at": 1786720647485,
   "min_tipi_version": "4.5.0"
 }

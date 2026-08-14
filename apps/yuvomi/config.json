@@ -7,7 +7,7 @@
   "port": 8184,
   "id": "yuvomi",
   "tipi_version": 1,
-  "version": "2.7.1",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708753055,
-  "updated_at": 1786708753055,
+  "created_at": 1786720647852,
+  "updated_at": 1786720647852,
   "min_tipi_version": "4.5.0"
 }

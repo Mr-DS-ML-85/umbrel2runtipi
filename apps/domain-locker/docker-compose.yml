@@ -1,6 +1,6 @@
 services:
   app:
-    image: lissy93/domain-locker:0.2.0@sha256:1c3379d97344c153595973327957b23bc5695bb8c956f11a3d21e7cd92358781
+    image: lissy93/domain-locker:latest
     user: 1000:1000
     restart: unless-stopped
     environment:
@@ -29,7 +29,7 @@ services:
       internal_port: 3000
       is_main: true
   postgres:
-    image: postgres:17.4@sha256:fe3f571d128e8efadcd8b2fde0e2b73ebab6dbec33f6bfe69d98c682c7d8f7bd
+    image: postgres:latest
     user: 1000:1000
     restart: unless-stopped
     environment:

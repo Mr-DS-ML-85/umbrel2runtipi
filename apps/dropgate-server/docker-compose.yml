@@ -1,6 +1,6 @@
 services:
   web:
-    image: willtda/dropgate-server:3.0.13@sha256:43698790fe341ea3fb0094bbdca701ecdf875a9c4b9c92b67f86c34c887c132b
+    image: willtda/dropgate-server:latest
     restart: unless-stopped
     stop_grace_period: 1m
     volumes:

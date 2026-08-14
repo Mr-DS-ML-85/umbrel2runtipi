@@ -1,6 +1,6 @@
 services:
   docker:
-    image: docker:28.3.0-dind@sha256:d33eb93fe02683e984e6f8a93c0b3d85bb74f56ec83922bc39fb34ba23ab42bc
+    image: docker:latest
     privileged: true
     network_mode: host
     stop_grace_period: 1m
@@ -15,7 +15,7 @@ services:
     labels:
     - runtipi.managed=true
   postgres:
-    image: ghcr.io/ferretdb/postgres-documentdb:17-0.104.0@sha256:1d709fc03dcb82faa2e3aa02c0f80ea10e483b38aff08a05da36a6faa2098608
+    image: ghcr.io/ferretdb/postgres-documentdb:latest
     user: 1000:1000
     labels:
       komodo.skip: null
@@ -28,7 +28,7 @@ services:
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: postgres
   ferretdb:
-    image: ghcr.io/ferretdb/ferretdb:2.3.1@sha256:1170bd36c39378614edd3f1d2b92f0c5a9b30e482a79ea0c3fc0fe11baba3afa
+    image: ghcr.io/ferretdb/ferretdb:latest
     user: 1000:1000
     labels:
       komodo.skip: null
@@ -41,7 +41,7 @@ services:
     environment:
       FERRETDB_POSTGRESQL_URL: postgres://admin:admin@postgres:5432/postgres
   core:
-    image: ghcr.io/moghtech/komodo-core:2.3.2@sha256:7ae1d1547b16f1fd88902050105d80bbefc41b3023baf1f6dbc2b8df47ecb526
+    image: ghcr.io/moghtech/komodo-core:latest
     user: 1000:1000
     init: true
     labels:
@@ -64,7 +64,7 @@ services:
       internal_port: 9120
       is_main: true
   periphery:
-    image: ghcr.io/moghtech/komodo-periphery:2.3.2@sha256:639e019751642518a0fbdc2720e5f39789e76aa495a499852b9585ffacf71149
+    image: ghcr.io/moghtech/komodo-periphery:latest
     labels:
       komodo.skip: null
       runtipi.managed: true

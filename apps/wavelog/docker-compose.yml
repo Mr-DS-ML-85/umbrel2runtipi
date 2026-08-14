@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/wavelog/wavelog:3.1.0@sha256:200ffaf57dcbcb21fe5abdd8c16ad5953ddbadee964678d0dc89347f283f68ef
+    image: ghcr.io/wavelog/wavelog:latest
     environment:
       CI_ENV: docker
     volumes:
@@ -16,7 +16,7 @@ services:
       internal_port: 80
       is_main: true
   wavelog-db:
-    image: mariadb:11.4@sha256:39596f079862334be04f4231664862e55d4febe54309cc62f750f2297de85b06
+    image: mariadb:latest
     environment:
       MARIADB_RANDOM_ROOT_PASSWORD: true
       MARIADB_DATABASE: wavelog

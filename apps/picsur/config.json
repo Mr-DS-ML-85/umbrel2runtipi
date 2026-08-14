@@ -7,7 +7,7 @@
   "port": 8286,
   "id": "picsur",
   "tipi_version": 1,
-  "version": "0.5.6",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752809,
-  "updated_at": 1786708752809,
+  "created_at": 1786720647605,
+  "updated_at": 1786720647605,
   "min_tipi_version": "4.5.0"
 }

@@ -7,7 +7,7 @@
   "port": 8762,
   "id": "plane",
   "tipi_version": 1,
-  "version": "1.4.1",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -34,7 +34,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752825,
-  "updated_at": 1786708752825,
+  "created_at": 1786720647621,
+  "updated_at": 1786720647621,
   "min_tipi_version": "4.5.0"
 }

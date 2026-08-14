@@ -7,7 +7,7 @@
   "port": 7070,
   "id": "bitaxe-sentry",
   "tipi_version": 1,
-  "version": "0.8.0",
+  "version": "latest",
   "categories": [
     "finance"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752341,
-  "updated_at": 1786708752341,
+  "created_at": 1786720647143,
+  "updated_at": 1786720647143,
   "min_tipi_version": "4.5.0"
 }

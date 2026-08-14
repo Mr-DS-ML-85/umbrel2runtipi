@@ -7,7 +7,7 @@
   "port": 8170,
   "id": "wavelog",
   "tipi_version": 1,
-  "version": "3.1.0",
+  "version": "latest",
   "categories": [
     "social"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708753025,
-  "updated_at": 1786708753025,
+  "created_at": 1786720647822,
+  "updated_at": 1786720647822,
   "min_tipi_version": "4.5.0"
 }

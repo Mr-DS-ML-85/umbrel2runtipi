@@ -7,7 +7,7 @@
   "port": 8085,
   "id": "ee-gateway",
   "tipi_version": 1,
-  "version": "0.10.7",
+  "version": "latest",
   "categories": [
     "network"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752454,
-  "updated_at": 1786708752454,
+  "created_at": 1786720647253,
+  "updated_at": 1786720647253,
   "min_tipi_version": "4.5.0"
 }

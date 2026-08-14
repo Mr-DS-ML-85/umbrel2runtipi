@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:17.7@sha256:bac8128cd62a35471a1e97966861aa2ac88c8d2f408767a425ae70695a607c99
+    image: postgres:latest
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
@@ -20,7 +20,7 @@ services:
     labels:
     - runtipi.managed=true
   backend:
-    image: dcbert/minersentinel-backend:v1.0.3@sha256:a890925f66df5b3f80334fe9d00c02f027e282d77015613a5b08925adfa5523b
+    image: dcbert/minersentinel-backend:latest
     restart: unless-stopped
     stop_grace_period: 1m
     depends_on:
@@ -34,30 +34,30 @@ services:
       DJANGO_SECRET_KEY: ${APP_SEED}
       DJANGO_DEBUG: 'False'
       ALLOWED_HOSTS: '*'
-      CORS_ALLOWED_ORIGINS: http://localhost:3082,http://*.ts.net:3082
-      CSRF_TRUSTED_ORIGINS: http://localhost:3082,http://*.ts.net:3082
+      CORS_ALLOWED_ORIGINS: ${APP_PROTOCOL:-http}://${APP_DOMAIN},http://*.ts.net:3082
+      CSRF_TRUSTED_ORIGINS: ${APP_PROTOCOL:-http}://${APP_DOMAIN},http://*.ts.net:3082
       DJANGO_SUPERUSER_USERNAME: admin
       DJANGO_SUPERUSER_PASSWORD: $APP_PASSWORD
       DJANGO_SUPERUSER_EMAIL: admin@localhost
-      API_BASE_URL: http://localhost:3082
+      API_BASE_URL: ${APP_PROTOCOL:-http}://${APP_DOMAIN}
     command: "sh -c \"\n  python manage.py migrate &&\n  python manage.py collectstatic --noinput &&\n  (python manage.py createsuperuser --no-input ||\n  echo 'Superuser already exists or created — winning!') &&\n  gunicorn minersentinel.wsgi:application --bind 0.0.0.0:8000 --workers 2 --timeout 120\n\"\n"
     labels:
     - runtipi.managed=true
   frontend:
-    image: dcbert/minersentinel-frontend:v1.0.3@sha256:e4ac190cbf5cdb9c6959b59bdff70d6135c34c18bf492b6b0303bbfd75489e59
+    image: dcbert/minersentinel-frontend:latest
     restart: unless-stopped
     stop_grace_period: 1m
     depends_on:
     - backend
     environment:
-      VITE_API_URL: http://localhost:3082
+      VITE_API_URL: ${APP_PROTOCOL:-http}://${APP_DOMAIN}
     labels:
     - runtipi.managed=true
     x-runtipi:
       internal_port: 80
       is_main: true
   data-service:
-    image: dcbert/minersentinel-data-service:v1.0.3@sha256:ce4b2a955dc70e5c3fd897c910e8a7a525b6133ff37e49f0a7f7a7f6239b5bc4
+    image: dcbert/minersentinel-data-service:latest
     restart: unless-stopped
     stop_grace_period: 1m
     depends_on:

@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/sheshbabu/zen/zen:1.5.0@sha256:370d7ae0d8b4d06593b44ffa1cfde5d15c7f80abe4bbe8d94e86d8d29e250270
+    image: ghcr.io/sheshbabu/zen/zen:latest
     user: 1000:1000
     restart: unless-stopped
     volumes:

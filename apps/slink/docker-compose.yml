@@ -1,11 +1,11 @@
 services:
   web:
-    image: anirdev/slink:v1.13.0@sha256:344c9772bf43190bf91e386b1642429dd0a202b9703aa6cc28f3c459f1d7ac57
+    image: anirdev/slink:latest
     user: 1000:1000
     restart: unless-stopped
     environment:
       TZ: UTC
-      ORIGIN: http://localhost:8811
+      ORIGIN: ${APP_PROTOCOL:-http}://${APP_DOMAIN}
       REQUIRE_SSL: 'false'
       USER_APPROVAL_REQUIRED: 'false'
       USER_PASSWORD_MIN_LENGTH: 8

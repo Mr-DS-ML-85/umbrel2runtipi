@@ -7,7 +7,7 @@
   "port": 3233,
   "id": "originless",
   "tipi_version": 1,
-  "version": "0.1.0",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752773,
-  "updated_at": 1786708752773,
+  "created_at": 1786720647569,
+  "updated_at": 1786720647569,
   "min_tipi_version": "4.5.0"
 }

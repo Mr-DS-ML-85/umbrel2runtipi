@@ -1,6 +1,6 @@
 services:
   influxdb:
-    image: influxdb:1.12.4@sha256:e9363fd88d67f8ae6f019f37a30cc136e3644f2cbaea5abd71ad63c96dc6ae08
+    image: influxdb:latest
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
@@ -13,7 +13,7 @@ services:
     labels:
     - runtipi.managed=true
   chronograf:
-    image: chronograf:1.11.2@sha256:a6db91a1ba1d88d19b04ca4cad6db77d90ded5d9c7bec3ef5a793a967c23c04d
+    image: chronograf:latest
     user: 1000:1000
     environment:
       INFLUXDB_URL: http://influxdb:8086

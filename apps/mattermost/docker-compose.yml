@@ -1,6 +1,6 @@
 services:
   app:
-    image: alexlack/mattermost-app:v11.9.0@sha256:9e3e4aa4d3036d97658178b8fd80c8a2d892de52395c7a431b525d8dc84e38cd
+    image: alexlack/mattermost-app:v11.9.0
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
@@ -28,7 +28,7 @@ services:
       internal_port: 8000
       is_main: true
   db:
-    image: alexlack/mattermost-db:v11.9.0@sha256:e43a4bea2643e428af0a50ac389458feba64436f55e7b102a9a8cf929b89a5e4
+    image: alexlack/mattermost-db:v11.9.0
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m

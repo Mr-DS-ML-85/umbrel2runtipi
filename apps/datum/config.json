@@ -7,7 +7,7 @@
   "port": 21000,
   "id": "datum",
   "tipi_version": 1,
-  "version": "v0.4.1-beta-hotfix.1",
+  "version": "1.14",
   "categories": [
     "finance"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752424,
-  "updated_at": 1786708752424,
+  "created_at": 1786720647224,
+  "updated_at": 1786720647224,
   "min_tipi_version": "4.5.0"
 }

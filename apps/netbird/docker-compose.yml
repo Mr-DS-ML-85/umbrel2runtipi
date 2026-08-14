@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/netbirdio/netbird:0.77.0-rootless@sha256:22a3b8b6aedf8748505dcd0dd4ab762cf469f7652fc2f1265975cdf02201bef8
+    image: ghcr.io/netbirdio/netbird:latest
     restart: unless-stopped
     user: 1000:1000
     cap_add:
@@ -13,7 +13,7 @@ services:
     labels:
     - runtipi.managed=true
   web:
-    image: nginx:1.27@sha256:124b44bfc9ccd1f3cedf4b592d4d1e8bddb78b51ec2ed5056c52d3692baebc19
+    image: nginx:latest
     restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/www:/usr/share/nginx/html:ro

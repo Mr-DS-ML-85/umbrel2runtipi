@@ -7,7 +7,7 @@
   "port": 8735,
   "id": "dcrpulse",
   "tipi_version": 1,
-  "version": "1.0.3",
+  "version": "latest",
   "categories": [
     "finance"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752429,
-  "updated_at": 1786708752429,
+  "created_at": 1786720647229,
+  "updated_at": 1786720647229,
   "min_tipi_version": "4.5.0"
 }

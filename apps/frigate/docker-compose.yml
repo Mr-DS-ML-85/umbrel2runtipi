@@ -2,7 +2,7 @@ services:
   web:
     privileged: true
     restart: unless-stopped
-    image: ghcr.io/blakeblackshear/frigate:0.17.2@sha256:d4351369984d4a9e2a49ac59736f6490856a7ea11f7790040746d21496967010
+    image: ghcr.io/blakeblackshear/frigate:0.12.0-beta1-tensorrt
     shm_size: 128mb
     volumes:
     - /etc/localtime:/etc/localtime:ro

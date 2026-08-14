@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/besoeasy/file-drop:1.4.3@sha256:f46389e22243a3a3cd6a371f9b46cd8428bcfa23030c9303509110fcd899a0b2
+    image: ghcr.io/besoeasy/file-drop:latest
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 5m

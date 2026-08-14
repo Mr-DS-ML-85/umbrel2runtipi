@@ -7,7 +7,7 @@
   "port": 5537,
   "id": "bffless",
   "tipi_version": 1,
-  "version": "0.4.15",
+  "version": "latest",
   "categories": [
     "development"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752337,
-  "updated_at": 1786708752337,
+  "created_at": 1786720647139,
+  "updated_at": 1786720647139,
   "min_tipi_version": "4.5.0"
 }

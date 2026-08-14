@@ -1,6 +1,6 @@
 services:
   backend:
-    image: ghcr.io/kittendevv/invio-backend:v2.1.1@sha256:53c6ac2407bf9445c4e1759627bb406686fec7ac4e2361a26f27af1c30168b6c
+    image: ghcr.io/kittendevv/invio-backend:latest
     environment:
       ADMIN_USER: admin
       ADMIN_PASS: ${APP_PASSWORD}
@@ -15,14 +15,14 @@ services:
     labels:
     - runtipi.managed=true
   frontend:
-    image: ghcr.io/kittendevv/invio-frontend:v2.1.1@sha256:c2c9d35c3258df5c454f26a534d86745814a50829acac178da00c1a539a7b36e
+    image: ghcr.io/kittendevv/invio-frontend:latest
     environment:
       PORT: 8000
       BACKEND_URL: http://backend:3000
       COOKIE_SECURE: 'false'
       FRONTEND_SECURE_HEADERS_DISABLED: 'false'
       ENABLE_HSTS: 'false'
-      ORIGIN: http://localhost:8003
+      ORIGIN: ${APP_PROTOCOL:-http}://${APP_DOMAIN}
     depends_on:
     - backend
     restart: unless-stopped

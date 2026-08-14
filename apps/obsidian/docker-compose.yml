@@ -1,6 +1,6 @@
 services:
   server:
-    image: linuxserver/obsidian:1.8.10@sha256:b85e75e572e75f5e00062fb564102eaad8e19970938ee8ec7bae0a96566c1400
+    image: linuxserver/obsidian:latest
     restart: unless-stopped
     environment:
     - PUID=1000

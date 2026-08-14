@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/readur/readur:2.9.2@sha256:bb6356cf930faac65aa461f323454b678a42c7c6688b59d69f3a24479d7d7a6a
+    image: ghcr.io/readur/readur:latest
     user: 1000:1000
     restart: unless-stopped
     environment:
@@ -42,7 +42,7 @@ services:
       internal_port: 8000
       is_main: true
   postgres:
-    image: postgres:17.5@sha256:3962158596daaef3682838cc8eb0e719ad1ce520f88e34596ce8d5de1b6330a1
+    image: postgres:latest
     user: 1000:1000
     restart: unless-stopped
     environment:

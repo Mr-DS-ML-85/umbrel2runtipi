@@ -1,6 +1,6 @@
 services:
   web:
-    image: secondark/bark-web:0.6.0@sha256:7f4b482e1680ef8ae0462b7420d7849dff0a176f96476de596ab41a74015d5b3
+    image: secondark/bark-web:0.7.2
     restart: unless-stopped
     stop_grace_period: 1m
     depends_on:
@@ -12,7 +12,7 @@ services:
       internal_port: 8080
       is_main: true
   api:
-    image: secondark/bark-web-api:0.6.0@sha256:159c5da6d8be50ef8e5c0b85a1b25cd64131150e05302d32109277fa2d2f44c1
+    image: secondark/bark-web-api:0.7.2
     restart: unless-stopped
     stop_grace_period: 1m
     volumes:
@@ -30,7 +30,7 @@ services:
     labels:
     - runtipi.managed=true
   barkd:
-    image: secondark/bark:0.6.0@sha256:caa7f3981bf400933642ac0fdcefe936556289603ff6b2c67e4fc7eccdc69ca2
+    image: secondark/bark:latest
     user: 0:0
     restart: unless-stopped
     stop_grace_period: 1m

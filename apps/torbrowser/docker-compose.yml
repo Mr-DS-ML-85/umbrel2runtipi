@@ -1,6 +1,6 @@
 services:
   web:
-    image: dennysubke/torbrowser:15.0.17@sha256:b0c12dbc6b93338ef02f57186f47a57952f864e31f015a9fb47fa6c5afc0d0b1
+    image: dennysubke/torbrowser:latest
     restart: unless-stopped
     environment:
     - DARK_MODE=1

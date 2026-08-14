@@ -7,7 +7,7 @@
   "port": 3391,
   "id": "openreader",
   "tipi_version": 1,
-  "version": "4.4.0",
+  "version": "latest",
   "categories": [
     "ai"
   ],
@@ -35,7 +35,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752766,
-  "updated_at": 1786708752766,
+  "created_at": 1786720647562,
+  "updated_at": 1786720647562,
   "min_tipi_version": "4.5.0"
 }

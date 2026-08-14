@@ -40,6 +40,7 @@ UA = {"User-Agent": "runtipi-umbrel-store/1.0"}
 EXTRA_SCREENSHOTS = {
     "dokploy": ["https://dokploy.com/banner.png"],
     "coolify": ["https://cdn.coollabs.io/og-images/coolify.png"],
+    "pterodactyl": ["https://cdn.pterodactyl.io/site-assets/carousel/screenshot-1.png"],
 }
 
 

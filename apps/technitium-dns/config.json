@@ -7,7 +7,7 @@
   "port": 5380,
   "id": "technitium-dns",
   "tipi_version": 1,
-  "version": "15.4.0",
+  "version": "latest",
   "categories": [
     "network"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752973,
-  "updated_at": 1786708752973,
+  "created_at": 1786720647770,
+  "updated_at": 1786720647770,
   "min_tipi_version": "4.5.0"
 }

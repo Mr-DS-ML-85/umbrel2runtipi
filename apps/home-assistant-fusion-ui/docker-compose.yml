@@ -1,12 +1,12 @@
 services:
   web:
-    image: ghcr.io/matt8707/ha-fusion:2024.10.1@sha256:5eea4634ab2b1e7c7523943996d13318d109b293abe8e9e86c38daf5c41830cb
+    image: ghcr.io/matt8707/ha-fusion:latest
     restart: unless-stopped
     user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/fusion:/app/data
     environment:
-      HASS_URL: http://localhost:8123
+      HASS_URL: ${APP_PROTOCOL:-http}://${APP_DOMAIN}
     labels:
     - runtipi.managed=true
     x-runtipi:

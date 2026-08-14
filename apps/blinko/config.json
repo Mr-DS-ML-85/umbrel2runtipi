@@ -7,7 +7,7 @@
   "port": 1112,
   "id": "blinko",
   "tipi_version": 1,
-  "version": "1.8.8",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752368,
-  "updated_at": 1786708752368,
+  "created_at": 1786720647169,
+  "updated_at": 1786720647169,
   "min_tipi_version": "4.5.0"
 }

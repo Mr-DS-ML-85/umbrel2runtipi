@@ -1,6 +1,6 @@
 services:
   server:
-    image: sbs20/scanservjs:v3.2.0@sha256:1fafc81417c634c4769044f694923b8b311a37ee5a02daac5fcde5a47c7035c0
+    image: sbs20/scanservjs:latest
     restart: unless-stopped
     stop_grace_period: 1m
     volumes:

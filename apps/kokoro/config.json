@@ -7,7 +7,7 @@
   "port": 8877,
   "id": "kokoro",
   "tipi_version": 1,
-  "version": "0.7.2",
+  "version": "latest",
   "categories": [
     "ai"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752594,
-  "updated_at": 1786708752594,
+  "created_at": 1786720647392,
+  "updated_at": 1786720647392,
   "min_tipi_version": "4.5.0"
 }

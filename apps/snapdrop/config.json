@@ -7,7 +7,7 @@
   "port": 8224,
   "id": "snapdrop",
   "tipi_version": 1,
-  "version": "b8b78cc2",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752915,
-  "updated_at": 1786708752915,
+  "created_at": 1786720647711,
+  "updated_at": 1786720647711,
   "min_tipi_version": "4.5.0"
 }

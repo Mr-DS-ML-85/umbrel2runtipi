@@ -1,6 +1,6 @@
 services:
   web:
-    image: ksjaay/lunalytics:0.10.23@sha256:b1e44f9e647e3e240400eafc914facafbfad2cc87d6c4f02d823226dd9731511
+    image: ksjaay/lunalytics:latest
     user: 1000:1000
     restart: unless-stopped
     healthcheck:

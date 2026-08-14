@@ -1,6 +1,6 @@
 services:
   server:
-    image: ghcr.io/spacedriveapp/spacebot:v0.5.0@sha256:ccd9411f72def62b192e44aed23446b94e6e4774d55d7100a94de1531029f6ed
+    image: ghcr.io/spacedriveapp/spacebot:latest
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m

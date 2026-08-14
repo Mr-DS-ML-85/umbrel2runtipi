@@ -7,7 +7,7 @@
   "port": 3313,
   "id": "transmute",
   "tipi_version": 1,
-  "version": "2.0.0",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752993,
-  "updated_at": 1786708752993,
+  "created_at": 1786720647790,
+  "updated_at": 1786720647790,
   "min_tipi_version": "4.5.0"
 }

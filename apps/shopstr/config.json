@@ -7,7 +7,7 @@
   "port": 30402,
   "id": "shopstr",
   "tipi_version": 1,
-  "version": "0.7.5",
+  "version": "latest",
   "categories": [
     "finance"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752906,
-  "updated_at": 1786708752906,
+  "created_at": 1786720647702,
+  "updated_at": 1786720647702,
   "min_tipi_version": "4.5.0"
 }

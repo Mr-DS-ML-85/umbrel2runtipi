@@ -7,7 +7,7 @@
   "port": 8018,
   "id": "adventurelog",
   "tipi_version": 1,
-  "version": "v0.13.0",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752292,
-  "updated_at": 1786708752292,
+  "created_at": 1786720647093,
+  "updated_at": 1786720647093,
   "min_tipi_version": "4.5.0"
 }

@@ -7,7 +7,7 @@
   "port": 3011,
   "id": "krystal-bull",
   "tipi_version": 1,
-  "version": "1.9.7",
+  "version": "latest",
   "categories": [
     "finance"
   ],
@@ -34,7 +34,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752603,
-  "updated_at": 1786708752603,
+  "created_at": 1786720647400,
+  "updated_at": 1786720647400,
   "min_tipi_version": "4.5.0"
 }

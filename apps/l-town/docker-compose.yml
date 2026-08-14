@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/besoeasy/l-town:20260621@sha256:48d6aa09d4cdb279c512c73b5e17bd30cb40657685fb5135e6bf840abf0f36e2
+    image: ghcr.io/besoeasy/l-town:latest
     restart: unless-stopped
     user: 1000:1000
     labels:

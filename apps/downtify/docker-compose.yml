@@ -1,6 +1,6 @@
 services:
   downtify:
-    image: ghcr.io/henriquesebastiao/downtify:2.10.0@sha256:9ee623da0dcd66ed26fd2aeea5bc5790dfb8b93d1a1c222e9170d263656fd74a
+    image: ghcr.io/henriquesebastiao/downtify:latest
     stop_grace_period: 1m
     volumes:
     - ${RUNTIPI_MEDIA_DIR}/downloads/downtify:/downloads

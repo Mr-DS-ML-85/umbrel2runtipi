@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/muchobien/pocketbase:0.39.10@sha256:dfebd2550d6b5176d67afd3e859f9b642096e624c7f6ada1b5a5bc70a5d21be1
+    image: ghcr.io/muchobien/pocketbase:latest
     restart: unless-stopped
     stop_grace_period: 1m
     volumes:

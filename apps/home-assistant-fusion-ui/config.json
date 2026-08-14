@@ -7,7 +7,7 @@
   "port": 5023,
   "id": "home-assistant-fusion-ui",
   "tipi_version": 1,
-  "version": "2024.10.1",
+  "version": "latest",
   "categories": [
     "automation"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752544,
-  "updated_at": 1786708752544,
+  "created_at": 1786720647342,
+  "updated_at": 1786720647342,
   "min_tipi_version": "4.5.0"
 }

@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/thelounge/thelounge:v4.4.3@sha256:c0565787e0c44951df4ea77840519a41cfe6a4ec040bf1bda928a91866cc3e5e
+    image: ghcr.io/thelounge/thelounge:latest
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m

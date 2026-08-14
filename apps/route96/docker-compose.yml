@@ -1,6 +1,6 @@
 services:
   server:
-    image: voidic/route96:v0.7.0@sha256:5ab6064f18ca191dd5836487505607122ef3bfeba6e6ccc5b28eef5c604cf4cc
+    image: voidic/route96:latest
     user: 1000:1000
     restart: unless-stopped
     volumes:
@@ -17,7 +17,7 @@ services:
       internal_port: 8002
       is_main: true
   db:
-    image: mariadb:11.2.4@sha256:e9ea1dbab6783ff0281e41e3357d950a5f598b2033559b8443e03b181807910b
+    image: mariadb:latest
     user: 1000:1000
     restart: unless-stopped
     volumes:

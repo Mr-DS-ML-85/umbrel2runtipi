@@ -7,7 +7,7 @@
   "port": 8980,
   "id": "trip",
   "tipi_version": 1,
-  "version": "1.47.0",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752996,
-  "updated_at": 1786708752996,
+  "created_at": 1786720647793,
+  "updated_at": 1786720647793,
   "min_tipi_version": "4.5.0"
 }

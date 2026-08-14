@@ -1,6 +1,6 @@
 services:
   nginx:
-    image: ghcr.io/bffless/ce-nginx:umbrel@sha256:e76ceda29c799638ac88eb40ebec0ed2763a0f8750a263d03a27b5c00522b0db
+    image: ghcr.io/bffless/ce-nginx:latest
     restart: unless-stopped
     stop_grace_period: 30s
     environment:
@@ -18,7 +18,7 @@ services:
       internal_port: 5537
       is_main: true
   postgres:
-    image: pgvector/pgvector:0.8.2-pg17@sha256:feb68f4f15446397d8cac7f4fe48fe4586de83160d1fc48b46283312d1a33966
+    image: pgvector/pgvector:0.8.6-pg13
     restart: unless-stopped
     stop_grace_period: 30s
     environment:
@@ -41,7 +41,7 @@ services:
     labels:
     - runtipi.managed=true
   supertokens:
-    image: supertokens/supertokens-postgresql:9.3@sha256:39c36693b19c4e231684c9e614422c1c95751c346c6fc3ffd74980161d0b041c
+    image: supertokens/supertokens-postgresql:latest
     restart: unless-stopped
     stop_grace_period: 30s
     depends_on:
@@ -68,7 +68,7 @@ services:
     labels:
     - runtipi.managed=true
   backend:
-    image: ghcr.io/bffless/ce-backend:umbrel@sha256:329c19087c022d4b0085d790ed3b5eca83a86d21ffa96f01ce9547d674f5a1d7
+    image: ghcr.io/bffless/ce-backend:latest
     restart: unless-stopped
     stop_grace_period: 30s
     depends_on:
@@ -112,7 +112,7 @@ services:
     labels:
     - runtipi.managed=true
   frontend:
-    image: ghcr.io/bffless/ce-frontend:umbrel@sha256:d961857db9765406311cd6e2934c3a146a10501f45faa8e8c83b9658c8376077
+    image: ghcr.io/bffless/ce-frontend:latest
     restart: unless-stopped
     stop_grace_period: 30s
     volumes:

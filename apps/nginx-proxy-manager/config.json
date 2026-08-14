@@ -7,7 +7,7 @@
   "port": 4498,
   "id": "nginx-proxy-manager",
   "tipi_version": 1,
-  "version": "2.15.1",
+  "version": "latest",
   "categories": [
     "network"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752722,
-  "updated_at": 1786708752722,
+  "created_at": 1786720647519,
+  "updated_at": 1786720647519,
   "min_tipi_version": "4.5.0"
 }

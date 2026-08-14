@@ -7,7 +7,7 @@
   "port": 8183,
   "id": "lunalytics",
   "tipi_version": 1,
-  "version": "0.10.23",
+  "version": "latest",
   "categories": [
     "network"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752663,
-  "updated_at": 1786708752663,
+  "created_at": 1786720647460,
+  "updated_at": 1786720647460,
   "min_tipi_version": "4.5.0"
 }

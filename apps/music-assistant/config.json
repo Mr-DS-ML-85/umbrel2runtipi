@@ -7,7 +7,7 @@
   "port": 8896,
   "id": "music-assistant",
   "tipi_version": 1,
-  "version": "2.9.13",
+  "version": "latest",
   "categories": [
     "media"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752708,
-  "updated_at": 1786708752708,
+  "created_at": 1786720647504,
+  "updated_at": 1786720647504,
   "min_tipi_version": "4.5.0"
 }

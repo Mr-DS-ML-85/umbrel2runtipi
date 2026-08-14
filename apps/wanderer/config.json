@@ -7,7 +7,7 @@
   "port": 3111,
   "id": "wanderer",
   "tipi_version": 1,
-  "version": "0.20.0",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -40,7 +40,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708753022,
-  "updated_at": 1786708753022,
+  "created_at": 1786720647819,
+  "updated_at": 1786720647819,
   "min_tipi_version": "4.5.0"
 }

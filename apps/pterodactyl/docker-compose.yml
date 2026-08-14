@@ -1,0 +1,102 @@
+services:
+  pterodactyl-panel:
+    image: ghcr.io/pterodactyl/panel:latest
+    container_name: pterodactyl-panel
+    restart: unless-stopped
+    ports:
+    - ${APP_PORT}:80
+    environment:
+    - APP_ENV=production
+    - APP_ENVIRONMENT_ONLY=false
+    - APP_URL=${APP_PROTOCOL:-http}://${APP_DOMAIN}
+    - APP_TIMEZONE=${APP_TIMEZONE:-UTC}
+    - APP_SERVICE_AUTHOR=${APP_SERVICE_AUTHOR:-noreply@localhost}
+    - TRUSTED_PROXIES=*
+    - DB_HOST=database
+    - DB_PORT=3306
+    - DB_DATABASE=panel
+    - DB_USERNAME=pterodactyl
+    - DB_PASSWORD=${APP_DB_PASSWORD}
+    - CACHE_DRIVER=redis
+    - SESSION_DRIVER=redis
+    - QUEUE_DRIVER=redis
+    - REDIS_HOST=cache
+    - REDIS_PORT=6379
+    - REDIS_PASSWORD=null
+    - HASHIDS_LENGTH=8
+    - MAIL_FROM=${APP_SERVICE_AUTHOR:-noreply@localhost}
+    - MAIL_DRIVER=smtp
+    - MAIL_HOST=localhost
+    - MAIL_PORT=1025
+    - MAIL_USERNAME=
+    - MAIL_PASSWORD=
+    - MAIL_ENCRYPTION=true
+    depends_on:
+      database:
+        condition: service_healthy
+      cache:
+        condition: service_healthy
+    volumes:
+    - ${APP_DATA_DIR}/var:/app/var
+    - ${APP_DATA_DIR}/nginx:/etc/nginx/http.d
+    - ${APP_DATA_DIR}/certs:/etc/letsencrypt
+    - ${APP_DATA_DIR}/logs:/app/storage/logs
+    networks:
+    - tipi_main_network
+    labels:
+      runtipi.managed: 'true'
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - wget -qO/dev/null http://127.0.0.1/ || exit 1
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+    x-runtipi:
+      internal_port: 80
+      is_main: true
+  database:
+    image: mariadb:latest
+    container_name: pterodactyl-database
+    restart: unless-stopped
+    environment:
+    - MYSQL_DATABASE=panel
+    - MYSQL_USER=pterodactyl
+    - MYSQL_PASSWORD=${APP_DB_PASSWORD}
+    - MYSQL_ROOT_PASSWORD=${APP_DB_ROOT_PASSWORD}
+    volumes:
+    - ${APP_DATA_DIR}/mysql:/var/lib/mysql
+    networks:
+    - tipi_main_network
+    labels:
+      runtipi.managed: 'true'
+    healthcheck:
+      test:
+      - CMD
+      - healthcheck.sh
+      - --connect
+      - --innodb_initialized
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  cache:
+    image: redis:latest
+    container_name: pterodactyl-cache
+    restart: unless-stopped
+    volumes:
+    - ${APP_DATA_DIR}/redis:/data
+    networks:
+    - tipi_main_network
+    labels:
+      runtipi.managed: 'true'
+    healthcheck:
+      test:
+      - CMD
+      - redis-cli
+      - ping
+      interval: 10s
+      timeout: 3s
+      retries: 5
+x-runtipi:
+  schema_version: 2

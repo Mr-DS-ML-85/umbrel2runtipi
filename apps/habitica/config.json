@@ -7,7 +7,7 @@
   "port": 3944,
   "id": "habitica",
   "tipi_version": 1,
-  "version": "5.48.8",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752527,
-  "updated_at": 1786708752527,
+  "created_at": 1786720647326,
+  "updated_at": 1786720647326,
   "min_tipi_version": "4.5.0"
 }

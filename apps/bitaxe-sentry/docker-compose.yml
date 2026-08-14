@@ -1,6 +1,6 @@
 services:
   sentry:
-    image: zachprice105/bitaxe-sentry:v0.8.0@sha256:c50dc141896314293ab4afc4fb4e1ce885cb5737c832b80adfc9cd5eb6f706cb
+    image: zachprice105/bitaxe-sentry:latest
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m
@@ -12,7 +12,7 @@ services:
     labels:
     - runtipi.managed=true
   web:
-    image: zachprice105/bitaxe-sentry:v0.8.0@sha256:c50dc141896314293ab4afc4fb4e1ce885cb5737c832b80adfc9cd5eb6f706cb
+    image: zachprice105/bitaxe-sentry:latest
     user: 1000:1000
     restart: unless-stopped
     stop_grace_period: 1m

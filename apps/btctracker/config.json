@@ -7,7 +7,7 @@
   "port": 3947,
   "id": "btctracker",
   "tipi_version": 1,
-  "version": "0.7.0",
+  "version": "latest",
   "categories": [
     "finance"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752388,
-  "updated_at": 1786708752388,
+  "created_at": 1786720647189,
+  "updated_at": 1786720647189,
   "min_tipi_version": "4.5.0"
 }

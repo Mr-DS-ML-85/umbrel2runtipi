@@ -83,6 +83,7 @@ REPO_LOGO_FALLBACKS = {
     "fizzy": "https://raw.githubusercontent.com/basecamp/fizzy/main/public/app-icon.png",
     "dokploy": "https://raw.githubusercontent.com/Dokploy/dokploy/main/apps/dokploy/public/logo.svg",
     "coolify": "https://raw.githubusercontent.com/coollabsio/coolify/main/public/coolify-logo.svg",
+    "pterodactyl": "https://raw.githubusercontent.com/pterodactyl/panel/master/public/assets/svgs/pterodactyl.svg",
 }
 
 # Manual overrides for apps whose Umbrel package depends on Umbrel install
@@ -137,7 +138,62 @@ MANUAL_COMPOSES = {
     },
 }
 
+# Compose env-var values to rewrite for specific apps after conversion. Keyed
+# by app id -> service name -> env var -> new value. Needed when the Umbrel
+# package wires secrets together but the app hard-validates them (mailflow:
+# SESSION_SECRET >= 32 chars, ENCRYPTION_KEY exactly 64 hex chars).
+MANUAL_ENV_OVERRIDES = {
+    "mailflow": {
+        "backend": {
+            "SESSION_SECRET": "${SESSION_SECRET}",
+            "ENCRYPTION_KEY": "${ENCRYPTION_KEY}",
+        },
+    },
+}
+
+
+def apply_env_overrides(compose: dict, app_id: str) -> None:
+    overrides = MANUAL_ENV_OVERRIDES.get(app_id)
+    if not overrides:
+        return
+    services = compose.get("services", {}) or {}
+    for svc_name, env_map in overrides.items():
+        svc = services.get(svc_name)
+        if not svc:
+            continue
+        env = svc.get("environment")
+        if isinstance(env, dict):
+            for k, v in env_map.items():
+                if k in env:
+                    env[k] = v
+        elif isinstance(env, list):
+            for i, e in enumerate(env):
+                if isinstance(e, str) and "=" in e:
+                    k, _, val = e.partition("=")
+                    if k.strip() in env_map:
+                        env[i] = f"{k.strip()}={env_map[k.strip()]}"
+
+
 MANUAL_FORM_FIELDS = {
+    "mailflow": [
+        {
+            "label": "Session secret",
+            "type": "random",
+            "env_variable": "SESSION_SECRET",
+            "min": 32,
+            "required": False,
+            "hint": "Must be at least 32 characters.",
+        },
+        {
+            "label": "Encryption key",
+            "type": "random",
+            "env_variable": "ENCRYPTION_KEY",
+            "encoding": "hex",
+            "min": 64,
+            "required": False,
+            "hint": "Exactly 64 hex characters (32 bytes).",
+        },
+    ],
     "openthread-border-router": [
         {
             "label": "Thread radio device",
@@ -405,6 +461,166 @@ EXTRA_APPS = {
                     },
                     "networks": ["tipi_main_network"],
                     "labels": {"runtipi.managed": "true"},
+                },
+            },
+        },
+        "x-runtipi": {"schema_version": 2},
+    },
+    "pterodactyl": {
+        "port": 8082,
+        "exposable": True,
+        "main_service": "pterodactyl-panel",
+        "manifest": {
+            "id": "pterodactyl",
+            "name": "Pterodactyl",
+            "category": "utilities",
+            "tagline": "Open-source game server management panel",
+            "description": (
+                "Pterodactyl is an open-source game server management panel. It provides a "
+                "web UI to deploy, manage and monitor game servers (Minecraft, Terraria, CS2, ...) "
+                "across multiple nodes, with an integrated account system, server resource "
+                "limits and a REST API.\n\n"
+                "**After install**, the panel needs one manual step before you can log in: create "
+                "the admin user by running inside the panel container:\n\n"
+                "```bash\n"
+                "docker exec -it pterodactyl-panel php artisan p:user:make\n"
+                "```\n\n"
+                "This package runs the control *panel* plus its MariaDB and Redis services. The "
+                "*wings* daemon that actually hosts game servers is a separate component that "
+                "runs on each node, requires a generated config and direct Docker access, and is "
+                "not included here -- see https://pterodactyl.io for setting up wings and "
+                "connecting nodes."
+            ),
+            "developer": "Pterodactyl",
+            "repo": "https://github.com/pterodactyl/panel",
+            "website": "https://pterodactyl.io",
+            "version": "1.15.0",
+            "port": 8082,
+        },
+        "form_fields": [
+            {
+                "label": "Database password",
+                "type": "random",
+                "env_variable": "APP_DB_PASSWORD",
+                "min": 32,
+                "required": False,
+            },
+            {
+                "label": "Database root password",
+                "type": "random",
+                "env_variable": "APP_DB_ROOT_PASSWORD",
+                "min": 32,
+                "required": False,
+            },
+            {
+                "label": "Service author email",
+                "type": "email",
+                "env_variable": "APP_SERVICE_AUTHOR",
+                "required": False,
+                "default": "noreply@localhost",
+            },
+            {
+                "label": "Timezone",
+                "type": "text",
+                "env_variable": "APP_TIMEZONE",
+                "required": False,
+                "default": "UTC",
+            },
+        ],
+        "compose": {
+            "services": {
+                "pterodactyl-panel": {
+                    "image": "ghcr.io/pterodactyl/panel:1.15.0",
+                    "container_name": "pterodactyl-panel",
+                    "restart": "unless-stopped",
+                    "ports": ["${APP_PORT}:80"],
+                    "environment": [
+                        "APP_ENV=production",
+                        "APP_ENVIRONMENT_ONLY=false",
+                        "APP_URL=${APP_PROTOCOL:-http}://${APP_DOMAIN}",
+                        "APP_TIMEZONE=${APP_TIMEZONE:-UTC}",
+                        "APP_SERVICE_AUTHOR=${APP_SERVICE_AUTHOR:-noreply@localhost}",
+                        "TRUSTED_PROXIES=*",
+                        "DB_HOST=database",
+                        "DB_PORT=3306",
+                        "DB_DATABASE=panel",
+                        "DB_USERNAME=pterodactyl",
+                        "DB_PASSWORD=${APP_DB_PASSWORD}",
+                        "CACHE_DRIVER=redis",
+                        "SESSION_DRIVER=redis",
+                        "QUEUE_DRIVER=redis",
+                        "REDIS_HOST=cache",
+                        "REDIS_PORT=6379",
+                        "REDIS_PASSWORD=null",
+                        "HASHIDS_LENGTH=8",
+                        "MAIL_FROM=${APP_SERVICE_AUTHOR:-noreply@localhost}",
+                        "MAIL_DRIVER=smtp",
+                        "MAIL_HOST=localhost",
+                        "MAIL_PORT=1025",
+                        "MAIL_USERNAME=",
+                        "MAIL_PASSWORD=",
+                        "MAIL_ENCRYPTION=true",
+                    ],
+                    "depends_on": {
+                        "database": {"condition": "service_healthy"},
+                        "cache": {"condition": "service_healthy"},
+                    },
+                    "volumes": [
+                        "${APP_DATA_DIR}/var:/app/var",
+                        "${APP_DATA_DIR}/nginx:/etc/nginx/http.d",
+                        "${APP_DATA_DIR}/certs:/etc/letsencrypt",
+                        "${APP_DATA_DIR}/logs:/app/storage/logs",
+                    ],
+                    "networks": ["tipi_main_network"],
+                    "labels": {
+                        "runtipi.managed": "true",
+                    },
+                    "healthcheck": {
+                        "test": ["CMD-SHELL", "wget -qO/dev/null http://127.0.0.1/ || exit 1"],
+                        "interval": "30s",
+                        "timeout": "5s",
+                        "retries": 5,
+                        "start_period": "60s",
+                    },
+                    "x-runtipi": {"internal_port": 80, "is_main": True},
+                },
+                "database": {
+                    "image": "mariadb:11",
+                    "container_name": "pterodactyl-database",
+                    "restart": "unless-stopped",
+                    "environment": [
+                        "MYSQL_DATABASE=panel",
+                        "MYSQL_USER=pterodactyl",
+                        "MYSQL_PASSWORD=${APP_DB_PASSWORD}",
+                        "MYSQL_ROOT_PASSWORD=${APP_DB_ROOT_PASSWORD}",
+                    ],
+                    "volumes": ["${APP_DATA_DIR}/mysql:/var/lib/mysql"],
+                    "networks": ["tipi_main_network"],
+                    "labels": {
+                        "runtipi.managed": "true",
+                    },
+                    "healthcheck": {
+                        "test": ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"],
+                        "interval": "10s",
+                        "timeout": "5s",
+                        "retries": 10,
+                    },
+                },
+                "cache": {
+                    "image": "redis:alpine",
+                    "container_name": "pterodactyl-cache",
+                    "restart": "unless-stopped",
+                    "volumes": ["${APP_DATA_DIR}/redis:/data"],
+                    "networks": ["tipi_main_network"],
+                    "labels": {
+                        "runtipi.managed": "true",
+                    },
+                    "healthcheck": {
+                        "test": ["CMD", "redis-cli", "ping"],
+                        "interval": "10s",
+                        "timeout": "3s",
+                        "retries": 5,
+                    },
                 },
             },
         },
@@ -739,6 +955,20 @@ def convert_compose(app_id: str, compose: dict, manifest_port: int):
             s,
         )
         s = re.sub(r"\$\{UMBREL_ROOT\}", "${RUNTIPI_MEDIA_DIR}", s)
+        # umbrel's DEVICE_DOMAIN_NAME/hostname used inside URLs is the device's
+        # public URL; map it to runtipi's APP_DOMAIN so apps generate redirects /
+        # websocket origins / oidc callbacks against the real access URL instead
+        # of the container-internal "localhost" (which crashes e.g. mailflow).
+        s = re.sub(
+            r"(?i)\bhttps?://\$\{DEVICE_DOMAIN_NAME\}(?::\d+)?",
+            "${APP_PROTOCOL:-http}://${APP_DOMAIN}",
+            s,
+        )
+        s = re.sub(
+            r"(?i)\bhttps?://\$\{DEVICE_HOSTNAME\}(?::\d+)?",
+            "${APP_PROTOCOL:-http}://${APP_DOMAIN}",
+            s,
+        )
         s = re.sub(r"\$\{DEVICE_DOMAIN_NAME\}|\$DEVICE_DOMAIN_NAME", "localhost", s)
         s = re.sub(r"\$\{DEVICE_HOSTNAME\}|\$DEVICE_HOSTNAME", "localhost", s)
         def _resolve_defaulted_var(m):
@@ -1188,6 +1418,8 @@ def main():
             failures.append((app_id, f"compose conversion failed: {e}"))
             continue
 
+        apply_env_overrides(new_compose, app_id)
+
         var_info, all_vars = collect_vars(new_compose, app_id)
 
         cfg_port = host_port if host_port else (int(manifest["port"]) if manifest.get("port") else 0)
@@ -1205,6 +1437,8 @@ def main():
         used_ports.setdefault(base, []).append(app_id)
 
         cfg = build_config(manifest, app_id, internal_port, var_info)
+        if app_id in MANUAL_FORM_FIELDS:
+            cfg["form_fields"] = MANUAL_FORM_FIELDS[app_id]
         cfg["port"] = base
 
         if main_service:

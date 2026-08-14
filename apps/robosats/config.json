@@ -7,7 +7,7 @@
   "port": 12596,
   "id": "robosats",
   "tipi_version": 1,
-  "version": "v0.8.4-alpha",
+  "version": "latest",
   "categories": [
     "finance"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752870,
-  "updated_at": 1786708752870,
+  "created_at": 1786720647666,
+  "updated_at": 1786720647666,
   "min_tipi_version": "4.5.0"
 }

@@ -1,6 +1,6 @@
 services:
   web:
-    image: recksato/robosats-client:v0.8.4-alpha@sha256:85bf9ace2eafbcd7c5c61f62d81423aea63ddf08375f5cbe1090392bb49e92f8
+    image: recksato/robosats-client:latest
     restart: unless-stopped
     stop_grace_period: 1m
     init: true

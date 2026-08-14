@@ -1,6 +1,6 @@
 services:
   server:
-    image: quay.io/jupyter/base-notebook:lab-4.6.2@sha256:50d8c29bb555af7ba18e956c97734c31ada26ee12d7e6dc77927608cb730d108
+    image: quay.io/jupyter/base-notebook:latest
     user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data:/home/jovyan/work

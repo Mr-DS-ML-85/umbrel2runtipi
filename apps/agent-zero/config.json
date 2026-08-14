@@ -7,7 +7,7 @@
   "port": 3015,
   "id": "agent-zero",
   "tipi_version": 1,
-  "version": "v2.9",
+  "version": "latest",
   "categories": [
     "ai"
   ],
@@ -36,7 +36,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752296,
-  "updated_at": 1786708752296,
+  "created_at": 1786720647098,
+  "updated_at": 1786720647098,
   "min_tipi_version": "4.5.0"
 }

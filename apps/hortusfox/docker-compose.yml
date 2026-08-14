@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/danielbrendel/hortusfox-web:v5.9@sha256:0941f553d086d66fe6ceb57502917697dff4fcc2b0d6eee7e854e1273b6bf5c2
+    image: ghcr.io/danielbrendel/hortusfox-web:latest
     restart: unless-stopped
     volumes:
     - ${APP_DATA_DIR}/data/images:/var/www/html/public/img
@@ -26,7 +26,7 @@ services:
       internal_port: 80
       is_main: true
   db:
-    image: mariadb:11.4.7@sha256:c5c82ddc074b9236fda87127934a1da726ecac68e9de083fd0e0d11a7bedc077
+    image: mariadb:latest
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: my-secret-pw

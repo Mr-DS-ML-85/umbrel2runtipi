@@ -7,7 +7,7 @@
   "port": 8410,
   "id": "satoshi-dashboard",
   "tipi_version": 1,
-  "version": "1.1.0",
+  "version": "latest",
   "categories": [
     "finance"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752892,
-  "updated_at": 1786708752892,
+  "created_at": 1786720647688,
+  "updated_at": 1786720647688,
   "min_tipi_version": "4.5.0"
 }

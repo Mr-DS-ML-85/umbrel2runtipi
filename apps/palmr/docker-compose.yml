@@ -1,6 +1,6 @@
 services:
   server:
-    image: kyantech/palmr:v3.3.2-beta@sha256:043dd6cdbb4d9985b376915020fb26c2037b19876674273eac310ab04cdf16f4
+    image: kyantech/palmr:latest
     restart: unless-stopped
     stop_grace_period: 1m
     environment:

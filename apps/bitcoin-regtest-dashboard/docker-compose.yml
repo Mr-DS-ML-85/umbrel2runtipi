@@ -1,6 +1,6 @@
 services:
   bitcoin:
-    image: ghcr.io/getumbrel/docker-bitcoind:v31.0@sha256:89185fc2792a9824cbe18f7ad4ead02a3a9a14adf5b34eb42f60ebec36201fa0
+    image: ghcr.io/getumbrel/docker-bitcoind:v31.0
     user: 1000:1000
     restart: unless-stopped
     entrypoint:
@@ -21,7 +21,7 @@ services:
     labels:
     - runtipi.managed=true
   electrs:
-    image: getumbrel/electrs:v0.11.0@sha256:0a2c6f573abfd8d724651c6ba1c1f3a9c740219c1cf0f4468043c3342170d8a5
+    image: getumbrel/electrs:latest
     user: 1000:1000
     restart: unless-stopped
     ports:
@@ -41,7 +41,7 @@ services:
     labels:
     - runtipi.managed=true
   dashboard:
-    image: coreylphillips/bitcoin-regtest-dashboard:v1.0.4@sha256:d71e099ec53426cecd05899a7f8efe2b73bfc1d0c21750ac53dc2b2dad107820
+    image: coreylphillips/bitcoin-regtest-dashboard:v1.0.4
     user: 1000:1000
     restart: unless-stopped
     environment:

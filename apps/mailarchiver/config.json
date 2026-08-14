@@ -7,7 +7,7 @@
   "port": 5006,
   "id": "mailarchiver",
   "tipi_version": 1,
-  "version": "2607.5",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752666,
-  "updated_at": 1786708752666,
+  "created_at": 1786720647462,
+  "updated_at": 1786720647462,
   "min_tipi_version": "4.5.0"
 }

@@ -1,6 +1,6 @@
 services:
   db:
-    image: mariadb:11.4.5@sha256:5dfb3093333fa0ea53194ddef0a2bfa21d3b1e1353bd228b22610cd6fc0c04da
+    image: mariadb:latest
     user: 1000:1000
     environment:
       MYSQL_ROOT_PASSWORD: tyooe
@@ -13,7 +13,7 @@ services:
     labels:
     - runtipi.managed=true
   app:
-    image: interaapps/pastefy:7.1.6@sha256:353ce246ccf24ab1dec42e3c387744b47925065c207699f0bf1ce8e560619ca9
+    image: interaapps/pastefy:latest
     user: 1000:1000
     environment:
       HTTP_SERVER_CORS: '*'
@@ -23,7 +23,7 @@ services:
       DATABASE_PASSWORD: tyooe
       DATABASE_HOST: db
       DATABASE_PORT: '3306'
-      SERVER_NAME: http://localhost:9900
+      SERVER_NAME: ${APP_PROTOCOL:-http}://${APP_DOMAIN}
     restart: unless-stopped
     depends_on:
     - db

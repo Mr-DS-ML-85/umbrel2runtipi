@@ -7,7 +7,7 @@
   "port": 8258,
   "id": "dumbpad",
   "tipi_version": 1,
-  "version": "1.0.4",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752449,
-  "updated_at": 1786708752449,
+  "created_at": 1786720647248,
+  "updated_at": 1786720647248,
   "min_tipi_version": "4.5.0"
 }

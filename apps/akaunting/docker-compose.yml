@@ -1,6 +1,6 @@
 services:
   app:
-    image: akaunting/akaunting:3.1.21@sha256:918bbc77981e5b96ab6aa6838491cfa7c98cb4ee7bbf9532ee083e7e66d04255
+    image: akaunting/akaunting:latest
     restart: unless-stopped
     environment:
       AKAUNTING_SETUP: 'true'
@@ -23,7 +23,7 @@ services:
       internal_port: 80
       is_main: true
   db:
-    image: mariadb:11.8.2@sha256:2bcbaec92bd9d4f6591bc8103d3a8e6d0512ee2235506e47a2e129d190444405
+    image: mariadb:latest
     user: 1000:1000
     restart: unless-stopped
     environment:

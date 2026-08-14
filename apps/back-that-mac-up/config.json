@@ -7,7 +7,7 @@
   "port": 3012,
   "id": "back-that-mac-up",
   "tipi_version": 1,
-  "version": "1.1.0",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752322,
-  "updated_at": 1786708752322,
+  "created_at": 1786720647124,
+  "updated_at": 1786720647124,
   "min_tipi_version": "4.5.0"
 }

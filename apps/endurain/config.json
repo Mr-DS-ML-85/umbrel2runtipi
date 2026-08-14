@@ -7,7 +7,7 @@
   "port": 8865,
   "id": "endurain",
   "tipi_version": 1,
-  "version": "0.17.7",
+  "version": "latest",
   "categories": [
     "social"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752467,
-  "updated_at": 1786708752467,
+  "created_at": 1786720647266,
+  "updated_at": 1786720647266,
   "min_tipi_version": "4.5.0"
 }

@@ -7,7 +7,7 @@
   "port": 8229,
   "id": "thinkdashboard",
   "tipi_version": 1,
-  "version": "0.7.6",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752980,
-  "updated_at": 1786708752980,
+  "created_at": 1786720647777,
+  "updated_at": 1786720647777,
   "min_tipi_version": "4.5.0"
 }

@@ -7,7 +7,7 @@
   "port": 3031,
   "id": "anything-llm",
   "tipi_version": 1,
-  "version": "1.15.0",
+  "version": "latest",
   "categories": [
     "ai"
   ],
@@ -40,7 +40,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752311,
-  "updated_at": 1786708752311,
+  "created_at": 1786720647112,
+  "updated_at": 1786720647112,
   "min_tipi_version": "4.5.0"
 }

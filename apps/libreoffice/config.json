@@ -7,7 +7,7 @@
   "port": 5001,
   "id": "libreoffice",
   "tipi_version": 1,
-  "version": "7.6.7",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752620,
-  "updated_at": 1786708752620,
+  "created_at": 1786720647417,
+  "updated_at": 1786720647417,
   "min_tipi_version": "4.5.0"
 }

@@ -1,6 +1,6 @@
 services:
   yucca:
-    image: yuccastream/yucca:0.13.4@sha256:1304ad68fa866f2cf426d8c0bddf238cd2bbaeb3aeedd7a2b65eeafdd2b79917
+    image: yuccastream/yucca:latest
     restart: unless-stopped
     shm_size: 128mb
     working_dir: /opt/yucca

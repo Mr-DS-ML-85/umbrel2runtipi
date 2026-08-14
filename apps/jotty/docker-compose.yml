@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/fccview/jotty:1.26.0@sha256:44b05273db46129ad2f8fc599ce7a8809a4fb8edbcb16bc651eef7ae1f7a9f5f
+    image: ghcr.io/fccview/jotty:latest
     user: 1000:1000
     restart: unless-stopped
     volumes:

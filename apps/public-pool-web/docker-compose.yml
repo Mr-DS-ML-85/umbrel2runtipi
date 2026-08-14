@@ -1,6 +1,6 @@
 services:
   rails-app:
-    image: martinbarilik/public-pool-web:0.2.0@sha256:f708bdea807986de548df4b2011cee47a827034786293bb7305d53a0a99f86a7
+    image: martinbarilik/public-pool-web:latest
     restart: unless-stopped
     user: 1000:1000
     environment:
@@ -22,7 +22,7 @@ services:
       internal_port: 3000
       is_main: true
   db:
-    image: pgautoupgrade/pgautoupgrade:18.4-trixie@sha256:37dfb44476ae3b753d0f305a55912e7442649d7cf020d8c3017acfce210cc062
+    image: pgautoupgrade/pgautoupgrade:latest
     restart: unless-stopped
     environment:
     - POSTGRES_USER=${APP_PUBLIC_POOL_WEB_POSTGRES_USERNAME}
@@ -41,7 +41,7 @@ services:
     labels:
     - runtipi.managed=true
   redis:
-    image: valkey/valkey:8@sha256:c6d4637d757379a2ff040148b95c85936d85a06c129eafa5fbe582f9e720e12f
+    image: valkey/valkey:latest
     restart: unless-stopped
     user: 1000:1000
     healthcheck:
@@ -54,7 +54,7 @@ services:
     labels:
     - runtipi.managed=true
   sidekiq:
-    image: martinbarilik/public-pool-web:0.2.0@sha256:f708bdea807986de548df4b2011cee47a827034786293bb7305d53a0a99f86a7
+    image: martinbarilik/public-pool-web:latest
     restart: unless-stopped
     user: 1000:1000
     environment:

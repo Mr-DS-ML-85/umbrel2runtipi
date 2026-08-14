@@ -7,7 +7,7 @@
   "port": 8386,
   "id": "convertx",
   "tipi_version": 1,
-  "version": "0.18.0",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752413,
-  "updated_at": 1786708752413,
+  "created_at": 1786720647213,
+  "updated_at": 1786720647213,
   "min_tipi_version": "4.5.0"
 }

@@ -7,7 +7,7 @@
   "port": 6157,
   "id": "opengist",
   "tipi_version": 1,
-  "version": "1.15.1",
+  "version": "latest",
   "categories": [
     "development"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752761,
-  "updated_at": 1786708752761,
+  "created_at": 1786720647557,
+  "updated_at": 1786720647557,
   "min_tipi_version": "4.5.0"
 }

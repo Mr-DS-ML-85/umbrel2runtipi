@@ -7,7 +7,7 @@
   "port": 3684,
   "id": "just-download",
   "tipi_version": 1,
-  "version": "1.0.9",
+  "version": "latest",
   "categories": [
     "media"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752581,
-  "updated_at": 1786708752581,
+  "created_at": 1786720647379,
+  "updated_at": 1786720647379,
   "min_tipi_version": "4.5.0"
 }

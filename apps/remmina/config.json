@@ -7,7 +7,7 @@
   "port": 8764,
   "id": "remmina",
   "tipi_version": 1,
-  "version": "1.4.35",
+  "version": "latest",
   "categories": [
     "network"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752865,
-  "updated_at": 1786708752865,
+  "created_at": 1786720647661,
+  "updated_at": 1786720647661,
   "min_tipi_version": "4.5.0"
 }

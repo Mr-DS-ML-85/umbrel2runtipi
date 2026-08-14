@@ -7,7 +7,7 @@
   "port": 8070,
   "id": "mainsail",
   "tipi_version": 1,
-  "version": "2.18.2",
+  "version": "latest",
   "categories": [
     "data"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752671,
-  "updated_at": 1786708752671,
+  "created_at": 1786720647468,
+  "updated_at": 1786720647468,
   "min_tipi_version": "4.5.0"
 }

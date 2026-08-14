@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/lissy93/networking-toolbox:1.6.0@sha256:4e97330fb310e1a5fbe185b1bf859270902ddef7934b88cecc6b3def98d21eaa
+    image: ghcr.io/lissy93/networking-toolbox:latest
     user: 1000:1000
     restart: unless-stopped
     environment:

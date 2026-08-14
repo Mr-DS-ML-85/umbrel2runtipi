@@ -1,0 +1,56 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Pterodactyl",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8082,
+  "id": "pterodactyl",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "utilities"
+  ],
+  "description": "Pterodactyl is an open-source game server management panel. It provides a web UI to deploy, manage and monitor game servers (Minecraft, Terraria, CS2, ...) across multiple nodes, with an integrated account system, server resource limits and a REST API.\n\n**After install**, the panel needs one manual step before you can log in: create the admin user by running inside the panel container:\n\n```bash\ndocker exec -it pterodactyl-panel php artisan p:user:make\n```\n\nThis package runs the control *panel* plus its MariaDB and Redis services. The *wings* daemon that actually hosts game servers is a separate component that runs on each node, requires a generated config and direct Docker access, and is not included here -- see https://pterodactyl.io for setting up wings and connecting nodes.",
+  "short_desc": "Open-source game server management panel",
+  "author": "Pterodactyl",
+  "source": "https://github.com/pterodactyl/panel",
+  "website": "https://pterodactyl.io",
+  "form_fields": [
+    {
+      "label": "Database password",
+      "type": "random",
+      "env_variable": "APP_DB_PASSWORD",
+      "min": 32,
+      "required": false
+    },
+    {
+      "label": "Database root password",
+      "type": "random",
+      "env_variable": "APP_DB_ROOT_PASSWORD",
+      "min": 32,
+      "required": false
+    },
+    {
+      "label": "Service author email",
+      "type": "email",
+      "env_variable": "APP_SERVICE_AUTHOR",
+      "required": false,
+      "default": "noreply@localhost"
+    },
+    {
+      "label": "Timezone",
+      "type": "text",
+      "env_variable": "APP_TIMEZONE",
+      "required": false,
+      "default": "UTC"
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786720647864,
+  "updated_at": 1786720647864,
+  "min_tipi_version": "4.5.0"
+}

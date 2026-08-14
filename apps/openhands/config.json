@@ -7,7 +7,7 @@
   "port": 3993,
   "id": "openhands",
   "tipi_version": 1,
-  "version": "1.10.0",
+  "version": "latest",
   "categories": [
     "ai"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752764,
-  "updated_at": 1786708752764,
+  "created_at": 1786720647560,
+  "updated_at": 1786720647560,
   "min_tipi_version": "4.5.0"
 }

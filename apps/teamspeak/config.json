@@ -7,7 +7,7 @@
   "port": 50371,
   "id": "teamspeak",
   "tipi_version": 1,
-  "version": "3.13.7",
+  "version": "latest",
   "categories": [
     "social"
   ],
@@ -34,7 +34,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752971,
-  "updated_at": 1786708752971,
+  "created_at": 1786720647768,
+  "updated_at": 1786720647768,
   "min_tipi_version": "4.5.0"
 }

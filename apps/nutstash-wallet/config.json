@@ -7,7 +7,7 @@
   "port": 4173,
   "id": "nutstash-wallet",
   "tipi_version": 1,
-  "version": "0.1.10",
+  "version": "0.1.12",
   "categories": [
     "finance"
   ],
@@ -21,7 +21,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752742,
-  "updated_at": 1786708752742,
+  "created_at": 1786720647539,
+  "updated_at": 1786720647539,
   "min_tipi_version": "4.5.0"
 }

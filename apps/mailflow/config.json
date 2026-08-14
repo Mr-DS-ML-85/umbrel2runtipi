@@ -7,7 +7,7 @@
   "port": 3395,
   "id": "mailflow",
   "tipi_version": 1,
-  "version": "2.9.0",
+  "version": "latest",
   "categories": [
     "network"
   ],
@@ -18,17 +18,28 @@
   "website": "https://mailflow.sh",
   "form_fields": [
     {
+      "label": "Session secret",
       "type": "random",
-      "label": "Seed",
-      "env_variable": "APP_SEED",
-      "required": false
+      "env_variable": "SESSION_SECRET",
+      "min": 32,
+      "required": false,
+      "hint": "Must be at least 32 characters."
+    },
+    {
+      "label": "Encryption key",
+      "type": "random",
+      "env_variable": "ENCRYPTION_KEY",
+      "encoding": "hex",
+      "min": 64,
+      "required": false,
+      "hint": "Exactly 64 hex characters (32 bytes)."
     }
   ],
   "supported_architectures": [
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752670,
-  "updated_at": 1786708752670,
+  "created_at": 1786720647466,
+  "updated_at": 1786720647466,
   "min_tipi_version": "4.5.0"
 }

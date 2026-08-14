@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/itskovacs/trip:1.47.0@sha256:4094594c95a66fd89892ecc2f483b027691631cc50a47a0744397816a5e7ce82
+    image: ghcr.io/itskovacs/trip:latest
     restart: unless-stopped
     stop_grace_period: 1m
     volumes:

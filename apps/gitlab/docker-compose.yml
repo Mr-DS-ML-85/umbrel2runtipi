@@ -1,6 +1,6 @@
 services:
   gitlab:
-    image: gitlab/gitlab-ce:19.2.2-ce.0@sha256:f7cf5de6f453623cfda9b7cc3708b1a29e82ea9be2dfaa91b5d7e7ed9aff9e6c
+    image: gitlab/gitlab-ce:latest
     restart: unless-stopped
     hostname: localhost:8929
     ulimits:

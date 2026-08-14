@@ -1,11 +1,11 @@
 services:
   server:
-    image: ghcr.io/papra-hq/papra:26.6.1-rootless@sha256:a7a42e228f73f229d1e2dcd53de7b67503f1756d1aa3a894ab175dba8030c0e8
+    image: ghcr.io/papra-hq/papra:latest
     user: 1000:1000
     restart: unless-stopped
     environment:
     - AUTH_SECRET=${APP_SEED}
-    - APP_BASE_URL=http://localhost:8112
+    - APP_BASE_URL=${APP_PROTOCOL:-http}://${APP_DOMAIN}
     volumes:
     - ${APP_DATA_DIR}/data:/app/app-data
     labels:

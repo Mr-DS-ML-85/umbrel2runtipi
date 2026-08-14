@@ -1,6 +1,6 @@
 services:
   web:
-    image: wger/server:2.6@sha256:997ead43aabdcd67d054f933e07d2b23875f01bf43271a267cb7796925ca27c4
+    image: wger/server:latest
     user: 1000:1000
     depends_on:
       db:
@@ -11,9 +11,9 @@ services:
         condition: service_completed_successfully
     environment:
       SECRET_KEY: ${APP_SEED}
-      CSRF_TRUSTED_ORIGINS: http://localhost:${APP_WGER_PORT},http://localhost:${APP_WGER_PORT},${APP_WGER_LOCAL_URLS}
-      SITE_URL: http://localhost:${APP_WGER_PORT}
-      MEDIA_URL: http://localhost:${APP_WGER_PORT}/media/
+      CSRF_TRUSTED_ORIGINS: ${APP_PROTOCOL:-http}://${APP_DOMAIN}:${APP_WGER_PORT},${APP_PROTOCOL:-http}://${APP_DOMAIN}:${APP_WGER_PORT},${APP_WGER_LOCAL_URLS}
+      SITE_URL: ${APP_PROTOCOL:-http}://${APP_DOMAIN}:${APP_WGER_PORT}
+      MEDIA_URL: ${APP_PROTOCOL:-http}://${APP_DOMAIN}:${APP_WGER_PORT}/media/
       PS_DATABASE_URI: postgres://wger:wger@db:5432/wger
       PS_STORAGE_PG_URI: postgres://powersync_storage:${APP_SEED}@db:5432/wger
       POWERSYNC_URL_PATH: ps
@@ -30,7 +30,7 @@ services:
     labels:
     - runtipi.managed=true
   powersync_setup:
-    image: wger/server:2.6@sha256:997ead43aabdcd67d054f933e07d2b23875f01bf43271a267cb7796925ca27c4
+    image: wger/server:latest
     user: 1000:1000
     command: ./manage.py setup-powersync-storage
     depends_on:
@@ -44,7 +44,7 @@ services:
     labels:
     - runtipi.managed=true
   powersync:
-    image: journeyapps/powersync-service:1.22.0@sha256:2d5084910f03a029174ebc7f7ce0c0d2c43e932ead63a2d87b919e90ebbb0e77
+    image: journeyapps/powersync-service:latest
     depends_on:
       db:
         condition: service_healthy
@@ -69,7 +69,7 @@ services:
     labels:
     - runtipi.managed=true
   nginx:
-    image: nginx:alpine3.22@sha256:b3c656d55d7ad751196f21b7fd2e8d4da9cb430e32f646adcf92441b72f82b14
+    image: nginx:latest
     depends_on:
     - web
     - powersync
@@ -96,7 +96,7 @@ services:
       internal_port: 80
       is_main: true
   db:
-    image: postgres:17.5-alpine@sha256:6567bca8d7bc8c82c5922425a0baee57be8402df92bae5eacad5f01ae9544daa
+    image: postgres:latest
     user: 1000:1000
     shm_size: 256mb
     environment:
@@ -130,7 +130,7 @@ services:
     labels:
     - runtipi.managed=true
   cache:
-    image: redis:8.0.3-alpine@sha256:25c0ae32c6c2301798579f5944af53729766a18eff5660bbef196fc2e6214a9c
+    image: redis:latest
     user: 1000:1000
     volumes:
     - ${APP_DATA_DIR}/data/redis-data:/data
@@ -144,7 +144,7 @@ services:
     labels:
     - runtipi.managed=true
   celery_worker:
-    image: wger/server:2.6@sha256:997ead43aabdcd67d054f933e07d2b23875f01bf43271a267cb7796925ca27c4
+    image: wger/server:latest
     user: 1000:1000
     command: /start-worker
     environment:
@@ -166,7 +166,7 @@ services:
     labels:
     - runtipi.managed=true
   celery_beat:
-    image: wger/server:2.6@sha256:997ead43aabdcd67d054f933e07d2b23875f01bf43271a267cb7796925ca27c4
+    image: wger/server:latest
     user: 1000:1000
     command: /start-beat
     environment:

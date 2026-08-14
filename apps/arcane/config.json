@@ -7,7 +7,7 @@
   "port": 3552,
   "id": "arcane",
   "tipi_version": 1,
-  "version": "2.8.0",
+  "version": "latest",
   "categories": [
     "development"
   ],
@@ -28,7 +28,7 @@
     "arm64",
     "amd64"
   ],
-  "created_at": 1786708752315,
-  "updated_at": 1786708752315,
+  "created_at": 1786720647117,
+  "updated_at": 1786720647117,
   "min_tipi_version": "4.5.0"
 }

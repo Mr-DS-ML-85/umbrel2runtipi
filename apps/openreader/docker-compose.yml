@@ -1,12 +1,12 @@
 services:
   web:
-    image: ghcr.io/richardr1126/openreader:4.4.0@sha256:2e3ec184dac71082646995a17309add008405827d81a020fb6d264360f7c1a49
+    image: ghcr.io/richardr1126/openreader:latest
     user: 1000:1000
     environment:
     - API_BASE=http://kokoro_web_1:8880/v1
-    - BASE_URL=http://localhost:3391
+    - BASE_URL=${APP_PROTOCOL:-http}://${APP_DOMAIN}
     - AUTH_SECRET=${APP_SEED}
-    - AUTH_TRUSTED_ORIGINS=http://localhost:3391,http://localhost:3391,http://*.ts.net:3391,https://*.ts.net:3391,${APP_OPENREADER_LOCAL_URLS}
+    - AUTH_TRUSTED_ORIGINS=${APP_PROTOCOL:-http}://${APP_DOMAIN},${APP_PROTOCOL:-http}://${APP_DOMAIN},http://*.ts.net:3391,https://*.ts.net:3391,${APP_OPENREADER_LOCAL_URLS}
     - USE_ANONYMOUS_AUTH_SESSIONS=true
     restart: unless-stopped
     volumes:
