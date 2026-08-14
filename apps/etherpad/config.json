@@ -1,0 +1,34 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Etherpad",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 9002,
+  "id": "etherpad",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "\u2699\ufe0f The admin panel for Etherpad is accessible at \"http://umbrel.local:9002/admin/\". You can find your unique credentials by right-clicking on the Etherpad app icon on the umbrelOS homescreen and selecting \"Show default credentials\".\n\n\ud83d\udcdd Etherpad is an open-source, web-based collaborative real-time editor that enables multiple users to simultaneously edit a document from different locations. It's particularly valuable for teamwork, group projects, or situations where many people need to contribute to the same document at once. One of Etherpad's standout features is its live collaboration functionality - as users make changes, those changes appear in real-time for all participants, with each user's contributions color-coded to distinguish them.\n\nThe platform is designed to be simple and intuitive, with a clean and straightforward interface that emphasizes writing and editing. Etherpad doesn't require users to sign up or install any software, making it easy for anyone to start collaborating quickly.\n\nAnother key feature of Etherpad is its version history system, which allows users to view and revert to previous versions of the document. This ensures that changes can be tracked and recovered if necessary, making it a useful tool for managing long-term collaborative projects.\n\nAs an open-source tool, Etherpad offers flexibility in how it's used. Users can run it on their own servers for greater control and customization or simply use a public instance hosted by various service providers. The platform is highly extensible, with plugins available for additional features like embedding images, adding task lists, or even integrating with other tools.\n\nEtherpad has gained popularity in academic, business, and development environments for its simple yet effective collaboration features. Whether you're writing meeting notes, drafting a report, or brainstorming ideas with a team, Etherpad offers a powerful and user-friendly solution for collaborative writing.",
+  "short_desc": "An intuitive tool for real-time collaborative writing",
+  "author": "The Etherpad Foundation",
+  "source": "https://github.com/ether/etherpad",
+  "website": "https://etherpad.org/",
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Password",
+      "env_variable": "APP_PASSWORD",
+      "required": false
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388515,
+  "updated_at": 1786690388515,
+  "min_tipi_version": "4.0.0"
+}

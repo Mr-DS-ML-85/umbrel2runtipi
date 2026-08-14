@@ -1,0 +1,24 @@
+services:
+  web:
+    image: ghcr.io/lukegus/termix:latest
+    restart: on-failure
+    depends_on:
+    - guacd
+    environment:
+      GUACD_HOST: guacd
+      GUACD_TUNNEL_HOST: web
+      GUACD_RECORDING_PATH: /termix-data/session_recordings/guacamole
+      POSTHOG_API_KEY: ''
+      ENABLE_TELEMETRY: 'false'
+    volumes:
+    - ${APP_DATA_DIR}/data:/app/data
+    x-runtipi:
+      internal_port: 8080
+      is_main: true
+  guacd:
+    image: guacamole/guacd:latest
+    restart: on-failure
+    volumes:
+    - ${APP_DATA_DIR}/data:/termix-data
+x-runtipi:
+  schema_version: 2

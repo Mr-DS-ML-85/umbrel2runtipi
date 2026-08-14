@@ -1,0 +1,45 @@
+# Zabbix
+
+The all-in-one, open-source solution that lets you monitor anything
+
+⚠️ Zabbix may take a few minutes to initialize after installation. Please be patient.
+
+An enterprise-class, open-source distributed monitoring solution that's designed to monitor the performance and availability of network devices, servers, services, and other IT resources. Zabbix is a flexible solution that can monitor anything from a simple, standalone application to a large-scale environment, with features including:
+  - Resource discovery: Discover network entities, server resources, and onboard/offboard devices. Use out-of-the-box integrations (templates) to monitor anything form a low-level device to a SAAS service.
+  - Metric acquisition: Use an agent or agent-less approach for metric acquisition from any source - devices, sensors, operating systems, virtualization platforms, container platforms like Docker, Kubernetes, cloud infrastructures, databases, webpages, Java ecosystems, application servers, API endpoints, business applications, and many more.
+  - Root cause analysis and problem detection: Count on high-performance, real-time problem detection that correlates both existing and incoming problems and performs root cause analyses.
+  - Incidents, alerts, and notifications: Receive an alert when an issue is triggered (proactively or post-mortem) in the ecosystem. Use multiple messaging channels (including Slack, JIRA, Microsoft Teams, email or text messages) to get notified about the different types of events occurring in your environment.
+  - "Single pane of glass" overview: Visualize collected data and monitoring events in graphs, lists, geomaps, and network topology maps.
+  - Multitenancy and distributed monitoring: Enjoy the convenience of one monitoring solution for multiple data centers, departments, and organizations, and monitor remote locations behind firewalls with remote command execution capability.
+  - Unparalleled flexibility: Adapt Zabbix to your needs and utilize built-in functionalities, including the ability to stream metrics and events over HTTP, reporting, auditing, security, service SLA calculations, and many more.
+
+
+⚙️ Configuration:
+
+The Zabbix Agent listens on port 10050. To monitor the Zabbix server itself, navigate to Monitoring > Hosts within Zabbix, and modify the "Zabbix server" host by adding the DNS name "zabbix_zabbix-agent_1" and toggling the "Connect to DNS" option.
+
+---
+
+## Links
+
+- Website: https://www.zabbix.com/
+- Repository: https://github.com/zabbix/zabbix
+- Support: https://www.zabbix.com/support
+
+## Default credentials
+
+- Username: `Admin`
+- Password: `zabbix`
+
+## Release notes
+
+This update includes bug fixes and improvements from Zabbix 7.4.13:
+  - Updated maximum supported TimescaleDB version to 2.28
+  - Updated Veeam Backup and Replication templates
+  - Fixed a potential VMware collector crash caused by vCenter connectivity issues
+  - Fixed frontend host wizard, redirect, web monitoring, and bulk action permission issues
+  - Fixed Zabbix Agent certificate access, persistent buffer writes, and system.run race conditions
+  - Custom JavaScript preprocessing scripts can no longer modify built-in object methods; review the upstream upgrade notes if you rely on that behavior
+
+
+Full release notes are available at https://www.zabbix.com/rn/rn7.4.13

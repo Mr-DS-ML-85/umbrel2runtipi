@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "DumbPad",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8258,
+  "id": "dumbpad",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "DumbPad is a minimal, modern notepad application built for speed and simplicity. It runs with zero fuss and stores notes as plain files.\n\nKey features\n  - Ultra-simple, minimal writing UI with auto-save (near real-time).\n  - Dark/light mode with system preference support.\n  - File-based storage: notes are stored as plain `.txt` files and a `notepads.json` index.\n  - Enhanced Markdown: alert blocks, extended tables, collapsible content, and code syntax highlighting.\n  - Direct notepad linking and copyable shareable URLs.\n  - Fuzzy search across filenames and contents.\n\n\nWhy DumbPad?\n\nDumbPad is for people who want a distraction-free place to jot things down quick notes, snippets, shopping lists, or code ideas without the overhead of accounts or heavy tooling.  It's small, fast, and built to keep your notes available and portable.",
+  "short_desc": "A notepad with collaborative editing, fuzzy search, & markdown preview",
+  "author": "DumbWareio",
+  "source": "https://github.com/DumbWareio/DumbPad",
+  "website": "https://github.com/DumbWareio/DumbPad",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388491,
+  "updated_at": 1786690388491,
+  "min_tipi_version": "4.0.0"
+}

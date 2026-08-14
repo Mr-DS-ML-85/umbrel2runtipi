@@ -1,0 +1,14 @@
+services:
+  server:
+    image: docker.io/sipeed/picoclaw:latest
+    user: 1000:1000
+    restart: on-failure
+    volumes:
+    - ${APP_DATA_DIR}/data:/data
+    environment:
+      PICOCLAW_HOME: /data
+    x-runtipi:
+      internal_port: 18800
+      is_main: true
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "SkyBro",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 7437,
+  "id": "skybro",
+  "tipi_version": 1,
+  "version": "1.5.7",
+  "categories": [
+    "network"
+  ],
+  "description": "SkyBro is a real-time sky tracker for your home. It runs silently in the background 24/7 and alerts you the moment something interesting is overhead.\n\n\u2708\ufe0f Aircraft \u2014 Tracks live planes in your vicinity using OpenSky Network's ADS-B data. Get Pushover or Discord alerts (with photo) when a plane enters your configured radius and altitude window. The live map shows per-airframe silhouettes for jets, widebodies, helicopters, light props, and military aircraft. Every alerted plane is saved to history with its full flight path.\n\n\ud83d\udef0\ufe0f Satellites \u2014 Monitors upcoming passes for the ISS, Hubble Space Telescope, and Tiangong CSS. Fires a push alert before each ISS pass so you never miss one.\n\n\ud83d\udd2d Astronomy \u2014 Full night-sky planner powered by ephem. Shows tonight's dark window, Bortle sky quality, and observation highlights. Browse all 110 Messier objects with equipment and horizon filters, track all 7 planets with rise/set times, and follow 11 annual meteor showers.\n\n\u2601\ufe0f Weather \u2014 Pulls hyperlocal forecasts from Open-Meteo (no API key needed) including current conditions, 24-hour hourly breakdown, and 7-day forecast. Includes a sky visibility score for tonight.\n\nAll settings \u2014 home coordinates, alert radius, altitude threshold, satellite lead time, and notification credentials are configurable through the built-in settings page. No config file editing required. Changes apply within 15 seconds without restarting.",
+  "short_desc": "Live aircraft, satellite, weather & astronomy tracker",
+  "author": "xDeeKay",
+  "source": "https://github.com/xDeeKay/SkyBro",
+  "website": "https://github.com/xDeeKay/SkyBro",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388919,
+  "updated_at": 1786690388919,
+  "min_tipi_version": "4.0.0"
+}

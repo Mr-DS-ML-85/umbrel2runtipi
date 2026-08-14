@@ -1,0 +1,9 @@
+services:
+  app:
+    image: dennysubke/seedtool:latest
+    restart: on-failure
+    x-runtipi:
+      internal_port: 8080
+      is_main: true
+x-runtipi:
+  schema_version: 2

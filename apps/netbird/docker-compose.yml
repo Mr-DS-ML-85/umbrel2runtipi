@@ -1,0 +1,22 @@
+services:
+  app:
+    image: ghcr.io/netbirdio/netbird:latest
+    restart: on-failure
+    user: 1000:1000
+    cap_add:
+    - NET_ADMIN
+    - SYS_ADMIN
+    - SYS_RESOURCE
+    network_mode: host
+    volumes:
+    - ${APP_DATA_DIR}/data/app_data:/var/lib/netbird:rw
+  web:
+    image: nginx:latest
+    restart: on-failure
+    volumes:
+    - ${APP_DATA_DIR}/data/www:/usr/share/nginx/html:ro
+    x-runtipi:
+      internal_port: 80
+      is_main: true
+x-runtipi:
+  schema_version: 2

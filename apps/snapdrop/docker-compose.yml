@@ -1,0 +1,14 @@
+services:
+  server:
+    image: linuxserver/snapdrop:latest
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/config
+    restart: on-failure
+    environment:
+    - PUID=1000
+    - PGID=1000
+    x-runtipi:
+      internal_port: 80
+      is_main: true
+x-runtipi:
+  schema_version: 2

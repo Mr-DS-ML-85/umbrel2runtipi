@@ -1,0 +1,76 @@
+# Mail Archiver
+
+A comprehensive solution for archiving, searching, and exporting emails
+
+Mail Archiver delivers automated archiving of incoming and outgoing emails from multiple accounts. All email content and attachments are synchronized based on a schedule. The responsive UI is optimized for mobile and desktop use, is multilingual and responsive with dark mode.
+OpenID Connect (OIDC) can be configured for integration of external authentication services.
+
+**Setup**
+Provided credentials need to be changed on first login. Users, accounts etc. may be configured in the webinterface, basic settings (f.e. timezone) may be adjusted to your needs in "data/appsettings.json".
+
+🔍 **Search & Access**
+  - Advanced search across all archived emails with filtering options
+  - Preview emails with attachment list
+  - Export entire mail accounts as mbox files or zipped EML archives
+  - Export selected individual emails or email batches
+
+
+👥 **User Management**
+  - Multi-user support with account-specific permissions
+  - Dashboard with statistics, storage monitoring, and sender analysis
+  - Comprehensive access logging with detailed activity tracking of user activities (Access, Export, Deletion, Restore and many more) - see Access Logging Guide for details
+
+
+🧩 **Email Provider Support**
+  - IMAP - Traditional IMAP accounts with full synchronization capabilities
+  - M365 - Microsoft 365 mail accounts via Microsoft Graph API (Setup Guide)
+  - IMPORT - Import-only accounts for migrating existing email archives
+
+
+📥 **Import & Restore Functions**
+  - MBox Import and EML Import (ZIP files with folder structure support)
+  - Restore selected emails or entire mailboxes to destination mailboxes
+
+
+🗑️ **Retention Policies**
+  - Configure automatic deletion of archived emails from mailserver after specified days (Retention Policies Documentation)
+  - Set retention period per email account (e.g., 30, 90, or 365 days)
+  - Local Archive Retention - Configure separate retention period for local archive
+
+---
+
+## Links
+
+- Website: https://mail-archiver.org
+- Repository: https://github.com/s1t5/mail-archiver
+- Support: https://github.com/s1t5/mail-archiver/issues
+
+## Default credentials
+
+- Username: `admin`
+- Password: `secure123!`
+
+## Release notes
+
+⚠️ Important: If you're updating from a pre-2606.1 version, create a backup before upgrading; the recent attachment deduplication migration may temporarily increase storage usage.
+
+New features and improvements:
+  - Added an optional Model Context Protocol (MCP) server for AI-agent access
+    to archived mail.
+  - Added support for preserving calendar invites as .ics attachments with a
+    readable summary.
+  - Added an Acknowledge Failures action for completed sync jobs with failed
+    emails.
+
+
+Improvements and fixes:
+  - Added clearer full-sync and pending-sync indicators instead of showing an
+    epoch timestamp.
+  - Added retention deletion logging and hardened email search sorting and
+    pagination against SQL injection.
+  - Fixed retention edge cases for malformed Message-ID headers and
+    non-compliant IMAP date filtering.
+  - Fixed clipping of the Mail Accounts actions menu on desktop.
+
+
+Full release notes can be found at https://github.com/s1t5/mail-archiver/releases/tag/2607.5

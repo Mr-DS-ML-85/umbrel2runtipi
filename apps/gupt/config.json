@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Gupt",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8423,
+  "id": "gupt",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "social"
+  ],
+  "description": "Encrypted chat, secure vault, and ephemeral sharing \u2014 with no phone number, no email, no account, and no central server.\n\nKey features include:\n  - Anonymous \u2014 no phone number, no email, no account required\n  - End-to-end encrypted direct messages\n  - WebRTC voice & video calls\n  - Encrypted media uploads via decentralized file storage\n  - Group rooms via Nostr relays\n  - Local-first with offline cache (IndexedDB)\n  - Vault for passwords, bookmarks, and notes\n  - Anonymous file sharing\n\nGupt is fully client-side with no backend \u2014 it connects directly to public or private Nostr relays. Your keys, your messages, your privacy.",
+  "short_desc": "Encrypted chat, secure vault, and ephemeral sharing",
+  "author": "besoeasy",
+  "source": "https://github.com/besoeasy/gupt",
+  "website": "https://github.com/besoeasy/gupt",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388566,
+  "updated_at": 1786690388566,
+  "min_tipi_version": "4.0.0"
+}

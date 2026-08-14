@@ -1,0 +1,21 @@
+services:
+  web:
+    privileged: true
+    restart: on-failure
+    image: ghcr.io/blakeblackshear/frigate:0.12.0-beta1-tensorrt
+    shm_size: 128mb
+    volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - ${APP_DATA_DIR}/data/config:/config
+    - ${APP_DATA_DIR}/data/storage:/media/frigate
+    ports:
+    - 8554:8554
+    - 8555:8555/tcp
+    - 8555:8555/udp
+    environment:
+      FRIGATE_RTSP_PASSWORD: ${APP_PASSWORD}
+    x-runtipi:
+      internal_port: 8971
+      is_main: true
+x-runtipi:
+  schema_version: 2

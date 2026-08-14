@@ -1,0 +1,28 @@
+# Habitica
+
+An RPG for your life
+
+Habitica is a productivity app that blends task management with elements of role-playing games to create an engaging and motivating experience. By turning everyday tasks and goals into quests, users are encouraged to complete them in exchange for rewards like experience points, gold, and in-game items. Habitica allows users to set up various types of tasks, such as daily habits, to-do lists, and long-term goals. As users complete tasks, they level up their avatars, unlock new features, and earn rewards, which can include customization options for their characters or even virtual pets.
+
+One of Habitica's key features is its focus on habit-building and personal growth. The app tracks progress over time, helping users develop good habits and break bad ones. The gamified nature of Habitica makes it more enjoyable to stay on top of tasks, as users get the satisfaction of seeing their avatars grow stronger and earn in-game achievements for completing real-world tasks.
+
+Beyond individual use, Habitica offers social features like joining groups and participating in challenges with friends or a wider community. This adds a layer of accountability and fosters a sense of camaraderie, making it easier to stay motivated. Overall, Habitica transforms mundane tasks into a more interactive and fun experience, encouraging users to work toward their goals while enjoying the journey.
+
+---
+
+## Links
+
+- Website: https://habitica.com/
+- Repository: https://github.com/HabitRPG/habitica
+- Support: https://github.com/HabitRPG/habitica/issues
+
+## Release notes
+
+This update includes Habitica API and client improvements:
+  - Improved reliability when joining Challenges and changing Party or Group Plan members
+  - Refreshed the Gem purchase modal design
+  - Fixed task drag-and-drop sorting when hidden tasks are present
+  - Fixed chat autocomplete after accepting Community Guidelines
+
+
+Full release notes can be found at https://github.com/HabitRPG/habitica/releases/tag/v5.48.8

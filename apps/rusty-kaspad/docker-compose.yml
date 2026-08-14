@@ -1,0 +1,23 @@
+services:
+  frontend:
+    image: elldee/kaspa-frontend:latest
+    restart: on-failure
+    stop_grace_period: 1m
+    depends_on:
+    - kaspad
+    x-runtipi:
+      internal_port: 4321
+      is_main: true
+  kaspad:
+    image: kaspanet/rusty-kaspad:latest
+    restart: on-failure
+    stop_grace_period: 3m
+    volumes:
+    - ${APP_DATA_DIR}/data/app:/app/data
+    ports:
+    - 16110:16110
+    - 16111:16111
+    - 17110:17110
+    - 18110:18110
+x-runtipi:
+  schema_version: 2

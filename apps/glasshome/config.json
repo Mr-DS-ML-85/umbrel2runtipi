@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "GlassHome",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 3123,
+  "id": "glasshome",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "automation"
+  ],
+  "description": "GlassHome is a local-first dashboard for Home Assistant that you design by dragging and dropping widgets in the UI, with no YAML. It talks to Home Assistant directly on your network over WebSocket; your entity data, Home Assistant address, and auth token never leave your network.\n\nHighlights:\n- Drag-and-drop dashboard editor\n- Area-based dashboards that mirror the rooms in your home\n- Seven theme presets, each with light and dark modes\n- Community widgets from the GlassHome Hub, gated by a per-widget permission prompt (requires the one-time GlassHome Pro purchase)\n- All data stays on your device in a local SQLite database\n\nGlassHome requires a reachable Home Assistant instance. If Home Assistant is installed on this Umbrel, enter the Umbrel's LAN address with port 8123, for example `http://192.168.1.50:8123`. For Home Assistant running elsewhere, enter its LAN or HTTPS address. The address must also open in the browser you use to complete setup. GlassHome will then guide you through Home Assistant authorization. A demo mode with simulated entities lets you explore before connecting.",
+  "short_desc": "A beautiful, local-first dashboard for Home Assistant",
+  "author": "GlassHome",
+  "source": "https://github.com/glasshome/homeassistant-addon",
+  "website": "https://glasshome.app",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388559,
+  "updated_at": 1786690388559,
+  "min_tipi_version": "4.0.0"
+}

@@ -1,0 +1,33 @@
+services:
+  app:
+    image: ghcr.io/s1t5/mailarchiver:latest
+    restart: on-failure
+    volumes:
+    - ${APP_DATA_DIR}/data/data-protection-keys:/app/DataProtection-Keys
+    - ${APP_DATA_DIR}/data/appsettings.json:/app/appsettings.json
+    depends_on:
+      postgres:
+        condition: service_healthy
+    x-runtipi:
+      internal_port: 5000
+      is_main: true
+  postgres:
+    image: postgres:latest
+    restart: on-failure
+    user: 1000:1000
+    environment:
+      POSTGRES_DB: mailarchiver
+      POSTGRES_USER: mailarchiver
+      POSTGRES_PASSWORD: mailarchiver
+    volumes:
+    - ${APP_DATA_DIR}/data/database:/var/lib/postgresql
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U mailarchiver -d mailarchiver
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+x-runtipi:
+  schema_version: 2

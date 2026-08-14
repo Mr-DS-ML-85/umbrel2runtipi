@@ -1,0 +1,675 @@
+# Umbrel -> Runtipi conversion report
+
+- Umbrel apps: 391  
+- Already in Runtipi official store (deduped): 112  
+- Require Umbrel bitcoin/lightning infra (skipped): 77  
+- Skipped other: 0  
+- Conversion failures: 0  
+- **Converted: 202**  
+
+
+## Converted apps
+
+- **AdGuard Home** (`adguard-home`) port 8105, main=server, internal=8095
+  - notes: host networking app, internal_port set to umbrel port; assigned new host port 8105 (umbrel port 8095 already used)
+- **AdventureLog** (`adventurelog`) port 8018, main=web, internal=3000
+  - notes: removed umbrel app_proxy service; assigned new host port 8018 (umbrel port 8015 already used)
+- **Agent Zero** (`agent-zero`) port 3015, main=web, internal=80
+  - notes: removed umbrel app_proxy service
+- **AirTrail** (`airtrail`) port 3256, main=app, internal=3000
+  - notes: removed umbrel app_proxy service
+- **Akaunting** (`akaunting`) port 8773, main=app, internal=80
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD
+- **AnythingLLM** (`anything-llm`) port 3031, main=app, internal=3001
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_ANYTHING_LLM_JWT_SECRET, APP_ANYTHING_LLM_SIG_KEY, APP_ANYTHING_LLM_SIG_SALT
+- **Appsmith** (`appsmith`) port 8655, main=app, internal=80
+  - notes: removed umbrel app_proxy service; assigned new host port 8655 (umbrel port 8654 already used)
+  - auto-generated secret env vars: APP_PASSWORD
+- **Arcane** (`arcane`) port 3552, main=arcane, internal=3552
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD
+- **Back That Mac Up** (`back-that-mac-up`) port 3012, main=server, internal=80
+  - notes: removed umbrel app_proxy service
+- **Bark Wallet** (`bark-wallet`) port 4004, main=web, internal=8080
+  - notes: removed umbrel app_proxy service
+- **BentoPDF** (`bentopdf`) port 8730, main=web, internal=8080
+  - notes: removed umbrel app_proxy service
+- **BFFless** (`bffless`) port 5537, main=nginx, internal=5537
+  - notes: removed umbrel app_proxy service
+- **Bisq 2 Node** (`bisq2-node`) port 8390, main=server, internal=8091
+  - notes: removed umbrel app_proxy service
+- **Bitaxe Sentry** (`bitaxe-sentry`) port 7070, main=web, internal=7070
+  - notes: removed umbrel app_proxy service
+- **bitBoard** (`bitboard`) port 3711, main=app, internal=3711
+  - notes: removed umbrel app_proxy service
+- **Bitcoin Regtest Dashboard** (`bitcoin-regtest-dashboard`) port 3022, main=dashboard, internal=3000
+  - notes: removed umbrel app_proxy service
+- **Bitwatch** (`bitwatch`) port 3117, main=web, internal=3117
+  - notes: removed umbrel app_proxy service
+- **Blinko** (`blinko`) port 1112, main=app, internal=1111
+  - notes: removed umbrel app_proxy service; assigned new host port 1112 (umbrel port 1111 already used)
+  - auto-generated secret env vars: APP_SEED
+- **BookLore** (`booklore`) port 6060, main=web, internal=6060
+  - notes: removed umbrel app_proxy service
+- **BTC Tracker** (`btctracker`) port 3947, main=web, internal=3000
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_SEED
+- **Campfire** (`campfire`) port 8004, main=server, internal=80
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_SEED
+- **Cashu.me Wallet** (`cashu-me`) port 3194, main=web, internal=80
+  - notes: removed umbrel app_proxy service
+- **changedetection.io** (`changedetection-io`) port 5037, main=app, internal=5000
+  - notes: removed umbrel app_proxy service
+- **ChatBot UI** (`chatbot-ui`) port 10101, main=web, internal=3000
+  - notes: removed umbrel app_proxy service
+- **Chromium** (`chromium`) port 30099, main=chromium, internal=3000
+  - notes: removed umbrel app_proxy service
+- **cobalt** (`cobalt`) port 9009, main=web, internal=9001
+  - notes: removed umbrel app_proxy service
+- **ConvertX** (`convertx`) port 8386, main=server, internal=3000
+  - notes: removed umbrel app_proxy service
+- **copyparty** (`copyparty`) port 3923, main=web, internal=3923
+  - notes: removed umbrel app_proxy service
+- **DATUM** (`datum`) port 21000, main=datum, internal=21000
+  - notes: removed umbrel app_proxy service
+- **Bison Wallet** (`dcrdex`) port 5758, main=web, internal=5758
+  - notes: removed umbrel app_proxy service
+- **Decred Pulse** (`dcrpulse`) port 8735, main=dashboard, internal=8735
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_SEED
+- **DeepSea Dashboard** (`deepsea`) port 5300, main=deepsea, internal=8000
+  - notes: removed umbrel app_proxy service
+- **DocuSeal** (`docuseal`) port 8387, main=server, internal=3000
+  - notes: removed umbrel app_proxy service
+- **Domain Locker** (`domain-locker`) port 8839, main=app, internal=3000
+  - notes: removed umbrel app_proxy service
+- **Donetick** (`donetick`) port 8123, main=app, internal=2021
+  - notes: removed umbrel app_proxy service; assigned new host port 8123 (umbrel port 8121 already used)
+- **Downtify** (`downtify`) port 8789, main=downtify, internal=8000
+  - notes: removed umbrel app_proxy service
+- **Dropgate Server** (`dropgate-server`) port 52443, main=web, internal=52443
+  - notes: removed umbrel app_proxy service
+- **DTAN Server** (`dtan-server`) port 8022, main=web, internal=8000
+  - notes: removed umbrel app_proxy service
+- **DumbPad** (`dumbpad`) port 8258, main=web, internal=3000
+  - notes: removed umbrel app_proxy service; assigned new host port 8258 (umbrel port 8255 already used)
+- **EE Gateway** (`ee-gateway`) port 8085, main=ui, internal=8080
+  - notes: removed umbrel app_proxy service; assigned new host port 8085 (umbrel port 8083 already used)
+- **Element** (`element`) port 8094, main=web, internal=80
+  - notes: removed umbrel app_proxy service; assigned new host port 8094 (umbrel port 8088 already used)
+- **Enclosed** (`enclosed`) port 8788, main=web, internal=8787
+  - notes: removed umbrel app_proxy service
+- **Endurain** (`endurain`) port 8865, main=app, internal=8080
+  - notes: removed umbrel app_proxy service; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available
+  - auto-generated secret env vars: APP_PASSWORD
+- **ErsatzTV Legacy** (`ersatztv-legacy`) port 8409, main=web, internal=8409
+  - notes: removed umbrel app_proxy service
+- **Etherpad** (`etherpad`) port 9002, main=app, internal=9001
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD
+- **File Drop** (`file-drop`) port 3232, main=app, internal=3232
+  - notes: removed umbrel app_proxy service
+- **Firefly III Importer** (`firefly-iii-importer`) port 30010, main=importer, internal=8080
+  - notes: removed umbrel app_proxy service
+- **Firefox** (`firefox`) port 3434, main=server, internal=3000
+  - notes: removed umbrel app_proxy service
+- **Fizzy** (`fizzy`) port 8005, main=server, internal=80
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_SEED
+- **Foldergram** (`foldergram`) port 4141, main=web, internal=4141
+  - notes: removed umbrel app_proxy service
+- **Formicaio** (`formicaio`) port 52100, main=proxy, internal=52100
+  - notes: removed umbrel app_proxy service
+- **FossFLOW** (`fossflow`) port 8176, main=web, internal=80
+  - notes: removed umbrel app_proxy service
+- **Frigate** (`frigate`) port 5004, main=web, internal=8971
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD
+- **Gitea Mirror** (`gitea-mirror`) port 4322, main=web, internal=4321
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_SEED
+- **Gitingest** (`gitingest`) port 8895, main=app, internal=8000
+  - notes: removed umbrel app_proxy service
+- **GitLab** (`gitlab`) port 8929, main=gitlab, internal=8929
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD
+- **GlassHome** (`glasshome`) port 3123, main=server, internal=3123
+  - notes: removed umbrel app_proxy service
+- **Gupt** (`gupt`) port 8423, main=web, internal=8000
+  - notes: removed umbrel app_proxy service
+- **Habitica** (`habitica`) port 3944, main=server, internal=3000
+  - notes: removed umbrel app_proxy service
+- **Hermes Agent** (`hermes-agent`) port 18790, main=web, internal=18789
+  - notes: removed umbrel app_proxy service
+- **HermitStash** (`hermitstash`) port 3081, main=web, internal=3000
+  - notes: removed umbrel app_proxy service
+- **Holesail Switchboard** (`holesail-switchboard`) port 3160, main=web, internal=3160
+  - notes: removed umbrel app_proxy service
+- **HA-Fusion** (`home-assistant-fusion-ui`) port 5023, main=web, internal=5050
+  - notes: removed ui port mapping(s) handled by runtipi: ['5023:5050']
+- **HomeHub** (`homehub`) port 5059, main=web, internal=5000
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_SEED
+- **Homey** (`homey`) port 4859, main=web, internal=4859
+  - notes: host networking app, internal_port set to umbrel port
+- **HortusFox** (`hortusfox`) port 8838, main=app, internal=80
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD
+- **InfluxDB** (`influxdb`) port 8888, main=chronograf, internal=8888
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD
+- **InfluxDB 2** (`influxdb2`) port 8886, main=app, internal=8086
+  - notes: removed umbrel app_proxy service
+- **Invio** (`invio`) port 8007, main=frontend, internal=8000
+  - notes: removed umbrel app_proxy service; assigned new host port 8007 (umbrel port 8003 already used)
+  - auto-generated secret env vars: APP_PASSWORD, APP_SEED
+- **IPFS Podcasting** (`ipfs-podcasting`) port 8676, main=web, internal=8675
+  - notes: removed umbrel app_proxy service; assigned new host port 8676 (umbrel port 8675 already used)
+- **Jotty** (`jotty`) port 8345, main=web, internal=3000
+  - notes: removed umbrel app_proxy service
+- **JupyterLab** (`jupyterlab`) port 8899, main=server, internal=8888
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD
+- **Just. Download.** (`just-download`) port 3684, main=web, internal=5000
+  - notes: removed umbrel app_proxy service
+- **kan** (`kan`) port 8373, main=server, internal=3000
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_SEED
+- **Karakeep** (`karakeep`) port 8620, main=web, internal=3000
+  - notes: removed umbrel app_proxy service; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available
+  - auto-generated secret env vars: APP_SEED
+- **KitchenOwl** (`kitchenowl`) port 8474, main=web, internal=8080
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD
+- **Kiwix** (`kiwix`) port 8898, main=web, internal=8080
+  - notes: removed umbrel app_proxy service
+- **Kokoro** (`kokoro`) port 8877, main=web, internal=8880
+  - notes: removed umbrel app_proxy service
+- **Komodo** (`komodo`) port 9120, main=core, internal=9120
+  - notes: removed umbrel app_proxy service; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available
+  - auto-generated secret env vars: APP_PASSWORD, APP_SEED
+- **Krystal Bull** (`krystal-bull`) port 3011, main=web, internal=3001
+  - notes: removed umbrel app_proxy service; assigned new host port 3011 (umbrel port 3010 already used)
+  - auto-generated secret env vars: APP_PASSWORD, APP_SEED
+- **L-Town** (`l-town`) port 30300, main=app, internal=30300
+  - notes: removed umbrel app_proxy service
+- **Langflow** (`langflow`) port 8862, main=app, internal=7860
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD
+- **LeafWiki** (`leafwiki`) port 8066, main=web, internal=8080
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD, APP_SEED
+- **LibreChat** (`librechat`) port 7050, main=api, internal=3080
+  - notes: removed umbrel app_proxy service; removed env_file ([{'path': '${APP_DATA_DIR}/.env'}]) - created by umbrel hooks, not available; removed env_file ([{'path': '${APP_DATA_DIR}/.env'}]) - created by umbrel hooks, not available
+- **LibReddit** (`libreddit`) port 7420, main=web, internal=7420
+  - notes: removed umbrel app_proxy service
+- **LibreOffice** (`libreoffice`) port 5001, main=server, internal=3000
+  - notes: removed umbrel app_proxy service
+- **LlamaGPT** (`llama-gpt`) port 1234, main=llama-gpt-ui, internal=3000
+  - notes: removed umbrel app_proxy service
+- **LNbits Holesail Proxy** (`lnbits-holesail-proxy`) port 3107, main=web, internal=3107
+  - notes: removed umbrel app_proxy service
+- **LocalAI** (`localai`) port 8793, main=api, internal=8080
+  - notes: removed umbrel app_proxy service
+- **Lunalytics** (`lunalytics`) port 8183, main=web, internal=2308
+  - notes: removed umbrel app_proxy service
+- **Mail Archiver** (`mailarchiver`) port 5006, main=app, internal=5000
+  - notes: removed umbrel app_proxy service
+- **MailFlow** (`mailflow`) port 3395, main=frontend, internal=80
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_SEED
+- **Mainsail** (`mainsail`) port 8070, main=web, internal=80
+  - notes: removed umbrel app_proxy service
+- **Mattermost** (`mattermost`) port 8765, main=app, internal=8000
+  - notes: removed umbrel app_proxy service
+- **Maybe** (`maybe`) port 3063, main=web, internal=3063
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_SEED
+- **Mazanoke** (`mazanoke`) port 3474, main=web, internal=80
+  - notes: removed umbrel app_proxy service
+- **MeshChatX** (`meshchatx`) port 8985, main=web, internal=8000
+  - notes: removed umbrel app_proxy service
+- **MinerSentinel** (`miner-sentinel`) port 3082, main=frontend, internal=80
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD, APP_SEED
+- **Monetr** (`monetr`) port 8379, main=monetr, internal=4000
+  - notes: removed umbrel app_proxy service
+- **Morphos server** (`morphos`) port 3778, main=web, internal=8080
+  - notes: removed umbrel app_proxy service
+- **Mosquitto** (`mosquitto`) port 9021, main=web, internal=80
+  - notes: removed umbrel app_proxy service
+- **MQTTX Web** (`mqttx-web`) port 9012, main=app, internal=80
+  - notes: removed umbrel app_proxy service
+- **Music Assistant** (`music-assistant`) port 8896, main=web, internal=8896
+  - notes: host networking app, internal_port set to umbrel port
+- **MySpeed** (`myspeed`) port 5216, main=web, internal=5216
+  - notes: removed umbrel app_proxy service
+- **Neko** (`neko`) port 3880, main=web, internal=8080
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD
+- **NetBird** (`netbird`) port 8479, main=web, internal=80
+  - notes: removed umbrel app_proxy service
+- **Networking Toolbox** (`networkingtoolbox`) port 3686, main=app, internal=3000
+  - notes: removed umbrel app_proxy service
+- **Nginx Proxy Manager** (`nginx-proxy-manager`) port 4498, main=web, internal=81
+  - notes: removed umbrel app_proxy service
+- **Nostr Relay** (`nostr-relay`) port 4848, main=web, internal=3000
+  - notes: removed umbrel app_proxy service
+- **Nostr VPN** (`nostr-vpn`) port 38180, main=web, internal=38080
+  - notes: removed umbrel app_proxy service
+- **noStrudel** (`nostrudel`) port 3149, main=web, internal=80
+  - notes: removed umbrel app_proxy service
+- **NoteDiscovery** (`notediscovery`) port 8736, main=web, internal=8000
+  - notes: removed umbrel app_proxy service
+- **Nutstash Wallet** (`nutstash-wallet`) port 4173, main=web, internal=3000
+  - notes: removed umbrel app_proxy service
+- **Obsidian** (`obsidian`) port 3435, main=server, internal=3000
+  - notes: removed umbrel app_proxy service
+- **OctoPrint** (`octoprint`) port 5003, main=web, internal=5000
+  - notes: removed umbrel app_proxy service
+- **Ollama** (`ollama`) port 11437, main=ollama, internal=11434
+  - notes: removed umbrel app_proxy service; assigned new host port 11437 (umbrel port 11434 already used)
+- **OmniTools** (`omnitools`) port 8681, main=app, internal=80
+  - notes: removed umbrel app_proxy service; assigned new host port 8681 (umbrel port 8678 already used)
+- **ONLYOFFICE Docs** (`onlyoffice-nextcloud`) port 3014, main=web, internal=3000
+  - notes: removed umbrel app_proxy service
+- **OpenCode** (`opencode`) port 4096, main=app, internal=4096
+  - notes: removed umbrel app_proxy service
+- **Opengist** (`opengist`) port 6157, main=server, internal=6157
+  - notes: removed umbrel app_proxy service
+- **OpenHands** (`openhands`) port 3993, main=web, internal=3000
+  - notes: removed umbrel app_proxy service
+- **OpenReader** (`openreader`) port 3391, main=web, internal=3003
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_SEED
+- **OpenResty Manager** (`openresty-manager`) port 34567, main=web, internal=34567
+  - notes: removed umbrel app_proxy service
+- **OpenThread Border Router** (`openthread-border-router`) port 7586, main=server, internal=7586
+  - notes: host networking app, internal_port set to umbrel port
+- **Originless** (`originless`) port 3233, main=app, internal=3232
+  - notes: removed umbrel app_proxy service; assigned new host port 3233 (umbrel port 3232 already used)
+- **Palmr** (`palmr`) port 8075, main=server, internal=5487
+  - notes: removed umbrel app_proxy service
+- **Papra** (`papra`) port 8114, main=server, internal=1221
+  - notes: removed umbrel app_proxy service; assigned new host port 8114 (umbrel port 8112 already used)
+  - auto-generated secret env vars: APP_SEED
+- **Passky Client** (`passky-client`) port 5052, main=web, internal=80
+  - notes: removed umbrel app_proxy service
+- **Passky Server** (`passky-server`) port 5050, main=server, internal=80
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD
+- **Pastefy** (`pastefy`) port 9900, main=app, internal=80
+  - notes: removed umbrel app_proxy service
+- **PearCircle Seeder** (`pearcircle-seeder`) port 8731, main=app, internal=8730
+  - notes: removed umbrel app_proxy service
+- **Vane** (`perplexica`) port 3444, main=web, internal=3000
+  - notes: removed umbrel app_proxy service
+- **PicoClaw** (`picoclaw`) port 18800, main=server, internal=18800
+  - notes: removed umbrel app_proxy service
+- **Picsur** (`picsur`) port 8286, main=web, internal=8286
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD
+- **Plane** (`plane`) port 8762, main=nginx, internal=8762
+  - notes: removed umbrel app_proxy service; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/settings.env']) - created by umbrel hooks, not available
+  - auto-generated secret env vars: APP_PASSWORD, APP_SEED
+- **Plausible Analytics** (`plausible`) port 9093, main=plausible, internal=8000
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PLAUSIBLE_VAULT_KEY, APP_SEED
+- **PocketBase** (`pocketbase`) port 5400, main=app, internal=8090
+  - notes: removed umbrel app_proxy service
+- **Poznote** (`poznote`) port 8389, main=app, internal=80
+  - notes: removed umbrel app_proxy service
+- **Public Pool's Web** (`public-pool-web`) port 2021, main=rails-app, internal=3000
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PUBLIC_POOL_WEB_MASTER_KEY, APP_PUBLIC_POOL_WEB_POSTGRES_PASSWORD
+- **pyload-ng** (`pyload-ng`) port 8784, main=web, internal=8000
+  - notes: removed umbrel app_proxy service; assigned new host port 8784 (umbrel port 8783 already used)
+- **Readeck** (`readeck`) port 8027, main=web, internal=8000
+  - notes: removed umbrel app_proxy service; assigned new host port 8027 (umbrel port 8026 already used)
+  - auto-generated secret env vars: APP_SEED
+- **Readur** (`readur`) port 8118, main=app, internal=8000
+  - notes: removed umbrel app_proxy service; assigned new host port 8118 (umbrel port 8111 already used)
+  - auto-generated secret env vars: APP_SEED
+- **Reitti** (`reitti`) port 8745, main=app, internal=8080
+  - notes: removed umbrel app_proxy service; assigned new host port 8745 (umbrel port 8744 already used)
+- **Remmina** (`remmina`) port 8764, main=server, internal=3000
+  - notes: removed umbrel app_proxy service
+- **Restreamer** (`restreamer`) port 8139, main=web, internal=8080
+  - notes: removed umbrel app_proxy service; assigned new host port 8139 (umbrel port 8135 already used)
+- **RoboSats** (`robosats`) port 12596, main=web, internal=12596
+  - notes: removed umbrel app_proxy service
+- **rotki** (`rotki`) port 8124, main=web, internal=80
+  - notes: removed umbrel app_proxy service; assigned new host port 8124 (umbrel port 8084 already used)
+- **Route96** (`route96`) port 8019, main=server, internal=8002
+  - notes: removed umbrel app_proxy service; assigned new host port 8019 (umbrel port 8002 already used)
+- **RustDesk Server** (`rustdesk-server`) port 21080, main=web, internal=80
+  - notes: removed umbrel app_proxy service
+- **Rusty Kaspad** (`rusty-kaspad`) port 4321, main=frontend, internal=4321
+  - notes: removed umbrel app_proxy service
+- **Samba** (`samba`) port 9445, main=homepage, internal=80
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD
+- **Satoshi Dashboard** (`satoshi-dashboard`) port 8410, main=web, internal=8410
+  - notes: removed umbrel app_proxy service
+- **scanservjs** (`scanservjs`) port 2903, main=server, internal=8080
+  - notes: removed umbrel app_proxy service
+- **Seafile** (`seafile`) port 8920, main=seafile, internal=80
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD, APP_SEED
+- **Bitcoin Seed Tool** (`seedtool`) port 8147, main=app, internal=8080
+  - notes: removed umbrel app_proxy service
+- **Shopstr** (`shopstr`) port 30402, main=web, internal=3000
+  - notes: removed umbrel app_proxy service
+- **Sikka** (`sikka`) port 64552, main=web, internal=64552
+  - notes: removed umbrel app_proxy service
+- **SimpleTorrent** (`simple-torrent`) port 8165, main=server, internal=8086
+  - notes: removed umbrel app_proxy service; assigned new host port 8165 (umbrel port 8086 already used)
+- **SkyBro** (`skybro`) port 7437, main=web, internal=5000
+  - notes: removed umbrel app_proxy service
+- **Slink** (`slink`) port 8811, main=web, internal=3000
+  - notes: removed umbrel app_proxy service
+- **Snapdrop** (`snapdrop`) port 8224, main=server, internal=80
+  - notes: removed umbrel app_proxy service; assigned new host port 8224 (umbrel port 8222 already used)
+- **Snort** (`snort`) port 52027, main=web, internal=8080
+  - notes: removed umbrel app_proxy service
+- **Tor Snowflake Proxy** (`snowflake`) port 3800, main=web, internal=3800
+  - notes: removed umbrel app_proxy service
+- **Spacebot** (`spacebot`) port 19898, main=server, internal=19898
+  - notes: removed umbrel app_proxy service
+- **SQLite Browser** (`sqlitebrowser`) port 8887, main=app, internal=3000
+  - notes: removed umbrel app_proxy service
+- **Stalwart** (`stalwart`) port 8746, main=server, internal=8080
+  - notes: removed umbrel app_proxy service; assigned new host port 8746 (umbrel port 8745 already used)
+  - auto-generated secret env vars: APP_PASSWORD
+- **Stash** (`stash`) port 5173, main=web, internal=5173
+  - notes: removed umbrel app_proxy service
+- **Strix** (`strix`) port 4568, main=web, internal=4567
+  - notes: removed umbrel app_proxy service; assigned new host port 4568 (umbrel port 4567 already used)
+- **Super Productivity** (`super-productivity`) port 8020, main=web, internal=80
+  - notes: removed umbrel app_proxy service
+- **Sure** (`sure`) port 3064, main=web, internal=3000
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_SEED
+- **Swing Music** (`swingmusic`) port 1970, main=app, internal=1970
+  - notes: removed umbrel app_proxy service
+- **Syslog-ng** (`syslog-ng`) port 5142, main=web, internal=8080
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD
+- **TeamSpeak** (`teamspeak`) port 50371, main=ui, internal=8080
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD, APP_SEED
+- **Technitium DNS Server** (`technitium-dns`) port 5380, main=dns-server, internal=5380
+  - notes: host networking app, internal_port set to umbrel port
+  - auto-generated secret env vars: APP_PASSWORD
+- **Telegrapho** (`telegrapho`) port 3712, main=app, internal=3712
+  - notes: removed umbrel app_proxy service
+- **Termix** (`termix`) port 6444, main=web, internal=8080
+  - notes: removed umbrel app_proxy service
+- **The Lounge** (`thelounge`) port 9003, main=web, internal=9000
+  - notes: removed umbrel app_proxy service
+- **ThinkDashboard** (`thinkdashboard`) port 8229, main=server, internal=8080
+  - notes: removed umbrel app_proxy service
+- **Threema Web** (`threema`) port 8855, main=web, internal=80
+  - notes: removed umbrel app_proxy service
+- **Tor Browser** (`torbrowser`) port 5832, main=web, internal=5800
+  - notes: removed umbrel app_proxy service
+- **Toshi Moto** (`toshi-moto`) port 8021, main=web, internal=8021
+  - notes: removed umbrel app_proxy service
+- **Transmute** (`transmute`) port 3313, main=web, internal=3313
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_SEED
+- **Trilium Notes** (`trilium-notes`) port 3779, main=server, internal=8080
+  - notes: removed umbrel app_proxy service
+- **Trip** (`trip`) port 8980, main=app, internal=8000
+  - notes: removed umbrel app_proxy service
+- **Twenty** (`twenty`) port 2020, main=server, internal=3000
+  - notes: removed umbrel app_proxy service
+- **Umami** (`umami`) port 25727, main=app, internal=3000
+  - notes: removed ui port mapping(s) handled by runtipi: ['25727:3000']
+  - auto-generated secret env vars: APP_SEED
+- **Urbit** (`urbit`) port 8170, main=manager, internal=8090
+  - notes: removed umbrel app_proxy service; assigned new host port 8170 (umbrel port 8090 already used)
+  - auto-generated secret env vars: APP_PASSWORD
+- **ValorGrid** (`valorgrid`) port 1325, main=app, internal=1325
+  - notes: removed umbrel app_proxy service
+- **VERT** (`vert`) port 3884, main=web, internal=80
+  - notes: removed umbrel app_proxy service
+- **Wanderer** (`wanderer`) port 3111, main=web, internal=3000
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_PASSWORD, APP_SEED, APP_WANDERER_ENCRYPTION_KEY
+- **Wavelog** (`wavelog`) port 8184, main=app, internal=80
+  - notes: removed umbrel app_proxy service; assigned new host port 8184 (umbrel port 8099 already used)
+- **Wealthfolio** (`wealthfolio`) port 8883, main=server, internal=8088
+  - notes: removed umbrel app_proxy service; assigned new host port 8883 (umbrel port 8880 already used)
+  - auto-generated secret env vars: APP_WEALTHFOLIO_SECRET_KEY
+- **WebCheck** (`webcheck`) port 3093, main=server, internal=3000
+  - notes: removed umbrel app_proxy service
+- **wger** (`wger`) port 8450, main=nginx, internal=80
+  - notes: removed umbrel app_proxy service; removed env_file (['${APP_DATA_DIR}/config/prod.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/config/prod.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/config/prod.env']) - created by umbrel hooks, not available; removed env_file (['${APP_DATA_DIR}/config/prod.env']) - created by umbrel hooks, not available
+  - auto-generated secret env vars: APP_SEED
+- **Wingfit** (`wingfit`) port 8950, main=app, internal=8000
+  - notes: removed umbrel app_proxy service
+- **Yamtrack** (`yamtrack`) port 8742, main=web, internal=8000
+  - notes: removed umbrel app_proxy service
+  - auto-generated secret env vars: APP_SEED
+- **Yucca** (`yucca`) port 9910, main=yucca, internal=9910
+  - notes: removed umbrel app_proxy service
+- **Yuvomi** (`yuvomi`) port 8187, main=web, internal=3000
+  - notes: removed umbrel app_proxy service; assigned new host port 8187 (umbrel port 8180 already used)
+  - auto-generated secret env vars: APP_SEED
+- **Zabbix** (`zabbix`) port 10052, main=zabbix-frontend, internal=8080
+  - notes: removed umbrel app_proxy service
+- **Zen** (`zen`) port 8894, main=app, internal=8080
+  - notes: removed umbrel app_proxy service
+- **ZeroNote** (`zeronote`) port 8023, main=app, internal=8000
+  - notes: removed umbrel app_proxy service; assigned new host port 8023 (umbrel port 8000 already used)
+- **Zoraxy** (`zoraxy`) port 8400, main=server, internal=8000
+  - notes: removed umbrel app_proxy service
+
+## Deduplicated (already in Runtipi)
+
+- `activepieces` matched runtipi `activepieces` (id)
+- `affine` matched runtipi `affine` (id)
+- `archivebox` matched runtipi `archivebox` (id)
+- `audiobookshelf` matched runtipi `audiobookshelf` (id)
+- `autobrr` matched runtipi `autobrr` (id)
+- `baikal` matched runtipi `baikal` (id)
+- `bazarr` matched runtipi `bazarr` (id)
+- `bitmagnet` matched runtipi `bitmagnet` (id)
+- `bookstack` matched runtipi `bookstack` (id)
+- `budibase` matched runtipi `budibase` (id)
+- `calibre-web` matched runtipi `calibre-web` (id)
+- `chatpad-ai` matched runtipi `chatpad` (name)
+- `cloudflared` matched runtipi `cloudflared` (id)
+- `code-server` matched runtipi `code-server` (id)
+- `databag` matched runtipi `databag` (id)
+- `dockge` matched runtipi `dockge` (id)
+- `docmost` matched runtipi `docmost` (id)
+- `duplicati` matched runtipi `duplicati` (id)
+- `electrs` matched runtipi `electrs` (id)
+- `emby` matched runtipi `emby` (id)
+- `esphome` matched runtipi `esphome` (id)
+- `excalidraw` matched runtipi `excalidraw` (id)
+- `file-browser` matched runtipi `filebrowser` (normalized-id)
+- `firefly-iii` matched runtipi `firefly-iii` (id)
+- `flaresolverr` matched runtipi `flaresolverr` (id)
+- `flatnotes` matched runtipi `flatnotes` (id)
+- `forgejo` matched runtipi `forgejo` (id)
+- `freshrss` matched runtipi `freshrss` (id)
+- `ghost` matched runtipi `ghost` (id)
+- `ghostfolio` matched runtipi `ghostfolio` (id)
+- `gitea` matched runtipi `gitea` (id)
+- `grafana` matched runtipi `grafana` (id)
+- `grocy` matched runtipi `grocy` (id)
+- `heimdall` matched runtipi `heimdall` (id)
+- `homarr` matched runtipi `homarr-1` (name)
+- `home-assistant` matched runtipi `homeassistant-1` (name)
+- `homebox` matched runtipi `homebox` (id)
+- `homebridge` matched runtipi `homebridge` (id)
+- `immich` matched runtipi `immich` (id)
+- `invidious` matched runtipi `invidious` (id)
+- `invoice-ninja` matched runtipi `invoice-ninja` (id)
+- `ittools` matched runtipi `it-tools` (normalized-id)
+- `jackett` matched runtipi `jackett` (id)
+- `jellyfin` matched runtipi `jellyfin` (id)
+- `jellyseerr` matched runtipi `jellyseerr` (id)
+- `kimai` matched runtipi `kimai` (id)
+- `librephotos` matched runtipi `librephotos` (id)
+- `librespeed` matched runtipi `librespeed` (id)
+- `libretranslate` matched runtipi `libretranslate` (id)
+- `lidarr` matched runtipi `lidarr` (id)
+- `linkstack` matched runtipi `linkstack` (id)
+- `linkwarden` matched runtipi `linkwarden` (id)
+- `lobe-chat` matched runtipi `lobe-chat` (id)
+- `lubelogger` matched runtipi `lubelogger` (id)
+- `matter-server` matched runtipi `matter-server` (id)
+- `mealie` matched runtipi `mealie-1` (name)
+- `memos` matched runtipi `memos` (id)
+- `mempool` matched runtipi `mempool` (id)
+- `metube` matched runtipi `metube` (id)
+- `minio` matched runtipi `minio` (id)
+- `mstream` matched runtipi `mstream` (id)
+- `n8n` matched runtipi `n8n-2` (name)
+- `navidrome` matched runtipi `navidrome` (id)
+- `nextcloud` matched runtipi `nextcloud` (id)
+- `nitter` matched runtipi `nitter` (id)
+- `nocodb` matched runtipi `nocodb` (id)
+- `node-red` matched runtipi `nodered` (normalized-id)
+- `node-red-standalone` matched runtipi `nodered` (name)
+- `ntfy` matched runtipi `ntfy` (id)
+- `onedev` matched runtipi `onedev` (id)
+- `open-webui` matched runtipi `open-webui` (id)
+- `openclaw` matched runtipi `openclaw` (id)
+- `outline` matched runtipi `outline` (id)
+- `overseerr` matched runtipi `overseerr` (id)
+- `owncloud` matched runtipi `owncloud` (id)
+- `paperless` matched runtipi `paperless-ngx` (name)
+- `penpot` matched runtipi `penpot` (id)
+- `photoprism` matched runtipi `photoprism` (id)
+- `pi-hole` matched runtipi `pihole` (normalized-id)
+- `pinchflat` matched runtipi `pinchflat` (id)
+- `pingvin-share` matched runtipi `pingvin-share` (id)
+- `planka` matched runtipi `planka` (id)
+- `plex` matched runtipi `plex` (id)
+- `portainer` matched runtipi `portainer` (id)
+- `privatebin` matched runtipi `privatebin` (id)
+- `prowlarr` matched runtipi `prowlarr` (id)
+- `qbittorrent` matched runtipi `qbittorrent` (id)
+- `radarr` matched runtipi `radarr` (id)
+- `readarr` matched runtipi `readarr` (id)
+- `romm` matched runtipi `romm` (id)
+- `sabnzbd` matched runtipi `sabnzbd` (id)
+- `searxng` matched runtipi `searxng` (id)
+- `sonarr` matched runtipi `sonarr` (id)
+- `stirling-pdf` matched runtipi `stirling-pdf` (id)
+- `syncthing` matched runtipi `syncthing` (id)
+- `tailscale` matched runtipi `tailscale` (id)
+- `tandoor` matched runtipi `tandoor` (id)
+- `tautulli` matched runtipi `tautulli` (id)
+- `transmission` matched runtipi `transmission` (id)
+- `tubearchivist` matched runtipi `tubearchivist` (id)
+- `uptime-kuma` matched runtipi `uptime-kuma` (id)
+- `vaultwarden` matched runtipi `vaultwarden` (id)
+- `vikunja` matched runtipi `vikunja` (id)
+- `wallos` matched runtipi `wallos` (id)
+- `watch-your-lan` matched runtipi `watchyourlan` (normalized-id)
+- `whoogle-search` matched runtipi `whoogle` (name)
+- `wikijs` matched runtipi `wikijs` (id)
+- `wireguard` matched runtipi `wg-easy-1` (name)
+- `wizarr` matched runtipi `wizarr` (id)
+- `wordpress` matched runtipi `wordpress` (id)
+- `zerotier` matched runtipi `zerotier` (id)
+- `zigbee2mqtt` matched runtipi `zigbee2mqtt` (id)
+
+## Skipped: require Umbrel bitcoin/lightning infra
+
+- `agora` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_HIDDEN_SERVICE;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `alby-nostr-wallet-connect` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `albyhub` — umbrel system app dependency [UMBREL_ROOT/app-data]
+- `am-i-exposed` — umbrel system app dependency [APP_MEMPOOL_HIDDEN_SERVICE;APP_MEMPOOL_IP;APP_MEMPOOL_PORT]
+- `bassin` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_BITCOIN_ZMQ_HASHBLOCK_PORT]
+- `bitbalance` — umbrel system app dependency [APP_ELECTRS_NODE_IP;APP_ELECTRS_NODE_PORT]
+- `bitcoin` — umbrel system app dependency [APP_BITCOIN_I2P_DAEMON_IP;APP_BITCOIN_NODE_IP;APP_BITCOIN_P2P_HIDDEN_SERVICE;APP_BITCOIN_P2P_PORT;APP_BITCOIN_P2P_WHITEBIND_PORT;APP_BITCOIN_RPC_HIDDEN_SERVICE]
+- `bitcoin-cash-node` — umbrel system app dependency [APP_BITCOIN_CASH_NODE_NODE_IP;APP_BITCOIN_CASH_NODE_RPC_PASS;APP_BITCOIN_CASH_NODE_RPC_USER;APP_BITCOIN_CASH_NODE_TOR_IP]
+- `bitcoin-knots` — umbrel system app dependency [APP_BITCOIN_KNOTS_I2P_DAEMON_IP;APP_BITCOIN_KNOTS_NODE_IP;APP_BITCOIN_KNOTS_P2P_HIDDEN_SERVICE;APP_BITCOIN_KNOTS_P2P_PORT;APP_BITCOIN_KNOTS_P2P_WHITEBIND_PORT;APP_BITCOIN_KNOTS_RPC_HIDDEN_SERVICE]
+- `bitfeed` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_BITCOIN_ZMQ_RAWBLOCK_PORT;APP_BITCOIN_ZMQ_RAWTX_PORT]
+- `bleskomat-server` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_HIDDEN_SERVICE;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_IP;APP_LIGHTNING_NODE_REST_PORT]
+- `blockstream-blind-oracle` — umbrel system app dependency [APP_PINSERVER_HIDDEN_SERVICE;APP_PINSERVER_PORT;APP_PINSERVER_WEB_HOST_PORT;APP_PINSERVER_WEB_PORT;APP_TAILSCALE_URL]
+- `bluewallet` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_HIDDEN_SERVICE;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `bolt12-pay` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR]
+- `btc-rpc-explorer` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_ELECTRS_NODE_IP;APP_ELECTRS_NODE_PORT]
+- `btcpay-server` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_BITCOIN_NODE_IP;APP_BITCOIN_P2P_PORT;APP_BITCOIN_P2P_WHITEBIND_PORT;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT]
+- `canary` — umbrel system app dependency [APP_CANARY_MEMPOOL_PORT;APP_CANARY_UMBREL_NTFY_URL;APP_ELECTRS_NODE_IP;APP_ELECTRS_NODE_PORT]
+- `chainforensics` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_USER;APP_FULCRUM_NODE_IP]
+- `chantools` — umbrel system app dependency [UMBREL_ROOT/app-data]
+- `circuitbreaker` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `core-lightning` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_CORE_LIGHTNING_BITCOIN_NETWORK;APP_CORE_LIGHTNING_DAEMON_GRPC_PORT]
+- `core-lightning-rtl` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_CORE_LIGHTNING_DAEMON_GRPC_PORT;APP_CORE_LIGHTNING_DAEMON_IP;APP_CORE_LIGHTNING_DATA_DIR]
+- `electrumx` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_ELECTRUMX_BITCOIN_NETWORK;APP_ELECTRUMX_IP]
+- `elements` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_ELEMENTS_NODE_P2P_PORT;APP_ELEMENTS_NODE_RPC_PORT]
+- `fedimint-gateway` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_BITCOIN_NETWORK_ELECTRS;APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER]
+- `fedimintd` — umbrel system app dependency [APP_BITCOIN_NETWORK_ELECTRS;APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER]
+- `fulcrum` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_FULCRUM_ADMIN_PORT;APP_FULCRUM_IP]
+- `gobrrr-pool` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_BITCOIN_ZMQ_HASHBLOCK_PORT]
+- `hashrate-autopilot` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_ELECTRS_NODE_IP;APP_ELECTRS_NODE_PORT]
+- `helipad` — umbrel system app dependency [APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `itchysats` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_ELECTRS_NODE_IP;APP_ELECTRS_NODE_PORT]
+- `jam` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER]
+- `joinstr` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER]
+- `kollider` — umbrel system app dependency [APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_IP]
+- `libre-relay` — umbrel system app dependency [APP_LIBRE_RELAY_COMMAND;APP_LIBRE_RELAY_DATA_DIR;APP_LIBRE_RELAY_I2P_DAEMON_IP;APP_LIBRE_RELAY_IP;APP_LIBRE_RELAY_NODE_IP;APP_LIBRE_RELAY_P2P_HIDDEN_SERVICE]
+- `lightning` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_LIGHTNING_COMMAND]
+- `lightning-shell` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT]
+- `lightning-terminal` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `lightningmate` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `ln-visualizer` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `lnbits` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_IP;APP_LIGHTNING_NODE_REST_PORT]
+- `lndboss` — umbrel system app dependency [APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `lndg` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP;APP_LNDG_IP;APP_LNDG_PORT]
+- `lnmarkets` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP;APP_LNMARKETS_IP;APP_LNMARKETS_PORT]
+- `lnplus` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `lnswitchboard` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `monero` — umbrel system app dependency [APP_MONERO_COMMAND;APP_MONERO_DATA_DIR;APP_MONERO_I2P_DAEMON_IP;APP_MONERO_IP;APP_MONERO_NODE_IP;APP_MONERO_P2P_HIDDEN_SERVICE]
+- `nolooking` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_HIDDEN_SERVICE;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `oak-node` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_IP;APP_LIGHTNING_NODE_REST_PORT]
+- `ordinals` — umbrel system app dependency [APP_BITCOIN_DATA_DIR;APP_BITCOIN_NETWORK;APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER]
+- `paperclip` — umbrel system app dependency [APP_HIDDEN_SERVICE]
+- `peerswap` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_ELEMENTS_NODE_RPC_PORT]
+- `pogolo` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_BITCOIN_ZMQ_HASHBLOCK_PORT]
+- `public-pool` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER]
+- `ride-the-lightning` — umbrel system app dependency [APP_BITCOIN_DATA_DIR;APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_IP;APP_LIGHTNING_NODE_REST_PORT;APP_RTL_BLOCK_EXPLORER_URL]
+- `saifa` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR]
+- `samourai-server` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_BITCOIN_ZMQ_HASHBLOCK_PORT]
+- `satsale` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `satsbook` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `satwatch` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_BITCOIN_ZMQ_RAWTX_PORT;APP_ELECTRS_NODE_IP]
+- `solidtime` — umbrel system app dependency [APP_HIDDEN_SERVICE]
+- `sparkkiosk` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_HIDDEN_SERVICE;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `specter-desktop` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER]
+- `sphinx-relay` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_HIDDEN_SERVICE;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP;APP_SPHINX_RELAY_PORT]
+- `squeaknode` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_LIGHTNING_NODE_DATA_DIR]
+- `squeakroad` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `suredbits-wallet` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_SUREDBITS_WALLET_P2P_HIDDEN_SERVICE]
+- `sv2-ui` — umbrel system app dependency [APP_BITCOIN_DATA_DIR]
+- `synapse` — umbrel system app dependency [APP_HIDDEN_SERVICE]
+- `tallycoin-connect` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `tdex` — umbrel system app dependency [APP_TDEX_DAEMON_HIDDEN_SERVICE;APP_TDEX_PORT]
+- `thunderhub` — umbrel system app dependency [APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `torq` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `urbit-bitcoin-connector` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_AUTH;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_ELECTRS_NODE_IP]
+- `usocial` — umbrel system app dependency [APP_LIGHTNING_NODE_DATA_DIR;APP_LIGHTNING_NODE_GRPC_PORT;APP_LIGHTNING_NODE_IP]
+- `woofbot` — umbrel system app dependency [APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER]
+- `woofbot-lnd` — umbrel system app dependency [APP_BITCOIN_NETWORK;APP_BITCOIN_NODE_IP;APP_BITCOIN_RPC_PASS;APP_BITCOIN_RPC_PORT;APP_BITCOIN_RPC_USER;APP_LIGHTNING_NODE_DATA_DIR]
+
+## Skipped: other
+
+
+## Conversion failures
+
+
+## Icons
+
+- All icons downloaded from the Umbrel gallery.

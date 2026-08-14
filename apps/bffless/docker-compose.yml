@@ -1,0 +1,115 @@
+services:
+  nginx:
+    image: ghcr.io/bffless/ce-nginx:latest
+    restart: on-failure
+    stop_grace_period: 30s
+    environment:
+      DEVICE_DOMAIN_NAME: umbrel.local
+    volumes:
+    - ${APP_DATA_DIR}/data/config:/app/config:ro
+    - ${APP_DATA_DIR}/data/frontend:/usr/share/nginx/html/app:ro
+    - ${APP_DATA_DIR}/data/nginx:/etc/nginx/sites-enabled
+    depends_on:
+    - backend
+    - frontend
+    x-runtipi:
+      internal_port: 5537
+      is_main: true
+  postgres:
+    image: pgvector/pgvector:0.8.6-pg13
+    restart: on-failure
+    stop_grace_period: 30s
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: staticfilesgobrrrr
+      POSTGRES_DB: assethost
+    volumes:
+    - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data
+    - ${APP_DATA_DIR}/data/db/init-databases.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    command: 'postgres -c shared_buffers=64MB -c effective_cache_size=128MB -c work_mem=4MB -c maintenance_work_mem=32MB -c max_connections=20 -c wal_buffers=4MB
+
+      '
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U postgres
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  supertokens:
+    image: supertokens/supertokens-postgresql:latest
+    restart: on-failure
+    stop_grace_period: 30s
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      POSTGRESQL_HOST: bffless_postgres_1
+      POSTGRESQL_PORT: '5432'
+      POSTGRESQL_USER: postgres
+      POSTGRESQL_PASSWORD: staticfilesgobrrrr
+      POSTGRESQL_DATABASE_NAME: supertokens
+      JAVA_OPTS: -Xmx192m -Xms96m -XX:+UseSerialGC -XX:MaxMetaspaceSize=64m
+      POSTGRESQL_CONNECTION_POOL_SIZE: '3'
+    healthcheck:
+      test:
+      - CMD
+      - curl
+      - -f
+      - http://localhost:3567/hello
+      interval: 15s
+      timeout: 10s
+      retries: 8
+      start_period: 45s
+  backend:
+    image: ghcr.io/bffless/ce-backend:latest
+    restart: on-failure
+    stop_grace_period: 30s
+    depends_on:
+      postgres:
+        condition: service_healthy
+      supertokens:
+        condition: service_healthy
+    environment:
+      NODE_OPTIONS: --max-old-space-size=128
+      NODE_ENV: production
+      PORT: '3000'
+      LOG_LEVEL: error,warn,log
+      APP_SEED: ${APP_SEED:-}
+      APP_DATA_DIR: ${APP_DATA_DIR:-/data}
+      DATABASE_URL: postgresql://postgres:staticfilesgobrrrr@bffless_postgres_1:5432/assethost
+      STORAGE_TYPE: local
+      ENABLE_MINIO: 'false'
+      CACHE_TYPE: memory
+      ENABLE_REDIS: 'false'
+      SUPERTOKENS_MODE: local
+      SUPERTOKENS_CONNECTION_URI: http://bffless-supertokens:3567
+      SUPERTOKENS_API_KEY: ''
+      PRIMARY_DOMAIN: localhost
+      FRONTEND_URL: http://localhost:5537
+      API_DOMAIN: http://localhost:5537
+      ADMIN_DOMAIN: localhost
+      COOKIE_SECURE: 'false'
+      COOKIE_DOMAIN: umbrel.local
+      NGINX_SITES_PATH: /etc/nginx/sites-enabled
+      NGINX_RELOAD_WAIT_MS: '3000'
+      NGINX_LISTEN_PORT: '5537'
+      BACKEND_HOST: backend
+      PROXY_MODE: cloudflare-tunnel
+      FEATURE_WILDCARD_SSL: 'false'
+      FEATURE_WILDCARD_SSL_BANNER: 'false'
+      FEATURE_DOMAIN_SSL_TOGGLE: 'false'
+    volumes:
+    - ${APP_DATA_DIR}/data/uploads:/app/apps/backend/uploads
+    - ${APP_DATA_DIR}/data/config:/app/config:ro
+    - ${APP_DATA_DIR}/data/nginx:/etc/nginx/sites-enabled
+  frontend:
+    image: ghcr.io/bffless/ce-frontend:latest
+    restart: on-failure
+    stop_grace_period: 30s
+    volumes:
+    - ${APP_DATA_DIR}/data/frontend:/app/dist
+    depends_on:
+    - backend
+x-runtipi:
+  schema_version: 2

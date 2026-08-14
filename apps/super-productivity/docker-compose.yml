@@ -1,0 +1,9 @@
+services:
+  web:
+    image: johannesjo/super-productivity:latest
+    restart: on-failure
+    x-runtipi:
+      internal_port: 80
+      is_main: true
+x-runtipi:
+  schema_version: 2

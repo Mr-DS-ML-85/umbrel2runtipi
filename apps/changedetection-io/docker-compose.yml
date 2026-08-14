@@ -1,0 +1,19 @@
+services:
+  app:
+    image: ghcr.io/dgtlmoon/changedetection.io:latest
+    user: 1000:1000
+    restart: on-failure
+    stop_grace_period: 1m
+    environment:
+      BASE_URL: http://localhost:5037
+      USE_X_SETTINGS: '1'
+      HIDE_REFERER: 'true'
+      TZ: Etc/UTC
+      DISABLE_VERSION_CHECK: 'true'
+    volumes:
+    - ${APP_DATA_DIR}/data:/datastore
+    x-runtipi:
+      internal_port: 5000
+      is_main: true
+x-runtipi:
+  schema_version: 2

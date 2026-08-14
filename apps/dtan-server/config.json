@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "DTAN Server",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8022,
+  "id": "dtan-server",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "network"
+  ],
+  "description": "DTAN Server is a specialized nostr relay for NIP-35 torrents. It combines a Nostr relay with DHT-based peer discovery to enable decentralized torrent distribution through the Nostr network.\nThe server acts as both a Nostr relay for torrent metadata and a tracker for peer discovery using DHT. It includes a web UI built with DTAN for managing torrents and monitoring the relay.",
+  "short_desc": "Nostr-based torrent distribution network",
+  "author": "v0l",
+  "source": "https://github.com/v0l/dtan-server",
+  "website": "https://github.com/v0l/dtan-server",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388490,
+  "updated_at": 1786690388490,
+  "min_tipi_version": "4.0.0"
+}

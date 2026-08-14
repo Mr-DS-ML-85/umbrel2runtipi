@@ -1,0 +1,11 @@
+services:
+  app:
+    image: iib0011/omni-tools:latest
+    security_opt:
+    - no-new-privileges:true
+    restart: on-failure
+    x-runtipi:
+      internal_port: 80
+      is_main: true
+x-runtipi:
+  schema_version: 2

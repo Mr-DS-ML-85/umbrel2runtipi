@@ -1,0 +1,12 @@
+services:
+  downtify:
+    image: ghcr.io/henriquesebastiao/downtify:latest
+    stop_grace_period: 1m
+    volumes:
+    - ${RUNTIPI_MEDIA_DIR}/downloads/downtify:/downloads
+    - ${APP_DATA_DIR}/data:/data
+    x-runtipi:
+      internal_port: 8000
+      is_main: true
+x-runtipi:
+  schema_version: 2

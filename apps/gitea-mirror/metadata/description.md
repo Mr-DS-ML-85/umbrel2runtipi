@@ -1,0 +1,39 @@
+# Gitea Mirror
+
+Mirror your GitHub repositories to a Gitea instance automatically
+
+Gitea Mirror automatically mirrors your GitHub repositories to a self-hosted Gitea instance. It supports mirroring public and private repositories, organizations, starred repos, issues, wikis, and pull requests.
+
+Configure your GitHub and Gitea credentials through the web interface to get started. The app will periodically sync your repositories based on your configured schedule.
+
+Key features include:
+  - Mirror repositories from GitHub to Gitea
+  - Support for organizations and starred repositories
+  - Issue and wiki mirroring
+  - Configurable sync intervals and scheduling
+  - Repository cleanup and orphan management
+  - Header-based authentication for reverse proxy SSO
+
+
+**Connecting to Gitea on Umbrel:** If you have the Gitea app installed on your Umbrel, use `http://gitea_server_1:8085` as the Gitea URL in the mirror settings.
+
+The **Gitea Access Token** should have the following permissions:
+  - write:repository
+  - read:user
+  - write:organization (optional)
+
+---
+
+## Links
+
+- Website: https://github.com/raylabshq/gitea-mirror
+- Repository: https://github.com/raylabshq/gitea-mirror
+- Support: https://github.com/raylabshq/gitea-mirror/issues
+
+## Release notes
+
+Gitea Mirror 3.26.2 improves the repositories table when long repository names are displayed. Names and owner/repo paths stay on one line with an ellipsis, and hovering over the repository cell now scrolls both fields smoothly so the full text is easier to read.
+
+If you're updating from a pre-3.17 version and use OAuth provider clients registered in Gitea Mirror, rotate the client secret for each client after upgrading because OAuth application secrets are stored hashed after migration.
+
+Full release notes for 3.26.1 and 3.26.2 can be found at https://github.com/RayLabsHQ/gitea-mirror/releases/tag/v3.26.1 and https://github.com/RayLabsHQ/gitea-mirror/releases/tag/v3.26.2

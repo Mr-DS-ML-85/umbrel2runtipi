@@ -1,0 +1,23 @@
+# Maybe
+
+The OS for your personal finances
+
+Maybe is a fully (your finances are secure) open-source OS for your personal finances built by a small team alongside an incredible community.
+
+This is an early access release of Maybe that is only available to those who self-host. Maybe is under active development and is still working towards a stable release with a full feature set.
+
+---
+
+## Links
+
+- Website: https://maybe.co/
+- Repository: https://github.com/maybe-finance/maybe
+- Support: https://github.com/maybe-finance/discussions
+
+## Release notes
+
+🚨 Maybe is pivoting to B2B financial forecasting and scenario planning and will no longer be actively maintaining the project.
+
+This final release is a working, "as-is" version of the software.
+
+Full release notes are found at https://github.com/maybe-finance/maybe/releases

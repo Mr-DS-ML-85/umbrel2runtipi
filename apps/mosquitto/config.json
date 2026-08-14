@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Mosquitto",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 9021,
+  "id": "mosquitto",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "automation"
+  ],
+  "description": "Eclipse Mosquitto is an open source (EPL/EDL licensed) message broker that implements the MQTT protocol versions 5.0, 3.1.1 and 3.1. Mosquitto is lightweight and is suitable for use on all devices from low power single board computers to full servers.\n\nThe MQTT protocol provides a lightweight method of carrying out messaging using a publish/subscribe model. This makes it suitable for Internet of Things messaging such as with low power sensors or mobile devices such as phones, embedded computers or microcontrollers.\n\nThe Mosquitto project also provides a C library for implementing MQTT clients, and the very popular mosquitto_pub and mosquitto_sub command line MQTT clients.",
+  "short_desc": "An open source MQTT broker",
+  "author": "Eclipse Foundation",
+  "source": "https://github.com/eclipse-mosquitto/mosquitto",
+  "website": "https://mosquitto.org/",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388732,
+  "updated_at": 1786690388732,
+  "min_tipi_version": "4.0.0"
+}

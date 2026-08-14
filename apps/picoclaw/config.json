@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "PicoClaw",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 18800,
+  "id": "picoclaw",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "ai"
+  ],
+  "description": "PicoClaw is an ultra-lightweight personal AI assistant written in Go and designed to run efficiently on low-cost hardware with a small memory footprint and fast startup times.\n\nPicoClaw provides a browser-based WebUI Launcher for configuring model providers, chat channels, tools, and the gateway process. It supports multiple LLM providers, MCP integration, multimodal file and image handling, web search tools, smart model routing, and chat app channels for building a compact self-hosted AI assistant.\n\nAfter opening PicoClaw, define your password, add your LLM provider API key, configure a channel such as Telegram if desired, start the gateway, and begin chatting.",
+  "short_desc": "Ultra-lightweight personal AI assistant",
+  "author": "Sipeed",
+  "source": "https://github.com/sipeed/picoclaw",
+  "website": "https://picoclaw.io",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388828,
+  "updated_at": 1786690388828,
+  "min_tipi_version": "4.0.0"
+}

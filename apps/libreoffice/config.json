@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "LibreOffice",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 5001,
+  "id": "libreoffice",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "LibreOffice is a free and powerful office suite, and a successor to OpenOffice.org (commonly known as OpenOffice). Its clean interface and feature-rich tools help you unleash your creativity and enhance your productivity.\n\nLibreOffice includes several applications that make it the most versatile Free and Open Source office suite on the market: Writer (word processing), Calc (spreadsheets), Impress (presentations), Draw (vector graphics and flowcharts), Base (databases), and Math (formula editing).",
+  "short_desc": "Do more - easier, quicker, smarter",
+  "author": "The Document Foundation",
+  "source": "https://www.libreoffice.org/about-us/source-code/",
+  "website": "https://www.libreoffice.org/",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388654,
+  "updated_at": 1786690388654,
+  "min_tipi_version": "4.0.0"
+}

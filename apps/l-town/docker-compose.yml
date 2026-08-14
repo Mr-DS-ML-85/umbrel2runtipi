@@ -1,0 +1,10 @@
+services:
+  app:
+    image: ghcr.io/besoeasy/l-town:latest
+    restart: on-failure
+    user: 1000:1000
+    x-runtipi:
+      internal_port: 30300
+      is_main: true
+x-runtipi:
+  schema_version: 2

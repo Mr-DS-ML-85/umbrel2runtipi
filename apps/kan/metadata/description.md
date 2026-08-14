@@ -1,0 +1,30 @@
+# kan
+
+The open source Trello alternative
+
+Kan is a modern, open-source alternative to Trello designed for seamless project and task management. It offers a clean, intuitive interface and a wide range of powerful features.
+
+
+  - 👁️ **Board Visibility:** Control who can view and edit your boards
+  - 🤝 **Workspace Members:** Invite members and collaborate with your team
+  - 🚀 **Trello Imports:** Easily import your Trello boards
+  - 🔍 **Labels & Filters:** Organise and find cards quickly
+  - 💬 **Comments:** Discuss and collaborate with your team
+  - 📝 **Activity Log:** Track all card changes with detailed activity history
+  - 🎨 **Templates:** Save time with reusable custom board templates
+
+---
+
+## Links
+
+- Website: https://kan.bn/
+- Repository: https://github.com/kanbn/kan
+- Support: https://github.com/kanbn/kan/issues
+
+## Release notes
+
+Kan 0.6.0 adds card context menus and duplication, card ticket numbers with workspace prefixes, and mobile list snap scrolling.
+
+It also improves workspace onboarding and logging, expands board slug length, and fixes avatar uploads, label fetching, card reordering, archive redirects, markdown paste formatting, password changes, attachment filename encoding, and drag-and-drop on wide boards.
+
+Full release notes can be found at https://github.com/kanbn/kan/releases/tag/v0.6.0

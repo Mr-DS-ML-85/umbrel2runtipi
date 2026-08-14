@@ -1,0 +1,40 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Seafile",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8920,
+  "id": "seafile",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "Seafile is an open source file sync&share solution designed for high reliability, performance and productivity. Sync, share and collaborate across devices and teams. Build your team's knowledge base with Seafile's built-in Wiki feature.\n\n\ud83d\udd04 Reliable File Syncing\nOrganize files into libraries. A library can be selectively synced into any device. Reliable and efficient file syncing improves your productivity.\n\n\ud83d\udee1\ufe0f Built-in File Encryption\nA library can be encrypted by a password choosen by you. Files are encrypted before syncing to the server. Even the system admin can't view the files.\n\n\ud83d\udee0\ufe0f SET-UP:\nSeafile is configured to work out-of-the-box when installed on Umbrel. However, if you want to be able to upload files from a domain name that is not umbrel.local, open the Seafile app, go to System Admin > Settings and change \"FILE_SERVER_ROOT\" to /seafhttp.",
+  "short_desc": "Reliable and Performant File Sync and Share Solution",
+  "author": "Seafile",
+  "source": "https://github.com/haiwen/seafile",
+  "website": "https://www.seafile.com/",
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Password",
+      "env_variable": "APP_PASSWORD",
+      "required": false
+    },
+    {
+      "type": "random",
+      "label": "Seed",
+      "env_variable": "APP_SEED",
+      "required": false
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388910,
+  "updated_at": 1786690388910,
+  "min_tipi_version": "4.0.0"
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "OpenThread Border Router",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 7586,
+  "id": "openthread-border-router",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "automation"
+  ],
+  "description": "OpenThread Border Router (OTBR) lets you bridge a Thread mesh network to your local Wi-Fi/Ethernet network using a Thread radio dongle. It enables Home Assistant and Matter-over-Thread devices (locks, sensors, plugs, thermostats) to communicate with your smart home stack without relying on a vendor-specific hub like Apple HomePod, Google Nest Hub, or Amazon eero.\n\n## Setup\n1. Plug your Thread radio dongle into your Umbrel device.\n2. Open the app. The setup wizard detects\n   your radio's serial device, lets you confirm the backbone network\n   interface, and checks that IPv6 is available on your host and LAN. Pick\n   the device and save \u2014 the border router then starts automatically.\n\n3. Open Home Assistant and add the \"OpenThread Border Router\"\n   integration, using the REST API URL shown in this app after setup. The\n   OTBR web dashboard link is also shown in the app after setup.\n\n\n## Notes\n- **IPv6 is required.** Thread relies on end-to-end IPv6, so IPv6\n  must be enabled on your Umbrel host and your router/LAN. The setup wizard\n  verifies this.",
+  "short_desc": "Thread border router for Home Assistant and Matter",
+  "author": "ownbee",
+  "source": "https://github.com/ownbee/hass-otbr-docker",
+  "website": "https://github.com/ownbee/hass-otbr-docker",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388793,
+  "updated_at": 1786690388793,
+  "min_tipi_version": "4.0.0"
+}

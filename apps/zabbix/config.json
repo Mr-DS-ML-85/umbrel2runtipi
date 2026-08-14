@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Zabbix",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 10052,
+  "id": "zabbix",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "network"
+  ],
+  "description": "\u26a0\ufe0f Zabbix may take a few minutes to initialize after installation. Please be patient.\n\nAn enterprise-class, open-source distributed monitoring solution that's designed to monitor the performance and availability of network devices, servers, services, and other IT resources. Zabbix is a flexible solution that can monitor anything from a simple, standalone application to a large-scale environment, with features including:\n  - Resource discovery: Discover network entities, server resources, and onboard/offboard devices. Use out-of-the-box integrations (templates) to monitor anything form a low-level device to a SAAS service.\n  - Metric acquisition: Use an agent or agent-less approach for metric acquisition from any source - devices, sensors, operating systems, virtualization platforms, container platforms like Docker, Kubernetes, cloud infrastructures, databases, webpages, Java ecosystems, application servers, API endpoints, business applications, and many more.\n  - Root cause analysis and problem detection: Count on high-performance, real-time problem detection that correlates both existing and incoming problems and performs root cause analyses.\n  - Incidents, alerts, and notifications: Receive an alert when an issue is triggered (proactively or post-mortem) in the ecosystem. Use multiple messaging channels (including Slack, JIRA, Microsoft Teams, email or text messages) to get notified about the different types of events occurring in your environment.\n  - \"Single pane of glass\" overview: Visualize collected data and monitoring events in graphs, lists, geomaps, and network topology maps.\n  - Multitenancy and distributed monitoring: Enjoy the convenience of one monitoring solution for multiple data centers, departments, and organizations, and monitor remote locations behind firewalls with remote command execution capability.\n  - Unparalleled flexibility: Adapt Zabbix to your needs and utilize built-in functionalities, including the ability to stream metrics and events over HTTP, reporting, auditing, security, service SLA calculations, and many more.\n\n\n\u2699\ufe0f Configuration:\n\nThe Zabbix Agent listens on port 10050. To monitor the Zabbix server itself, navigate to Monitoring > Hosts within Zabbix, and modify the \"Zabbix server\" host by adding the DNS name \"zabbix_zabbix-agent_1\" and toggling the \"Connect to DNS\" option.",
+  "short_desc": "The all-in-one, open-source solution that lets you monitor anything",
+  "author": "Zabbix LLC",
+  "source": "https://github.com/zabbix/zabbix",
+  "website": "https://www.zabbix.com/",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690389058,
+  "updated_at": 1786690389058,
+  "min_tipi_version": "4.0.0"
+}

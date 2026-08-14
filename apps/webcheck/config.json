@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "WebCheck",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 3093,
+  "id": "webcheck",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "network"
+  ],
+  "description": "WebCheck is a versatile OSINT (Open Source Intelligence) tool for analyzing and monitoring websites. It offers a comprehensive range of features to assist users in security audits and performance analysis of websites. Key functionalities include:\n\n\ud83d\udd0d Website Scanning: Automated detection of vulnerabilities and security weaknesses.\n\n\ud83d\ude80 Performance Analysis: Metrics like load times, visibility, and optimization potential.\n\n\ud83d\udcdd Content Analysis: Extraction of metadata, DNS info, and HTTP headers.\n\n\ud83d\udcca Visual Representation: Generation of screenshots to document site layouts.\n\n\ud83d\udcdd Monitoring and Reporting: Continuous tracking with custom reporting options.\n\nWebCheck is modular, allowing users to integrate additional plugins for extended functionality. It supports API integration, is cross-platform, and is easy to deploy via Docker, making it accessible on any server. Its open-source nature ensures transparency and full control over the conducted analyses, making it ideal for security-conscious users.\n\nIn addition to public website analysis, WebCheck can be used for internal network security and infrastructure checks within organizations. The customizable features and extensibility make it an essential tool for web analysts and IT security teams.",
+  "short_desc": "An all-in-one Open Source Intelligence tool for analyzing any website",
+  "author": "Alicia Sykes",
+  "source": "https://github.com/Lissy93/web-check",
+  "website": "https://web-check.xyz/",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690389030,
+  "updated_at": 1786690389030,
+  "min_tipi_version": "4.0.0"
+}

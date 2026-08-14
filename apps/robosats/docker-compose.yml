@@ -1,0 +1,14 @@
+services:
+  web:
+    image: recksato/robosats-client:latest
+    restart: on-failure
+    stop_grace_period: 1m
+    init: true
+    environment:
+      TOR_PROXY_IP: ${TOR_PROXY_IP}
+      TOR_PROXY_PORT: ${TOR_PROXY_PORT}
+    x-runtipi:
+      internal_port: 12596
+      is_main: true
+x-runtipi:
+  schema_version: 2

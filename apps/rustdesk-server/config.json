@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "RustDesk Server",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 21080,
+  "id": "rustdesk-server",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "network"
+  ],
+  "description": "RustDesk is an open-source, self-hosted, and secure remote desktop solution that allows users to access and control computers remotely. It provides functionality similar to other remote desktop tools like TeamViewer and AnyDesk but with the key advantage of being open-source, meaning users can inspect the code, contribute to its development, and even self-host the software on their own servers. This allows for greater control over the remote access environment and better privacy, as all communication can be routed through a server that the user owns or operates, rather than relying on a third-party provider.\n\nRustDesk is built using Rust, a systems programming language known for its performance, security, and memory safety. The software is lightweight and designed for ease of use, featuring an intuitive interface that makes remote desktop access accessible to both technical and non-technical users. It supports cross-platform functionality, meaning you can connect from Windows, macOS, Linux, iOS, and Android devices to control a remote machine. RustDesk offers essential features such as file transfer, clipboard synchronization, and screen sharing, ensuring a seamless experience for users needing remote assistance or working from different locations.\n\nOne of the major benefits of RustDesk is its ability to function without relying on centralized servers. While it does offer a cloud service for convenience, users can set up their own server infrastructure, enhancing the security and privacy of their remote sessions. With this self-hosted option, users can have complete control over the data transmitted between the devices, which is ideal for individuals or organizations that prioritize privacy and data protection.\n\nOverall, RustDesk provides a powerful alternative to proprietary remote desktop software. Its open-source nature, self-hosting capability, and high performance make it an appealing choice for anyone seeking a reliable, secure, and customizable remote desktop solution.",
+  "short_desc": "A fast and reliable solution for remote access",
+  "author": "RustDesk Team",
+  "source": "https://github.com/rustdesk/rustdesk-server",
+  "website": "https://rustdesk.com",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388889,
+  "updated_at": 1786690388889,
+  "min_tipi_version": "4.0.0"
+}

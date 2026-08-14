@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Nginx Proxy Manager",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 4498,
+  "id": "nginx-proxy-manager",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "network"
+  ],
+  "description": "Expose your apps to the internet easily and securely.\n\n\u26a0\ufe0f Be cautious when exposing apps to the public internet. Ensure they have proper security, such as login protection, and avoid exposing sensitive apps without adequate safeguards.\n\n\ud83d\udd27 Nginx Proxy Manager uses port 40080 for HTTP (unsecured) traffic and port 40443 for HTTPS (secured) traffic. To make your apps accessible from the public internet, you will need to set up port forwarding on your router. Forward external port 80 (HTTP) to internal port 40080 and external port 443 (HTTPS) to internal port 40443.\n\n\ud83d\udd0d Features:\n\n  - Beautiful and Secure Admin Interface based on Tabler\n  - Easily create forwarding domains, redirections, streams and 404 hosts without knowing anything about Nginx\n  - Free SSL using Let's Encrypt or provide your own custom SSL certificates\n  - Access Lists and basic HTTP Authentication for your hosts\n  - Advanced Nginx configuration available for super users\n  - User management, permissions and audit log",
+  "short_desc": "Expose your services easily and securely",
+  "author": "Jamie Curnow",
+  "source": "https://github.com/NginxProxyManager/nginx-proxy-manager",
+  "website": "https://nginxproxymanager.com/",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388749,
+  "updated_at": 1786690388749,
+  "min_tipi_version": "4.0.0"
+}

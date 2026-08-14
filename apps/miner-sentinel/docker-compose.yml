@@ -1,0 +1,73 @@
+services:
+  db:
+    image: postgres:latest
+    user: 1000:1000
+    restart: on-failure
+    stop_grace_period: 1m
+    volumes:
+    - ${APP_DATA_DIR}/data/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: minersentinel
+      POSTGRES_PASSWORD: minersentinel
+      POSTGRES_DB: minersentinel
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - pg_isready -U minersentinel
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  backend:
+    image: dcbert/minersentinel-backend:latest
+    restart: on-failure
+    stop_grace_period: 1m
+    depends_on:
+    - db
+    environment:
+      POSTGRES_HOST: miner-sentinel_db_1
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: minersentinel
+      POSTGRES_USER: minersentinel
+      POSTGRES_PASSWORD: minersentinel
+      DJANGO_SECRET_KEY: ${APP_SEED}
+      DJANGO_DEBUG: 'False'
+      ALLOWED_HOSTS: '*'
+      CORS_ALLOWED_ORIGINS: http://localhost:3082,http://*.ts.net:3082
+      CSRF_TRUSTED_ORIGINS: http://localhost:3082,http://*.ts.net:3082
+      DJANGO_SUPERUSER_USERNAME: admin
+      DJANGO_SUPERUSER_PASSWORD: $APP_PASSWORD
+      DJANGO_SUPERUSER_EMAIL: admin@umbrel.local
+      API_BASE_URL: http://localhost:3082
+    command: "sh -c \"\n  python manage.py migrate &&\n  python manage.py collectstatic --noinput &&\n  (python manage.py createsuperuser --no-input ||\n  echo 'Superuser already exists or created — winning!') &&\n  gunicorn minersentinel.wsgi:application --bind 0.0.0.0:8000 --workers 2 --timeout 120\n\"\n"
+  frontend:
+    image: dcbert/minersentinel-frontend:latest
+    restart: on-failure
+    stop_grace_period: 1m
+    depends_on:
+    - backend
+    environment:
+      VITE_API_URL: http://localhost:3082
+    x-runtipi:
+      internal_port: 80
+      is_main: true
+  data-service:
+    image: dcbert/minersentinel-data-service:latest
+    restart: on-failure
+    stop_grace_period: 1m
+    depends_on:
+    - db
+    - backend
+    environment:
+      POSTGRES_HOST: miner-sentinel_db_1
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: minersentinel
+      POSTGRES_USER: minersentinel
+      POSTGRES_PASSWORD: minersentinel
+      BACKEND_URL: http://miner-sentinel_backend_1:8000
+      BITAXE_POLL_INTERVAL: 60
+      AVALON_POLL_INTERVAL: 60
+      POOL_POLL_INTERVAL: 300
+      TELEGRAM_BOT_TOKEN: ''
+      TELEGRAM_CHAT_ID: ''
+x-runtipi:
+  schema_version: 2

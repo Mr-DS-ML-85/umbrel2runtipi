@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "BentoPDF",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8730,
+  "id": "bentopdf",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "\ud83d\udcc4 BentoPDF is an advanced privacy-oriented application designed to give users complete control over their PDF documents directly within the browser. It eliminates the need for external uploads or online conversion services, ensuring that every action takes place locally and confidentially. This focus on privacy makes BentoPDF a secure alternative to traditional cloud-based PDF tools.\n\nAt its core, BentoPDF provides an extensive set of features for working with digital documents. Users can merge multiple PDFs into a single file, split them into separate sections, or reorganize individual pages in just a few clicks. The application allows rotating, duplicating, or removing pages with ease, offering full flexibility when editing complex documents. Visual adjustments such as background color changes, watermarks, headers, and footers can also be applied to enhance the appearance of professional documents.\n\nBentoPDF includes a robust conversion engine that supports transforming images into PDFs and exporting individual pages back into common image formats. It also enables file compression to optimize storage space without compromising quality. For document security, users can apply passwords, encrypt sensitive information, or remove existing restrictions to regain editing access. These tools make it suitable for both personal use and professional document preparation.\n\nAnother highlight is the integrated OCR functionality, which scans and recognizes text from image-based PDFs, turning them into fully searchable documents. Metadata editing options let users refine document properties and improve organization. With all these capabilities combined, BentoPDF offers a comprehensive, user-friendly environment for creating, editing, and managing PDFs efficiently \u2014 all while maintaining the highest level of privacy and control.",
+  "short_desc": "A Privacy First PDF Toolkit",
+  "author": "BentoPDF",
+  "source": "https://github.com/alam00000/bentopdf",
+  "website": "https://bentopdf.com/",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388385,
+  "updated_at": 1786690388385,
+  "min_tipi_version": "4.0.0"
+}

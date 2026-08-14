@@ -1,0 +1,40 @@
+# Termix
+
+Manage your servers with built-in SSH, tunnels, and file access
+
+💻 Termix is designed to simplify server administration by bringing powerful management tools into a single, unified interface. At its core, it provides direct access to SSH terminals inside the browser, eliminating the need for external clients. Sessions can be opened in tabs or arranged in split screens, allowing administrators to multitask and manage different systems simultaneously with ease. The terminal experience is responsive and reliable, ensuring that routine tasks such as configuration, updates, and troubleshooting can be performed quickly.
+
+Beyond terminal access, Termix offers advanced tunnel management that enables secure and persistent connections between servers and services. These tunnels can be created, monitored, and automatically reconnected when necessary, giving administrators confidence that critical links remain available without constant manual intervention. This feature is particularly useful for maintaining stable communication in environments where connections may drop or need to be reestablished frequently.
+
+File management is another key aspect of Termix. Remote directories can be navigated as if they were local, with support for uploading new files, renaming or deleting existing ones, and editing content directly within the interface. The built-in editor provides syntax highlighting for various programming and configuration languages, making it easy to adjust configuration files or scripts without relying on separate tools. This seamless integration reduces friction and speeds up everyday maintenance tasks.
+
+To support the handling of multiple servers, Termix includes a host manager where connections can be organized and grouped. Tags and folders make it simple to categorize different environments, whether they are development, staging, or production systems. This structure ensures that administrators can quickly find and connect to the right host without sifting through long lists of saved credentials.
+
+Another significant capability of Termix is real-time monitoring. The application presents detailed statistics on system resources, including processor load, memory usage, and storage consumption. These insights help administrators identify potential issues before they develop into critical problems.
+
+All of these features are wrapped in a clean and modern interface that prioritizes usability. The design emphasizes clarity and efficiency, enabling both experienced administrators and newcomers to interact with complex systems in a straightforward way. Termix transforms server management from a fragmented set of tools into a cohesive, accessible, and user-friendly experience.
+
+---
+
+## Links
+
+- Website: https://docs.termix.site/
+- Repository: https://github.com/Termix-SSH/Termix/
+- Support: https://github.com/Termix-SSH/Termix/issues
+
+## Release notes
+
+Important for skipped-version updates: if you are updating from before Termix 2.5.1, avoid downgrading after this update because the database-layer refactor can cause data loss on downgrade. If you must revert, restore a pre-refactor backup from your data folder.
+
+New features and improvements:
+  - Added audit log export, configurable audit retention, optional SIEM forwarding, OIDC group-to-RBAC mapping, Tailscale SSH check mode, and multi-disk metrics
+  - Added safer host export options, shared SSH credential overrides, better terminal search, app rail pinning, and groundwork for PostgreSQL/MySQL backends
+  - This Umbrel package keeps upstream telemetry disabled
+
+
+Bug fixes:
+  - Fixed database persistence during container shutdown, remote sync stalls/deletion propagation, jump-host tunnels for Guacamole, RDP/VNC resolution and recording behavior, OIDC/JWKS login issues, and file-manager navigation after permission errors
+  - Fixed host command history settings, Docker/homepage proxy validation, snippet results, SSH alerts, shared host duplication, terminal highlighting/input issues, and mobile/desktop sync edge cases
+
+
+Full release notes can be found at https://github.com/Termix-SSH/Termix/releases/tag/release-2.6.1-tag

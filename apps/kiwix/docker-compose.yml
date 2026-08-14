@@ -1,0 +1,15 @@
+services:
+  web:
+    image: ghcr.io/kiwix/kiwix-serve:latest
+    user: 1000:1000
+    restart: on-failure
+    volumes:
+    - ${RUNTIPI_MEDIA_DIR}/downloads/:/data
+    command: '/data/*.zim -k
+
+      '
+    x-runtipi:
+      internal_port: 8080
+      is_main: true
+x-runtipi:
+  schema_version: 2

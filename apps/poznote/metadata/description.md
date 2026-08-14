@@ -1,0 +1,38 @@
+# Poznote
+
+A powerful app for taking notes
+
+📝 Poznote is a clean and focused application designed to help users capture, structure, and refine information in a flexible workspace. It combines a rich text editor with Markdown formatting to support both quick jotting and long form writing, allowing thoughts to grow and change without friction.
+
+The interface encourages fluid organization through tags, search, and customizable workspaces so ideas remain easy to find even as the collection expands. Poznote supports attachments for images, documents, and other files, making it possible to keep related material together within a single note.
+
+It includes tools for creating checklists, tasks, and reminders that integrate directly into the writing flow rather than feeling like separate modules. A built in drawing and diagramming tool powered by an Excalidraw integration allows users to sketch concepts, create charts, or visualize ideas alongside text.
+
+Notes can be edited, restored from the trash, exported for safekeeping, or duplicated to act as templates for recurring structures. Poznote aims to create a writing environment where text, media, ideas, and tasks coexist naturally, offering a streamlined way to manage information with clarity and continuity.
+
+---
+
+## Links
+
+- Website: https://poznote.com/
+- Repository: https://github.com/timothepoznanski/poznote
+- Support: https://github.com/timothepoznanski/poznote/issues
+
+## Default credentials
+
+- Username: `admin_change_me`
+- Password: `admin`
+
+## Release notes
+
+Poznote 6.57.1 improves account deletion safety and cleanup:
+
+- Makes user-data deletion mandatory during account deletion, including S3 object cleanup.
+- Adds clearer warnings and translations for irreversible account deletion.
+- Improves deletion logs, S3 cleanup logging, error tracking, API documentation, and UI styling.
+
+If you're updating from before Poznote 6.51.0, you may need to log in again because of the remember-me cookie security changes.
+
+If you're updating from before Poznote 6.21.0, existing Excalidraw diagrams may need to be opened, slightly modified, and saved again before their generated images match the current dark/light theme.
+
+Full release notes can be found at https://github.com/timothepoznanski/poznote/releases/tag/6.57.1

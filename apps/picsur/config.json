@@ -1,0 +1,34 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Picsur",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8286,
+  "id": "picsur",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "\ud83d\uddbc\ufe0f Picsur is a lightweight, self-hosted image hosting platform designed for simplicity and control. It allows users to upload, store, and share images directly from their own server, without relying on third-party services. Inspired by the functionality of platforms like Imgur and Pastebin, Picsur focuses on offering a clean and efficient experience for users who need a straightforward way to manage images online.\n\nUnlike more complex photo management solutions such as PhotoPrism or Immich, which include features like facial recognition, albums, and AI-assisted sorting, Picsur is purpose-built for quick uploads and direct sharing. It supports a wide range of image formats, including common ones like JPEG, PNG, and GIF, as well as newer or less standard types such as QOI and animated WebP files. Once uploaded, images can be edited with basic tools such as resizing, rotating, flipping, or applying grayscale and negative effects.\n\nThe platform includes a user-friendly web interface that supports drag-and-drop uploads and provides direct links for sharing images instantly. Administrators can access a backend panel to manage uploaded files and user permissions, offering full control over how the service operates.\n\nBecause Picsur is self-hosted, it ensures maximum privacy and independence from cloud providers. This makes it an ideal solution for individuals or small teams looking to host images privately, efficiently, and with minimal overhead.",
+  "short_desc": "An easy to use image sharing service",
+  "author": "CaramelFur",
+  "source": "https://github.com/CaramelFur/Picsur",
+  "website": "https://picsur.org/upload",
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Password",
+      "env_variable": "APP_PASSWORD",
+      "required": false
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388830,
+  "updated_at": 1786690388830,
+  "min_tipi_version": "4.0.0"
+}

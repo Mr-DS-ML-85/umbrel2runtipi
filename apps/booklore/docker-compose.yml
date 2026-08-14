@@ -1,0 +1,31 @@
+services:
+  web:
+    image: ghcr.io/booklore-app/booklore:latest
+    restart: on-failure
+    environment:
+      DATABASE_URL: jdbc:mariadb://booklore_db_1:3306/booklore
+      DATABASE_USERNAME: bookloreuser
+      DATABASE_PASSWORD: booklorepass
+    depends_on:
+      db:
+        condition: service_started
+    volumes:
+    - ${APP_DATA_DIR}/data/app:/app/data
+    - ${APP_DATA_DIR}/data/books:/books
+    - ${APP_DATA_DIR}/data/bookdrop:/bookdrop
+    x-runtipi:
+      internal_port: 6060
+      is_main: true
+  db:
+    image: mariadb:latest
+    user: 1000:1000
+    restart: on-failure
+    environment:
+      MARIADB_DATABASE: booklore
+      MARIADB_USER: bookloreuser
+      MARIADB_PASSWORD: booklorepass
+      MARIADB_ROOT_PASSWORD: rootpass
+    volumes:
+    - ${APP_DATA_DIR}/data/db:/var/lib/mysql
+x-runtipi:
+  schema_version: 2

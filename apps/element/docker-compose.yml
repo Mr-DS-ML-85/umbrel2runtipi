@@ -1,0 +1,11 @@
+services:
+  web:
+    image: vectorim/element-web:latest
+    user: nginx:nginx
+    restart: on-failure
+    stop_grace_period: 1m
+    x-runtipi:
+      internal_port: 80
+      is_main: true
+x-runtipi:
+  schema_version: 2

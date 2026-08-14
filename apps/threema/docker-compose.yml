@@ -1,0 +1,9 @@
+services:
+  web:
+    image: dennysubke/threema-web:latest
+    restart: on-failure
+    x-runtipi:
+      internal_port: 80
+      is_main: true
+x-runtipi:
+  schema_version: 2

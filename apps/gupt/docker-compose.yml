@@ -1,0 +1,11 @@
+services:
+  web:
+    image: ghcr.io/besoeasy/gupt:latest
+    user: 1000:1000
+    restart: on-failure
+    stop_grace_period: 1m
+    x-runtipi:
+      internal_port: 8000
+      is_main: true
+x-runtipi:
+  schema_version: 2

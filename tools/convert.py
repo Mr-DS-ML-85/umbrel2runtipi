@@ -1,0 +1,786 @@
+#!/usr/bin/env python3
+"""
+Convert Umbrel App Store apps to Runtipi-compatible appstore format.
+
+- Reads the cloned Umbrel apps repo (umbrel-apps/)
+- Reads the cloned Runtipi official appstore (runtipi-official/)
+- Dedupes: skips any Umbrel app that already exists in the Runtipi registry
+  (match by id, normalized id, or normalized name)
+- Skips apps that fundamentally depend on Umbrel's own infrastructure
+  (Bitcoin/Lightning/Electrs/Monero tor-integrated system apps, tor-only apps)
+- Converts each remaining app:
+    umbrel-app.yml       -> config.json
+    docker-compose.yml   -> dynamic docker-compose.yml (x-runtipi schema v2)
+    description          -> metadata/description.md
+    gallery icon (SVG)   -> metadata/logo.jpg
+- Writes the store into <out>/apps/<app-id>/... plus a report.
+
+Usage: python3 convert.py
+"""
+
+from __future__ import annotations
+
+import io
+import json
+import os
+import re
+import shutil
+import time
+import urllib.request
+from pathlib import Path
+
+import yaml
+
+# --- YAML 1.2-compatible loader ------------------------------------------
+# Docker Compose (go-yaml v3) follows YAML 1.2: plain scalars like "10025:25"
+# stay strings. PyYAML's default resolver is YAML 1.1 and would interpret
+# "10025:25" as a base-60 integer (601525), corrupting port mappings.
+# Build a loader with a strict decimal int/float resolver.
+_INT = re.compile(r"^[-+]?[0-9]+$")
+_FLOAT = re.compile(
+    r"^[-+]?(?:[0-9]+\.[0-9]*|[0-9]*\.[0-9]+|[0-9]+[eE][-+]?[0-9]+"
+    r"|[0-9]+\.[0-9]*[eE][-+]?[0-9]+)$"
+)
+
+
+class ComposeLoader(yaml.SafeLoader):
+    pass
+
+
+def _build_resolvers():
+    base = {k: list(v) for k, v in yaml.SafeLoader.yaml_implicit_resolvers.items()}
+    for ch in base:
+        base[ch] = [
+            (t, rx)
+            for t, rx in base[ch]
+            if t not in ("tag:yaml.org,2002:int", "tag:yaml.org,2002:float")
+        ]
+    for ch in "0123456789":
+        base.setdefault(ch, []).append(("tag:yaml.org,2002:int", _INT))
+        base.setdefault(ch, []).append(("tag:yaml.org,2002:float", _FLOAT))
+    for ch in "+-":
+        base.setdefault(ch, []).append(("tag:yaml.org,2002:int", _INT))
+        base.setdefault(ch, []).append(("tag:yaml.org,2002:float", _FLOAT))
+    return base
+
+
+ComposeLoader.yaml_implicit_resolvers = _build_resolvers()
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+ROOT_DIR = SCRIPT_DIR.parent
+UMBREL_REPO = ROOT_DIR / "umbrel-apps"
+RUNTIPI_REPO = ROOT_DIR / "runtipi-official"
+OUT_DIR = ROOT_DIR
+REPORT_PATH = ROOT_DIR / "conversion-report.md"
+
+ICON_BASE = "https://getumbrel.github.io/umbrel-apps-gallery"
+
+# Host ports already in use on the user's server (nmap result) - the store must
+# NEVER assign these to an app. Edit this list to match your setup.
+RESERVED_PORTS = {
+    22, 25, 53, 80, 139, 143, 443, 445, 465, 587, 631, 993,
+    2000, 2283, 2285, 3007, 3478, 4190, 8043, 8081, 8089, 8099,
+    8104, 8152, 8250, 8374, 8443, 8642, 8840, 8999, 9119, 9983, 45876,
+}
+
+RUNTIPI_SYSTEM_VARS = {
+    "APP_DATA_DIR", "APP_PORT", "APP_DOMAIN", "APP_PROTOCOL", "APP_ID",
+    "APP_VERSION", "TZ", "UID", "GID", "RUNTIPI_MEDIA_DIR", "RUNTIPI_APP_ID",
+    "LOCAL_DOMAIN", "ROOT_FOLDER_HOST", "APP_EXPOSED", "DNS_IP",
+}
+
+# Umbrel system-app dependencies => these apps cannot run on Runtipi without
+# Umbrel's own Bitcoin/Lightning infrastructure. If a compose references any of
+# these env vars, the app needs an Umbrel system app to provide them.
+UMBREL_INFRA_PREFIXES = (
+    "APP_BITCOIN", "APP_LIGHTNING", "APP_LND", "APP_LNDG", "APP_CORE_LIGHTNING",
+    "APP_ELECTRS", "APP_ELECTRUMX", "APP_FULCRUM", "APP_MEMPOOL", "APP_ELEMENTS",
+    "APP_LIBRE_RELAY", "APP_MONERO", "APP_SUREDBITS", "APP_SQUEAKNODE",
+    "APP_TDEX", "APP_SAMOURAI", "APP_ZWALLET", "APP_TAILS", "APP_BOLTZ",
+    "APP_RTL", "APP_CANARY", "APP_SPHINX", "APP_PINSERVER", "APP_URBIT",
+    "APP_SWH", "APP_HIDDEN_SERVICE", "APP_TOR", "APP_ALBY_LN", "APP_LNMARKETS",
+    "APP_LNPLUS", "APP_GHOSTFOLIO", "APP_PEERSWAP", "APP_ITCHYSATS",
+    "APP_JOINSTR", "APP_CIRCUITBREAKER", "APP_THUNDERHUB", "APP_TORQ",
+    "APP_BLESKOMAT", "APP_LNBITS", "APP_BTCPAY", "APP_ORDINALS", "APP_DATUM",
+    "APP_BASSIN", "APP_SIHA", "APP_SWAP", "APP_SV2", "APP_MINER_SENTINEL",
+)
+
+SECRET_RE = re.compile(
+    r"(PASSWORD|_PASS$|^PASSPHRASE|_PASSPHRASE$|_SEED$|_SECRET|_TOKEN$|"
+    r"_KEY$|_KEYS$|_SALT$|_API_KEY$|_MASTER_KEY$|_ENCRYPTION_KEY$|"
+    r"_JWT_SECRET$|_APP_KEY$|_VAULT_KEY$|_SIG_KEY$|_SIG_SALT$|"
+    r"_ACCESS_TOKEN_SALT$|_DB_PASSWORD$|_REDIS_PASSWORD$|_ROOT_PASSWORD$)"
+)
+
+CATEGORY_MAP = {
+    "files": "data",
+    "bitcoin": "finance",
+    "crypto": "finance",
+    "networking": "network",
+    "media": "media",
+    "developer": "development",
+    "social": "social",
+    "ai": "ai",
+    "automation": "automation",
+    "finance": "finance",
+}
+
+KNOWN_SERVICES = {"app_proxy", "web", "server", "app", "db", "api", "backend", "frontend", "nginx", "worker"}
+
+# Env-var reference detection
+VAR_REF_RE = re.compile(r"\$\{([A-Z0-9_]+)(?::-([^}]*))?\}", re.IGNORECASE)
+VAR_REF_BARE_RE = re.compile(r"(?<!\$)\$(\$)?([A-Z_][A-Z0-9_]*)")
+
+
+def norm(s: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", (s or "").lower().replace("_", "-"))
+
+
+def collect_vars(compose: dict, app_id: str) -> tuple[dict[str, bool], set[str]]:
+    """Return {VAR: has_default} for every APP_* referenced in compose, and set of all vars."""
+    default_map: dict[str, bool] = {}
+    found: set[str] = set()
+
+    def scan_str(s: str) -> None:
+        for m in VAR_REF_RE.finditer(s):
+            name, default = m.group(1), m.group(2)
+            if not name.startswith("APP_"):
+                continue
+            found.add(name)
+            has_def = default is not None
+            default_map[name] = (default_map.get(name, False)) or has_def
+        for m in VAR_REF_BARE_RE.finditer(s):
+            if m.group(1):
+                continue  # $${ escaped
+            name = m.group(2)
+            if not name.startswith("APP_"):
+                continue
+            found.add(name)
+            # bare $VAR always has no default
+            default_map[name] = default_map.get(name, False)
+
+    def walk(obj):
+        if isinstance(obj, dict):
+            for k, v in obj.items():
+                scan_str(str(k))
+                walk(v)
+        elif isinstance(obj, list):
+            for v in obj:
+                walk(v)
+        elif isinstance(obj, str):
+            scan_str(obj)
+        elif obj is not None:
+            scan_str(str(obj))
+
+    walk(compose)
+    return default_map, found
+
+
+def find_app_proxy(compose: dict, app_id: str):
+    services = compose.get("services", {}) or {}
+    ap = services.get("app_proxy")
+    if not ap:
+        return None, None
+    env = ap.get("environment", {}) or {}
+    env_list = env if isinstance(env, list) else [
+        (k, v) for k, v in env.items()
+    ]
+    host = None
+    port = None
+    for e in env_list:
+        if isinstance(e, str):
+            if e.startswith("APP_HOST"):
+                host = e.split("=", 1)[1].strip()
+            elif e.startswith("APP_PORT"):
+                port = e.split("=", 1)[1].strip()
+        elif isinstance(e, (list, tuple)) and len(e) == 2:
+            if e[0] == "APP_HOST":
+                host = str(e[1])
+            elif e[0] == "APP_PORT":
+                port = str(e[1])
+    return host, port
+
+
+def derive_main_service(compose: dict, app_id: str, host=None, port=None):
+    services = (compose.get("services", {}) or {})
+
+    main = None
+    if host:
+        # e.g. "paperless_webserver_1" -> webserver ; or "$APP_LNDG_IP"
+        m = re.match(rf"^{re.escape(app_id)}_([A-Za-z0-9_-]+)_\d+$", host)
+        if m:
+            candidate = m.group(1)
+            if candidate in services:
+                main = candidate
+        elif "$" not in host:
+            stripped = re.sub(r"_\d+$", "", host)
+            candidate = stripped.removeprefix(app_id + "_")
+            if candidate in services:
+                main = candidate
+
+    if not main:
+        # prefer the web-facing service name then the first one
+        for name in ("web", "webserver", "ui", "server", "app", "frontend", "main", "proxy", "caddy"):
+            if name in services:
+                main = name
+                break
+    if not main:
+        non_proxy = [s for s in services if s != "app_proxy"]
+        if non_proxy:
+            main = non_proxy[0]
+    return main, port
+
+
+def parse_port(value):
+    if not value:
+        return None
+    m = re.search(r"(\d+)", str(value))
+    return int(m.group(1)) if m else None
+
+
+def internal_port_from_ports(service: dict, manifest_port: int):
+    ports = service.get("ports") or []
+    for p in ports:
+        p = str(p).split("/")[0]
+        if ":" in p:
+            host, container = p.split(":", 1)
+            # strip ${APP_PORT} or similar variable
+            host_num = parse_port(host)
+            container_num = parse_port(container)
+            if host_num == manifest_port and container_num:
+                return container_num
+            if host in ("${APP_PORT}", "$APP_PORT") and container_num:
+                return container_num
+        else:
+            n = parse_port(p)
+            if n == manifest_port:
+                return n
+    return None
+
+
+def convert_compose(app_id: str, compose: dict, manifest_port: int):
+    """Return (new_compose, main_service, internal_port, host_port, notes)."""
+    notes: list[str] = []
+    comp = json.loads(json.dumps(compose))  # deep copy
+
+    for k in ("version", "name", "configs", "networks"):
+        comp.pop(k, None)
+
+    services = comp.setdefault("services", {})
+    ap_host, ap_port = find_app_proxy(comp, app_id)
+    if "app_proxy" in services:
+        del services["app_proxy"]
+        notes.append("removed umbrel app_proxy service")
+
+    main_service, ap_port = derive_main_service(comp, app_id, ap_host, ap_port)
+    internal_port = None
+    host_port = manifest_port
+
+    if not main_service:
+        raise RuntimeError("unable to determine main service")
+
+    svc = services[main_service]
+
+    # -- determine internal port -----------------------------------------
+    if ap_port is not None:
+        internal_port = parse_port(ap_port)
+    if internal_port is None and svc.get("network_mode") == "host":
+        internal_port = manifest_port
+        notes.append("host networking app, internal_port set to umbrel port")
+    if internal_port is None:
+        # try to find a ports entry whose host side == manifest port
+        for p in svc.get("ports") or []:
+            ps = str(p).split("/")[0]
+            if ":" in ps:
+                h, c = ps.split(":", 1)
+                hn, cn = parse_port(h), parse_port(c)
+                if hn == manifest_port and cn:
+                    internal_port = cn
+                    break
+    if internal_port is None and svc.get("ports"):
+        # fall back to first TCP port mapping (the UI)
+        for p in svc.get("ports") or []:
+            ps = str(p)
+            proto = ps.split("/")[-1] if "/" in ps else "tcp"
+            if proto != "tcp":
+                continue
+            if ":" in ps.split("/")[0]:
+                h, c = ps.split("/")[0].split(":", 1)
+                hn, cn = parse_port(h), parse_port(c)
+                if cn:
+                    internal_port = cn
+                    host_port = hn
+                    notes.append(f"ui port inferred from ports mapping {h}:{c}")
+                    break
+    if internal_port is None:
+        internal_port = manifest_port
+        notes.append(f"inferred internal_port={internal_port} (no app_proxy APP_PORT found)")
+
+    # -- drop container_name, runtipi manages names -----------------------
+    # Map custom container names to service names so references still resolve.
+    container_map = {}
+    for sname, s in (compose.get("services", {}) or {}).items():
+        cn = s.get("container_name")
+        if isinstance(cn, str) and cn and cn != sname:
+            container_map[cn] = sname
+
+    for s in services.values():
+        s.pop("container_name", None)
+        s.pop("networks", None)
+        # env_file paths are generated by Umbrel hooks and won't exist here
+        if "env_file" in s:
+            notes.append(f"removed env_file ({s['env_file']}) - created by umbrel hooks, not available")
+            s.pop("env_file", None)
+        # variable-based extra_hosts entries can yield an empty host on runtipi
+        if isinstance(s.get("extra_hosts"), list):
+            s["extra_hosts"] = [h for h in s["extra_hosts"] if "${" not in str(h) and "$" not in str(h)]
+            if not s["extra_hosts"]:
+                s.pop("extra_hosts", None)
+        # remove depends_on refs to app_proxy
+        dep = s.get("depends_on")
+        if isinstance(dep, list) and "app_proxy" in dep:
+            dep.remove("app_proxy")
+        if isinstance(dep, dict):
+            dep.pop("app_proxy", None)
+
+    # -- main service port mapping: drop the UI mapping (runtipi adds it) --
+    removed_ports = []
+    if svc.get("ports"):
+        kept = []
+        for p in svc["ports"]:
+            ps = str(p).split("/")[0]
+            if ":" in ps:
+                h, _ = ps.split(":", 1)
+                hn = parse_port(h)
+            else:
+                h, hn = ps, parse_port(ps)
+            is_ui = (
+                h == "${APP_PORT}"
+                or h == "$APP_PORT"
+                or (hn is not None and hn == host_port)
+            )
+            if is_ui and (str(p).split("/")[0].count(":") == 1):
+                removed_ports.append(str(p))
+                continue
+            kept.append(p)
+        if removed_ports:
+            svc["ports"] = kept
+            notes.append(f"removed ui port mapping(s) handled by runtipi: {removed_ports}")
+        if not svc.get("ports"):
+            svc.pop("ports", None)
+
+    # -- rewrite UMBREL_ROOT shared-storage paths --------------------------
+    def rewrite_paths(obj):
+        if isinstance(obj, dict):
+            return {k: rewrite_paths(v) for k, v in obj.items()}
+        if isinstance(obj, list):
+            return [rewrite_paths(v) for v in obj]
+        if isinstance(obj, str):
+            return rewrite_str(obj)
+        return obj
+
+    def rewrite_str(s: str) -> str:
+        s = re.sub(
+            r"\$\{UMBREL_ROOT\}/data/storage/downloads/?",
+            "${RUNTIPI_MEDIA_DIR}/downloads/",
+            s,
+        )
+        s = re.sub(
+            r"\$\{UMBREL_ROOT\}/data/storage/?",
+            "${RUNTIPI_MEDIA_DIR}/",
+            s,
+        )
+        s = re.sub(
+            r"\$\{UMBREL_ROOT\}/data/storage/(.*)",
+            r"${RUNTIPI_MEDIA_DIR}/\1",
+            s,
+        )
+        s = re.sub(r"\$\{UMBREL_ROOT\}", "${RUNTIPI_MEDIA_DIR}", s)
+        s = re.sub(r"\$\{DEVICE_DOMAIN_NAME\}|\$DEVICE_DOMAIN_NAME", "localhost", s)
+        s = re.sub(r"\$\{DEVICE_HOSTNAME\}|\$DEVICE_HOSTNAME", "localhost", s)
+        def _resolve_defaulted_var(m):
+            return m.group(1) if m.group(1) else "localhost"
+        s = re.sub(r"\$\{DEVICE_DOMAIN_NAME(?::-([^}]*))?\}", _resolve_defaulted_var, s)
+        s = re.sub(r"\$\{DEVICE_HOSTNAME(?::-([^}]*))?\}", _resolve_defaulted_var, s)
+        if container_map:
+            for cn, sname in container_map.items():
+                s = re.sub(rf"(?<![\w.-]){re.escape(cn)}(?![\w.-])", sname, s)
+        return s
+
+    comp = rewrite_paths(comp)
+    services = comp.setdefault("services", {})
+    svc = services[main_service]
+
+    # -- x-runtipi metadata -------------------------------------------------
+    svc.setdefault("x-runtipi", {})
+    svc["x-runtipi"]["internal_port"] = internal_port
+    svc["x-runtipi"]["is_main"] = True
+    comp["x-runtipi"] = {"schema_version": 2}
+
+    return comp, main_service, internal_port, host_port, notes
+
+
+def build_form_fields(var_info: dict[str, bool]):
+    """var_info: {VAR: has_default}. Only add fields for vars without default."""
+    fields = []
+    for var in sorted(var_info):
+        if var in RUNTIPI_SYSTEM_VARS:
+            continue
+        if var_info[var]:
+            continue  # has a default in compose, don't override
+        if SECRET_RE.search(var):
+            fields.append({
+                "type": "random",
+                "label": var.replace("APP_", "").replace("_", " ").title(),
+                "env_variable": var,
+                "required": False,
+            })
+        else:
+            fields.append({
+                "type": "text",
+                "label": var.replace("APP_", "").replace("_", " ").title(),
+                "env_variable": var,
+                "required": False,
+                "default": "",
+            })
+    return fields
+
+
+def build_config(manifest: dict, app_id: str, internal_port: int, var_info: dict[str, bool]) -> dict:
+    name = manifest.get("name") or app_id
+    category = manifest.get("category", "")
+    categories = [CATEGORY_MAP.get(category, "utilities")]
+    now = int(time.time() * 1000)
+
+    form_fields = build_form_fields(var_info)
+
+    cfg = {
+        "$schema": "../app-info-schema.json",
+        "name": name,
+        "available": True,
+        "exposable": True,
+        "dynamic_config": True,
+        "port": int(manifest["port"]) if manifest.get("port") else 0,
+        "id": app_id,
+        "tipi_version": 1,
+        "version": str(manifest.get("version") or "latest"),
+        "categories": categories,
+        "description": (manifest.get("description") or "").strip(),
+        "short_desc": (manifest.get("tagline") or "").strip(),
+        "author": manifest.get("developer") or name,
+        "source": manifest.get("repo") or manifest.get("website") or "",
+        "website": manifest.get("website") or manifest.get("repo") or "",
+        "form_fields": form_fields,
+        "supported_architectures": ["arm64", "amd64"],
+        "created_at": now,
+        "updated_at": now,
+        "min_tipi_version": "4.0.0",
+    }
+    return cfg
+
+
+def description_md(manifest: dict) -> str:
+    lines = ["# " + (manifest.get("name") or ""), ""]
+    tagline = (manifest.get("tagline") or "").strip()
+    if tagline:
+        lines += [tagline, ""]
+    desc = (manifest.get("description") or "").strip()
+    if desc:
+        lines += [desc, "", "---", ""]
+    links = []
+    if manifest.get("website"):
+        links.append(f"- Website: {manifest['website']}")
+    if manifest.get("repo"):
+        links.append(f"- Repository: {manifest['repo']}")
+    if manifest.get("support"):
+        links.append(f"- Support: {manifest['support']}")
+    if links:
+        lines += ["## Links", ""] + links + [""]
+    if manifest.get("defaultUsername") or manifest.get("defaultPassword"):
+        lines += ["## Default credentials", ""]
+        if manifest.get("defaultUsername"):
+            lines.append(f"- Username: `{manifest['defaultUsername']}`")
+        if manifest.get("defaultPassword"):
+            lines.append(f"- Password: `{manifest['defaultPassword']}`")
+        lines.append("")
+    rn = (manifest.get("releaseNotes") or "").strip()
+    if rn:
+        lines += ["## Release notes", "", rn, ""]
+    return "\n".join(lines)
+
+
+def download_logo(app_id: str, out_dir: Path) -> bool:
+    url = f"{ICON_BASE}/{app_id}/icon.svg"
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "runtipi-umbrel-converter"})
+        svg_data = urllib.request.urlopen(req, timeout=30).read()
+    except Exception:
+        return False
+    try:
+        from PIL import Image
+        import subprocess
+        svg_path = out_dir / "icon_tmp.svg"
+        svg_path.write_bytes(svg_data)
+        png_path = out_dir / "icon_tmp.png"
+        subprocess.run(
+            ["rsvg-convert", "-w", "256", "-h", "256", "-o", str(png_path), str(svg_path)],
+            check=True, capture_output=True,
+        )
+        img = Image.open(png_path).convert("RGB")
+        img.save(str(out_dir / "logo.jpg"), "JPEG", quality=90)
+        svg_path.unlink(missing_ok=True)
+        png_path.unlink(missing_ok=True)
+        return True
+    except Exception:
+        for p in (out_dir / "icon_tmp.svg", out_dir / "icon_tmp.png"):
+            p.unlink(missing_ok=True)
+        return False
+
+
+def placeholder_logo(out_dir: Path, label: str):
+    try:
+        from PIL import Image, ImageDraw
+        img = Image.new("RGB", (256, 256), (52, 65, 82))
+        d = ImageDraw.Draw(img)
+        d.rectangle([8, 8, 247, 247], outline=(120, 140, 160), width=4)
+        d.text((128, 128), label[:1].upper(), fill=(255, 255, 255))
+        img.save(str(out_dir / "logo.jpg"), "JPEG")
+    except Exception:
+        open(out_dir / "logo.jpg", "wb").write(b"")
+        raise
+
+
+def load_runtipi_catalog() -> dict:
+    catalog = {}
+    for cfg in (RUNTIPI_REPO / "apps").glob("*/config.json"):
+        try:
+            c = json.loads(cfg.read_text())
+        except Exception:
+            continue
+        catalog[c["id"].lower()] = c.get("name", c["id"])
+    return catalog
+
+
+def match_runtipi(umbrel_id: str, umbrel_name: str, catalog: dict):
+    ru_id = umbrel_id.lower()
+    if ru_id in catalog:
+        return ("id", ru_id)
+    nid = norm(umbrel_id)
+    for rid in catalog:
+        if norm(rid) == nid:
+            return ("normalized-id", rid)
+    nname = norm(umbrel_name)
+    for rid, rname in catalog.items():
+        if norm(rname) == nname:
+            return ("name", rid)
+    return None
+
+
+def main():
+    catalog = load_runtipi_catalog()
+    app_dirs = sorted([d for d in UMBREL_REPO.iterdir() if d.is_dir() and (d / "umbrel-app.yml").exists()])
+
+    skipped_dedup = []
+    skipped_infra = []
+    skipped_other = []
+    converted = []
+    failures = []
+    used_ports = {}
+    port_taken = set()
+
+    # Pre-populate used ports from the Runtipi official store so host ports
+    # don't clash with apps the user may already install from it.
+    for cfg in (RUNTIPI_REPO / "apps").glob("*/config.json"):
+        try:
+            c = json.loads(cfg.read_text())
+            if c.get("port"):
+                port_taken.add(int(c["port"]))
+                used_ports.setdefault(int(c["port"]), []).append("runtipi:" + c["id"])
+        except Exception:
+            pass
+
+    # Never assign ports that are already in use on the user's server.
+    for p in RESERVED_PORTS:
+        port_taken.add(p)
+        used_ports.setdefault(p, []).append("reserved (already in use)")
+
+    for app_dir in app_dirs:
+        app_id = app_dir.name
+        try:
+            manifest = yaml.safe_load((app_dir / "umbrel-app.yml").read_text()) or {}
+            compose = yaml.load((app_dir / "docker-compose.yml").read_text(), Loader=ComposeLoader) or {}
+        except Exception as e:
+            failures.append((app_id, f"parse error: {e}"))
+            continue
+
+        # ---- deduce umbrel id/name (from manifest) ----------------------
+        umbrel_id = manifest.get("id") or app_id
+        umbrel_name = manifest.get("name") or app_id
+
+        # ---- dedupe against runtipi --------------------------------------
+        m = match_runtipi(umbrel_id, umbrel_name, catalog)
+        if m:
+            skipped_dedup.append((app_id, m[1], m[0]))
+            continue
+
+        # ---- skip tor-only / no GUI --------------------------------------
+        if manifest.get("torOnly"):
+            skipped_other.append((app_id, "tor-only app"))
+            continue
+        if not umbrel_id:
+            skipped_other.append((app_id, "missing id"))
+            continue
+
+        # ---- skip apps that depend on Umbrel system infra -----------------
+        compose_text = json.dumps(compose)
+        all_vars = set(re.findall(r"\$\{?(APP_[A-Z0-9_]+)\}?", compose_text))
+        infra_hits = sorted(
+            v for v in all_vars
+            if v.startswith(UMBREL_INFRA_PREFIXES) and v != "APP_DATA_DIR"
+        )
+        if "${UMBREL_ROOT}/app-data" in compose_text or "/app-data/lightning" in compose_text:
+            infra_hits.append("UMBREL_ROOT/app-data")
+        if infra_hits:
+            skipped_infra.append((app_id, "umbrel system app dependency", ";".join(infra_hits[:6])))
+            continue
+
+        # ---- convert -------------------------------------------------------
+        try:
+            new_compose, main_service, internal_port, host_port, notes = convert_compose(
+                app_id, compose, int(manifest["port"]) if manifest.get("port") else 0
+            )
+        except Exception as e:
+            failures.append((app_id, f"compose conversion failed: {e}"))
+            continue
+
+        var_info, all_vars = collect_vars(new_compose, app_id)
+
+        cfg_port = host_port if host_port else (int(manifest["port"]) if manifest.get("port") else 0)
+        if cfg_port == 0:
+            failures.append((app_id, "missing port"))
+            continue
+
+        # assign a free host port if the umbrel port collides
+        base = cfg_port
+        while base in port_taken and base in used_ports:
+            base = base + 1
+        if base != cfg_port:
+            notes.append(f"assigned new host port {base} (umbrel port {cfg_port} already used)")
+        port_taken.add(base)
+        used_ports.setdefault(base, []).append(app_id)
+
+        cfg = build_config(manifest, app_id, internal_port, var_info)
+        cfg["port"] = base
+
+        if main_service:
+            pass
+
+        converted.append({
+            "id": app_id,
+            "name": cfg["name"],
+            "compose": new_compose,
+            "config": cfg,
+            "manifest": manifest,
+            "main_service": main_service,
+            "internal_port": internal_port,
+            "notes": notes,
+            "unnamed_vars": sorted(v for v in var_info if not var_info[v] and v not in RUNTIPI_SYSTEM_VARS),
+        })
+
+    # ------------------------------------------------------------------
+    # write output
+    # ------------------------------------------------------------------
+    # Only regenerate the apps/ directory so store-level files the user adds
+    # (README, scripts, .gitignore, ...) are preserved across runs.
+    if (OUT_DIR / "apps").exists():
+        shutil.rmtree(OUT_DIR / "apps")
+    OUT_DIR.mkdir(exist_ok=True)
+    (OUT_DIR / "apps").mkdir(parents=True)
+
+    logo_fail = []
+    for app in converted:
+        a_dir = OUT_DIR / "apps" / app["id"]
+        (a_dir / "metadata").mkdir(parents=True)
+        (a_dir / "config.json").write_text(
+            json.dumps(app["config"], indent=2) + "\n", encoding="utf-8"
+        )
+        # sensible dump for docker-compose.yml
+        comp_dump = yaml.safe_dump(
+            app["compose"],
+            sort_keys=False,
+            default_flow_style=False,
+            width=10000,
+            allow_unicode=True,
+        )
+        # prevent PyYAML emitting $VAR refs as weird YAML aliases
+        (a_dir / "docker-compose.yml").write_text(comp_dump, encoding="utf-8")
+        (a_dir / "metadata" / "description.md").write_text(
+            description_md(app["manifest"]), encoding="utf-8"
+        )
+        ok = download_logo(app["id"], a_dir / "metadata")
+        if not ok:
+            try:
+                placeholder_logo(a_dir / "metadata", app["name"])
+                logo_fail.append((app["id"], "placeholder logo (no svg)"))
+            except Exception as e:
+                logo_fail.append((app["id"], f"no logo, placeholder failed: {e}"))
+
+    # copy schema + validation tooling
+    shutil.copy2(RUNTIPI_REPO / "apps" / "app-info-schema.json", OUT_DIR / "app-info-schema.json")
+
+    # ---- report ----------------------------------------------------------
+    lines = []
+    lines.append("# Umbrel -> Runtipi conversion report\n")
+    lines.append(
+        f"- Umbrel apps: {len(app_dirs)}  \n"
+        f"- Already in Runtipi official store (deduped): {len(skipped_dedup)}  \n"
+        f"- Require Umbrel bitcoin/lightning infra (skipped): {len(skipped_infra)}  \n"
+        f"- Skipped other: {len(skipped_other)}  \n"
+        f"- Conversion failures: {len(failures)}  \n"
+        f"- **Converted: {len(converted)}**  \n"
+    )
+    lines.append("\n## Converted apps\n")
+    for app in sorted(converted, key=lambda a: a["id"]):
+        n = app["notes"]
+        field_keys = [f["env_variable"] for f in app["config"]["form_fields"] if f["type"] == "random"]
+        note_str = "; ".join(n)
+        lines.append(
+            f"- **{app['name']}** (`{app['id']}`) port {app['config']['port']}, "
+            f"main={app['main_service']}, internal={app['internal_port']}"
+        )
+        if note_str:
+            lines.append(f"  - notes: {note_str}")
+        if field_keys:
+            lines.append(f"  - auto-generated secret env vars: {', '.join(field_keys)}")
+    lines.append("\n## Deduplicated (already in Runtipi)\n")
+    for folder, rid, how in sorted(skipped_dedup):
+        lines.append(f"- `{folder}` matched runtipi `{rid}` ({how})")
+    lines.append("\n## Skipped: require Umbrel bitcoin/lightning infra\n")
+    for folder, reason, hits in sorted(skipped_infra):
+        lines.append(f"- `{folder}` — {reason} [{hits}]")
+    lines.append("\n## Skipped: other\n")
+    for folder, reason in sorted(skipped_other):
+        lines.append(f"- `{folder}` — {reason}")
+    lines.append("\n## Conversion failures\n")
+    for folder, reason in sorted(failures):
+        lines.append(f"- `{folder}` — {reason}")
+    lines.append("\n## Icons\n")
+    if logo_fail:
+        for folder, why in sorted(logo_fail):
+            lines.append(f"- `{folder}` — {why}")
+    else:
+        lines.append("- All icons downloaded from the Umbrel gallery.")
+
+    REPORT_PATH.write_text("\n".join(lines), encoding="utf-8")
+
+    print(f"Converted: {len(converted)}")
+    print(f"Deduped: {len(skipped_dedup)}")
+    print(f"Skipped infra: {len(skipped_infra)}")
+    print(f"Skipped other: {len(skipped_other)}")
+    print(f"Failures: {len(failures)}")
+    print(f"Output: {OUT_DIR}")
+    print(f"Report: {REPORT_PATH}")
+
+
+if __name__ == "__main__":
+    main()

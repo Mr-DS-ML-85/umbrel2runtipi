@@ -1,0 +1,41 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Gitea Mirror",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 4322,
+  "id": "gitea-mirror",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "development"
+  ],
+  "description": "Gitea Mirror automatically mirrors your GitHub repositories to a self-hosted Gitea instance. It supports mirroring public and private repositories, organizations, starred repos, issues, wikis, and pull requests.\n\nConfigure your GitHub and Gitea credentials through the web interface to get started. The app will periodically sync your repositories based on your configured schedule.\n\nKey features include:\n  - Mirror repositories from GitHub to Gitea\n  - Support for organizations and starred repositories\n  - Issue and wiki mirroring\n  - Configurable sync intervals and scheduling\n  - Repository cleanup and orphan management\n  - Header-based authentication for reverse proxy SSO\n\n\n**Connecting to Gitea on Umbrel:** If you have the Gitea app installed on your Umbrel, use `http://gitea_server_1:8085` as the Gitea URL in the mirror settings.\n\nThe **Gitea Access Token** should have the following permissions:\n  - write:repository\n  - read:user\n  - write:organization (optional)",
+  "short_desc": "Mirror your GitHub repositories to a Gitea instance automatically",
+  "author": "RayLabs HQ",
+  "source": "https://github.com/raylabshq/gitea-mirror",
+  "website": "https://github.com/raylabshq/gitea-mirror",
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Gitea Mirror Port",
+      "env_variable": "APP_GITEA_MIRROR_PORT",
+      "required": false,
+      "default": ""
+    },
+    {
+      "type": "random",
+      "label": "Seed",
+      "env_variable": "APP_SEED",
+      "required": false
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388554,
+  "updated_at": 1786690388554,
+  "min_tipi_version": "4.0.0"
+}

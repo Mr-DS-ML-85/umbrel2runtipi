@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Element",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8094,
+  "id": "element",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "social"
+  ],
+  "description": "Element is a new type of messaging app. You choose where your messages are stored, putting you in control of your data. You can connect it to the Synapse app running on your Umbrel, or to any other Matrix homeserver.\n\n\n  - It gives you access to the Matrix open network, so you can talk to anyone. Element provides a new level of security, adding cross-signed device verification to default end-to-end encryption.\n\n  - The very best end-to-end encryption and Element's unique cross-signed device verification means only those that should be in the conversation can read the messages - no eavesdroppers or imposters.\n\n  - Most important of all, Element is open; built on the Matrix network, it connects to all other Matrix-based apps as well as bridging into proprietary systems. You can stay in Element while talking to friends and family in other apps.\n\n  - Element is open source. You know exactly what you're getting. Full transparency, the freedom to extend and customise with the support of a vibrant community of developers.\n\n\n\ud83d\udee0\ufe0f Getting Started\n\nAn easy way to get started is to install the \"Synapse\" app on your Umbrel. Synapse is a Matrix homeserver that stores all your personal chat history and user account information.\n\nWhen you register or login through Element, you will need to change the address of the homeserver you are logging into from the default matrix.org to http://umbrel.local:8008 for local access.\n\nFor seamless connection even when you are accessing Element away from home, simply install the \"Tailscale\" app on your Umbrel and your device you are using to access Element, and use http://umbrel:8008 as the address of your server.",
+  "short_desc": "A glossy Matrix client compatible with Synapse",
+  "author": "New Vector Ltd",
+  "source": "https://github.com/vector-im/element-web",
+  "website": "https://element.io",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388502,
+  "updated_at": 1786690388502,
+  "min_tipi_version": "4.0.0"
+}

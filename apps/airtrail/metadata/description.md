@@ -1,0 +1,28 @@
+# AirTrail
+
+A modern, open-source personal flight tracking system
+
+A web application that allows users to track their flights and view their flight history.
+
+Features:
+- **World Map**: View all your flights on an interactive world map.
+- **Flight History**: Keep track of all your flights in one place.
+- **Statistics**: Get insights into your flight history with statistics.
+- **Multiple Users**: Manage multiple users, share flights among them, secure your data with user authentication and integrate with your OAuth provider.
+- **Responsive Design**: Use the application on any device with a responsive design.
+- **Dark Mode**: Switch between light and dark mode.
+- **Import Flights**: Import flights from various sources including MyFlightRadar24, App in the Air and JetLog.
+
+---
+
+## Links
+
+- Website: https://airtrail.johan.ohly.dk
+- Repository: https://github.com/johanohly/AirTrail
+- Support: https://github.com/johanohly/AirTrail/issues
+
+## Release notes
+
+This update adds individual flight detail panes, altitude-colored uploaded flight tracks, readsb trace JSON and Miles & More importers, improved flight list grouping, custom passenger field enhancements, and better AeroDataBox conflict handling.
+
+It also automatically migrates existing seat and flight-reason data to the reworked passenger model, tightens AirTrail backup import permissions, fixes a custom airline icon upload path traversal issue, and includes several map, import, and PWA fixes.

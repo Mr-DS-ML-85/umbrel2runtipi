@@ -1,0 +1,34 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "JupyterLab",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8899,
+  "id": "jupyterlab",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "development"
+  ],
+  "description": "JupyterLab is a next-generation web-based user interface for Project Jupyter. \n\nIt enables you to work with documents and activities such as Jupyter notebooks, text editors, terminals, and custom components in a flexible, integrated, and extensible manner. You can arrange multiple documents and activities side by side in the work area using tabs and splitters.\n\nKey features and workflows include:\n  - Code Consoles for interactive code execution and linking to a notebook kernel.\n  - Kernel-backed documents that allow code in any text file (Markdown, Python, LaTeX) to be run interactively.\n  - Mirrored cell outputs for simple dashboards.\n  - Multiple views of documents with different editors or viewers (e.g., live preview of Markdown or CSV).\n  - A unified model for viewing and handling data formats (images, CSV, JSON, PDF, Vega, etc.).\n  - Customizable keyboard shortcuts and an extensible architecture.\n\n\nJupyterLab uses the same notebook document format as the classic Jupyter Notebook.",
+  "short_desc": "Next-generation web interface for interactive computing and data science",
+  "author": "jupyterlab",
+  "source": "https://github.com/jupyterlab/jupyterlab",
+  "website": "https://jupyterlab.readthedocs.io/en/latest/",
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Password",
+      "env_variable": "APP_PASSWORD",
+      "required": false
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388618,
+  "updated_at": 1786690388618,
+  "min_tipi_version": "4.0.0"
+}

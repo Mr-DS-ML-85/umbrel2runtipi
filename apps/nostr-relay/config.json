@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Nostr Relay",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 4848,
+  "id": "nostr-relay",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "social"
+  ],
+  "description": "Introducing Nostr Relay \u2014 an official app by Umbrel.\n\nStep 1. Connect your Nostr client (e.g., Damus, Amethyst) to your private relay for seamless backup of all Nostr activity. In Damus, add your Relay URL via Menu > Relays.\n\nTip: Install Tailscale on your Umbrel and your devices for an uninterrupted connection between your clients and your relay, even when you're away from your home network. Enable Tailscale's MagicDNS and use ws://umbrel:4848 as your Relay URL.\n\nStep 2. Tap the globe icon on the top to back up past Nostr activity from your public relays and ensure uninterrupted future backups, even if the connection between your private relay and Nostr client is disrupted.\n\nThat's it! Your past and future Nostr activity will be now backed up to your private relay.\n\nNostr Relay is powered by the open source nostr-rs-relay project \u2014 a Rust implementation of Nostr relay. It currently supports the entire relay protocol, including NIP-01, NIP-02, NIP-03, NIP-05, NIP-09, NIP-11, NIP-12, NIP-15, NIP-16, NIP-20, NIP-22, NIP-26, NIP-28, and NIP-33.",
+  "short_desc": "Backup all your Nostr activity with your private relay",
+  "author": "Umbrel",
+  "source": "https://github.com/getumbrel/umbrel-nostr-relay",
+  "website": "https://umbrel.com",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388759,
+  "updated_at": 1786690388759,
+  "min_tipi_version": "4.0.0"
+}

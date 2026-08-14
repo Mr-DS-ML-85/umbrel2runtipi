@@ -1,0 +1,13 @@
+services:
+  web:
+    image: ghcr.io/vert-sh/vert:latest
+    restart: on-failure
+    environment:
+      PUB_HOSTNAME: http://localhost:3884
+      PUB_VERTD_URL: http://localhost:3884
+      PUB_ENV: production
+    x-runtipi:
+      internal_port: 80
+      is_main: true
+x-runtipi:
+  schema_version: 2

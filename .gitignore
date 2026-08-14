@@ -1,0 +1,11 @@
+# Source clones (not part of the store — cloned by the converter)
+/umbrel-apps/
+/runtipi-official/
+
+# Converter caches / artifacts
+tools/update-tags-cache.json
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store

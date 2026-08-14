@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Cashu.me Wallet",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 3194,
+  "id": "cashu-me",
+  "tipi_version": 1,
+  "version": "0.1.1",
+  "categories": [
+    "finance"
+  ],
+  "description": "\ud83e\udd5c Cashu.me is a free and open-source Bitcoin wallet built on the Cashu ecash protocol. It combines the speed and efficiency of ecash with the power of Bitcoin \u2014 ensuring your financial privacy like never before.\n## \ud83d\ude80 Why Use Cashu.me?\n\n  - \ud83e\uddfe No KYC \u2013 You stay anonymous.\n  - \ud83d\udd10 Privacy-first \u2013 Ecash ensures your wallet data stays yours.\n  - \ud83e\ude99 Bitcoin-native \u2013 Designed from the ground up to work with Bitcoin.\n  - \ud83e\udde0 Open-source \u2013 Trust through transparency.\n\n## \ud83c\udf10 How It Works\nCashu is a privacy-focused ecash protocol for Bitcoin. Learn more at https://cashu.space.\nTo use the wallet, you need to connect to one or more Cashu mints of your choice. This wallet is not affiliated with any specific mint.\n## \ud83d\udce6 Important to Know\n\n  - \ud83d\udd11 **Back up your seed phrase!** Your ecash tokens are stored locally in your browser.\n    If you clear your browser data without a backup, your funds will be lost forever.\n  - \ud83e\uddea **Beta Warning**: This wallet is in active development and considered beta software.\n    Use at your own risk.\n  - \ud83e\uddfe **License**: Open-source and MIT licensed.",
+  "short_desc": "An open-source Bitcoin ecash wallet",
+  "author": "cashubtc",
+  "source": "https://github.com/cashubtc/cashu.me",
+  "website": "https://cashu.space",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388443,
+  "updated_at": 1786690388443,
+  "min_tipi_version": "4.0.0"
+}

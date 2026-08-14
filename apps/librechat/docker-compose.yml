@@ -1,0 +1,71 @@
+services:
+  api:
+    image: ghcr.io/danny-avila/librechat:latest
+    restart: on-failure
+    user: 1000:1000
+    command: npm run backend
+    environment:
+    - HOST=0.0.0.0
+    - MONGO_URI=mongodb://librechat_mongodb_1:27017/LibreChat
+    - MEILI_HOST=http://librechat_meilisearch_1:7700
+    - RAG_PORT=8000
+    - RAG_API_URL=http://librechat_rag_api_1:8000
+    - OPENAI_API_KEY=user_provided
+    - GOOGLE_KEY=user_provided
+    - ANTHROPIC_API_KEY=user_provided
+    - ASSISTANTS_API_KEY=user_provided
+    - CREDS_KEY=f34be427ebb29de8d88c107a71546019685ed8b241d8f2ed00c3df97ad2566f0
+    - CREDS_IV=e2341419ec3dd3d19b13a1a87fafcbfb
+    - JWT_SECRET=16f8c0ef4a5d391b26034086c628469d3f9f497f08163ab9b40137092f2909ef
+    - JWT_REFRESH_SECRET=eaa5191f2914e30b9387fd84e254e4ba6fc51b4654968a9b0803b456a54b8418
+    volumes:
+    - ${APP_DATA_DIR}/data/api/librechat.yaml:/app/librechat.yaml
+    - ${APP_DATA_DIR}/data/api/images:/app/client/public/images
+    - ${APP_DATA_DIR}/data/api/uploads:/app/uploads
+    - ${APP_DATA_DIR}/data/api/logs:/app/api/logs
+    depends_on:
+    - mongodb
+    - rag_api
+    x-runtipi:
+      internal_port: 3080
+      is_main: true
+  mongodb:
+    image: mongo:latest
+    restart: on-failure
+    user: 1000:1000
+    volumes:
+    - ${APP_DATA_DIR}/data/db:/data/db
+    command: mongod --noauth
+  meilisearch:
+    image: getmeili/meilisearch:latest
+    restart: on-failure
+    user: 1000:1000
+    environment:
+    - MEILI_HOST=http://librechat_meilisearch_1:7700
+    - MEILI_NO_ANALYTICS=true
+    - MEILI_MASTER_KEY=DrhYf7zENyR6AlUCKmnz0eYASOQdl6zxH7s7MKFSfFCt
+    volumes:
+    - ${APP_DATA_DIR}/data/meilisearch:/meili_data
+  vectordb:
+    image: ankane/pgvector:latest
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    restart: on-failure
+    volumes:
+    - ${APP_DATA_DIR}/data/vectordb:/var/lib/postgresql/data
+  rag_api:
+    image: ghcr.io/danny-avila/librechat-rag-api-dev-lite:latest
+    environment:
+    - DB_HOST=librechat_vectordb_1
+    - RAG_PORT=8000
+    - OPENAI_API_KEY=user_provided
+    - GOOGLE_KEY=user_provided
+    - ANTHROPIC_API_KEY=user_provided
+    - ASSISTANTS_API_KEY=user_provided
+    restart: on-failure
+    depends_on:
+    - vectordb
+x-runtipi:
+  schema_version: 2

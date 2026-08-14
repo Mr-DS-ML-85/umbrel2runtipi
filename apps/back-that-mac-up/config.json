@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Back That Mac Up",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 3012,
+  "id": "back-that-mac-up",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "\u26a0\ufe0f Removal Notice: This app has been removed from the Umbrel App Store. It would really make sense for this to be integrated directly into umbrelOS... hmmmmmmm.\n\nIntroducing Back That Mac Up \u2014 an official app by Umbrel.\n\nEffortlessly back up your Mac to your Umbrel using Time Machine. Simply follow the instructions in the app to set up your Umbrel as a Time Machine backup destination and you're good to go!\n\nMake sure to follow the instructions in the app to appropriately allocate the backup size. Time Machine backs up your Mac by keeping hourly backups for the past 24 hours, daily backups for the past month and weekly backups for all previous months. Over time, it will likely use all the allotted space on your Umbrel, automatically deleting the oldest backups to free up space as needed.\n\nFor seamless backups even when your Mac isn't connected to the same network as your Umbrel, simply install Tailscale on your Umbrel and your Mac, and use smb://umbrel as the server address.",
+  "short_desc": "Backup your Mac to your Umbrel using Time Machine",
+  "author": "Umbrel",
+  "source": "https://github.com/getumbrel/umbrel-back-that-mac-up",
+  "website": "https://umbrel.com",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388376,
+  "updated_at": 1786690388376,
+  "min_tipi_version": "4.0.0"
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "LocalAI",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8793,
+  "id": "localai",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "ai"
+  ],
+  "description": "LocalAI is the free, Open Source OpenAI alternative. LocalAI act as a drop-in replacement REST API that's compatible with OpenAI API specifications for local inferencing.\n\nIt allows you to run LLMs, generate images, audio locally with consumer grade hardware, supporting multiple model families and architectures.\n\n\u26a0\ufe0f Note\nBefore running a model, make sure your device has enough free RAM to support it. Attempting to run a model that exceeds your available memory could cause your device to crash or become unresponsive. Always check the model requirements before downloading or starting it.",
+  "short_desc": "Drop-in OpenAI replacement",
+  "author": "Ettore Di Giacinto",
+  "source": "https://github.com/mudler/LocalAI",
+  "website": "https://localai.io/",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388692,
+  "updated_at": 1786690388692,
+  "min_tipi_version": "4.0.0"
+}

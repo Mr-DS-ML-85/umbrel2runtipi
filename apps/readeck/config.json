@@ -1,0 +1,34 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Readeck",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8027,
+  "id": "readeck",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "Readeck is a simple web application that lets you save the precious readable content of web pages you like and want to keep forever. See it as a bookmark manager and a read later tool.\n\n**Features**\n- **\ud83d\udd16 Bookmarks** - Like a page you're reading? Paste the link in Readeck and you're done!\n- **\ud83d\udcf8 Articles, pictures and videos** - Readeck saves the readable content of web pages for you to read later. It also detects when a page is an image or a video and adapts its process accordingly.\n- **\u2b50 Labels, favorites, archives** - Move bookmarks to archives or favorites and add as many labels as you want.\n- **\ud83d\udd8d\ufe0f Highlights** - Highlight the important content of your bookmarks to easily find it later.\n- **\ud83d\uddc3\ufe0f Collections** - If you need a dedicated section with all your bookmarks from the past 2 weeks labeled with \"cat\", Readeck lets you save this search query into a collection so you can access it later.\n- **\ud83e\udde9 Browser Extension** - Want to keep something for later while browsing? No need to copy and paste a link. Install the browser extension and save bookmarks in one click!\n- **\ud83d\udcd6 E-Book export** - What's better than reading your collected articles on your e-reader? You can export any article to an e-book file (EPUB). You can even export a collection to a single book!\n\n  On top of that, you can directly access Readeck's catalog and collections from your e-reader if it supports OPDS.\n\n- **\ud83d\udd0e Full text search** - Whether you need to find a vague piece of text from an article, or all the articles with a specific label or from a specific website, we've got you covered!\n- **\ud83d\ude80 Fast!** - Readeck is a modern take on so-called boring, but proven, technology pieces. It guarantees very quick response times and a smooth user experience.\n- **\ud83d\udd12 Built for your privacy and long term archival** - Will this article you like be online next year? In 10 year? Maybe not; maybe it's all gone, text and images. For this reason, and for your privacy, text and images are all stored in your Readeck instance the moment you save a link.\n\n  With the exception of videos, not a single request is made from your browser to an external website.",
+  "short_desc": "Save web pages to read and keep forever",
+  "author": "Readeck",
+  "source": "https://codeberg.org/readeck/readeck",
+  "website": "https://readeck.org",
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Seed",
+      "env_variable": "APP_SEED",
+      "required": false
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388869,
+  "updated_at": 1786690388869,
+  "min_tipi_version": "4.0.0"
+}

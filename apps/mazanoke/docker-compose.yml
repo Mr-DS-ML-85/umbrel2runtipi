@@ -1,0 +1,17 @@
+services:
+  web:
+    image: ghcr.io/civilblur/mazanoke:latest
+    restart: on-failure
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - nc -z 127.0.0.1 80 || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 90s
+    x-runtipi:
+      internal_port: 80
+      is_main: true
+x-runtipi:
+  schema_version: 2

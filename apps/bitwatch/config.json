@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Bitwatch",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 3117,
+  "id": "bitwatch",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "finance"
+  ],
+  "description": "Monitor Bitcoin addresses in the mempool and on-chain using the mempool.space API and websocket.\n\nTrack balance changes, get telegram notifications, and manage expectations for multiple addresses.\n\nFeatures:\n  - Build list of addresses in collections to sum-up balances accross wallets\n  - Subscribes to mempool.space (or locally hosted) websocket for real-time mempool activity\n  - Double checks data against mempool.space (or locally hosted) API on a configured interval\n  - Track both on-chain and mempool activity\n  - Configure auto-acceptance or alert mode of changes (chain_in, chain_out, mempool_in, mempool_out)\n    - by default, incoming transactions are auto-accepted, outgoing transactions are alerted\n    - all activity is alerted to a configured telegram connection once (even when auto-accepted)\n  - Option to use your own local node for privacy\n\n\nRecommended to have Mempool + Fulcrum to run privately but not required.",
+  "short_desc": "Monitor Bitcoin addresses in real-time",
+  "author": "Zap-O-Matic",
+  "source": "https://github.com/zapomatic/bitwatch",
+  "website": "https://github.com/zapomatic/bitwatch",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388413,
+  "updated_at": 1786690388413,
+  "min_tipi_version": "4.0.0"
+}

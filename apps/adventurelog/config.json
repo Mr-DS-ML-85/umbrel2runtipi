@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "AdventureLog",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8018,
+  "id": "adventurelog",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "\ud83d\uddfa\ufe0f Starting from a simple idea of tracking travel locations (called adventures), AdventureLog has grown into a full-fledged travel companion. With AdventureLog, you can log your adventures, keep track of where you've been on the world map, plan your next trip collaboratively, and share your experiences with friends and family.\n\nAdventureLog was created to solve a problem: the lack of a modern, open-source, user-friendly travel companion. Many existing travel apps are either too complex, too expensive, or too closed-off to be useful for the average traveler. AdventureLog aims to be the opposite: simple, beautiful, and open to everyone.",
+  "short_desc": "Self-hostable travel tracker and trip planner",
+  "author": "Sean Morley",
+  "source": "https://github.com/seanmorley15/AdventureLog",
+  "website": "https://adventurelog.app/",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388348,
+  "updated_at": 1786690388348,
+  "min_tipi_version": "4.0.0"
+}

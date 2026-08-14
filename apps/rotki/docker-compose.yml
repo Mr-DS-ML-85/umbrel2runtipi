@@ -1,0 +1,14 @@
+services:
+  web:
+    image: rotki/rotki:latest
+    restart: on-failure
+    stop_grace_period: 1m
+    init: true
+    volumes:
+    - ${APP_DATA_DIR}/data/data:/data
+    - ${APP_DATA_DIR}/data/logs:/logs
+    x-runtipi:
+      internal_port: 80
+      is_main: true
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Poznote",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8389,
+  "id": "poznote",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "\ud83d\udcdd Poznote is a clean and focused application designed to help users capture, structure, and refine information in a flexible workspace. It combines a rich text editor with Markdown formatting to support both quick jotting and long form writing, allowing thoughts to grow and change without friction.\n\nThe interface encourages fluid organization through tags, search, and customizable workspaces so ideas remain easy to find even as the collection expands. Poznote supports attachments for images, documents, and other files, making it possible to keep related material together within a single note.\n\nIt includes tools for creating checklists, tasks, and reminders that integrate directly into the writing flow rather than feeling like separate modules. A built in drawing and diagramming tool powered by an Excalidraw integration allows users to sketch concepts, create charts, or visualize ideas alongside text.\n\nNotes can be edited, restored from the trash, exported for safekeeping, or duplicated to act as templates for recurring structures. Poznote aims to create a writing environment where text, media, ideas, and tasks coexist naturally, offering a streamlined way to manage information with clarity and continuity.",
+  "short_desc": "A powerful app for taking notes",
+  "author": "Timoth\u00e9 Poznanski",
+  "source": "https://github.com/timothepoznanski/poznote",
+  "website": "https://poznote.com/",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388853,
+  "updated_at": 1786690388853,
+  "min_tipi_version": "4.0.0"
+}

@@ -1,0 +1,13 @@
+services:
+  web:
+    image: ghcr.io/transmute-app/transmute:latest
+    restart: on-failure
+    environment:
+      AUTH_SECRET_KEY: ${APP_SEED}
+    volumes:
+    - ${APP_DATA_DIR}/data:/app/data
+    x-runtipi:
+      internal_port: 3313
+      is_main: true
+x-runtipi:
+  schema_version: 2

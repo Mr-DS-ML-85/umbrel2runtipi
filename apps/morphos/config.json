@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Morphos server",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 3778,
+  "id": "morphos",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "Today we are forced to rely on third party services to convert files to other formats. This is a serious threat to our privacy, if we use such services to convert files with  highly sensitive personal data. It can be used against us, sooner or later.\n\nMorphos server aims to solve the problem mentioned above, by providing a self-hosted server to convert files privately. The project provides an user-friendly web UI.\n\nFeatures:\n- Convert images to other image formats\n- Convert PDF to images and vice versa\n- Convert DOCX to PDF and vice versa\n- Convert XLSX to CSV and vice versa",
+  "short_desc": "Self-hosted file converter",
+  "author": "Dan Vergara",
+  "source": "https://github.com/danvergara/morphos",
+  "website": "https://github.com/danvergara/morphos",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388730,
+  "updated_at": 1786690388730,
+  "min_tipi_version": "4.0.0"
+}

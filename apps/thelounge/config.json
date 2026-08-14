@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "The Lounge",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 9003,
+  "id": "thelounge",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "social"
+  ],
+  "description": "The Lounge is a modern, open-source, web-based IRC (Internet Relay Chat) client that offers persistent connectivity, allowing users to remain connected to IRC servers even while offline, and provides a responsive interface compatible with desktops, smartphones, and tablets.\n\nIt brings IRC into the 21st century with features like push notifications, link previews, and file uploads, and supports multiple user accounts, enabling server sharing among friends or team members.\n\nThe Lounge can be installed on a continuously running server for optimal performance, granting users access through their browsers or mobile devices.\n\nIt offers both private mode, combining the functionalities of a bouncer and a client for a modern chat experience, and public mode, allowing open chat access without registration.",
+  "short_desc": "Modern web IRC client designed for self-hosting",
+  "author": "The Lounge Team",
+  "source": "https://github.com/thelounge/thelounge",
+  "website": "https://thelounge.chat",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388982,
+  "updated_at": 1786690388982,
+  "min_tipi_version": "4.0.0"
+}

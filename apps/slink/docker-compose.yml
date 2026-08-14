@@ -1,0 +1,24 @@
+services:
+  web:
+    image: anirdev/slink:latest
+    user: 1000:1000
+    restart: on-failure
+    environment:
+      TZ: UTC
+      ORIGIN: http://localhost:8811
+      REQUIRE_SSL: 'false'
+      USER_APPROVAL_REQUIRED: 'false'
+      USER_PASSWORD_MIN_LENGTH: 8
+      USER_PASSWORD_REQUIREMENTS: 15
+      IMAGE_MAX_SIZE: 15M
+      IMAGE_STRIP_EXIF_METADATA: 'true'
+      IMAGE_COMPRESSION_QUALITY: 80
+      STORAGE_PROVIDER: local
+    volumes:
+    - ${APP_DATA_DIR}/data/var:/app/var/data
+    - ${APP_DATA_DIR}/data/images:/app/slink/images
+    x-runtipi:
+      internal_port: 3000
+      is_main: true
+x-runtipi:
+  schema_version: 2

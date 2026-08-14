@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Dropgate Server",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 52443,
+  "id": "dropgate-server",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "**Dropgate** is a modern, privacy-respecting file sharing system designed to be easy to self-host and easy to use.\n\nDropgate supports **two ways to transfer files**:\n  - **Hosted upload (classic mode)** \u2014 you upload to your server, share a link, and the server holds the file temporarily.\n  - **Direct transfer (P2P)** \u2014 the file can move device-to-device, with the server only helping peers find each other.\n\n\nIn today's world, privacy and anonymity are more important than ever. Dropgate was built to make **secure file sharing accessible**, **transparent**, and **fully self-hostable** \u2014 whether on a home NAS, a VPS, or in Docker.\n\nFeatures\n  - **End-to-End Encryption (E2EE)** \u2013 Encrypt on the sender device, decrypt on the recipient device. Encryption keys never need to reach the server.\n  - **Privacy First** \u2013 No analytics, no tracking, and no logging of file contents.\n  - **Share Links That \u201cJust Work\u201d** \u2013 Simple links for recipients that expire based on download count or lifetime.\n  - **Direct Transfer (P2P)** \u2013 Great for big files or \u201czero-storage\u201d sharing (when enabled).\n  - **Built-in Web UI** \u2013 Send and receive from a browser, no install required.\n  - **Configurable Server Controls** \u2013 Tune size limits, rate limits, retention, and storage caps.\n  - **Self-Host Ready** \u2013 Works behind common reverse proxies and tunnels.",
+  "short_desc": "Self-hosted, privacy-first file sharing with hosted upload and P2P transfer",
+  "author": "Diamond Digital Development",
+  "source": "https://github.com/diamonddigitaldev/Dropgate",
+  "website": "https://diamonddigital.dev/projects/dropgate",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388489,
+  "updated_at": 1786690388489,
+  "min_tipi_version": "4.0.0"
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Invio",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8007,
+  "id": "invio",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "finance"
+  ],
+  "description": "Invio is a self-hosted invoicing without the bloat. A fast, minimalist, and privacy-friendly invoicing system built for freelancers and small teams who want control, not clutter.\n\nCreate and share invoices in seconds, host your data yourself, and share secure, password-free links with clients. Lightweight by design, no CRM overhead and no SaaS lock-in.",
+  "short_desc": "Invio is a self-hosted invoicing app without the bloat",
+  "author": "kittendevv",
+  "source": "https://github.com/kittendevv/invio",
+  "website": "https://github.com/kittendevv/invio",
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Password",
+      "env_variable": "APP_PASSWORD",
+      "required": false
+    },
+    {
+      "type": "random",
+      "label": "Seed",
+      "env_variable": "APP_SEED",
+      "required": false
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388601,
+  "updated_at": 1786690388601,
+  "min_tipi_version": "4.0.0"
+}

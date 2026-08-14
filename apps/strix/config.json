@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Strix",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 4568,
+  "id": "strix",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "automation"
+  ],
+  "description": "Finding working streams for your cameras. Most IP cameras - especially Chinese NVRs and budget models - come with zero documentation. No RTSP URLs, no protocol specs, no way to connect them to Frigate. Strix solves this by matching your camera against a database of over 100,000 URL patterns for 67,000 models, testing them and returning only working streams.\n\nEnter your camera IP, model, username and password. Strix tests all matching URL patterns and gives you working streams in seconds.\n\nThen paste your existing frigate.yml - even with 500 cameras - and Strix adds camera 501 with main and sub stream through go2rtc without breaking anything. Works with cameras that don't support RTSP or ONVIF - finds BUBBLE, MJPEG, JPEG, HTTP-FLV and many other protocols that are constantly being added.",
+  "short_desc": "IP camera stream discovery tool for Frigate",
+  "author": "eduard256",
+  "source": "https://github.com/eduard256/Strix",
+  "website": "https://github.com/eduard256/Strix",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388949,
+  "updated_at": 1786690388949,
+  "min_tipi_version": "4.0.0"
+}

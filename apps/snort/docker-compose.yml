@@ -1,0 +1,9 @@
+services:
+  web:
+    image: voidic/snort:latest
+    init: true
+    x-runtipi:
+      internal_port: 8080
+      is_main: true
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,34 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Frigate",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 5004,
+  "id": "frigate",
+  "tipi_version": 1,
+  "version": "0.12.0-beta1-tensorrt",
+  "categories": [
+    "automation"
+  ],
+  "description": "A complete and local NVR designed for Home Assistant with AI object detection.  Uses OpenCV and Tensorflow to perform realtime object detection locally for IP cameras.\n\n\ud83d\udee0\ufe0f SET-UP\n\n- You can configure your cameras directly within the Frigate app, there is no need to manually edit the configuration files.\n\n- Sign in to Frigate with username `admin` and the \"default app password\" displayed on Frigate's page in the app store (shown after install). The same default app password is also used as your RTSP password if needed.",
+  "short_desc": "A complete and local NVR",
+  "author": "Blake Blackshear",
+  "source": "https://github.com/blakeblackshear/frigate",
+  "website": "https://frigate.video/",
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Password",
+      "env_variable": "APP_PASSWORD",
+      "required": false
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388544,
+  "updated_at": 1786690388544,
+  "min_tipi_version": "4.0.0"
+}

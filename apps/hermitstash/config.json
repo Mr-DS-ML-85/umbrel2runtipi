@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "HermitStash",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 3081,
+  "id": "hermitstash",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "HermitStash is a self-hosted file upload server with post-quantum encryption. Every file and database field is sealed with an ML-KEM-1024 + ECDH P-384 hybrid envelope and XChaCha20-Poly1305 before touching disk; passwords use Argon2id. Nothing is stored in plaintext, including database fields the operator never thinks of as sensitive.\n\nGenerate shareable download links with optional expiry, download limits, and per-bundle passwords. Sign in with WebAuthn passkeys, mTLS browser certificates issued by the built-in CA, or password + TOTP. A separately-installable desktop sync client watches a local folder and mirrors changes back to the server over a post-quantum WebSocket channel.\n\nThe admin panel covers users, uploads with per-user and per-stash size limits, webhooks, API keys, branding, a tamper-evident audit log (CSV/JSON/CADF export, plus syslog or webhook forwarding to a SIEM), mutual-TLS certificate-authority management, and storage backends \u2014 local disk by default, or any S3-compatible bucket (MinIO, Cloudflare R2, Backblaze B2) for off-device archives. Retry-safe writes via the standard Idempotency-Key header. RFC 9457 problem-details on every API error response.\n\nFiles and database fields are sealed with post-quantum encryption at rest no matter how you reach the app. When it is served over HTTPS \u2014 a custom domain, or remote access over Tor or Tailscale \u2014 the TLS handshake also negotiates a post-quantum key exchange (X25519MLKEM768 or SecP384r1MLKEM1024), so the connection itself is quantum-resistant; over a plain local-network address the at-rest protection still applies.",
+  "short_desc": "Post-quantum encrypted self-hosted file sharing",
+  "author": "dotCooCoo",
+  "source": "https://github.com/dotCooCoo/hermitstash",
+  "website": "https://hermitstash.com",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388578,
+  "updated_at": 1786690388578,
+  "min_tipi_version": "4.0.0"
+}

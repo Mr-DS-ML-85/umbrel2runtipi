@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Satoshi Dashboard",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8410,
+  "id": "satoshi-dashboard",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "finance"
+  ],
+  "description": "Satoshi Dashboard is a comprehensive, real-time Bitcoin analytics platform that brings together 32+ key metrics into a single, beautifully designed interface. Track live BTC price, sats per dollar, block height, hash rate, network difficulty, circulating supply, and the Fear & Greed index \u2014 all updating in real time from multiple data sources.\n\nDive deep into mempool analytics with a live status gauge showing usage percentage, pending transactions, virtual size, and fee estimates across economy, normal, and priority tiers. Visualize the Bitcoin mempool queue with interactive charts broken down by fee bands, and explore block-level fee heatmaps for a granular view of network activity.\n\nMonitor the global Bitcoin network with an interactive node map showing 21,000+ nodes across every country, with breakdowns by IPv4, IPv6, full nodes, and pruned nodes. Compare BTC against gold, analyze housing affordability in Bitcoin terms, and explore cycle analysis tools \u2014 all from one dashboard.\n\nSatoshi Dashboard is self-hosted, open-source, and designed for bitcoiners who value sovereignty and want a single place to monitor the Bitcoin ecosystem, with live data sourced from public APIs.",
+  "short_desc": "Real-time Bitcoin analytics dashboard",
+  "author": "Satoshi-Dashboard",
+  "source": "https://github.com/Satoshi-Dashboard/main",
+  "website": "https://www.satoshidashboard.com",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388901,
+  "updated_at": 1786690388901,
+  "min_tipi_version": "4.0.0"
+}

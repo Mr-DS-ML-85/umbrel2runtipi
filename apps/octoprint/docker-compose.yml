@@ -1,0 +1,13 @@
+services:
+  web:
+    image: octoprint/octoprint:latest
+    privileged: true
+    volumes:
+    - ${APP_DATA_DIR}/data:/octoprint
+    - /dev:/dev
+    restart: on-failure
+    x-runtipi:
+      internal_port: 5000
+      is_main: true
+x-runtipi:
+  schema_version: 2

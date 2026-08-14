@@ -1,0 +1,31 @@
+# OpenReader
+
+A document reader with Text-to-Speech capabilities
+
+OpenReader WebUI is a web-based document reader that integrates text-to-speech (TTS) functionality, allowing users to listen to text from various document formats, including PDF and EPUB. Designed to enhance accessibility and improve the reading experience, it features synchronized text highlighting, ensuring that the currently read portion of the document is visually emphasized as the speech engine narrates the content. This makes it particularly useful for individuals with visual impairments, reading difficulties, or those who simply prefer an auditory learning style.
+
+The application is built with compatibility in mind, supporting any OpenAI-compatible TTS backend, such as Kokoro-FastAPI and Orpheus-FastAPI. This allows users to select a preferred speech synthesis engine, offering flexibility in voice selection, pronunciation accuracy, and overall reading quality. By leveraging these backends, OpenReader WebUI can generate natural-sounding speech, making long-form reading more engaging and reducing the cognitive load associated with traditional reading.
+
+The user interface is designed to be intuitive and lightweight, providing a seamless experience without unnecessary complexity. Users can upload documents directly through the web interface, control playback speed, pause and resume narration, and navigate through the document efficiently. The software aims to cater to a diverse audience, including students, professionals, and individuals with disabilities, ensuring that reading materials are more accessible to everyone.
+
+Additionally, OpenReader WebUI is available as an open-source project, allowing developers to contribute to its improvement and expand its capabilities. A public demo is accessible online, enabling users to test its features without requiring installation, making it easy to evaluate its functionality before setting up a local instance. With a focus on usability and accessibility, OpenReader WebUI represents a modern approach to document reading, bridging the gap between text and speech in a user-friendly manner.
+
+⚠️ This app only works in Chromium-based browsers (e.g., Chrome, Edge, Brave).
+
+---
+
+## Links
+
+- Website: https://openreader.richardr.dev/
+- Repository: https://github.com/richardr1126/openreader
+- Support: https://github.com/richardr1126/openreader/issues
+
+## Release notes
+
+⚠️ Update note: Uploaded documents remain available, but OpenReader 4.4.0 moves browser-only folders, reading progress, toolbar/list preferences, onboarding state, and recently opened timestamps into the server database. Existing browser-only values for those items are not migrated, so they may reset after updating.
+
+User-supplied TTS provider API keys are no longer supported. OpenReader will continue using the shared Kokoro provider configured by the Umbrel package.
+
+This release also improves media caching and loading states, and fixes loopback storage playback, HTML/Markdown read-aloud segmentation, and long-segment audio playback.
+
+Full release notes can be found at https://github.com/richardr1126/openreader/releases/tag/v4.4.0

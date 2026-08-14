@@ -1,0 +1,27 @@
+# InfluxDB 2
+
+The leading platform for time series data
+
+Purpose built for real-time analytics at any scale.
+
+Powered by columnar analytics, optimized for cost-efficient storage, and built with open data standards.
+- Unmatched Performance at Scale: manage millions of time series data points per second without limits or caps.
+- Columnar Analytics: columnar datastore delivers faster analytic queries by orders of magnitude and reduces storage footprint.
+- High-Speed Ingest: ingest billions of series with fewer CPUs and less RAM at a fraction of the storage cost.
+- Real-Time Querying: sub-second query responses for recent and live incoming data.
+- Unlimited Cardinality: analyze billions of time series and data points per second without limitations or caps.
+- Low-Cost Object Store with Parquet: separation of compute from storage with best-in-category compression to store more data using less space.
+- Interoperability with Data Lakehouses: built on open data standards for direct access to data from lakehouses and warehouses via Apache Iceberg.
+
+---
+
+## Links
+
+- Website: https://www.influxdata.com/
+- Repository: https://github.com/influxdata/influxdb
+- Support: https://support.influxdata.com/s/
+
+## Release notes
+
+This release updates InfluxDB to v2.9.1.
+- Fixed an issue that could prevent level 3 storage compactions from running - Improved compaction queue accounting by separating queued work from active running compactions - Updated the Go toolchain used to build InfluxDB

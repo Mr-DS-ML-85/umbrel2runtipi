@@ -1,0 +1,40 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Krystal Bull",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 3011,
+  "id": "krystal-bull",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "finance"
+  ],
+  "description": "Krystal Bull allows you to become a Bitcoin oracle. An oracle allows information from the real world (financial markets, sporting events, elections, etc) to be used to create and settle Bitcoin bets.\n\nThe oracle is a crucial component for Discreet Log Contracts (DLC). Without a trustworthy oracle, you cannot create a bet on Bitcoin using DLCs. Trustworthy oracles are a building block to realizing Bitcoin DeFi.\n\nTo see some example oracles, please visit oracle.suredbits.com.\n\nWARNING: This version of Krystal Bull is an early alpha release for testing. It's not secure, please don't use it for anything serious.",
+  "short_desc": "Become an oracle and create Bitcoin bets",
+  "author": "SuredBits",
+  "source": "https://github.com/bitcoin-s/krystal-bull",
+  "website": "https://suredbits.com/",
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Password",
+      "env_variable": "APP_PASSWORD",
+      "required": false
+    },
+    {
+      "type": "random",
+      "label": "Seed",
+      "env_variable": "APP_SEED",
+      "required": false
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388638,
+  "updated_at": 1786690388638,
+  "min_tipi_version": "4.0.0"
+}

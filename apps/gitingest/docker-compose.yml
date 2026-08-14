@@ -1,0 +1,12 @@
+services:
+  app:
+    image: ghcr.io/coderamp-labs/gitingest:main
+    restart: on-failure
+    user: 1000:1000
+    environment:
+    - ALLOWED_HOSTS=localhost,localhost,${APP_GITINGEST_LOCAL_IPS}
+    x-runtipi:
+      internal_port: 8000
+      is_main: true
+x-runtipi:
+  schema_version: 2

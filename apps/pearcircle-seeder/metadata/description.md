@@ -1,0 +1,27 @@
+# PearCircle Seeder
+
+Keep your PearCircle circles online 24/7
+
+Run a blind seeder for your PearCircle circles on your Umbrel so their history stays in sync even when every phone is offline.
+
+PearCircle is a peer-to-peer location-sharing app with no accounts, tracking, or subscriptions. The locations shared in a circle live only on its members' devices, and no company holds a copy. Devices connect directly when possible and can use an optional PeerLoom relay when a network blocks peer-to-peer traffic. The relay forwards encrypted data it cannot read and stores nothing. This app runs the PearCircle seed-mode worklet as an always-on background service that replicates each enrolled circle's encrypted blocks, so members stay caught up regardless of who's online.
+
+It is a "blind" seeder: the blocks it stores and serves stay encrypted, so your Umbrel keeps a circle's data available without ever being able to read the locations, places, or members inside it. Circle members stay in control — they admit the seeder when it enrolls and can revoke it at any time, and each circle has its own retention window (forever, 30 days, 7 days, or 24 hours).
+
+To enroll a circle: open the seeder dashboard, then in the PearCircle phone app mint a seed invite for the circle and paste it in.
+
+---
+
+## Links
+
+- Website: https://peerloomllc.com
+- Repository: https://github.com/peerloomllc/pearcircle
+- Support: https://github.com/peerloomllc/pearcircle/issues
+
+## Release notes
+
+This update upgrades PearCircle Seeder to 1.1.0. The dashboard now shows live progress while a phone is pairing instead of appearing to stall. In PearCircle 1.1.0, the phone app's Seeders screen can also distinguish seeders that have actually checked in for a circle from those that were only approved, and shows when each was last heard from.
+
+The seeder now warns if a circle member publishes a last-known location without encryption. PearCircle fixed the affected phone-side behavior in 1.0.25, so circle members using older versions should update their phone apps too; updating the seeder alone does not fix an affected phone. No seeder data migration or reconfiguration is required.
+
+Full upstream release notes: https://github.com/peerloomllc/pearcircle/releases/tag/v1.1.0

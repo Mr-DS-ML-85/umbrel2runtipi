@@ -1,0 +1,27 @@
+# Slink
+
+A powerful, privacy-first image sharing platform
+
+📸 Slink is a modern and privacy-focused image sharing application designed to give users complete control over how their images are stored, managed, and shared. It provides a sleek and user-friendly interface that makes uploading and organizing visual content both simple and efficient. Instead of depending on third-party services, Slink puts the user in charge of their own image collection, ensuring that every upload remains private and secure unless shared intentionally.
+
+The platform supports a wide range of image formats, including standard and high-efficiency types, allowing for seamless handling of all kinds of media files. Uploaded images can be automatically optimized through compression and metadata removal, ensuring fast loading times while protecting sensitive information that might be embedded in files. This approach combines convenience with privacy, making Slink suitable for both personal use and professional environments that demand confidentiality.
+
+Beyond simple image hosting, Slink includes a powerful management system for users and permissions. Administrators can require approval for new users, enforce password strength policies, and limit upload sizes to maintain security and stability. Each shared image can be linked with unique URLs, making it easy to distribute visuals while retaining full control over access.
+
+Slink is built around the idea of ownership and transparency. It avoids unnecessary complexity, focusing instead on reliability, performance, and user experience. Whether used to share creative work, manage internal visual assets, or store personal collections, Slink offers a clean and responsible way to host and share images with complete peace of mind.
+
+---
+
+## Links
+
+- Website: https://docs.slinkapp.io/
+- Repository: https://github.com/andrii-kryvoviaz/slink
+- Support: https://github.com/andrii-kryvoviaz/slink/issues
+
+## Release notes
+
+This update adds admin controls for the site name, description, and logo, and lets users copy share links for their own images directly from feeds and image viewers.
+
+It also adds permanent user/content removal tools for admins, fixes legacy share migrations during startup, improves social link previews for short links, and fixes title flicker and settings form timing issues.
+
+Full release notes can be found at https://github.com/andrii-kryvoviaz/slink/releases/tag/v1.13.0

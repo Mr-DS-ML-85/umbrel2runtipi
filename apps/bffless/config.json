@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "BFFless",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 5537,
+  "id": "bffless",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "development"
+  ],
+  "description": "BFFless is a self-hosted platform for hosting static websites and build artifacts from CI/CD pipelines.\n\nKey Features:\n  - Upload static sites via CLI, API, or GitHub Actions\n  - Instant deployments with unique URLs per commit\n  - Deployment aliases for staging, production, and custom environments\n  - Custom domain support with subdomain routing\n  - Built-in admin dashboard for managing deployments\n  - Privacy-focused: All data stays on your Umbrel\n\n\nPerfect for developers who want full control over their static site hosting without relying on external services.\n\nNote: This app requires a Cloudflare Tunnel for external domain access. Internal access shows setup instructions.",
+  "short_desc": "Self-hosted static site hosting platform",
+  "author": "BFFless",
+  "source": "https://github.com/bffless/ce",
+  "website": "https://docs.bffless.app/deployment/umbrel/",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388389,
+  "updated_at": 1786690388389,
+  "min_tipi_version": "4.0.0"
+}

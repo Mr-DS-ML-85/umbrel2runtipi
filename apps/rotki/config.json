@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "rotki",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8124,
+  "id": "rotki",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "finance"
+  ],
+  "description": "rotki is an open source portfolio tracking, analytics, accounting and tax reporting tool that protects your privacy. \n\nThe mission of rotki is to bring transparency into the crypto and financial sectors through the use of open source. \n\nMost importantly unlike virtually every other competing service which consists of closed source SaaS onto which you are forced to hand over all your financial data, with rotki your data is stored encrypted locally in your computer. \n\nIt enables you to take ownership of your financial data!\n\n\u26a0\ufe0f IMPORTANT \u26a0\ufe0f Rotki is meant to be accessed locally. Hosting it on a publicly accessible machine should be avoided at all cost, unless you know what you're doing!",
+  "short_desc": "Portfolio tracking, analytics, accounting and tax reporting",
+  "author": "Rotki",
+  "source": "https://github.com/rotki/rotki",
+  "website": "https://rotki.com",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388885,
+  "updated_at": 1786690388885,
+  "min_tipi_version": "4.0.0"
+}

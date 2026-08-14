@@ -1,0 +1,13 @@
+services:
+  server:
+    image: triliumnext/trilium:latest
+    restart: on-failure
+    environment:
+    - TRILIUM_DATA_DIR=/data
+    volumes:
+    - ${APP_DATA_DIR}/data:/data
+    x-runtipi:
+      internal_port: 8080
+      is_main: true
+x-runtipi:
+  schema_version: 2

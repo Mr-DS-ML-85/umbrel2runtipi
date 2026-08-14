@@ -1,0 +1,34 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Readur",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8118,
+  "id": "readur",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "\ud83d\udcc4 Readur is a powerful and modern document management system designed to help individuals and teams efficiently organize, process, and access their digital documents. It combines a high-performance backend with a sleek and intuitive web interface to deliver a smooth and reliable user experience.\n\nUsers can easily upload various types of files such as PDFs, images, text documents, and Office files using a simple drag and drop method. One of the key strengths of Readur is its advanced optical character recognition technology which automatically extracts text from scanned documents and images. This OCR functionality enables users to transform otherwise static or image-based files into searchable content, greatly enhancing the ability to locate information within documents.\n\nThe system continuously monitors designated folders for new files, processing them in a non-destructive way that preserves the original data. Once processed, the documents become fully searchable thanks to sophisticated full-text search capabilities supported by a robust database. This search feature includes powerful filtering and ranking mechanisms that make finding relevant documents fast and precise.\n\nSecurity is a priority in Readur, with user authentication handled through secure token-based methods and strong password hashing. The user interface is built to be responsive and visually appealing, focusing on ease of use and productivity.\n\nOverall, Readur leverages intelligent OCR and efficient document processing to provide a seamless experience for managing large volumes of documents while ensuring quick access to the information that matters most.",
+  "short_desc": "An intuitive OCR platform for documents",
+  "author": "Jon Fuller",
+  "source": "https://github.com/readur/readur",
+  "website": "https://github.com/readur/readur",
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Seed",
+      "env_variable": "APP_SEED",
+      "required": false
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388872,
+  "updated_at": 1786690388872,
+  "min_tipi_version": "4.0.0"
+}

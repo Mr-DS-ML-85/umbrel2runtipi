@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "FossFLOW",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8176,
+  "id": "fossflow",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "network"
+  ],
+  "description": "FossFLOW is a feature-rich, open-source Progressive Web App (PWA) designed for creating elegant and professional **isometric diagrams**. It's lightweight, fast, and privacy-friendly everything runs locally in your browser.\n\n\u2728 Key Features\n  - \ud83c\udfa8 **Isometric Diagramming** \u2014 Build stunning 3D-style technical and architectural diagrams with ease.\n  - \ud83d\udcbe **Auto-Save** \u2014 Your work is automatically saved every 5 seconds, so you never lose progress.\n  - \ud83d\udd12 **Privacy-First** \u2014 100% client-side; all data is stored locally in your browser.\n  - \ud83d\udce4 **Import/Export** \u2014 Save or share your work as JSON files and reopen them anytime.\n  - \ud83c\udfaf **Session Storage** \u2014 Quick save without prompts or extra dialogs.\n  - \ud83c\udf10 **Offline Support** \u2014 Create and edit diagrams even without an internet connection.\n  - \ud83c\udf0d **Multilingual Interface** \u2014 Available in 8 languages: English, \u7b80\u4f53\u4e2d\u6587, Espa\u00f1ol, Portugu\u00eas, Fran\u00e7ais, \u0939\u093f\u0928\u094d\u0926\u0940, \u09ac\u09be\u0982\u09b2\u09be, \u0420\u0443\u0441\u0441\u043a\u0438\u0439.\n\n\n\ud83d\ude80 **Why FossFLOW?**\n\nFossFLOW brings the power of isometric diagramming to everyone:- developers, network engineers, designers, and educators. It's ideal for visualizing system architectures, workflows, and infrastructure layouts without needing any paid tools or accounts.",
+  "short_desc": "Make beautiful isometric infrastructure diagrams",
+  "author": "stan-smith",
+  "source": "https://github.com/stan-smith/FossFLOW",
+  "website": "https://github.com/stan-smith/FossFLOW",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388541,
+  "updated_at": 1786690388541,
+  "min_tipi_version": "4.0.0"
+}

@@ -1,0 +1,14 @@
+services:
+  web:
+    image: ghcr.io/matt8707/ha-fusion:latest
+    restart: on-failure
+    user: 1000:1000
+    volumes:
+    - ${APP_DATA_DIR}/data/fusion:/app/data
+    environment:
+      HASS_URL: http://localhost:8123
+    x-runtipi:
+      internal_port: 5050
+      is_main: true
+x-runtipi:
+  schema_version: 2

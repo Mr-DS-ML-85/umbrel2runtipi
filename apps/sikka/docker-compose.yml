@@ -1,0 +1,13 @@
+services:
+  web:
+    image: ghcr.io/sikkalabs/sikka:latest
+    restart: on-failure
+    stop_grace_period: 1m
+    user: 1000:1000
+    volumes:
+    - ${APP_DATA_DIR}/data:/home/sikka/data
+    x-runtipi:
+      internal_port: 64552
+      is_main: true
+x-runtipi:
+  schema_version: 2

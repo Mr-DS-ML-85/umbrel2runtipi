@@ -1,0 +1,40 @@
+services:
+  app:
+    image: ghcr.io/timothepoznanski/poznote:latest
+    restart: on-failure
+    environment:
+      SQLITE_DATABASE: /var/www/html/data/database/poznote.db
+      HTTP_WEB_PORT: 80
+    volumes:
+    - ${APP_DATA_DIR}/data:/var/www/html/data
+    healthcheck:
+      test:
+      - CMD
+      - wget
+      - --quiet
+      - --tries=1
+      - --timeout=5
+      - -O
+      - /dev/null
+      - http://127.0.0.1/api/health
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    x-runtipi:
+      internal_port: 80
+      is_main: true
+  mcp:
+    image: ghcr.io/timothepoznanski/poznote-mcp:latest
+    restart: on-failure
+    environment:
+      POZNOTE_API_URL: http://poznote_app_1:80/api/v1
+      POZNOTE_DEBUG: ${POZNOTE_DEBUG:-false}
+    ports:
+    - 8340:8045
+    volumes:
+    - ${APP_DATA_DIR}/data:/var/www/html/data:ro
+    depends_on:
+    - app
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,45 @@
+# Trilium Notes
+
+Build your personal knowledge base with Trilium Notes
+
+Features
+
+- Notes can be arranged into arbitrarily deep tree. Single note can be placed into multiple places in the tree (see cloning)
+- Rich WYSIWYG note editing including e.g. tables, images and math with markdown autoformat
+- Support for editing notes with source code, including syntax highlighting
+- Fast and easy navigation between notes, full text search and note hoisting
+- Seamless note versioning
+- Note attributes can be used for note organization, querying and advanced scripting
+- Synchronization with self-hosted sync server (there's a 3rd party service for hosting synchronisation server)
+- Sharing (publishing) notes to public internet
+- Strong note encryption with per-note granularity
+- Sketching diagrams with bult-in Excalidraw (note type "canvas")
+- Relation maps and link maps for visualizing notes and their relations
+- Scripting - see Advanced showcases
+- REST API for automation
+- Scales well in both usability and performance upwards of 100 000 notes
+- Touch optimized mobile frontend for smartphones and tablets
+- Night theme
+- Evernote and Markdown import & export
+- Web Clipper for easy saving of web content
+
+---
+
+## Links
+
+- Website: https://github.com/TriliumNext
+- Repository: https://github.com/TriliumNext/Trilium
+- Support: https://github.com/TriliumNext/Trilium/wiki
+
+## Release notes
+
+Trilium v0.104.1 is a follow-up to the recent v0.104.0 major update. If you're updating from a pre-v0.104.0 version, backend scripting and SQL console access are now disabled by default for safer server operation. If you rely on those features, review Trilium's security documentation before upgrading.
+
+Highlights:
+  - Improves OneNote imports with better throttling/504 handling, web device-code login, longer-running imports, richer clipping/table/drawing support, and safer handling of encrypted sections
+  - Redesigns LLM model selection and provider setup, with support for DeepSeek, custom OpenAI-compatible providers, Ollama, LM Studio, and other self-hosted providers
+  - Fixes protected hidden-note migrations, sync behind multi-cookie reverse proxies, disabled TOTP state, spellcheck and smooth-scrolling settings, and several editor/media viewer issues
+  - Fixes a Docker upgrade failure from v0.103.0 to v0.104.0 on some older Linux hosts
+
+
+Full release notes are available at https://github.com/TriliumNext/Trilium/releases/tag/v0.104.1

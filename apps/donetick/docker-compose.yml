@@ -1,0 +1,16 @@
+services:
+  app:
+    image: donetick/donetick:latest
+    user: 1000:1000
+    restart: on-failure
+    volumes:
+    - ${APP_DATA_DIR}/data/app:/donetick-data
+    - ${APP_DATA_DIR}/data/config:/config
+    environment:
+    - DT_ENV=selfhosted
+    - DT_SQLITE_PATH=/donetick-data/donetick.db
+    x-runtipi:
+      internal_port: 2021
+      is_main: true
+x-runtipi:
+  schema_version: 2

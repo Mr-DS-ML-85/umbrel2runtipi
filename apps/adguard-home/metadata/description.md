@@ -1,0 +1,28 @@
+# AdGuard Home
+
+Network-wide software for blocking ads and tracking
+
+⚠️ See below for important set-up instructions.
+
+AdGuard Home is a comprehensive solution designed to block ads and tracking across all devices in your home network. As the world increasingly embraces the Internet of Things, with a growing number of connected devices, maintaining control over your entire network is crucial. AdGuard Home empowers you to manage this with ease, ensuring a secure and clutter-free browsing experience for every device under your roof.
+
+🛠️ SET-UP INSTRUCTIONS
+In the setup wizard, it is important to set the "Port" of the Admin Web Interface to 8095. This ensures that the app will not conflict with other apps from the Umbrel App Store, and that the app will be accessible when clicking on the app icon in the umbrelOS homescreen.
+
+---
+
+## Links
+
+- Website: https://adguard.com/fr/adguard-home/overview.html
+- Repository: https://github.com/AdguardTeam/AdGuardHome
+- Support: https://github.com/AdguardTeam/AdGuardHome/issues
+
+## Release notes
+
+This security-focused release improves protection against JIGGLE attacks, validates DoH and DNSCrypt upstream responses more strictly, and protects QUIC connections from unbounded reads.
+
+Rulelist sizes are now limited to help prevent overload from misbehaving filter sources, and filter update intervals can be configured up to 365 days.
+
+This release also fixes DNS response AA flag handling, HTTPS DNS rewrite `ech` parsing, and Custom filtering rules blocked-service checks.
+
+Full release notes can be found at https://github.com/AdguardTeam/AdGuardHome/releases/tag/v0.107.78

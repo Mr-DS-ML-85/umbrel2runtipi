@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "OctoPrint",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 5003,
+  "id": "octoprint",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "OctoPrint provides a snappy web interface for controlling consumer 3D printers. OctoPrint's powerful plugin system allows extending its functionality with awesome plugins from the community.\n\nPlug your 3D printer into your Umbrel to control and monitor every aspect of your 3D printer and your printing jobs right from within your browser.",
+  "short_desc": "A snappy web interface for your 3D printer",
+  "author": "OctoPrint",
+  "source": "https://github.com/OctoPrint/OctoPrint",
+  "website": "https://octoprint.org/",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388772,
+  "updated_at": 1786690388772,
+  "min_tipi_version": "4.0.0"
+}

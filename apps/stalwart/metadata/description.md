@@ -1,0 +1,59 @@
+# Stalwart
+
+All-in-one Mail & Collaboration server
+
+📧 Stalwart is a fast, secure, and scalable open-source server for email, calendars, contacts, and file sharing, built in Rust for top-tier performance and safety.
+
+All-in-One Communication Platform
+  - Full Email Protocol Support: JMAP, IMAP4, POP3, and SMTP with advanced authentication, security, and filtering.
+  - Collaboration Tools: CalDAV calendars, CardDAV contacts, WebDAV file storage and sharing.
+  - Spam & Phishing Protection: AI-powered filtering, DNS blocklists, greylisting, sender reputation tracking, and more.
+
+
+Powerful Features for Any Scale
+  - Flexible storage backends: PostgreSQL, MySQL, SQLite, S3, Redis, ElasticSearch, and more.
+  - Built-in encryption, 2FA, and automated TLS certificates.
+  - Fault-tolerant, cluster-ready design with Kubernetes and Docker support.
+  - Rich admin dashboard, real-time monitoring, and user self-service tools.
+
+
+Whether you're running a small private server or a large enterprise deployment, Stalwart delivers modern, secure, and efficient communication you can trust.
+
+These are the configured external port mappings:
+  - **10443:443** (HTTPS)
+  - **10025:25** (SMTP)
+  - **10465:465** (SMTPS)
+  - **10587:587** (SMTP Submission)
+  - **10143:143** (IMAP)
+  - **10993:993** (IMAPS)
+  - **14190:4190** (Sieve)
+  - **10110:110**  (POP3)
+  - **10995:995**  (POP3S)
+
+
+You can find more details on how to properly setup your instance here: https://stalw.art/docs/install/platform/docker/
+
+---
+
+## Links
+
+- Website: https://stalw.art/
+- Repository: https://github.com/stalwartlabs/stalwart
+- Support: https://github.com/stalwartlabs/stalwart/issues
+
+## Default credentials
+
+- Username: `admin`
+
+## Release notes
+
+⚠️ If updating from Stalwart v0.15.x or earlier, make sure to have a backup before updating. Umbrel runs the v0.16 migration automatically, but it's recommended to review the upgrading guide: https://github.com/stalwartlabs/stalwart/blob/main/UPGRADING/v0_16.md
+
+Changes since v0.16.16 include:
+  - Adds support for the IMAP UIDBATCHES, UIDONLY, MESSAGELIMIT, and SAVELIMIT extensions
+  - Adds Range and If-Range support for WebDAV file downloads
+  - Adds the `url_original` spam-filter expression variable for URL rules
+  - Fixes MTA TLS validation, delivery scheduling/reporting, shared-item visibility, IMAP shared-folder moves, JMAP email submission queries, CardDAV vCard negotiation, and calendar scheduling messages
+
+
+Full release notes can be found at https://github.com/stalwartlabs/stalwart/releases/tag/v0.16.17

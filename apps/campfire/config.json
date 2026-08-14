@@ -1,0 +1,34 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Campfire",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8004,
+  "id": "campfire",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "social"
+  ],
+  "description": "Campfire is a web-based chat application for teams. Run your own private chat server with all the features you need.\n\nFeatures:\n  - Multiple chat rooms with access controls\n  - Direct messages between users\n  - File attachments with image and video previews\n  - Search across all messages\n  - Web Push notifications\n  - @mentions to notify specific users\n  - API with support for bot integrations\n  - Modern, responsive web interface\n  - Self-hosted and privacy-focused\n\nOn first launch, you'll be guided through creating an admin account. This admin can then invite other users and manage rooms and permissions.",
+  "short_desc": "Self-hosted chat for teams",
+  "author": "basecamp",
+  "source": "https://github.com/basecamp/once-campfire",
+  "website": "https://once.com/campfire",
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Seed",
+      "env_variable": "APP_SEED",
+      "required": false
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388440,
+  "updated_at": 1786690388440,
+  "min_tipi_version": "4.0.0"
+}

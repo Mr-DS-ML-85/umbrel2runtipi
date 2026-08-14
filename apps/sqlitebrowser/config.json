@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "SQLite Browser",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8887,
+  "id": "sqlitebrowser",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "development"
+  ],
+  "description": "DB Browser for SQLite (DB4S) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.\n\nDB4S is for users and developers who want to create, search, and edit databases. DB4S uses a familiar spreadsheet-like interface, so complicated SQL commands do not have to be learned.\n\nControls and wizards are available for users to:\n- Create and compact database files\n- Create, define, modify and delete tables\n- Create, define, and delete indexes\n- Browse, edit, add, and delete records\n- Search records\n- Import and export records as text\n- Import and export tables from/to CSV files\n- Import and export databases from/to SQL dump files\n- Issue SQL queries and inspect the results\n- Examine a log of all SQL commands issued by the application\n- Plot simple graphs based on table or query data",
+  "short_desc": "A database browser for SQLite",
+  "author": "SQLiteBrowser",
+  "source": "https://github.com/sqlitebrowser/sqlitebrowser",
+  "website": "https://sqlitebrowser.org/",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388939,
+  "updated_at": 1786690388939,
+  "min_tipi_version": "4.0.0"
+}

@@ -1,0 +1,19 @@
+services:
+  yucca:
+    image: yuccastream/yucca:latest
+    restart: on-failure
+    shm_size: 128mb
+    working_dir: /opt/yucca
+    volumes:
+    - ${APP_DATA_DIR}/data/data:/opt/yucca/data
+    ports:
+    - 10925:10925
+    - 9912:9912
+    environment:
+      YUCCA_SERVER_DATA_DIR: /opt/yucca/data
+      YUCCA_SMTP_SERVER_LISTEN_ADDRESS: :10925
+    x-runtipi:
+      internal_port: 9910
+      is_main: true
+x-runtipi:
+  schema_version: 2

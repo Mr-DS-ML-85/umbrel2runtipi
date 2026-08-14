@@ -1,0 +1,12 @@
+services:
+  web:
+    image: ghcr.io/mainsail-crew/mainsail:latest
+    restart: on-failure
+    stop_grace_period: 1m
+    volumes:
+    - ${APP_DATA_DIR}/data/config.json:/usr/share/nginx/html/config.json:ro
+    x-runtipi:
+      internal_port: 80
+      is_main: true
+x-runtipi:
+  schema_version: 2

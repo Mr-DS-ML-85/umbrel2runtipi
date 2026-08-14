@@ -1,0 +1,19 @@
+services:
+  web:
+    image: ghcr.io/music-assistant/server:latest
+    restart: on-failure
+    user: 1000:1000
+    network_mode: host
+    volumes:
+    - ${APP_DATA_DIR}/data:/data/
+    - ${RUNTIPI_MEDIA_DIR}/downloads/:/media
+    cap_add:
+    - SYS_ADMIN
+    - DAC_READ_SEARCH
+    security_opt:
+    - apparmor=unconfined
+    x-runtipi:
+      internal_port: 8896
+      is_main: true
+x-runtipi:
+  schema_version: 2

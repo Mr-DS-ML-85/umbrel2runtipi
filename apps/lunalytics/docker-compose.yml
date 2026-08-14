@@ -1,0 +1,21 @@
+services:
+  web:
+    image: ksjaay/lunalytics:latest
+    user: 1000:1000
+    restart: on-failure
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - nc -z 127.0.0.1 2308 || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 90s
+    volumes:
+    - ${APP_DATA_DIR}/data/lunalytics_data:/app/data:rw
+    - ${APP_DATA_DIR}/data/logs:/app/logs:rw
+    x-runtipi:
+      internal_port: 2308
+      is_main: true
+x-runtipi:
+  schema_version: 2

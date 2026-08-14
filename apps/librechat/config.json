@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "LibreChat",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 7050,
+  "id": "librechat",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "ai"
+  ],
+  "description": "Enhanced ChatGPT Clone: Features Agents, DeepSeek, Anthropic, AWS, OpenAI, Assistants API, Azure, Groq, o1, GPT-4o, Mistral, OpenRouter, Vertex AI, Gemini, Artifacts, AI model switching, message search, Code Interpreter, langchain, DALL-E-3, OpenAPI Actions, Functions, Secure Multi-User Auth, Presets, open-source for self-hosting.\n\n\u2728 Features\n  - \ud83d\udda5\ufe0f UI & Experience inspired by ChatGPT with enhanced design and features\n  - \ud83e\udd16 AI Model Selection:\n    - Anthropic (Claude), AWS Bedrock, OpenAI, Azure OpenAI, Google, Vertex AI, OpenAI Assistants API (incl. Azure)\n    - Custom Endpoints: Use any OpenAI-compatible API with LibreChat, no proxy required\n    - Compatible with Local & Remote AI Providers:\n      - Ollama, groq, Cohere, Mistral AI, Apple MLX, koboldcpp, together.ai,\n      - OpenRouter, Perplexity, ShuttleAI, Deepseek, Qwen, and more\n  - \ud83d\udd27 Code Interpreter API:\n    - Secure, Sandboxed Execution in Python, Node.js (JS/TS), Go, C/C++, Java, PHP, Rust, and Fortran\n    - Seamless File Handling: Upload, process, and download files directly\n    - No Privacy Concerns: Fully isolated and secure execution\n  - \ud83d\udd26 Agents & Tools Integration:\n    - LibreChat Agents:\n      - No-Code Custom Assistants: Build specialized, AI-driven helpers without coding\n      - Flexible & Extensible: Attach tools like DALL-E-3, file search, code execution, and more\n      - Compatible with Custom Endpoints, OpenAI, Azure, Anthropic, AWS Bedrock, and more\n      - Model Context Protocol (MCP) Support for Tools\n    - Use LibreChat Agents and OpenAI Assistants with Files, Code Interpreter, Tools, and API Actions\n  - \ud83d\udd0d Web Search:\n    - Search the internet and retrieve relevant information to enhance your AI context\n    - Combines search providers, content scrapers, and result rerankers for optimal results\n  - \ud83e\ude84 Generative UI with Code Artifacts:\n    - Code Artifacts allow creation of React, HTML, and Mermaid diagrams directly in chat\n  - \ud83c\udfa8 Image Generation & Editing\n    - Text-to-image and image-to-image with GPT-Image-1\n    - Text-to-image with DALL-E (3/2), Stable Diffusion, Flux, or any MCP server\n    - Produce stunning visuals from prompts or refine existing images with a single instruction\n  - \ud83d\udcbe Presets & Context Management:\n    - Create, Save, & Share Custom Presets\n    - Switch between AI Endpoints and Presets mid-chat\n    - Edit, Resubmit, and Continue Messages with Conversation branching\n    - Fork Messages & Conversations for Advanced Context control\n  - \ud83d\udcac Multimodal & File Interactions:\n    - Upload and analyze images with Claude 3, GPT-4.5, GPT-4o, o1, Llama-Vision, and Gemini \ud83d\udcf8\n    - Chat with Files using Custom Endpoints, OpenAI, Azure, Anthropic, AWS Bedrock, & Google \ud83d\uddc3\ufe0f\n  - \ud83c\udf0e Multilingual UI:\n    - English, \u4e2d\u6587, Deutsch, Espa\u00f1ol, Fran\u00e7ais, Italiano, Polski, Portugu\u00eas Brasileiro\n    - \u0420\u0443\u0441\u0441\u043a\u0438\u0439, \u65e5\u672c\u8a9e, Svenska, \ud55c\uad6d\uc5b4, Ti\u1ebfng Vi\u1ec7t, \u7e41\u9ad4\u4e2d\u6587, \u0627\u0644\u0639\u0631\u0628\u064a\u0629, T\u00fcrk\u00e7e, Nederlands, \u05e2\u05d1\u05e8\u05d9\u05ea\n  - \ud83e\udde0 Reasoning UI:\n    - Dynamic Reasoning UI for Chain-of-Thought/Reasoning AI models like DeepSeek-R1\n  - \ud83c\udfa8 Customizable Interface:\n    - Customizable Dropdown & Interface that adapts to both power users and newcomers\n  - \ud83d\udde3\ufe0f Speech & Audio:\n    - Chat hands-free with Speech-to-Text and Text-to-Speech\n    - Automatically send and play Audio\n    - Supports OpenAI, Azure OpenAI, and Elevenlabs\n  - \ud83d\udce5 Import & Export Conversations:\n    - Import Conversations from LibreChat, ChatGPT, Chatbot UI\n    - Export conversations as screenshots, markdown, text, json\n  - \ud83d\udd0d Search & Discovery:\n    - Search all messages/conversations\n  - \ud83d\udc65 Multi-User & Secure Access:\n    - Multi-User, Secure Authentication with OAuth2, LDAP, & Email Login Support\n    - Built-in Moderation, and Token spend tools\n  - \u2699\ufe0f Configuration & Deployment:\n    - Configure Proxy, Reverse Proxy, Docker, & many Deployment options\n    - Use completely local or deploy on the cloud\n  - \ud83d\udcd6 Open-Source & Community:\n    - Completely Open-Source & Built in Public\n    - Community-driven development, support, and feedback",
+  "short_desc": "Enhanced ChatGPT Clone",
+  "author": "Danny Avila",
+  "source": "https://github.com/danny-avila/LibreChat",
+  "website": "https://librechat.ai/",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388651,
+  "updated_at": 1786690388651,
+  "min_tipi_version": "4.0.0"
+}

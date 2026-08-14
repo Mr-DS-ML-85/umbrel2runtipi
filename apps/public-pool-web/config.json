@@ -1,0 +1,68 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Public Pool's Web",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 2021,
+  "id": "public-pool-web",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "finance"
+  ],
+  "description": "Public Pool's Web provides a sleek, user-friendly interface for managing and monitoring your Public Pool's data. \n\nBuilt with Rails 8.1 and modern web technologies, it offers real-time updates, detailed analytics, and comprehensive pool management features.\n\nFeatures:\n  - Add user\n  - Add worker\n  - Change theme\n  - Sidekiq web interface ( to check background jobs, usually you do not mess with it )\n\nThis is a hobby project!",
+  "short_desc": "Modern web interface for managing your Public Pool's data",
+  "author": "martinbarilik",
+  "source": "https://github.com/martinbarilik/public-pool-web",
+  "website": "https://github.com/martinbarilik/public-pool-web",
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Public Pool Web Database Url",
+      "env_variable": "APP_PUBLIC_POOL_WEB_DATABASE_URL",
+      "required": false,
+      "default": ""
+    },
+    {
+      "type": "random",
+      "label": "Public Pool Web Master Key",
+      "env_variable": "APP_PUBLIC_POOL_WEB_MASTER_KEY",
+      "required": false
+    },
+    {
+      "type": "text",
+      "label": "Public Pool Web Postgres Dbname",
+      "env_variable": "APP_PUBLIC_POOL_WEB_POSTGRES_DBNAME",
+      "required": false,
+      "default": ""
+    },
+    {
+      "type": "random",
+      "label": "Public Pool Web Postgres Password",
+      "env_variable": "APP_PUBLIC_POOL_WEB_POSTGRES_PASSWORD",
+      "required": false
+    },
+    {
+      "type": "text",
+      "label": "Public Pool Web Postgres Username",
+      "env_variable": "APP_PUBLIC_POOL_WEB_POSTGRES_USERNAME",
+      "required": false,
+      "default": ""
+    },
+    {
+      "type": "text",
+      "label": "Public Pool Web Redis Url",
+      "env_variable": "APP_PUBLIC_POOL_WEB_REDIS_URL",
+      "required": false,
+      "default": ""
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388861,
+  "updated_at": 1786690388861,
+  "min_tipi_version": "4.0.0"
+}

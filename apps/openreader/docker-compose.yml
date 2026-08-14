@@ -1,0 +1,18 @@
+services:
+  web:
+    image: ghcr.io/richardr1126/openreader:latest
+    user: 1000:1000
+    environment:
+    - API_BASE=http://kokoro_web_1:8880/v1
+    - BASE_URL=http://localhost:3391
+    - AUTH_SECRET=${APP_SEED}
+    - AUTH_TRUSTED_ORIGINS=http://localhost:3391,http://localhost:3391,http://*.ts.net:3391,https://*.ts.net:3391,${APP_OPENREADER_LOCAL_URLS}
+    - USE_ANONYMOUS_AUTH_SESSIONS=true
+    restart: on-failure
+    volumes:
+    - ${APP_DATA_DIR}/data/docstore:/app/docstore
+    x-runtipi:
+      internal_port: 3003
+      is_main: true
+x-runtipi:
+  schema_version: 2

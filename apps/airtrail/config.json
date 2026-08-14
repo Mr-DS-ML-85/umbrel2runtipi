@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "AirTrail",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 3256,
+  "id": "airtrail",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "A web application that allows users to track their flights and view their flight history.\n\nFeatures:\n- **World Map**: View all your flights on an interactive world map.\n- **Flight History**: Keep track of all your flights in one place.\n- **Statistics**: Get insights into your flight history with statistics.\n- **Multiple Users**: Manage multiple users, share flights among them, secure your data with user authentication and integrate with your OAuth provider.\n- **Responsive Design**: Use the application on any device with a responsive design.\n- **Dark Mode**: Switch between light and dark mode.\n- **Import Flights**: Import flights from various sources including MyFlightRadar24, App in the Air and JetLog.",
+  "short_desc": "A modern, open-source personal flight tracking system",
+  "author": "Johan Ohly",
+  "source": "https://github.com/johanohly/AirTrail",
+  "website": "https://airtrail.johan.ohly.dk",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388356,
+  "updated_at": 1786690388356,
+  "min_tipi_version": "4.0.0"
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Bitcoin Regtest Dashboard",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 3022,
+  "id": "bitcoin-regtest-dashboard",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "finance"
+  ],
+  "description": "A self-contained development dashboard with its own Bitcoin Core regtest node and Electrs instance. No external dependencies required.\n\nFeatures include:\n  - Mine blocks instantly with one click\n  - Auto-mine blocks until stopped or for a set duration\n  - Generate new addresses (all types supported)\n  - Send Bitcoin to any address\n  - View and manage UTXOs\n  - RBF (Replace-By-Fee) transactions\n  - Cancel unconfirmed transactions\n  - Browse mempool and blocks\n  - Decode and broadcast raw transactions\n  - Full RPC console for advanced commands\n\n\nPerfect for Bitcoin developers who need quick access to regtest node functionality for testing wallets, applications, and Bitcoin integrations.",
+  "short_desc": "Development toolkit for Bitcoin regtest",
+  "author": "Corey Phillips",
+  "source": "https://github.com/coreyphillips/bitcoin-regtest-dashboard",
+  "website": "https://github.com/coreyphillips/bitcoin-regtest-dashboard",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388408,
+  "updated_at": 1786690388408,
+  "min_tipi_version": "4.0.0"
+}

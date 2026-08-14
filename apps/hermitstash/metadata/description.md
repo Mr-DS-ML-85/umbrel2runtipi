@@ -1,0 +1,25 @@
+# HermitStash
+
+Post-quantum encrypted self-hosted file sharing
+
+HermitStash is a self-hosted file upload server with post-quantum encryption. Every file and database field is sealed with an ML-KEM-1024 + ECDH P-384 hybrid envelope and XChaCha20-Poly1305 before touching disk; passwords use Argon2id. Nothing is stored in plaintext, including database fields the operator never thinks of as sensitive.
+
+Generate shareable download links with optional expiry, download limits, and per-bundle passwords. Sign in with WebAuthn passkeys, mTLS browser certificates issued by the built-in CA, or password + TOTP. A separately-installable desktop sync client watches a local folder and mirrors changes back to the server over a post-quantum WebSocket channel.
+
+The admin panel covers users, uploads with per-user and per-stash size limits, webhooks, API keys, branding, a tamper-evident audit log (CSV/JSON/CADF export, plus syslog or webhook forwarding to a SIEM), mutual-TLS certificate-authority management, and storage backends — local disk by default, or any S3-compatible bucket (MinIO, Cloudflare R2, Backblaze B2) for off-device archives. Retry-safe writes via the standard Idempotency-Key header. RFC 9457 problem-details on every API error response.
+
+Files and database fields are sealed with post-quantum encryption at rest no matter how you reach the app. When it is served over HTTPS — a custom domain, or remote access over Tor or Tailscale — the TLS handshake also negotiates a post-quantum key exchange (X25519MLKEM768 or SecP384r1MLKEM1024), so the connection itself is quantum-resistant; over a plain local-network address the at-rest protection still applies.
+
+---
+
+## Links
+
+- Website: https://hermitstash.com
+- Repository: https://github.com/dotCooCoo/hermitstash
+- Support: https://github.com/dotCooCoo/hermitstash/issues
+
+## Release notes
+
+This release moves the mutual-TLS certificate authority for sync clients to post-quantum ML-DSA-87 (FIPS 204), migrates existing installs to it automatically, and lands a broad round of security hardening across the upload, authentication, admin, and audit surfaces.
+- The sync certificate authority now signs with post-quantum ML-DSA-87 (FIPS 204) by default. An existing classical authority migrates itself automatically at startup on a capable runtime; the migration is crash-safe and keeps existing sync certificates verifying through a 30-day grace window while their owners re-enroll. - The certificates people import into a browser or OS keystore stay on a separate classical ECDSA P-384 authority so they remain universally importable, while machine sync certificates go post-quantum. The certificate engine moves to the zero-dependency @blamejs/pki toolkit. - In the admin panel, the mutual-TLS certificate-authority view reflects the split between the post-quantum sync authority and the classical browser authority, shows each authority's algorithm and generation, and surfaces the auto-migration grace window on the Danger Zone card. - File and bundle changes now enforce the API key's certificate binding and its stash and bundle confinement, so a bearer token presented without its client certificate can no longer reach another key's resources. - Chunked-upload reassembly memory is bounded even under a no-limit policy, and the shared bundle behind a public sync stash can no longer be overwritten by an unauthenticated request. - The tamper-evident audit chain no longer interleaves retention cleanup with encrypted archival, outbound webhooks are signed under the Standard Webhooks scheme for replay protection, and account-enumeration timing is closed on password-reset, email-verification, and access-code requests. - Authentication is tightened: the soft mTLS gate validates a presented bearer token, passkey verification runs before any account-status check, repeated second-factor failures count against the pending sign-in, and operator-supplied legal-policy text is HTML-sanitized before rendering. - Reliability fixes: an oversized request on an encrypted session returns a Payload Too Large response instead of resetting the connection, a negative numeric setting falls back to its default, access-code attempts are counted atomically, and a storage error mid-download no longer crashes the process. The container base image is also refreshed to clear a high-severity npm advisory (CVE-2026-14257).
+Full release notes can be found at https://github.com/dotCooCoo/hermitstash/releases/tag/v1.14.2

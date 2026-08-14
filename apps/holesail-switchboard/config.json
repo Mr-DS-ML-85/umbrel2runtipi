@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Holesail Switchboard",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 3160,
+  "id": "holesail-switchboard",
+  "tipi_version": 1,
+  "version": "2.0.8",
+  "categories": [
+    "network"
+  ],
+  "description": "Running Umbrel behind a home router (NAT) without a public domain? Tor is too slow?\n\nHolesail Switchboard provides a web interface to manage multiple holesail servers and clients, allowing you to create instant P2P tunnels that bypass any network, firewall, or NAT restrictions.\n\nFeatures:\n  - Create and manage multiple P2P servers and clients from a single dashboard\n  - QR code generation for easy sharing of server connection URLs\n  - Secure mode support for private connections\n  - Persistent configuration that survives restarts\n\n\nUse cases:\n  - Expose your Umbrel apps to the internet without port forwarding\n  - Share access to local services with friends and family\n  - Connect to remote services securely\n\nFor more information: https://github.com/oren-z0/holesail-switchboard/blob/main/docs/Umbrel.md",
+  "short_desc": "Manage multiple holesail P2P tunnels from a single dashboard",
+  "author": "oren-z0",
+  "source": "https://github.com/oren-z0/holesail-switchboard",
+  "website": "https://github.com/oren-z0/holesail-switchboard",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388580,
+  "updated_at": 1786690388580,
+  "min_tipi_version": "4.0.0"
+}

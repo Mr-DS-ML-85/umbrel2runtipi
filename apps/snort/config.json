@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Snort",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 52027,
+  "id": "snort",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "social"
+  ],
+  "description": "Snort is a client for Nostr that is built using React, designed to be fast and lightweight while still offering a wide range of features.  Our focus is on providing users with an easy-to-use interface to interact with the Nostr network, making it accessible to all types of users.  With its clean and intuitive design, Snort makes it simple to navigate the Nostr network and access its features, allowing users to efficiently manage their data.",
+  "short_desc": "Fast Nostr UI",
+  "author": "Snort",
+  "source": "https://git.v0l.io/Kieran/snort",
+  "website": "https://snort.social",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388923,
+  "updated_at": 1786690388923,
+  "min_tipi_version": "4.0.0"
+}

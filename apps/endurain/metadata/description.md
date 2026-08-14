@@ -1,0 +1,40 @@
+# Endurain
+
+Fitness tracking, Open Source, Self-Hosted
+
+Endurain is a self-hosted fitness tracking service designed to give users full control over their data and hosting environment. 
+
+It's similar to Strava but focused on privacy and customization.
+
+Features:
+- **Seamless Activity Tracking** - Import workouts via manual entry, bulk upload (.gpx and .fit files), or sync automatically with Strava and Garmin Connect
+- **Complete Gear Management** - Monitor usage and performance of your shoes, bicycles, wetsuits, and more
+- **Personalized Dashboard** - View your activity feeds, weekly/monthly statistics, and progress at a glance
+- **Social Connection** - Follow friends, share achievements, and build your fitness community
+- **Customizable Experience** - Enjoy multi-language support, dark/light themes, and interfaces that adapt to admin or user roles
+- **Comprehensive Health Tracking** - Sync body composition data and log weight measurements
+- **Privacy Controls** - Manage who sees your activities with flexible privacy settings
+- **Third-Party Integration** - Connect with your favorite fitness apps for a unified experience
+
+---
+
+## Links
+
+- Website: https://docs.endurain.com/
+- Repository: https://github.com/joaovitoriasilva/endurain
+- Support: https://github.com/joaovitoriasilva/endurain/issues
+
+## Default credentials
+
+- Username: `admin`
+- Password: `admin`
+
+## Release notes
+
+⚠️ Warning: Your user sessions will be deleted on upgrade. Users will have to authenticate again.
+
+Bug fixes and improvements:
+  - Fixed Garmin Connect login
+
+
+Full release notes can be found at https://github.com/joaovitoriasilva/endurain/releases

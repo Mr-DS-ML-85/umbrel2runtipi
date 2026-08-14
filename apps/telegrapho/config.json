@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Telegrapho",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 3712,
+  "id": "telegrapho",
+  "tipi_version": 1,
+  "version": "1.0.1",
+  "categories": [
+    "network"
+  ],
+  "description": "Stop pasting sensitive text into third-party apps.\n\nTelegrapho creates private realtime text channels between your devices using your self-hosted server.\n\nCopy on mobile and receive instantly on desktop.\n\nYour text. Your server. Your control.",
+  "short_desc": "Private copy and paste between your devices",
+  "author": "egzola",
+  "source": "https://github.com/egzola/telegrapho",
+  "website": "https://github.com/egzola/telegrapho",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388978,
+  "updated_at": 1786690388978,
+  "min_tipi_version": "4.0.0"
+}

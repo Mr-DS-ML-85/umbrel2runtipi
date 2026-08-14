@@ -1,0 +1,34 @@
+# Appsmith
+
+Platform to build admin panels, internal tools, and dashboards
+
+Appsmith is an open-source, low-code development platform designed to help developers and teams build internal tools and business applications quickly and efficiently. Whether you need dashboards, admin panels, database GUIs, or approval workflows, Appsmith provides a powerful yet flexible environment to create robust applications without the overhead of traditional software development.
+
+At its core, Appsmith offers a drag-and-drop interface featuring over 45 customizable widgets, seamless integration with more than 18 data sources—including PostgreSQL, MongoDB, REST APIs, and GraphQL—and a built-in JavaScript editor for advanced logic and interactivity. This combination empowers both developers and non-technical users to build dynamic, data-driven applications with ease.
+
+Appsmith supports Git-based version control, allowing teams to manage application changes effectively. Its architecture embraces a model-view-controller (MVC) pattern, promoting clean code organization and scalability. Additionally, Appsmith offers both cloud-hosted and self-hosted deployment options, providing flexibility and control over your applications.
+
+Trusted by over 10,000 teams across 150 countries—including organizations like Dropbox, Twilio, and GSK—Appsmith is a proven solution for building internal tools that enhance productivity and streamline operations.
+
+Whether you're a startup looking to accelerate development or an enterprise seeking customizable internal solutions, Appsmith offers the tools and flexibility to meet your needs.
+
+---
+
+## Links
+
+- Website: https://www.appsmith.com/
+- Repository: https://github.com/appsmithorg/appsmith
+- Support: https://discord.com/invite/rBTTVJp
+
+## Release notes
+
+Appsmith 2.3 keeps the automatic migration for older Umbrel installs, so Appsmith may take some time to come back online while the migration finishes. Please leave Appsmith running until it has started.
+Appsmith AI datasource connections are being retired: after upgrading, new Appsmith AI datasources and queries can no longer be created, while existing ones continue to work until September 30, 2026.
+Highlights include:
+  - Added Ask AI to Community Edition and AI Copilot support for Custom Widgets.
+  - Added the Card widget, Button label styling options, widget tab-order controls, and configurable HTML language attributes.
+  - Fixed multiple security issues covering datasource authorization, Git imports, permission group boundaries, anonymous tenant responses, login redirects, frame ancestors, SMTP TLS verification, rate limiting, and dependency CVEs.
+  - Improved Git error messages and Git import behavior.
+  - Fixed several UI and widget issues, including application theme permissions, copy-to-application scrolling, table menu button widths, and link handling in Text widgets.
+
+Full release notes can be found at https://github.com/appsmithorg/appsmith/releases/tag/v2.3

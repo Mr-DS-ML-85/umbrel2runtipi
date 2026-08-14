@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "InfluxDB 2",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 8886,
+  "id": "influxdb2",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "development"
+  ],
+  "description": "Purpose built for real-time analytics at any scale.\n\nPowered by columnar analytics, optimized for cost-efficient storage, and built with open data standards.\n- Unmatched Performance at Scale: manage millions of time series data points per second without limits or caps.\n- Columnar Analytics: columnar datastore delivers faster analytic queries by orders of magnitude and reduces storage footprint.\n- High-Speed Ingest: ingest billions of series with fewer CPUs and less RAM at a fraction of the storage cost.\n- Real-Time Querying: sub-second query responses for recent and live incoming data.\n- Unlimited Cardinality: analyze billions of time series and data points per second without limitations or caps.\n- Low-Cost Object Store with Parquet: separation of compute from storage with best-in-category compression to store more data using less space.\n- Interoperability with Data Lakehouses: built on open data standards for direct access to data from lakehouses and warehouses via Apache Iceberg.",
+  "short_desc": "The leading platform for time series data",
+  "author": "InfluxData",
+  "source": "https://github.com/influxdata/influxdb",
+  "website": "https://www.influxdata.com/",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388597,
+  "updated_at": 1786690388597,
+  "min_tipi_version": "4.0.0"
+}

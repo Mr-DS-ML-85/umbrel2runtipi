@@ -1,0 +1,27 @@
+# EE Gateway
+
+Self-hosted Bluetooth gateway for open BLE networks
+
+EE Gateway turns your Umbrel into a self-hosted Bluetooth gateway for open BLE networks.
+
+It scans with your device's Bluetooth radio for nearby BLE devices from supported networks and forwards their packets to the right upstream cloud, extending ground coverage from hardware you already own. Hubble Network is supported today; more partner networks will be added as they come online.
+
+Two containers do the work: a worker that scans over Bluetooth and ingests packets upstream, and a small web dashboard for first-time setup and live status. You'll need a free encryptedenergy.com account to create the API token used during setup. Enter it once in the setup wizard, and the gateway runs on its own.
+
+EE Gateway is free and open-source software (GPL-3.0-only), built by encryptedenergy.com. It is an independent community project and is not affiliated with any specific BLE network.
+
+---
+
+## Links
+
+- Website: https://encryptedenergy.com
+- Repository: https://github.com/Encrypted-Energy/gateway
+- Support: https://github.com/Encrypted-Energy/gateway/issues
+
+## Release notes
+
+Big efficiency release. The worker now uploads queued packets in one batch instead of one request per packet. On a busy gateway that cuts network requests and SD card writes by up to 500 times, and uploads clear much faster after the gateway comes back online.
+
+Location reporting is more trustworthy too. Each packet now carries the exact time its GPS coordinate was captured and how precise the fix was, straight from your dongle. That lets the upstream network verify your gateway's coverage is real, which protects your payout eligibility as anti-fraud checks tighten.
+
+Housekeeping: the last unused leftovers of the organization ID are gone from the worker. Your API token alone connects the gateway, and existing installs keep working with no changes. Worker 0.8.0, UI 0.6.4.

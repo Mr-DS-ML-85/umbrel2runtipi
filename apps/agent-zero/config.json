@@ -1,0 +1,42 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Agent Zero",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 3015,
+  "id": "agent-zero",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "ai"
+  ],
+  "description": "Agent Zero is a personal, organic agentic framework that grows and learns with you. It is fully Dockerized and includes features like Speech-to-Text and TTS.\n\n**Key Features:**\n  - **General Purpose Assistant:** Can handle various tasks.\n  - **Computer Use:** Can use the computer (in the container).\n  - **Coding:** Can write and execute code.\n  - **Memory:** Learns from interactions.\n\n\n**Getting Started:**\n  1. Launch Agent Zero.\n  2. Configure your models in the settings.\n\n\n\u26a0\ufe0f **Warning:** Agent Zero can execute code. Run with caution.",
+  "short_desc": "A personal, organic agentic framework that grows and learns with you",
+  "author": "Agent Zero AI",
+  "source": "https://github.com/agent0ai/agent-zero",
+  "website": "https://github.com/agent0ai/agent-zero",
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Agentzero Local Urls",
+      "env_variable": "APP_AGENTZERO_LOCAL_URLS",
+      "required": false,
+      "default": ""
+    },
+    {
+      "type": "text",
+      "label": "Agentzero Port",
+      "env_variable": "APP_AGENTZERO_PORT",
+      "required": false,
+      "default": ""
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388352,
+  "updated_at": 1786690388352,
+  "min_tipi_version": "4.0.0"
+}

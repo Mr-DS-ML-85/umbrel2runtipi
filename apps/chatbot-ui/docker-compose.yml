@@ -1,0 +1,8 @@
+services:
+  web:
+    image: ghcr.io/mckaywrigley/chatbot-ui:main
+    x-runtipi:
+      internal_port: 3000
+      is_main: true
+x-runtipi:
+  schema_version: 2

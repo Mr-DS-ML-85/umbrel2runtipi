@@ -1,0 +1,25 @@
+services:
+  homepage:
+    image: loficafe/static-web-server-samba:1.0.1
+    restart: on-failure
+    user: 1000:1000
+    volumes:
+    - ${APP_DATA_DIR}/data/samba/smb.conf:/public/smb.conf:ro
+    x-runtipi:
+      internal_port: 80
+      is_main: true
+  server:
+    image: dockurr/samba:latest
+    restart: on-failure
+    environment:
+      USER: umbrel
+      PASS: ${APP_PASSWORD}
+      UID: 1000
+      GID: 1000
+    ports:
+    - 446:445
+    volumes:
+    - ${APP_DATA_DIR}/data/samba/smb.conf:/etc/samba/smb.conf
+    - ${RUNTIPI_MEDIA_DIR}/:/storage
+x-runtipi:
+  schema_version: 2

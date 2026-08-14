@@ -1,0 +1,23 @@
+services:
+  web:
+    image: jc21/nginx-proxy-manager:latest
+    hostname: nginx-proxy-manager_web_1
+    restart: on-failure
+    ports:
+    - 40080:80
+    - 40443:443
+    volumes:
+    - ${APP_DATA_DIR}/data/npm-data:/data
+    - ${APP_DATA_DIR}/data/letsencrypt:/etc/letsencrypt
+    x-runtipi:
+      internal_port: 81
+      is_main: true
+  docker-host:
+    image: qoomon/docker-host:latest
+    hostname: localhost
+    cap_add:
+    - NET_ADMIN
+    - NET_RAW
+    restart: on-failure
+x-runtipi:
+  schema_version: 2

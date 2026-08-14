@@ -1,0 +1,29 @@
+# NetBird
+
+An adaptive client for Zero Trust Networking
+
+NetBird is a secure networking platform that creates private, peer-to-peer connections between devices using encrypted communication channels. It builds a trusted network layer that allows seamless and direct communication without exposing data to intermediaries. Every connection is protected with modern encryption standards and managed automatically through a zero trust security model that authenticates identities rather than networks.
+
+The NetBird Client is the component that brings this system to life. It handles all encrypted communication, key management, and access control between connected peers. Once active, it securely links the device to the NetBird network and continuously manages all background operations to maintain a reliable and private connection.
+
+By combining simplicity, automation, and strong cryptography, the NetBird Client enables secure networking without configuration. It provides a stable foundation for private communication and collaboration while ensuring that every connection remains fully encrypted, authenticated, and resilient.
+
+⚙️ Get your Umbrel connected with NetBird
+
+Open the link shown in your browser on your computer or mobile device and sign in with the same NetBird account you use for the dashboard. Approve the device when prompted. After confirmation, your Umbrel client will automatically register itself and remain connected across restarts.
+
+---
+
+## Links
+
+- Website: https://netbird.io/
+- Repository: https://github.com/netbirdio/netbird
+- Support: https://github.com/netbirdio/netbird/issues
+
+## Release notes
+
+This update improves NetBird's Agent Network endpoint identity and settings bootstrap.
+
+It also improves client privacy in debug bundles, prevents WireGuard packets from being misrouted to the STUN handler, and adds an ACL fallback when ipset is unavailable.
+
+Full release notes can be found at https://github.com/netbirdio/netbird/releases/tag/v0.77.0

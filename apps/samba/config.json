@@ -1,0 +1,34 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Samba",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 9445,
+  "id": "samba",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "network"
+  ],
+  "description": "\u26a0\ufe0f Removal Notice: The Samba app has been removed from the Umbrel App Store as file sharing is now natively integrated into umbrelOS.\n\ud83d\udcc2 Simplify your file sharing with Samba!\nSamba is a powerful tool that makes it easy to share files across different devices on your network. It allows your Umbrel device to seamlessly share files with Windows, macOS, Linux, and more. Whether you're sharing documents, media files, or backups, Samba makes it simple and secure.\n\n\ud83d\udcc4 Effortless File Access\nAccess and manage the files on your Umbrel device from any computer on your network. Say good bye to the complicated SSH access!\n\n\ud83d\udda5\ufe0f Cross-Platform Compatibility\nSamba works with all major operating systems, including Windows, macOS, and Linux. Share your files without worrying about compatibility issues.\n\n\ud83d\udee1\ufe0f Secure and Reliable\nSamba has been providing secure and stable file sharing for over 30 years. Trust it to keep your files safe and accessible.",
+  "short_desc": "Make your storage accessible using Samba",
+  "author": "Samba",
+  "source": "https://github.com/dockur/samba",
+  "website": "https://www.samba.org/",
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Password",
+      "env_variable": "APP_PASSWORD",
+      "required": false
+    }
+  ],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388896,
+  "updated_at": 1786690388896,
+  "min_tipi_version": "4.0.0"
+}

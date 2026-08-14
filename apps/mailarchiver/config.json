@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Mail Archiver",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 5006,
+  "id": "mailarchiver",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "Mail Archiver delivers automated archiving of incoming and outgoing emails from multiple accounts. All email content and attachments are synchronized based on a schedule. The responsive UI is optimized for mobile and desktop use, is multilingual and responsive with dark mode.\nOpenID Connect (OIDC) can be configured for integration of external authentication services.\n\n**Setup**\nProvided credentials need to be changed on first login. Users, accounts etc. may be configured in the webinterface, basic settings (f.e. timezone) may be adjusted to your needs in \"data/appsettings.json\".\n\n\ud83d\udd0d **Search & Access**\n  - Advanced search across all archived emails with filtering options\n  - Preview emails with attachment list\n  - Export entire mail accounts as mbox files or zipped EML archives\n  - Export selected individual emails or email batches\n\n\n\ud83d\udc65 **User Management**\n  - Multi-user support with account-specific permissions\n  - Dashboard with statistics, storage monitoring, and sender analysis\n  - Comprehensive access logging with detailed activity tracking of user activities (Access, Export, Deletion, Restore and many more) - see Access Logging Guide for details\n\n\n\ud83e\udde9 **Email Provider Support**\n  - IMAP - Traditional IMAP accounts with full synchronization capabilities\n  - M365 - Microsoft 365 mail accounts via Microsoft Graph API (Setup Guide)\n  - IMPORT - Import-only accounts for migrating existing email archives\n\n\n\ud83d\udce5 **Import & Restore Functions**\n  - MBox Import and EML Import (ZIP files with folder structure support)\n  - Restore selected emails or entire mailboxes to destination mailboxes\n\n\n\ud83d\uddd1\ufe0f **Retention Policies**\n  - Configure automatic deletion of archived emails from mailserver after specified days (Retention Policies Documentation)\n  - Set retention period per email account (e.g., 30, 90, or 365 days)\n  - Local Archive Retention - Configure separate retention period for local archive",
+  "short_desc": "A comprehensive solution for archiving, searching, and exporting emails",
+  "author": "s1t5",
+  "source": "https://github.com/s1t5/mail-archiver",
+  "website": "https://mail-archiver.org",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388698,
+  "updated_at": 1786690388698,
+  "min_tipi_version": "4.0.0"
+}

@@ -1,0 +1,29 @@
+services:
+  server:
+    image: voidic/route96:latest
+    user: 1000:1000
+    restart: on-failure
+    volumes:
+    - ${APP_DATA_DIR}/data/uploads:/app/data
+    - ${APP_DATA_DIR}/data/config.yaml:/app/config.yaml
+    environment:
+      RUST_LOG: info
+      APP_PUBLIC_URL: http://${APP_DOMAIN}:8002
+    depends_on:
+    - db
+    x-runtipi:
+      internal_port: 8002
+      is_main: true
+  db:
+    image: mariadb:latest
+    user: 1000:1000
+    restart: on-failure
+    volumes:
+    - ${APP_DATA_DIR}/data/db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: moneyprintergobrrr
+      MYSQL_USER: route96
+      MYSQL_PASSWORD: moneyprintergobrrr
+      MYSQL_DATABASE: route96
+x-runtipi:
+  schema_version: 2

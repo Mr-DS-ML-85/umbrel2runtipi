@@ -1,0 +1,27 @@
+# Yamtrack
+
+A self hosted media tracker
+
+🎬 Yamtrack is an open-source self-hosted media tracking application designed to help users organize and keep track of a wide range of entertainment content including movies, TV shows, anime, manga, video games, books, and comics. It provides a comprehensive platform where users can record detailed information about their media consumption such as ratings, viewing status, progress, start and end dates, and personal notes. Every action performed within the application is logged, enabling users to maintain a history of their interactions such as adding new media, starting to watch or read, and resuming paused content.
+
+One of the notable features of Yamtrack is its flexibility in managing both automatically imported data from popular services and manually created entries for media items that might not be available through external APIs. This allows for a personalized and complete tracking experience. Users can organize their tracked media into custom lists and share these collections with others, enhancing community interaction. A calendar view provides an overview of upcoming releases, keeping users informed about new content relevant to their interests. Notifications can be configured through various platforms such as Discord, Telegram, Slack, and email using Apprise, allowing users to stay updated on new releases or other significant events.
+
+Yamtrack supports multiple users, each with their own accounts and personalized tracking data, making it suitable for households or small groups of media enthusiasts. Integration with Jellyfin enables automatic tracking of episodes once they are watched, seamlessly connecting media playback with tracking data. Data import is supported from several well-known services including Trakt, Simkl, MyAnimeList, The Movie Database, AniList, and Kitsu, allowing users to migrate their existing media tracking information easily. Users also have the option to export all their tracked data into a CSV file and re-import it when needed.
+
+Yamtrack is actively developed with regular updates that enhance its functionality, such as improved integration with media servers and better search capabilities for video games. Users appreciate the application for its ease of use, comprehensive tracking features, and the ability to host their own data privately without relying on third-party platforms. It is a valuable tool for anyone looking to keep a detailed and organized record of their diverse media consumption in one centralized place.
+
+---
+
+## Links
+
+- Website: https://github.com/FuzzyGrim/Yamtrack
+- Repository: https://github.com/FuzzyGrim/Yamtrack
+- Support: https://github.com/FuzzyGrim/Yamtrack/issues
+
+## Release notes
+
+This release adds a new journal page that groups activity by day, redesigns media details with section tabs, adds time-to-beat game stats, adds options to hide upcoming episodes and leave episode dates empty, improves statistics badges/breakdowns, and lets media search match notes.
+
+It also improves in-place media and episode editing, and fixes timezone/calendar crashes, the 0.26.0 media date migration, SQLite import locking, Goodreads import crashes, Trakt/Simkl/Yamtrack import dates, unaired-episode progress, duplicate top-rated stats, and missing season images.
+
+Full release notes can be found at https://github.com/FuzzyGrim/Yamtrack/releases/tag/v0.26.1

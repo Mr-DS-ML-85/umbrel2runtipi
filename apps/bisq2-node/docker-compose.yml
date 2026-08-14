@@ -1,0 +1,19 @@
+services:
+  server:
+    image: ghcr.io/bisq-network/bisq2-api:latest
+    restart: on-failure
+    stop_grace_period: 1m
+    mem_limit: 2g
+    volumes:
+    - ${APP_DATA_DIR}/data:/data
+    x-runtipi:
+      internal_port: 8091
+      is_main: true
+  web:
+    image: ghcr.io/bisq-network/bisq2-api-web-ui:latest
+    restart: on-failure
+    network_mode: service:server
+    volumes:
+    - ${APP_DATA_DIR}/data:/data:ro
+x-runtipi:
+  schema_version: 2

@@ -1,0 +1,17 @@
+services:
+  web:
+    image: dennysubke/cobalt:latest
+    read_only: true
+    restart: on-failure
+    user: 1000:1000
+    ports:
+    - 9013:9000
+    environment:
+      API_URL: http://localhost:9013/
+      API_AUTH_REQUIRED: 0
+      DURATION_LIMIT: 86400
+    x-runtipi:
+      internal_port: 9001
+      is_main: true
+x-runtipi:
+  schema_version: 2

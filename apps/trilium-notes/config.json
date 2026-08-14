@@ -1,0 +1,27 @@
+{
+  "$schema": "../app-info-schema.json",
+  "name": "Trilium Notes",
+  "available": true,
+  "exposable": true,
+  "dynamic_config": true,
+  "port": 3779,
+  "id": "trilium-notes",
+  "tipi_version": 1,
+  "version": "latest",
+  "categories": [
+    "data"
+  ],
+  "description": "Features\n\n- Notes can be arranged into arbitrarily deep tree. Single note can be placed into multiple places in the tree (see cloning)\n- Rich WYSIWYG note editing including e.g. tables, images and math with markdown autoformat\n- Support for editing notes with source code, including syntax highlighting\n- Fast and easy navigation between notes, full text search and note hoisting\n- Seamless note versioning\n- Note attributes can be used for note organization, querying and advanced scripting\n- Synchronization with self-hosted sync server (there's a 3rd party service for hosting synchronisation server)\n- Sharing (publishing) notes to public internet\n- Strong note encryption with per-note granularity\n- Sketching diagrams with bult-in Excalidraw (note type \"canvas\")\n- Relation maps and link maps for visualizing notes and their relations\n- Scripting - see Advanced showcases\n- REST API for automation\n- Scales well in both usability and performance upwards of 100 000 notes\n- Touch optimized mobile frontend for smartphones and tablets\n- Night theme\n- Evernote and Markdown import & export\n- Web Clipper for easy saving of web content",
+  "short_desc": "Build your personal knowledge base with Trilium Notes",
+  "author": "TriliumNext",
+  "source": "https://github.com/TriliumNext/Trilium",
+  "website": "https://github.com/TriliumNext",
+  "form_fields": [],
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1786690388997,
+  "updated_at": 1786690388997,
+  "min_tipi_version": "4.0.0"
+}
